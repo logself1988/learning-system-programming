@@ -1,5 +1,0 @@
-/Users/zhang/workspace/github/perf_hacks/code-snippet/cplusplus/essential-cplusplus/build/CMakeFiles/rebuild_cache.dir
-/Users/zhang/workspace/github/perf_hacks/code-snippet/cplusplus/essential-cplusplus/build/CMakeFiles/edit_cache.dir
-/Users/zhang/workspace/github/perf_hacks/code-snippet/cplusplus/essential-cplusplus/build/src/02_procedure_programming/CMakeFiles/rebuild_cache.dir
-/Users/zhang/workspace/github/perf_hacks/code-snippet/cplusplus/essential-cplusplus/build/src/02_procedure_programming/CMakeFiles/edit_cache.dir
-/Users/zhang/workspace/github/perf_hacks/code-snippet/cplusplus/essential-cplusplus/build/src/02_procedure_programming/CMakeFiles/sequence.dir
