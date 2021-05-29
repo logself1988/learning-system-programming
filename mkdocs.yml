@@ -1,0 +1,68 @@
+site_name: Performance Hacks
+site_author: 'zhoujiagen@gmail.com'
+copyright: MIT
+repo_name: perf_hacks
+repo_url: https://github.com/zhoujiagen/perf_hacks
+
+nav:
+    - Home: index.md
+    - Build:
+      - Home: build-tools/docs/index.md
+      - Make: build-tools/docs/make.md
+      - Autotools: build-tools/docs/autotools.md
+      - CMake: build-tools/docs/cmake.md
+    - C:
+      - Home: c/docs/index.md
+      - 'Core': c/docs/clang-core.md
+      - 'Lib': c/docs/clib.md
+      - 'Tool': c/docs/tool.md
+    - 'C++':
+      - Home: /index.md
+      - 'Q&A': cpp/docs/QA.md
+      - 'Tool': cpp/docs/tool.md
+      - 'C++ 11': cpp/docs/CXX11-Standard.md
+    - 'Kernel':
+      - Home: kernel/docs/index.md
+      - 'Linux架构': kernel/docs/linux-arch.md
+      - 'Linux手册页': kernel/docs/linux-man.md
+      - '系统调用': kernel/docs/syscall.md
+      - 'UNIX环境高级编程': kernel/docs/apue.md
+      - 'Linux编程接口': kernel/docs/tlpi.md
+      - '网络':
+        - 'TCP/IP': kernel/docs/network/network.md
+        - 'Netty': kernel/docs/network/netty.md
+        - 'NS2': kernel/docs/network/ns2.md
+
+#theme: readthedocs
+theme:
+  name: material
+extra:
+  search:
+    language: 'en'
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+      guess_lang: False
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex # LaTeX math equations
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - footnotes
+  - markdown_inline_graphviz
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
