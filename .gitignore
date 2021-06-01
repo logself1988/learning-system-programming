@@ -31,5 +31,8 @@
 *.out
 *.app
 
+# CMake
 **/build/
 **/*.dSYM/
+greeting
+game
