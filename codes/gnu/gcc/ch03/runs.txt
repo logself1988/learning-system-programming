@@ -1,0 +1,75 @@
+# dbmain.c
+
+$ gcc -Wall dbmain.c -lgdbm -o dbmain
+dbmain.c:2:10: fatal error: gdbm.h: No such file or directory
+    2 | #include <gdbm.h>
+      |          ^~~~~~~~
+compilation terminated.
+
+$ sudo apt install libgdbm-dev
+
+$ gcc -Wall dbmain.c -lgdbm -o dbmain
+$ ./dbmain
+Storing key-value pair... done.
+
+$ find /usr/ | grep gdbm.h
+/usr/include/gdbm.h
+$ find /usr/ | grep gdbm
+/usr/include/gdbm.h
+/usr/lib/python3.8/lib-dynload/_gdbm.cpython-38-x86_64-linux-gnu.so
+/usr/lib/python3.9/lib-dynload/_gdbm.cpython-39-x86_64-linux-gnu.so
+/usr/lib/x86_64-linux-gnu/libgdbm_compat.so.4.0.0
+/usr/lib/x86_64-linux-gnu/libgdbm.so.6.0.0
+/usr/lib/x86_64-linux-gnu/libgdbm.a
+/usr/lib/x86_64-linux-gnu/libgdbm_compat.so.4
+/usr/lib/x86_64-linux-gnu/libgdbm.so.6
+/usr/lib/x86_64-linux-gnu/libgdbm.so
+$ gcc -Wall -I/usr/include -L/usr/lib/x86_64-linux-gnu dbmain.c -lgdbm -o dbmain
+$ ./dbmain
+Storing key-value pair... done.
+
+# ansi.c
+
+$ gcc -Wall ansi.c
+ansi.c: In function ‘main’:
+ansi.c:5:16: error: expected identifier or ‘(’ before ‘asm’
+    5 |     const char asm[] = "6502";
+      |                ^~~
+ansi.c:6:39: error: expected expression before ‘asm’
+    6 |     printf("the string as is '%s'\n", asm);
+      |                                       ^~~
+
+$ gcc -Wall -ansi ansi.c -o ansi
+$ ./ansi
+the string as is '6502'
+
+# pi.c
+
+$ gcc -Wall -ansi pi.c
+pi.c: In function ‘main’:
+pi.c:6:39: error: ‘M_PI’ undeclared (first use in this function)
+    6 |     printf("the value of pi is %f\n", M_PI);
+      |                                       ^~~~
+pi.c:6:39: note: each undeclared identifier is reported only once for each function it appears in
+
+$ gcc -Wall pi.c -o pi
+$ ./pi
+the value of pi is 3.141593
+
+$ gcc -Wall -ansi -D_GNU_SOURCE pi.c -o pi
+$ ./pi
+the value of pi is 3.141593
+
+# gnuarray.c
+
+$ gcc -Wall -ansi gnuarray.c -o gnuarray
+$ ./gnuarray
+&x = 0x7ffc8d6ba440
+
+$ gcc -Wall -ansi -pedantic gnuarray.c -o gnuarray
+gnuarray.c: In function ‘main’:
+gnuarray.c:6:5: warning: ISO C90 forbids variable length array ‘x’ [-Wvla]
+    6 |     double x[n];
+      |     ^~~~~~
+$ ./gnuarray
+&x = 0x7ffdef694f50

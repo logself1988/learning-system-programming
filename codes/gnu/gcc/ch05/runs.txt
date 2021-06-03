@@ -1,0 +1,28 @@
+# null.c
+
+$ gcc -Wall -g null.c
+$ ./a.out
+Segmentation fault
+
+$ ulimit -c
+0
+$ ulimit -c unlimited
+
+$ ./a.out # 再次执行生成core文件
+Segmentation fault
+
+$ gdb a.out core # for Windows WSL
+Reading symbols from a.out...
+"/mnt/d/workspace/learning-system-programming/codes/gnu/gcc/ch05/core" is not a core dump: file format not recognized
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/gnu/gcc/ch05/a.out
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000555555555162 in a (p=0x0) at null.c:11
+11          int y = *p;
+(gdb) print p
+$1 = (int *) 0x0
+(gdb) backtrace
+#0  0x0000555555555162 in a (p=0x0) at null.c:11
+#1  0x0000555555555150 in main (argc=1, argv=0x7fffffffdeb8) at null.c:6
+

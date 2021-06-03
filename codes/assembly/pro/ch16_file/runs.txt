@@ -1,0 +1,31 @@
+# ex01_cpuidfile.s
+
+$ ./ex01_cpuidfile
+$ ls -al cpuid.txt
+-rwxrwxrwx 1 zhoujiagen zhoujiagen 42 Sep 15 01:14 cpuid.txt
+$ cat cpuid.txt
+The processor Vendor ID is 'GenuineIntel'
+
+# ex02_read.s
+
+$ ./ex02_read cpuid.txt
+The processor Vendor ID is 'GenuineIntel'
+
+# ex02_read2.s
+
+$ ./ex02_read2 cpuid.txt
+The processor Vendor ID is 'GenuineIntel'
+
+# ex02_read3.s
+
+$ ./ex02_read3 cpuid.txt cpuid2.txt
+$ cat cpuid2.txt
+THE PROCESSOR VENDOR ID IS 'GENUINEINTEL'
+
+# fileconvert.s, sizefunc.s, convert.s
+
+$ cat cpuid.txt
+The processor Vendor ID is 'GenuineIntel'
+$ ./fileconvert cpuid.txt
+$ cat cpuid.txt
+THE PROCESSOR VENDOR ID IS 'GENUINEINTEL'

@@ -1,0 +1,83 @@
+# ex01_jmp.s
+
+$ ./ex01_jmp
+$ echo $?
+20
+
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch06_control_flow/ex01_jmp
+
+Breakpoint 1, _start () at ex01_jmp.s:6
+6           movl $1, %eax
+(gdb) print/x $rip
+$1 = 0x401000
+(gdb) n
+7           jmp overhere
+(gdb) n
+overhere () at ex01_jmp.s:11
+11          movl $20, %ebx
+(gdb) print/x $rip
+$2 = 0x40100e
+(gdb) x/s 0x40100e
+0x40100e <overhere>:    "\273\024"
+
+# ex02_call.s
+
+$ ./ex02_call
+This is section 1
+This is section 2
+This is section 3
+
+# ex03_cmp.s
+
+$ ./ex03_cmp
+$ echo $?
+10
+
+# ex04_flag_ZF.s
+
+$ ./ex04_flag_ZF
+$ echo $?
+0
+
+# ex04_flag_OF.s
+
+$ ./ex04_flag_OF
+$ echo $?
+0
+
+# ex04_flag_PF.s
+
+$ ./ex04_flag_PF
+$ echo $?
+0
+
+# ex04_flag_SF.s
+
+$ ./ex04_flag_SF
+The value is: 2
+The value is: 10
+The value is: 80
+The value is: 32
+The value is: 50
+The value is: 6
+The value is: 11
+The value is: 34
+The value is: 15
+The value is: 21
+
+# ex04_flag_CF.s
+
+$ ./ex04_flag_CF
+$ echo $?
+0
+
+# ex05_loop.s
+
+$ ./ex05_loop
+The value is: 5050
+
+# ex06_better_loop.s
+
+$ ./ex06_better_loop
+The value is: 0

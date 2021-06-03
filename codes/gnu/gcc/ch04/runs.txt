@@ -1,0 +1,84 @@
+# dtest.c
+
+$ gcc -Wall dtest.c -o dtest
+$ ./dtest
+Running...
+$ gcc -Wall -DTEST dtest.c -o dtest
+$ ./dtest
+Test mode
+Running...
+
+# dtestval.c
+
+$ gcc -Wall dtestval.c -o dtestval
+dtestval.c: In function ‘main’:
+dtestval.c:5:36: error: ‘NUM’ undeclared (first use in this function)
+    5 |     printf("Value of NUM is %d\n", NUM);
+      |                                    ^~~
+dtestval.c:5:36: note: each undeclared identifier is reported only once for each function it appears in
+
+$ gcc -Wall -DNUM=1000 dtestval.c -o dtestval
+$ ./dtestval
+Value of NUM is 1000
+
+$ gcc -Wall -DNUM="2+2" dtestval.c -o dtestval
+$ ./dtestval
+Value of NUM is 4
+Value of 10 * NUM is 40
+
+$ gcc -Wall -DNUM dtestval.c -o dtestval
+$ ./dtestval
+Value of NUM is 1
+Value of 10 * NUM is 10
+
+# test.c
+
+$ gcc -E test.c
+# 1 "test.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 32 "<command-line>" 2
+# 1 "test.c"
+
+const char str[] = "Hello, World!";
+
+# hello.c
+
+$ gcc -E hello.c
+# 1 "hello.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 32 "<command-line>" 2
+# 1 "hello.c"
+# 1 "/usr/include/stdio.h" 1 3 4
+# 27 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 33 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 3 4
+# 1 "/usr/include/features.h" 1 3 4
+# 461 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
+# 452 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+......
+# 2 "hello.c" 2
+
+
+# 3 "hello.c"
+int main(int argc, char **argv)
+{
+    printf("Hello, world!\n");
+    return 0;
+}
+
+
+$ gcc -c -save-temps hello.c
+$ ls
+dtest.c  dtestval.c  hello.c  hello.i  hello.o  hello.s  runs.txt  test.c
+$ ls | grep hello
+hello.c
+hello.i
+hello.o
+hello.s

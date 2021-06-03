@@ -1,0 +1,157 @@
+# ex01_asm.c
+
+$ ./ex01_asm
+The result is 200
+
+$ gcc -m32 -S ex01_asm.c
+
+#APP
+# 10 "ex01_asm.c" 1
+	nop
+# 0 "" 2
+
+# ex02_global.c
+
+$ ./ex02_global
+The result is 200
+
+$ gcc -m32 -S ex02_global.c
+
+#APP
+# 10 "ex02_global.c" 1
+	pusha
+	movl a, %eax
+	movl b, %ebx
+	imull %ebx, %eax
+	movl %eax, result
+	popa
+# 0 "" 2
+
+# ex03_reg.c
+
+$ ./ex03_reg
+The result is 200
+
+$ gcc -m32 -S ex03_reg.c
+
+#APP
+# 10 "ex03_reg.c" 1
+	imull %edx, %ecx
+	movl %ecx, %eax
+# 0 "" 2
+
+# ex04_movs.c
+
+$ ./ex04_movs
+This is a test message.
+
+$ gcc -m32 -S ex04_movs.c
+
+#APP
+# 10 "ex04_movs.c" 1
+	cld
+	rep movsb
+# 0 "" 2
+
+# ex05_reg.c
+
+$ ./ex05_reg
+The result is 200
+
+$ gcc -m32 -S ex05_reg.c
+
+#APP
+# 10 "ex05_reg.c" 1
+	imull %edx, %ecx
+	movl %ecx, %edx
+# 0 "" 2
+
+# ex06_reg.c
+
+$ ./ex06_reg
+The result is 200
+
+$ gcc -m32 -S ex06_reg.c
+
+#APP
+# 9 "ex06_reg.c" 1
+	imull %ecx, %eax
+# 0 "" 2
+
+# ex07_alt.c
+
+$ ./ex07_alt
+The result is 200
+
+$ gcc -m32 -S ex07_alt.c
+
+#APP
+# 9 "ex07_alt.c" 1
+	imull %ecx, %eax
+# 0 "" 2
+
+# ex08_changed.c
+
+$ ./ex08_changed
+The result is 30
+
+$ gcc -m32 -S ex08_changed.c
+
+#APP
+# 9 "ex08_changed.c" 1
+	movl %ebx, %eax
+	addl %eax, %edx
+# 0 "" 2
+
+# ex09_mem.c
+
+$ ./ex09_mem
+The result is 4
+
+$ gcc -m32 -S ex08_changed.c
+
+#APP
+# 10 "ex09_mem.c" 1
+	divb -24(%ebp)
+	movl %eax, -20(%ebp)
+# 0 "" 2
+
+# ex10_sincos.c
+
+$ ./ex10_sincos
+The cosine is 0.000001, and the sine is 1.000000
+
+# ex11_area.c
+
+$ ./ex11_area
+The area is 314.159271
+
+# ex12_jump.c
+
+$ ./ex12_jump
+The larger value is 20
+
+# ex12_jump2.c
+
+$ ./ex12_jump2
+The larger value is 20
+
+$ gcc -m32 -S ex12_jump2.c
+
+#APP
+# 10 "ex12_jump2.c" 1
+	cmp %edx, %ecx
+	jge 0f
+	movl %edx, %edx
+	jmp 1f
+0:
+	movl %ecx, %edx
+1:
+# 0 "" 2
+
+# ex13_macro.c
+
+$ ./ex13_macro
+a=10, b=20, result=20
+a=30, b=20, result=30
+

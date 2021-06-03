@@ -1,0 +1,29 @@
+# eatsyscall.asm
+
+$ ./eatsyscall
+Eat at Joe's!
+Ten million files can't ALL be wrong!
+$ echo $?
+0
+
+# uppercaser.asm
+
+$ ./uppercaser < eatsyscall.asm
+; AN EXAMPLE OF CALL LINUX SYSTEM CALL
+SECTION .DATA
+EATMSG: DB "EAT AT JOE'S!", 10, "TEN MILLION FILES CAN'T ALL BE WRONG!", 10
+EATLEN: EQU $-EATMSG
+
+SECTION .TEXT
+
+    GLOBAL _START
+_START:
+    MOV EAX, 4
+    MOV EBX, 1
+    MOV ECX, EATMSG
+    MOV EDX, EATLEN
+    INT 80H
+
+    MOV EAX, 1
+    MOV EBX, 0
+    INT 80H

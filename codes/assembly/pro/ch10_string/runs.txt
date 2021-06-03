@@ -1,0 +1,98 @@
+# ex01_movs.s
+
+(gdb) x/s &value1
+0x402000:       "This is a test string.\n"
+(gdb) x/s &output
+0x402018 <output>:      "This is"
+
+#  ex01_movs2.s
+
+(gdb) x/s &value1
+0x402000:       "This is a test string.\n"
+(gdb) x/23b &output
+0x402018 <output>:      ""
+0x402019 <output+1>:    ""
+0x40201a <output+2>:    ""
+0x40201b <output+3>:    ""
+0x40201c <output+4>:    ""
+0x40201d <output+5>:    ""
+0x40201e <output+6>:    ""
+0x40201f <output+7>:    ""
+0x402020 <output+8>:    ""
+0x402021 <output+9>:    ""
+0x402022 <output+10>:   ""
+0x402023 <output+11>:   ""
+0x402024 <output+12>:   ""
+0x402025 <output+13>:   ""
+0x402026 <output+14>:   ""
+0x402027 <output+15>:   ""
+0x402028 <output+16>:   ""
+0x402029 <output+17>:   ""
+0x40202a <output+18>:   ""
+0x40202b <output+19>:   "ng.\n"
+0x402030:       ""
+0x402031:       ""
+0x402032:       ""
+
+# ex01_movs3.s
+
+(gdb) x/s &value1
+0x402000:       "This is a test string.\n"
+(gdb) x/s &output
+0x402018 <output>:      "This is a test string.\n"
+
+
+# ex02_rep.s
+
+(gdb) x/s &output
+0x402018 <output>:      "This is a test string.\n"
+
+# ex02_rep2.s
+
+(gdb) x/s &buffer
+0x402038 <buffer>:      "This is a test of the conversion prgram.\n"
+
+# ex02_rep3.s
+
+(gdb) x/s &output
+0x402018 <output>:      "This is a test string.\n"
+
+# ex03_stos.s
+
+(gdb) x/s &buffer
+0x402008 <buffer>:      ' ' <repeats 200 times>...
+
+# ex04_convert.s
+
+$ ./ex04_convert
+THIS IS A TEST, OF THE CONVERSION PROGRAM!
+
+# ex05_cmps.s
+
+$ ./ex05_cmps
+$ echo $?
+0
+
+# ex05_cmps2.s
+
+$ ./ex05_cmps2
+$ echo $?
+11
+
+# ex06_strcomp.s
+
+$ ./ex06_strcomp
+$ echo $?
+255
+
+# ex07_scas.s
+
+$ ./ex07_scas
+$ echo $?
+16
+
+# ex08_str_size.s
+
+$ ./ex08_str_size
+$ echo $?
+35

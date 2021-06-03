@@ -1,0 +1,18 @@
+# word_count
+
+$ make
+gcc -c word_count.c
+flex -o lexer.c lexer.l
+gcc -c lexer.c
+gcc -o word_count word_count.o lexer.o -lfl
+$ ./word_count < lexer.l
+3 3 3 3
+
+# word_count_dir
+
+$ make
+gcc -I include -c src/word_count.c
+gcc -I include -c src/counter.c
+flex -o lexer.c src/lexer.l
+gcc -c lexer.c
+gcc -o word_count word_count.o counter.o lexer.o -lfl

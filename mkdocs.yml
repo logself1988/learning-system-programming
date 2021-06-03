@@ -1,37 +1,67 @@
-site_name: Performance Hacks
+site_name: Learning System Programming
 site_author: 'zhoujiagen@gmail.com'
 copyright: MIT
-repo_name: perf_hacks
-repo_url: https://github.com/zhoujiagen/perf_hacks
+repo_name: learning-system-programming
+repo_url: https://github.com/zhoujiagen/learning-system-programming
 
 nav:
     - Home: index.md
-    - Build:
-      - Home: build-tools/docs/index.md
-      - Make: build-tools/docs/make.md
-      - Autotools: build-tools/docs/autotools.md
-      - CMake: build-tools/docs/cmake.md
+    - Tools:
+      - Home: tools/index.md
+      - 'GNU toolchain':
+        - Home: tools/gnu/gnu-toolchain.md
+        - 'An Introduction to GCC': tools/gnu/gcc-intro.md
+        - 'Make': tools/gnu/make.md
+        - 'Managing Projects with GNU Make': tools/gnu/managing-projects-with-gnu-make.md
+        - 'Autotools': tools/gnu/autotools.md
+      - CMake: tools/cmake.md
+      - 'C Tool': tools/c-tool.md
+      - 'C++ Tool': tools/cpp-tool.md
+      - Ninja: tools/ninja.md
+      - LLVM:
+        - 'Home': tools/llvm/llvm.md
+        - 'LLVM Essentials': tools/llvm/llvm-essentials.md
+        - 'LLVM Paper': tools/llvm/llvm-paper.md
+        - 'LLVM Core Libraries': tools/llvm/llvm-core-libraries.md
+    - 'Architecture':
+      - 'System V Application Binary Interface': architecture/ABI.md 
+      - 'The Linux Kernel CPU Architectures': architecture/linux-cpu-architecture.md
+      - 'Intel':
+        - 'Volume 1: Basic Architecture': architecture/intel/vol1-basic-architecture.md
+        - 'Volume 3A: System Programming Guide': architecture/intel/vol3a-system-programming-guide.md
+        - 'Volume 3B: System Programming Guide': architecture/intel/vol3b-system-programming-guide.md
+    - Compiler:
+      - 'References': compiler/Engineering-a-Compiler-refs.md
+    - Assembly:
+      - Home: assembly/index.md
+      - 'Professional Assembly Language': assembly/pro-assembly.md
+      - 'NASM': assembly/nasm.md
+      - 'Assembly Language Step-by-Step': assembly/assembly-step-by-step.md
+      - 'Instructions': assembly/instructions.md
     - C:
-      - Home: c/docs/index.md
-      - 'Core': c/docs/clang-core.md
-      - 'Lib': c/docs/clib.md
-      - 'Tool': c/docs/tool.md
+      - Home: c/index.md
+      - 'Core': c/clang-core.md
     - 'C++':
-      - Home: /index.md
-      - 'Q&A': cpp/docs/QA.md
-      - 'Tool': cpp/docs/tool.md
-      - 'C++ 11': cpp/docs/CXX11-Standard.md
+      - Home: cpp/index.md
+      - 'Q&A': cpp/QA.md
+      - 'C++ 11': cpp/CXX11-Standard.md
     - 'Kernel':
-      - Home: kernel/docs/index.md
-      - 'Linux架构': kernel/docs/linux-arch.md
-      - 'Linux手册页': kernel/docs/linux-man.md
-      - '系统调用': kernel/docs/syscall.md
-      - 'UNIX环境高级编程': kernel/docs/apue.md
-      - 'Linux编程接口': kernel/docs/tlpi.md
+      - Home: kernel/index.md
+      - 'Linux Referenced Specifications': kernel/linux-ref-spec.md
+      - 'Linux Standard Base': kernel/linux-standard-base.md
+      - 'Linux手册页': kernel/linux-man.md
+      - '系统调用': kernel/syscall.md
+      - 'UNIX环境高级编程': kernel/apue.md
+      - 'Linux编程接口': kernel/tlpi.md
+      - 'Linux内核设计与实现':
+        - 'Home': kernel/kernel-dev/kernel-dev.md
+        - 'Part 1': kernel/kernel-dev/kernel-dev1.md
+        - 'Part 2': kernel/kernel-dev/kernel-dev2.md
+      - '深入Linux内核架构': kernel/linux-arch.md
       - '网络':
-        - 'TCP/IP': kernel/docs/network/network.md
-        - 'Netty': kernel/docs/network/netty.md
-        - 'NS2': kernel/docs/network/ns2.md
+        - 'TCP/IP': kernel/network/network.md
+        - 'Netty': kernel/network/netty.md
+        - 'NS2': kernel/network/ns2.md
 
 #theme: readthedocs
 theme:
@@ -57,7 +87,9 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: docs
+      check_paths: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde

@@ -1,0 +1,242 @@
+
+# ex01_size1.s, ex01_size2.s, ex02_size3.s
+
+$ ls -al ex01_size1
+-rwxrwxrwx 1 zhoujiagen zhoujiagen 4640 Sep 10 14:15 ex01_size1
+$ ls -al ex01_size2
+-rwxrwxrwx 1 zhoujiagen zhoujiagen 4800 Sep 10 14:17 ex01_size2
+$ ls -al ex01_size3
+-rwxrwxrwx 1 zhoujiagen zhoujiagen 18880 Sep 10 14:17 ex01_size3
+
+
+# ex02_mem_to_reg.s
+
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch05_transfer_data/ex02_mem_to_reg
+
+Breakpoint 1, _start () at ex02_mem_to_reg.s:8
+8           nop
+(gdb) n
+9           movl value, %ecx
+(gdb) print/d $ecx
+$1 = 0
+(gdb) n
+11          movl $1, %eax
+(gdb) print/d $ecx
+$2 = 1
+
+# ex03_reg_to_mem.s
+
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch05_transfer_data/ex03_reg_to_mem
+
+Breakpoint 1, _start () at ex03_reg_to_mem.s:8
+8           movl $100, %eax
+(gdb) n
+9           movl %eax, value
+(gdb) x/d &value
+0x402000:       1
+(gdb) n
+11          movl $1, %eax
+(gdb) x/d &value
+0x402000:       100
+
+# ex04_indexed_mem_loc.s
+
+$ ./ex04_indexed_mem_loc
+The value is 10
+The value is 15
+The value is 20
+The value is 25
+The value is 30
+The value is 35
+The value is 40
+The value is 45
+The value is 50
+The value is 55
+The value is 60
+
+# ex05_indirect_addressing
+
+$ ./ex05_indirect_addressing
+$ echo $?
+100
+
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch05_transfer_data/ex05_indirect_addressing
+
+Breakpoint 1, _start () at ex05_indirect_addressing.s:10
+10          movl values, %eax                   # %eax = 10
+(gdb) print/d $eax
+$1 = 0
+(gdb) n
+11          movl $values, %edi                  # %edi = address of values
+(gdb) print/d $eax
+$2 = 10
+(gdb) x/11d &values
+0x402000:       10      15      20      25
+0x402010:       30      35      40      45
+0x402020:       50      55      60
+(gdb) n
+12          movl $100, 4(%edi)                  # 15 => 100
+(gdb) print/x $edi
+$3 = 0x402000
+(gdb) n
+13          movl $1, %edi
+(gdb) x/11d &values
+0x402000:       10      100     20      25
+0x402010:       30      35      40      45
+0x402020:       50      55      60
+(gdb) n
+14          movl values(, %edi, 4), %ebx        # 100
+(gdb) n
+16          movl $1, %eax
+(gdb) print/d $ebx
+$4 = 100
+
+# ex06_cmov.s
+
+$ ./ex06_cmov
+The largest value is 315
+
+# ex07_bswap.s
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex07_bswap.s, line 6.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch05_transfer_data/ex07_bswap
+
+Breakpoint 1, _start () at ex07_bswap.s:6
+6           movl $0x12345678, %ebx
+(gdb) n
+7           bswap %ebx
+(gdb) printx/x $ebx
+Undefined command: "printx".  Try "help".
+(gdb) print/x $ebx
+$1 = 0x12345678
+(gdb) n
+9           movl $1, %eax
+(gdb) print/x $ebx
+$2 = 0x78563412
+
+# ex08_cmpxchg.s
+
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch05_transfer_data/ex08_cmpxchg
+
+Breakpoint 1, _start () at ex08_cmpxchg.s:10
+10          movl $10, %eax
+(gdb) n
+11          movl $5, %ebx
+(gdb) n
+13          cmpxchg %ebx, data
+(gdb) x/d &data
+0x402000:       10
+(gdb) n
+15          movl $1, %eax
+(gdb) x/d &data
+0x402000:       5
+
+# ex09_cmpxchg8b
+
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch05_transfer_data/ex09_cmpxchg8b
+
+Breakpoint 1, _start () at ex09_cmpxchg8b.s:8
+8         movl $0x44332211, %eax
+(gdb) n
+9         movl $0x88776655, %edx
+(gdb) n
+10        movl $0x11223344, %ebx
+(gdb) n
+11        movl $0x55667788, %ecx
+(gdb) n
+13        cmpxchg8b data
+(gdb) x/2xw &data
+0x402000:       0x44332211      0x88776655
+(gdb) n
+15        movl $1, %eax
+(gdb) x/2xw &data
+0x402000:       0x11223344      0x55667788
+
+# ex10_bubble.s
+
+(gdb) b *end
+Breakpoint 1 at 0x401033: file ex10_bubble.s, line 40.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch05_transfer_data/ex10_bubble
+
+Breakpoint 1, end () at ex10_bubble.s:40
+40          movl $1, %eax
+(gdb) x/10d &values
+0x402000:       5       53      61      105
+0x402010:       117     134     145     221
+0x402020:       235     315
+
+# ex11_push_pop.s
+
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch05_transfer_data/ex11_push_pop
+
+Breakpoint 1, _start () at ex11_push_pop.s:10
+10          movl $24420, %ecx
+(gdb) n
+11          movw $350, %bx
+(gdb) n
+12          movb $100, %al
+(gdb) n
+14          pushl %ecx
+(gdb) print/x $esp
+$1 = 0xffffcf70
+(gdb) print/x $ecx
+$2 = 0x5f64
+(gdb) print/x $bx
+$3 = 0x15e
+(gdb) print/x $al
+$4 = 0x64
+(gdb) n
+15          pushw %bx
+(gdb) n
+16          pushl %eax
+(gdb) n
+17          pushl data
+(gdb) n
+18          pushl $data
+(gdb) n
+20          popl %eax
+(gdb) print/x $esp
+$5 = 0xffffcf5e
+(gdb) x/18xb 0xffffcf5e
+0xffffcf5e:     0x00    0xb0    0x04    0x08    0x7d    0x00    0x00    0x00
+0xffffcf66:     0x64    0x00    0x00    0x00    0x5e    0x01    0x64    0x5f
+0xffffcf6e:     0x00    0x00
+(gdb) n
+21          popl %eax
+(gdb) print/x $esp
+$6 = 0xffffcf62
+(gdb) x/14xb 0xffffcf62
+0xffffcf62:     0x7d    0x00    0x00    0x00    0x64    0x00    0x00    0x00
+0xffffcf6a:     0x5e    0x01    0x64    0x5f    0x00    0x00
+(gdb) n
+22          popl %eax
+(gdb) print/x $esp
+$7 = 0xffffcf66
+(gdb) x/10xb 0xffffcf66
+0xffffcf66:     0x64    0x00    0x00    0x00    0x5e    0x01    0x64    0x5f
+0xffffcf6e:     0x00    0x00
+(gdb) n
+23          popw %ax
+(gdb) print/x $esp
+$8 = 0xffffcf6a
+(gdb) x/6xb 0xffffcf6a
+0xffffcf6a:     0x5e    0x01    0x64    0x5f    0x00    0x00
+(gdb) n
+24          popl %eax
+(gdb) print/x $esp
+$9 = 0xffffcf6c
+(gdb) x/4xb 0xffffcf6c
+0xffffcf6c:     0x64    0x5f    0x00    0x00
+(gdb) n
+26          movl $1, %eax
+(gdb) print/x $esp
+$10 = 0xffffcf70

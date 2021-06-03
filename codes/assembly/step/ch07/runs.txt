@@ -1,0 +1,4 @@
+# sandbox.asm
+
+$ ./sandbox && echo $?
+0

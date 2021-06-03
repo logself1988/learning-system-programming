@@ -1,0 +1,153 @@
+# mainprog.c, asmfunc.s
+
+$ ./mainprog
+This is a test.
+This is a test message from the asm function
+Now for the second time.
+This is a test message from the asm function
+This completes the test.
+
+# square_main.c, square.s
+
+$ ./square_main
+The square of 2 is 4
+The square of 10 is 100
+
+# cpuid_main.c, cpuidfunc.s
+
+$ ./cpuid_main
+The CPUID is: 'GenuineIntel'
+
+# area_main.c, areafunc.s
+
+$ ./area_main
+The result is 314.159271
+The result is 12.566371
+
+# greater_main.c, greater.s
+
+$ ./greater_main
+The larger value is 20
+
+# goodprog.c, testfunc.s
+
+$ ./goodprog
+The result is 31.415900
+
+# fpumath_main.c, fpumathfunc.s
+
+$ ./fpumath_main
+The result is 3.264907
+
+$ python
+Python 2.7.18 (default, Mar  8 2021, 13:02:45)
+[GCC 9.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> (( 43.65 / 22) + (76.34 * 3.1)) / ((12.43 * 6) - (140.2 / 94.21))
+3.264907633729943
+
+# extern_main.cpp, square.s, areafunc.s, cpuidfunc.s
+
+$ ./extern_main
+The radius square is 100
+The area is 314.159
+The CPUID is GenuineIntel
+
+# libch14
+
+$ ar t libch14.a
+square.o
+cpuidfunc.o
+areafunc.o
+greater.o
+fpumathfunc.o
+
+$ ranlib libch14.a
+
+$ nm -s libch14.a
+
+Archive index:
+square in square.o
+output in cpuidfunc.o
+cpuidfunc in cpuidfunc.o
+areafunc in areafunc.o
+greater in greater.o
+fpumathfunc in fpumathfunc.o
+
+square.o:
+00000000 T square
+
+cpuidfunc.o:
+00000000 T cpuidfunc
+0000000d C output
+
+areafunc.o:
+00000000 T areafunc
+
+greater.o:
+0000000f t end
+00000000 T greater
+
+fpumathfunc.o:
+00000000 T fpumathfunc
+
+# fpumath_main_withlib
+
+$ ./fpumath_main_withlib
+The result is 3.264907
+
+# libsch14
+
+$ nm -s libsch14.so
+00003f38 d _DYNAMIC
+00004000 d _GLOBAL_OFFSET_TABLE_
+         w _ITM_deregisterTMCloneTable
+         w _ITM_registerTMCloneTable
+00002000 r __FRAME_END__
+00004010 d __TMC_END__
+         w __cxa_finalize
+000010f0 t __do_global_dtors_aux
+00003f34 d __do_global_dtors_aux_fini_array_entry
+0000400c d __dso_handle
+00003f30 d __frame_dummy_init_array_entry
+         w __gmon_start__
+00001050 t __x86.get_pc_thunk.bx
+00001149 t __x86.get_pc_thunk.dx
+000011c8 t _fini
+00001000 t _init
+0000117c T areafunc
+00004010 b completed.7622
+0000115a T cpuidfunc
+00001060 t deregister_tm_clones
+0000119b t end
+0000119f T fpumathfunc
+00001140 t frame_dummy
+0000118c T greater
+00004020 B output
+000010a0 t register_tm_clones
+0000114d T square
+
+$ ldd fpumath_main_withlibs
+        linux-gate.so.1 (0xf7f60000)
+        libsch14.so => not found
+        libc.so.6 => /lib32/libc.so.6 (0xf7d58000)
+        /lib/ld-linux.so.2 (0xf7f62000)
+$ ./fpumath_main_withlibs
+./fpumath_main_withlibs: error while loading shared libraries: libsch14.so: cannot open shared object file: No such file or directory
+$ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:."
+$ ./fpumath_main_withlibs
+The result is 3.264907
+
+$ unset LD_LIBRARY_PATH
+$ ./fpumath_main_withlibs
+./fpumath_main_withlibs: error while loading shared libraries: libsch14.so: cannot open shared object file: No such file or directory
+
+$ sudo mkdir /usr/local/lib/apps
+$ sudo cp libsch14.so /usr/local/lib/apps
+$ pwd
+/etc/ld.so.conf.d
+zhoujiagen:/etc/ld.so.conf.d$ cat apps.conf
+/usr/local/lib/apps
+$ sudo ldconfig
+$ ./fpumath_main_withlibs
+The result is 3.264907

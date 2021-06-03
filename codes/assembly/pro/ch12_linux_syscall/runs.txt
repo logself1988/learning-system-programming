@@ -1,0 +1,148 @@
+# 查找系统调用号
+
+$ find /usr | grep unistd
+/usr/include/asm-generic/unistd.h
+/usr/include/unistd.h
+/usr/include/linux/unistd.h
+/usr/include/sys/unistd.h
+/usr/include/x86_64-linux-gnu/asm/unistd.h
+/usr/include/x86_64-linux-gnu/asm/unistd_32.h
+/usr/include/x86_64-linux-gnu/asm/unistd_64.h
+/usr/include/x86_64-linux-gnu/asm/unistd_x32.h
+/usr/include/x86_64-linux-gnu/sys/unistd.h
+/usr/include/x86_64-linux-gnu/bits/unistd.h
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h
+/usr/lib/x86_64-linux-gnu/perl/5.30.0/asm/unistd_32.ph
+/usr/lib/x86_64-linux-gnu/perl/5.30.0/asm/unistd.ph
+/usr/lib/x86_64-linux-gnu/perl/5.30.0/asm/unistd_64.ph
+/usr/lib/x86_64-linux-gnu/perl/5.30.0/asm/unistd_x32.ph
+
+$ grep getpid /usr/include/x86_64-linux-gnu/asm/unistd_32.h
+#define __NR_getpid 20
+$ grep getuid /usr/include/x86_64-linux-gnu/asm/unistd_32.h
+#define __NR_getuid 24
+#define __NR_getuid32 199
+$ grep getgid /usr/include/x86_64-linux-gnu/asm/unistd_32.h
+#define __NR_getgid 47
+#define __NR_getgid32 200
+
+# ex01_syscall_write.s
+
+$ ./ex01_syscall_write
+This is a test message.
+
+# ex02_syscall_rtn.s
+
+$ id
+uid=1000(zhoujiagen) gid=1000(zhoujiagen) groups=1000(zhoujiagen),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev),1001(docker)
+
+
+(gdb) b *end
+Breakpoint 1 at 0x40102a: file ex02_syscall_rtn.s, line 24.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch12_linux_syscall/ex02_syscall_rtn
+
+Breakpoint 1, end () at ex02_syscall_rtn.s:24
+24          movl $1, %eax
+(gdb) x/d &pid
+0x402000 <pid>: 472
+(gdb) x/d &uid
+0x402004 <uid>: 1000
+(gdb) x/d &gid
+0x402008 <gid>: 1000
+
+
+# ex03_syscall_sysinfo.s
+
+$ ./syscall_sysinfo
+sizeof(long)=8
+sizeof(unsigned long)=8
+sizeof(unsigned short)=2
+sizeof(unsigned int)=4
+sizeof(struct sysinfo)=112
+
+uptime: 10142
+loads: 0 0 0
+totalram: 13215576064
+freeram: 12679352320
+sharedram: 69632
+bufferram: 98504704
+totalswap: 4294967296
+freeswap: 4294967296
+procs: 162
+totalhigh: 0
+freehigh: 0
+mem_unit: 1
+
+$ gdb ./ex03_syscall_sysinfo
+(gdb) b 46
+Breakpoint 1 at 0x40100c: file ex03_syscall_sysinfo.s, line 46.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch12_linux_syscall/ex03_syscall_sysinfo
+
+Breakpoint 1, _start () at ex03_syscall_sysinfo.s:46
+46          movl $0, %ebx
+(gdb) x/d &uptime &load1
+'load1' has unknown type; cast it to its declared type
+(gdb) x/14d &result
+0x402000:       10151   0       0       0
+0x402010:       3226459 3093710 17      24049
+0x402020:       1048576 1048576 163     0
+0x402030:       0       4096
+
+
+# ex04_syscall_nanosleep.s
+
+$ ps -ef | grep ex04
+zhoujia+  1127     9  0 13:00 pts/0    00:00:00 ./ex04_syscall_nanosleep
+zhoujia+  1129  1114  0 13:00 pts/2    00:00:00 grep --color=auto ex04
+zhoujiagen:~$ strace -p 1127
+strace: Process 1127 attached
+strace: [ Process PID=1127 runs in 32 bit mode. ]
+restart_syscall(<... resuming interrupted nanosleep ...>) = 0
+write(1, "This is a test\n", 15)        = 15
+nanosleep({tv_sec=5, tv_nsec=0}, 0x804a018) = 0
+write(1, "This is a test\n", 15)        = 15
+nanosleep({tv_sec=5, tv_nsec=0}, 0x804a018) = 0
+write(1, "This is a test\n", 15)        = 15
+nanosleep({tv_sec=5, tv_nsec=0}, 0x804a018) = 0
+write(1, "This is a test\n", 15)        = 15
+
+# ex05_syscall_libc.s
+
+$ strace -c ./ex05_syscall_libc
+strace: [ Process PID=1213 runs in 32 bit mode. ]
+This is a test
+This is a test
+This is a test
+This is a test
+This is a test
+This is a test
+This is a test
+This is a test
+^Cstrace: Process 1213 detached
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+  0.00    0.000000           0         1           execve
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000000                     1           total
+System call usage summary for 32 bit mode:
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 41.23    0.000888         111         8           write
+ 28.37    0.000611          76         8         8 clock_nanosleep_time64
+ 22.19    0.000478          68         7           clock_nanosleep
+  3.85    0.000083          20         4           brk
+  3.06    0.000066          66         1           munmap
+  1.30    0.000028           9         3           fstat64
+  0.00    0.000000           0         1           read
+  0.00    0.000000           0         2           close
+  0.00    0.000000           0         3         3 access
+  0.00    0.000000           0         3           mprotect
+  0.00    0.000000           0         2           pread64
+  0.00    0.000000           0         7           mmap2
+  0.00    0.000000           0         1           set_thread_area
+  0.00    0.000000           0         2           openat
+  0.00    0.000000           0         1         1 arch_prctl
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.002154                    53        12 total

@@ -1,0 +1,207 @@
+# ctest.c
+
+$ gcc -o ctest ctest.c
+$ ./ctest
+Radius: 10, Area: 314.158997
+Radius: 2, Area: 12.566360
+Radius: 120, Area: 45238.894531
+
+# ex01_area_test.s
+
+$ gdb ex01_area_test
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex01_area_test.s, line 13.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch11_function/ex01_area_test
+
+Breakpoint 1, _start () at ex01_area_test.s:13
+13          finit
+(gdb) n
+14          fldcw precision
+(gdb) n
+16          movl $10, %ebx
+(gdb) n
+17          call area
+(gdb) s
+area () at ex01_area_test.s:31
+31          fldpi
+(gdb) s
+32          imull %ebx, %ebx
+(gdb) s
+33          movl %ebx, value
+(gdb) s
+34          filds value
+(gdb) s
+35          fmulp %st(0), %st(1)
+(gdb) s
+area () at ex01_area_test.s:36
+36          ret
+(gdb) s
+_start () at ex01_area_test.s:19
+19          movl $2, %ebx
+(gdb) x/d &value
+0x402004 <value>:       100
+(gdb) info all
+...
+st0            314.159271240234375 (raw 0x40079d14630000000000)
+st1            0                   (raw 0x00000000000000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            100                 (raw 0x4005c800000000000000)
+...
+(gdb) n
+20          call area
+(gdb) n
+22          movl $120, %ebx
+(gdb) x/d &value
+0x402004 <value>:       4
+(gdb) info all
+...
+st0            12.5663709640502929688 (raw 0x4002c90fdb0000000000)
+st1            314.159271240234375 (raw 0x40079d14630000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            4                   (raw 0x40018000000000000000)
+...
+(gdb) n
+23          call area
+(gdb) n
+25          movl $1, %eax
+(gdb) x/d &value
+0x402004 <value>:       14400
+(gdb) info all
+...
+st0            45238.93359375      (raw 0x400eb0b6ef0000000000)
+st1            12.5663709640502929688 (raw 0x4002c90fdb0000000000)
+st2            314.159271240234375 (raw 0x40079d14630000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            14400               (raw 0x400ce100000000000000)
+...
+
+# ex02_area_test.s
+
+$ gdb ex02_area_test
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex02_area_test.s, line 13.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch11_function/ex02_area_test
+
+Breakpoint 1, _start () at ex02_area_test.s:13
+13          finit
+(gdb) n
+14          fldcw precision
+(gdb) n
+16          movl $10, radius
+(gdb) n
+17          call area
+(gdb) x/d &radius
+0x402004 <radius>:      10
+(gdb) x/f &result
+0x402008 <result>:      0
+(gdb) n
+19          movl $2, radius
+(gdb) x/f &result
+0x402008 <result>:      314.159271
+(gdb)
+
+# ex03_area_test
+
+$ gdb ex03_area_test
+
+(gdb) b *_start
+Breakpoint 1 at 0x8049000: file ex03_area_test.s, line 13.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch11_function/ex03_area_test
+
+Breakpoint 1, _start () at ex03_area_test.s:13
+13          finit
+(gdb) n
+14          fldcw precision
+(gdb) n
+16          pushl $10
+(gdb) n
+17          call area
+(gdb) b 18
+Breakpoint 2 at 0x8049010: file ex03_area_test.s, line 18.
+(gdb) c
+Continuing.
+
+Breakpoint 2, _start () at ex03_area_test.s:18
+18          addl $4, %esp
+(gdb) x/f &result
+0x804a004 <result>:     0
+(gdb) print/f $eax
+$1 = 314.159271
+(gdb) n
+19          movl %eax, result
+(gdb) n
+21          pushl $2
+(gdb) x/f &result
+0x804a004 <result>:     314.159271
+
+
+# area.s, ex04_area_test.s
+
+$ gdb area
+
+(gdb) b *_start
+Breakpoint 1 at 0x8049000: file ex04_area_test.s, line 13.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch11_function/area
+
+Breakpoint 1, _start () at ex04_area_test.s:13
+13          finit
+(gdb) n
+14          fldcw precision
+(gdb) n
+16          pushl $10
+(gdb) b 18
+Breakpoint 2 at 0x8049010: file ex04_area_test.s, line 18.
+(gdb) n
+17          call area
+(gdb) print/f $eax
+$1 = 0
+(gdb) c
+Continuing.
+
+Breakpoint 2, _start () at ex04_area_test.s:18
+18          addl $4, %esp
+(gdb) print/f $eax
+$2 = 314.159271
+
+# ex05_cmd_args.s
+
+$ ./ex05_cmd_args 1 2 3 testing
+There are 5 parameters:
+./ex05_cmd_args
+1
+2
+3
+testing
+
+# ex06_env_vars.s
+
+$ ./ex06_env_vars
+SHELL=/bin/bash
+WSL_DISTRO_NAME=Ubuntu-20.04
+...
+_=./ex06_env_vars
+
+# ex07_env_vars.s
+
+$ ./ex07_use_cmd_args 10
+The area is: 314.159265
+$ ./ex07_use_cmd_args 2
+The area is: 12.566371
+$ ./ex07_use_cmd_args 120
+The area is: 45238.934212

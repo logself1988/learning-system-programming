@@ -1,0 +1,42 @@
+# test.c
+
+$ gcc -Wall -O0 test.c -lm
+$ time ./a.out
+sum = 4e+38
+
+real    0m1.335s
+user    0m1.321s
+sys     0m0.010s
+
+$ gcc -Wall -O1 test.c -lm
+$ time ./a.out
+sum = 4e+38
+
+real    0m0.214s
+user    0m0.212s
+sys     0m0.000s
+
+$ gcc -Wall -O2 test.c -lm
+$ time ./a.out
+sum = 4e+38
+
+real    0m0.219s
+user    0m0.216s
+sys     0m0.000s
+
+$ gcc -Wall -O3 -funroll-loops test.c -lm
+$ time ./a.out
+sum = 4e+38
+
+real    0m0.218s
+user    0m0.215s
+sys     0m0.000s
+
+# uninit.c
+
+$ gcc -Wall -c uninit.c
+$ gcc -Wall -O2 -c uninit.c
+uninit.c: In function ‘sign’:
+uninit.c:10:12: warning: ‘s’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   10 |     return s;
+      |            ^

@@ -1,2 +1,1 @@
-# learning-c
-Playground of C and C++.
+# Learning System Programming

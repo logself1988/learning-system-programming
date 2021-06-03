@@ -1,0 +1,4 @@
+# eatsyscall.asm
+
+$ ./eatsyscall
+Eat at Joe's!

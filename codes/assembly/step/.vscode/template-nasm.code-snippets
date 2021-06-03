@@ -1,0 +1,57 @@
+{
+	// Place your step workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Template": {
+		"prefix": ["main", "ske", "temp"],
+		"body": ["; An example of $0",
+				"SECTION .data",
+				"",
+				"SECTION .bss",
+				"",
+				"SECTION .text",
+				"",
+				"global _start",
+				"_start:",
+				"    ",
+				"    mov eax, 1",
+				"    mov ebx, 0",
+				"    int 80H",
+				""],
+		"description": "A template for main assembly program"
+	},
+	"Makefile Template": {
+		"prefix": ["make"],
+		"body": ["# 64",
+			"NASM_FLAG = -f elf64 -g -F stabs",
+			"LD_FLAG = -m elf_x86_64",
+			"# 32",
+			"NASM_FLAG = -f elf32 -g -F stabs",
+			"LD_FLAG = -m elf_i386",
+			"",
+			"TARGET = $0",
+			"",
+			"\\$(TARGET): \\$(TARGET).asm",
+			"\tnasm \\$(NASM_FLAG) \\$< -o \\$(TARGET).o",
+			"\tld \\$(LD_FLAG) -o \\$@ \\$(TARGET).o",
+			"",
+			"clean:",
+			"\trm -rf *.o \\$(TARGET)",
+			""],
+		"description": "A template for makefile"
+	}
+}

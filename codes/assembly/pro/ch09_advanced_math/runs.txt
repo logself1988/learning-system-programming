@@ -1,0 +1,239 @@
+# ex01_get_status.s
+
+(gdb) print/x $ax
+$1 = 0x0
+(gdb) x/x &status
+0x402000 <status>:      0x00000000
+(gdb) info all
+...
+fstat          0x0                 0
+...
+
+# ex02_set_prec.s
+
+(gdb) x/2xb &newvalue
+0x402000:       0x7f    0x00
+(gdb) x/2xb &control
+0x402008 <control>:     0x7f    0x00
+(gdb) info all
+...
+fctrl          0x7f                127
+...
+
+# ex03_fpu_stack.s
+
+(gdb) x/f &result
+0x402018 <result>:      92.4404984
+
+(gdb) info all
+...
+st0            221.440321000000011509 (raw 0x4006dd70b8e086bdf800)
+st1            40                  (raw 0x4004a000000000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            221.440321000000011509 (raw 0x4006dd70b8e086bdf800)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            92.44049835205078125 (raw 0x4005b8e1890000000000)
+fctrl          0x37f               895
+fstat          0x3000              12288
+
+# ex04_fpu_math1.s
+
+$ python
+Python 2.7.18 (default, Mar  8 2021, 13:02:45)
+[GCC 9.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> (( 43.65 / 22) + (76.34 * 3.1)) / ((12.43 * 6) - (140.2 / 94.21))
+3.264907633729943
+
+$ ./ex04_fpu_math1
+The result is 3.264907
+
+# ex05_fpu_math2
+
+(gdb) info all
+st0            8                   (raw 0x40028000000000000000)
+st1            9145.2900390625     (raw 0x400c8ee5290000000000)
+st2            -395.209991455078125 (raw 0xc007c59ae10000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            0                   (raw 0x00000000000000000000)
+
+# ex06_frndint.s
+
+(gdb) x/d &result1
+0x402008 <result1>:     4
+(gdb) x/d &result2
+0x40200c <result2>:     3
+(gdb) x/d &result3
+0x402010 <result3>:     4
+
+# ex07_fprem1.s
+
+(gdb) x/f &result
+0x402008 <result>:      0.799999475
+
+# ex08_trig.s
+
+(gdb) x/f &result1
+0x40200c <result1>:     1
+(gdb) x/f &result2
+0x402010 <result2>:     -4.37113883e-08
+
+# ex08_trig2.s
+
+(gdb) x/f &sinresult
+0x402008 <sinresult>:   1
+(gdb) x/f &cosresult
+0x40200c <cosresult>:   -2.71050543e-20
+
+# ex09_fscale.s
+
+(gdb) x/f &result1
+0x40200c <result1>:     40
+(gdb) x/f &result2
+0x402010 <result2>:     2.5
+
+# ex10_log.s
+
+(gdb) x/f &result
+0x402008 <result>:      1.07918119
+
+# ex11_fcom.s
+
+$ ./ex11_fcom
+$ echo $?
+2
+
+# ex12_fcomi.s
+
+$ ./ex12_fcomi
+$ echo $?
+2
+
+# ex13_fcomv.s
+
+(gdb) info all
+st0            20.5                (raw 0x4003a400000000000000)
+st1            20.5                (raw 0x4003a400000000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            0                   (raw 0x00000000000000000000)
+
+# ex14_fpu_env.s
+
+(gdb) n
+23          finit
+(gdb) x/28xb &buffer
+0x402010 <buffer>:      0x7f    0x0b    0xff    0xff    0x00    0x30    0xff    0xff
+0x402018 <buffer+8>:    0xff    0x0f    0xff    0xff    0x0a    0x10    0x40    0x00
+0x402020 <buffer+16>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402028 <buffer+24>:   0x00    0x00    0xff    0xff
+(gdb) info all
+...
+st0            56.78900146484375   (raw 0x4004e327f00000000000)
+st1            12.340000152587890625 (raw 0x4002c570a40000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            0                   (raw 0x00000000000000000000)
+fctrl          0xb7f               2943
+fstat          0x3000              12288
+ftag           0xfff               4095
+fiseg          0x0                 0
+fioff          0x40100a            4198410
+foseg          0x0                 0
+fooff          0x0                 0
+fop            0x0                 0
+mxcsr          0x1f80              [ IM DM ZM OM UM PM ]
+(gdb) n
+24          flds value2
+(gdb) n
+25          flds value1
+(gdb) n
+27          fldenv buffer
+(gdb) info all
+...
+st0            12.340000152587890625 (raw 0x4002c570a40000000000)
+st1            56.78900146484375   (raw 0x4004e327f00000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            0                   (raw 0x00000000000000000000)
+fctrl          0x37f               895
+fstat          0x3000              12288
+ftag           0xfff               4095
+fiseg          0x0                 0
+fioff          0x40102a            4198442
+foseg          0x0                 0
+fooff          0x0                 0
+fop            0x0                 0
+mxcsr          0x1f80              [ IM DM ZM OM UM PM ]
+(gdb) n
+29          movl $1, %eax
+(gdb) info all
+...
+st0            12.340000152587890625 (raw 0x4002c570a40000000000)
+st1            56.78900146484375   (raw 0x4004e327f00000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            0                   (raw 0x00000000000000000000)
+fctrl          0xb7f               2943
+fstat          0x3000              12288
+ftag           0xfff               4095
+fiseg          0x0                 0
+fioff          0x40100a            4198410
+foseg          0x0                 0
+fooff          0x0                 0
+fop            0x0                 0
+mxcsr          0x1f80              [ IM DM ZM OM UM PM ]
+
+# ex15_fpu_save.s
+
+(gdb) x/108xb &buffer
+0x402010 <buffer>:      0x7f    0x0b    0xff    0xff    0x00    0x30    0xff    0xff
+0x402018 <buffer+8>:    0xff    0x0f    0xff    0xff    0x0a    0x10    0x40    0x00
+0x402020 <buffer+16>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402028 <buffer+24>:   0x00    0x00    0xff    0xff    0x00    0x00    0x00    0x00
+0x402030 <buffer+32>:   0x00    0xf0    0x27    0xe3    0x04    0x40    0x00    0x00
+0x402038 <buffer+40>:   0x00    0x00    0x00    0xa4    0x70    0xc5    0x02    0x40
+0x402040 <buffer+48>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402048 <buffer+56>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402050 <buffer+64>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402058 <buffer+72>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402060 <buffer+80>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402068 <buffer+88>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402070 <buffer+96>:   0x00    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x402078 <buffer+104>:  0x00    0x00    0x00    0x00
+(gdb) info all
+...
+st0            56.78900146484375   (raw 0x4004e327f00000000000)
+st1            12.340000152587890625 (raw 0x4002c570a40000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            0                   (raw 0x00000000000000000000)
+fctrl          0xb7f               2943
+fstat          0x3000              12288
+ftag           0xfff               4095
+fiseg          0x0                 0
+fioff          0x40100a            4198410
+foseg          0x0                 0
+fooff          0x0                 0
+fop            0x0                 0
+mxcsr          0x1f80              [ IM DM ZM OM UM PM ]

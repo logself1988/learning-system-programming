@@ -1,0 +1,32 @@
+Codes of Organe's一个操作系统的实现
+
+# Mac安装和配置bochs
+
+➜  ch01 git:(main) ✗ brew install bochs
+Updating Homebrew...
+==> Downloading https://ghcr.io/v2/homebrew/core/sdl2/manifests/2.0.16
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/sdl2/blobs/sha256:4634185a35d9fc37c8fc07f884e45e7e2fbaa3fdec615171e647a9e02c395bd4
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:4634185a35d9fc37c8fc07f884e45e7e2fbaa3fdec615171e647a9e02c395bd4?se=
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/bochs/manifests/2.7
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/bochs/blobs/sha256:a903d4549d08e804de103c69866708ac5a993f7a4006687e9465e67991494cb4
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:a903d4549d08e804de103c69866708ac5a993f7a4006687e9465e67991494cb4?se=
+######################################################################## 100.0%
+==> Installing dependencies for bochs: sdl2
+==> Installing bochs dependency: sdl2
+==> Pouring sdl2--2.0.16.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/sdl2/2.0.16: 91 files, 5.3MB
+==> Installing bochs
+==> Pouring bochs--2.7.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/bochs/2.7: 168 files, 6.6MB
+
+修改显示库:
+
+#display_library: term
+display_library: sdl2
+
+运行模拟器:
+
+bochs -f bochsrc

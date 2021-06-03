@@ -1,0 +1,283 @@
+# ex01_signed_int.s
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex01_signed_int.s, line 10.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch07_number/ex01_signed_int
+
+Breakpoint 1, _start () at ex01_signed_int.s:10
+10          movl $-345, %ecx
+(gdb) n
+11          movw $0xffb1, %dx
+(gdb) print/d $ecx
+$1 = -345
+(gdb) n
+12          movl data, %ebx
+(gdb) print/x $dx
+$2 = 0xffb1
+(gdb) n
+14          movl $1, %eax
+(gdb) print/d $ebx
+$3 = -45
+
+
+# ex02_movzx
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex02_movzx.s, line 6.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch07_number/ex02_movzx
+
+Breakpoint 1, _start () at ex02_movzx.s:6
+6           movl $279, %ecx
+(gdb) n
+7           movzx %cl, %ebx
+(gdb) print/d $ecx
+$1 = 279
+(gdb) print/d $cl
+$2 = 23
+(gdb) print/d $ch
+$3 = 1
+(gdb) n
+9           movl $1, %eax
+(gdb) print/d $ebx
+$4 = 23
+
+# ex03_movsx.s
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex03_movsx.s, line 6.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch07_number/ex03_movsx
+
+Breakpoint 1, _start () at ex03_movsx.s:6
+6           movw $-79, %cx
+(gdb) n
+7           movl $0, %ebx
+(gdb) n
+8           movw %cx, %bx
+(gdb) print/d $ebx
+$1 = 0
+(gdb) n
+9           movsx %cx, %eax
+(gdb) print/d $ebx
+$2 = 65457
+(gdb) print/d $cx
+$5 = -79
+(gdb) n
+11          movl $1, %eax
+(gdb) print/d $eax
+$6 = -79
+
+# ex03_movsx2.s
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex03_movsx2.s, line 6.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch07_number/ex03_movsx2
+
+Breakpoint 1, _start () at ex03_movsx2.s:6
+6           movw $79, %cx
+(gdb) n
+7           xor %ebx, %ebx
+(gdb) n
+8           movw %cx, %bx
+(gdb) n
+9           movsx %cx, %eax
+(gdb) n
+11          movl $1, %eax
+(gdb) print $eax
+$1 = 79
+(gdb) print $ebx
+$2 = 79
+(gdb) print $ecx
+$3 = 79
+
+# ex04_quad.s
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex04_quad.s, line 12.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch07_number/ex04_quad
+
+Breakpoint 1, _start () at ex04_quad.s:12
+12          movl $1, %eax
+(gdb) x/5w &data1
+0x402000:       1       -1      463345  -333252322
+0x402010:       0
+(gdb) x/5xw &data1
+0x402000:       0x00000001      0xffffffff      0x000711f1      0xec22f91e
+0x402010:       0x00000000
+(gdb) x/10xw &data2
+0x402014:       0x00000001      0x00000000      0xffffffff      0xffffffff
+0x402024:       0x000711f1      0x00000000      0xec22f91e      0xffffffff
+0x402034:       0x00000000      0x00000000
+
+# ex05_mmx.s
+
+
+(gdb) info all
+...
+st0            -nan(0xffffffff00000001) (raw 0xffffffffffff00000001)
+st1            <invalid float value> (raw 0xffff0100e44732ff0510)
+...
+
+
+# ex06_sse.s
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex06_sse.s, line 15.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch07_number/ex06_sse
+
+Breakpoint 1, _start () at ex06_sse.s:15
+15          movdqu values1, %xmm0
+(gdb) n
+16          movdqu values2, %xmm1
+(gdb) n
+18          movl $1, %eax
+(gdb) print $xmm0
+$1 = {v4_float = {1.40129846e-45, -nan(0x7fffff), 0, 1.89520012e-40}, v2_double = {-nan(0xfffff00000001), 2.8699144274488922e-309},
+  v16_int8 = {1, 0, 0, 0, -1, -1, -1, -1, 0, 0, 0, 0, 78, 16, 2, 0}, v8_int16 = {1, 0, -1, -1, 0, 0, 4174, 2}, v4_int32 = {1, -1, 0,
+    135246}, v2_int64 = {-4294967295, 580877146914816}, uint128 = 10715292067404213048920514521726977}
+(gdb) print $xmm1
+$2 = {v4_float = {1.40129846e-45, 0, -nan(0x7fffff), -nan(0x7fffff)}, v2_double = {4.9406564584124654e-324, -nan(0xfffffffffffff)},
+  v16_int8 = {1, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1}, v8_int16 = {1, 0, 0, 0, -1, -1, -1, -1}, v4_int32 = {1, 0, -1,
+    -1}, v2_int64 = {1, -1}, uint128 = 340282366920938463444927863358058659841}
+
+
+# ex07_bcd.s
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex07_bcd.s, line 15.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch07_number/ex07_bcd
+
+Breakpoint 1, _start () at ex07_bcd.s:15
+15          fbld data1
+(gdb) x/10xb &data1
+0x402000:       0x34    0x12    0x00    0x00    0x00    0x00    0x00    0x00
+0x402008:       0x00    0x00
+(gdb) n
+16          fimul data2
+(gdb) print/x $st0
+$1 = 0x4d2
+(gdb) print/d $st0
+$2 = 1234
+(gdb) n
+17          fbstp data1
+(gdb) print/d $st0
+$3 = 2468
+(gdb) n
+19          movl $1, %eax
+(gdb) x/10xb &data1
+0x402000:       0x68    0x24    0x00    0x00    0x00    0x00    0x00    0x00
+0x402008:       0x00    0x00
+
+# ex08_float.s
+
+(gdb) b *_start
+Breakpoint 1 at 0x401000: file ex08_float.s, line 15.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/assembly/pro/ch07_number/ex08_float
+
+Breakpoint 1, _start () at ex08_float.s:15
+15          flds value1
+(gdb) n
+16          fldl value2
+(gdb) print/x $st0
+$1 = 0xc
+(gdb) print/f $st0
+$2 = 12.340000152587890625
+(gdb) n
+17          fstl data
+(gdb) print/f $st0
+$3 = 2353.63099999999985812
+(gdb) print/f $st1
+$4 = 12.340000152587890625
+(gdb) n
+19          movl $1, %eax
+(gdb) print/f $st0
+$5 = 2353.63099999999985812
+(gdb) print/f $st1
+$6 = 12.340000152587890625
+(gdb) x/gf &data
+0x402010 <data>:        2353.6309999999999
+
+# ex09_fpu_values.s
+
+(gdb) info all
+...
+st0            0                   (raw 0x00000000000000000000)
+st1            0.693147180559945309429 (raw 0x3ffeb17217f7d1cf79ac)
+st2            0.301029995663981195226 (raw 0x3ffd9a209a84fbcff799)
+st3            3.14159265358979323851 (raw 0x4000c90fdaa22168c235)
+st4            1.44269504088896340739 (raw 0x3fffb8aa3b295c17f0bc)
+st5            3.32192809488736234781 (raw 0x4000d49a784bcd1b8afe)
+st6            1                   (raw 0x3fff8000000000000000)
+st7            0                   (raw 0x00000000000000000000)
+...
+
+# ex10_sse_float.s
+
+(gdb) print $xmm0
+$1 = {v4_float = {12.3400002, 2345.54297, -3493.19995, 0.449010015}, v2_double = {5.6204289471764299e+24, 1.0439462282443856e-05},
+  v16_int8 = {-92, 112, 69, 65, -80, -104, 18, 69, 51, 83, 90, -59, -92, -28, -27, 62}, v8_int16 = {28836, 16709, -26448, 17682, 21299,
+    -15014, -7004, 16101}, v4_int32 = {1095069860, 1158846640, -983936205, 1055253668}, v2_int64 = {4977208420974555300,
+    4532279996355072819}, uint128 = 83605809163155287727927076236493680804}
+(gdb) print $xmm1
+$2 = {v4_float = {-5439.23389, 32121.4004, 1.00940001, 3.00000011e-06}, v2_double = {8.7452727745837517e+33, 3.4658329842889617e-47},
+  v16_int8 = {-33, -7, -87, -59, -51, -14, -6, 70, 5, 52, -127, 63, -100, 83, 73, 54}, v8_int16 = {-1569, -14935, -3379, 18170, 13317,
+    16257, 21404, 13897}, v4_int32 = {-978716193, 1190851277, 1065432069, 910775196}, v2_int64 = {5114667292431088095,
+    3911749681893422085}, uint128 = 72159045262302707577450683077612927455}
+(gdb) print $xmm2
+$3 = {v4_float = {12.3400002, 2345.54297, -3493.19995, 0.449010015}, v2_double = {5.6204289471764299e+24, 1.0439462282443856e-05},
+  v16_int8 = {-92, 112, 69, 65, -80, -104, 18, 69, 51, 83, 90, -59, -92, -28, -27, 62}, v8_int16 = {28836, 16709, -26448, 17682, 21299,
+    -15014, -7004, 16101}, v4_int32 = {1095069860, 1158846640, -983936205, 1055253668}, v2_int64 = {4977208420974555300,
+    4532279996355072819}, uint128 = 83605809163155287727927076236493680804}
+(gdb) x/4f &data
+0x402020 <data>:        12.3400002      2345.54297      -3493.19995     0.449010015
+
+# ex11_sse2_float.s
+
+(gdb) print $xmm0
+$1 = {v4_float = {5.84860315e+35, 2.63562489, 1.79352231e-36, 5.07264233}, v2_double = {12.34, 2345.5430000000001}, v16_int8 = {-82, 71,
+    -31, 122, 20, -82, 40, 64, 117, -109, 24, 4, 22, 83, -94, 64}, v8_int16 = {18350, 31457, -20972, 16424, -27787, 1048, 21270, 16546},
+  v4_int32 = {2061584302, 1076407828, 68719477, 1084379926}, v2_int64 = {4623136420479977390, 4657376318677619573},
+  uint128 = 85913429005601586953847513200535357358}
+(gdb) print $xmm1
+$2 = {v4_float = {-1.11704749e+24, -5.66396856, -1.58818684e-23, 6.98026705}, v2_double = {-5439.2340000000004, 32121.400000000001},
+  v16_int8 = {68, -117, 108, -25, 59, 63, -75, -64, -102, -103, -103, -103, 89, 94, -33, 64}, v8_int16 = {-29884, -6292, 16187, -16203,
+    -26214, -26215, 24153, 16607}, v4_int32 = {-412316860, -1061863621, -1717986918, 1088380505}, v2_int64 = {-4560669521124488380,
+    4674558677155944858}, uint128 = 86230387575033986983375224144585853764}
+(gdb) print $xmm2
+$3 = {v4_float = {5.84860315e+35, 2.63562489, 1.79352231e-36, 5.07264233}, v2_double = {12.34, 2345.5430000000001}, v16_int8 = {-82, 71,
+    -31, 122, 20, -82, 40, 64, 117, -109, 24, 4, 22, 83, -94, 64}, v8_int16 = {18350, 31457, -20972, 16424, -27787, 1048, 21270, 16546},
+  v4_int32 = {2061584302, 1076407828, 68719477, 1084379926}, v2_int64 = {4623136420479977390, 4657376318677619573},
+  uint128 = 85913429005601586953847513200535357358}
+(gdb) x/2gf &data
+0x402020 <data>:        12.34   2345.5430000000001
+(gdb)
+
+# ex12_conv.s
+
+(gdb) print $xmm0
+$1 = {v4_float = {1.40129846e-45, 1.75162308e-43, 2.80259693e-43, -nan(0x7ffec8)}, v2_double = {2.6524947387115311e-312,
+    -nan(0xffec8000000c8)}, v16_int8 = {1, 0, 0, 0, 125, 0, 0, 0, -56, 0, 0, 0, -56, -2, -1, -1}, v8_int16 = {1, 0, 125, 0, 200, 0,
+    -312, -1}, v4_int32 = {1, 125, 200, -312}, v2_int64 = {536870912001, -1340029796152},
+  uint128 = 340282342201751762702250093524836941825}
+(gdb) print $xmm1
+$2 = {v4_float = {1.40129846e-45, 1.7376101e-43, 2.80259693e-43, -nan(0x7ffec8)}, v2_double = {2.6312747808018783e-312,
+    -nan(0xffec8000000c8)}, v16_int8 = {1, 0, 0, 0, 124, 0, 0, 0, -56, 0, 0, 0, -56, -2, -1, -1}, v8_int16 = {1, 0, 124, 0, 200, 0,
+    -312, -1}, v4_int32 = {1, 124, 200, -312}, v2_int64 = {532575944705, -1340029796152},
+  uint128 = 340282342201751762702250093520541974529}
+(gdb) print $xmm2
+$3 = {v4_float = {1, -435, 0, -25}, v2_double = {-7.3498756827903427e+18, -805306368}, v16_int8 = {0, 0, -128, 63, 0, -128, -39, -61, 0,
+    0, 0, 0, 0, 0, -56, -63}, v8_int16 = {0, 16256, -32768, -15399, 0, 0, 0, -15928}, v4_int32 = {1065353216, -1009156096, 0,
+    -1043857408}, v2_int64 = {-4334292427813683200, -4483333429047328768}, uint128 = 257579462558195729010253313545846390784}
+(gdb) x/4d &data
+0x402020 <data>:        0       0       0       0
+(gdb) n
+20          movl $1, %eax
+(gdb) x/4d &data
+0x402020 <data>:        1       125     200     -312
