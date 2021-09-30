@@ -1,5 +1,7 @@
 # word_count
 
+使用变量
+
 $ make
 gcc -c word_count.c
 flex -o lexer.c lexer.l
@@ -10,9 +12,81 @@ $ ./word_count < lexer.l
 
 # word_count_dir
 
+按目录组织源文件.
+
+$ tree
+.
+├── Makefile
+├── include
+│   ├── counter.h
+│   └── lexer.h
+└── src
+    ├── counter.c
+    ├── lexer.l
+    └── word_count.c
+
 $ make
 gcc -I include -c src/word_count.c
 gcc -I include -c src/counter.c
 flex -o lexer.c src/lexer.l
 gcc -c lexer.c
 gcc -o word_count word_count.o counter.o lexer.o -lfl
+
+# work_count_defaults
+
+使用内置规则.
+
+$ make
+cc  -I include  -c -o word_count.o src/word_count.c
+cc  -I include  -c -o counter.o src/counter.c
+lex  -t src/lexer.l > lexer.c
+cc  -I include  -c -o lexer.o lexer.c
+cc   word_count.o counter.o lexer.o /usr/lib/x86_64-linux-gnu/libfl.so   -o word_count
+rm lexer.c
+$ ls
+Makefile  counter.o  include  lexer.o  src  word_count  word_count.o
+$ ./word_count < src/lexer.l
+3 3 3 3
+
+自动生成依赖:
+
+$ make --just-print
+cc -M -I include src/counter.c > counter.d.$$; \
+sed 's,\(counter\)\.o[ :]*,\1.o counter.d : ,g' < counter.d.$$ > counter.d; \
+rm -rf counter.d.$$
+lex  -t src/lexer.l > lexer.c
+cc -M -I include lexer.c > lexer.d.$$; \
+sed 's,\(lexer\)\.o[ :]*,\1.o lexer.d : ,g' < lexer.d.$$ > lexer.d; \
+rm -rf lexer.d.$$
+cc -M -I include src/word_count.c > word_count.d.$$; \
+sed 's,\(word_count\)\.o[ :]*,\1.o word_count.d : ,g' < word_count.d.$$ > word_count.d; \
+rm -rf word_count.d.$$
+rm lexer.c
+make: Warning: File 'counter.d' has modification time 0.68 s in the future
+cc  -I include  -c -o word_count.o src/word_count.c
+cc  -I include  -c -o counter.o src/counter.c
+cc  -I include  -c -o lexer.o lexer.c
+cc   word_count.o counter.o lexer.o /usr/lib/x86_64-linux-gnu/libfl.so   -o word_count
+
+# word_count_lib
+
+使用库.
+
+$ make
+cc  -I include  -c -o word_count.o src/word_count.c
+lex  -t src/lexer.l > lexer.c
+cc  -I include  -c -o lexer.o lexer.c
+ar rv libcounter.a lexer.o
+ar: creating libcounter.a
+a - lexer.o
+make: Warning: File 'libcounter.a' has modification time 0.82 s in the future
+cc  -I include  -c -o counter.o src/counter.c
+ar rv libcounter.a counter.o
+a - counter.o
+cc   word_count.o libcounter.a /usr/lib/x86_64-linux-gnu/libfl.so   -o word_count
+rm lexer.c
+$ ar t libcounter.a
+lexer.o
+counter.o
+$ ./word_count <src/lexer.l
+3 3 3 3

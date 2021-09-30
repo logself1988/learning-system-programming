@@ -1,0 +1,10 @@
+# continuing
+
+使用连接符.
+
+$ make
+for d in `pwd`; \
+do                              \
+        echo $d/*;      \
+done > file_list
+rm file_list

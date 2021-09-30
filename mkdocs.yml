@@ -11,8 +11,7 @@ nav:
       - 'GNU toolchain':
         - Home: tools/gnu/gnu-toolchain.md
         - 'An Introduction to GCC': tools/gnu/gcc-intro.md
-        - 'Make': tools/gnu/make.md
-        - 'Managing Projects with GNU Make': tools/gnu/managing-projects-with-gnu-make.md
+        - 'Managing Projects with GNU Make': tools/gnu/make.md
         - 'Autotools': tools/gnu/autotools.md
       - CMake: tools/cmake.md
       - 'C Tool': tools/c-tool.md
@@ -24,7 +23,7 @@ nav:
         - 'LLVM Paper': tools/llvm/llvm-paper.md
         - 'LLVM Core Libraries': tools/llvm/llvm-core-libraries.md
     - 'Architecture':
-      - 'System V Application Binary Interface': architecture/ABI.md 
+      - 'System V Application Binary Interface': architecture/ABI.md
       - 'The Linux Kernel CPU Architectures': architecture/linux-cpu-architecture.md
       - 'Intel':
         - 'Volume 1: Basic Architecture': architecture/intel/vol1-basic-architecture.md

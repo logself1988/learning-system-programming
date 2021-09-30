@@ -4,6 +4,7 @@
 |时间|内容|
 |:---|:---|
 |20210929|kick off.|
+|20210930|Complete PART I.|
 
 ## 术语
 
@@ -11,6 +12,7 @@
 
 - target: 目标
 - prerequisite: 前提
+- stem of a file: 词干, 即文件名称中后缀之前的部分, 例如`xxx.c`中的`xxx`
 
 ## 介绍
 
@@ -149,58 +151,99 @@ $single-character-variable-name
 - 返回值的目录部分, 例如: `$(@D)`, `$(<D)`;
 - 返回值的文件部分, 例如: `$(@F)`, `$(<F)`.
 
+例:
+
 ``` Makefile
-count_words: count_words.o counter.o lexer.o -lfl
-    gcc $^ -o $@
-count_words.o: count_words.c
-    gcc -c $<
-counter.o: counter.c
-    gcc -c $<
+word_count: word_count.o lexer.o
+	gcc -o $@ $^ -lfl
+
+word_count.o: word_count.c
+	gcc -c $<
+
 lexer.o: lexer.c
-    gcc -c $<
+	gcc -c $<
+
 lexer.c: lexer.l
-    flex -t $< > $@
+	flex -o $@ $<
 ```
 
 ##### 使用`VPATH`和`vpath`查找文件
 
-VPATH变量和vpath指令
+`make`默认在当前目录下查找target和prerequisite, 使用`VPATH`变量和`vpath`指令可以修改查找目录:
+
+- `VPATH = directory-list`: 由目录列表构成;
+- `vpath pattern directory-list`: 如果`VPATH`列表中有相同名称的文件, `make`使用第一个找到的文件; `vpath`指定在特定目录中查找满足特定模式的文件.
 
 ``` Makefile
-# 指定源文件目录
-VPATH = src
-```
+VPATH = src       # 指定源文件目录
 
-``` Makefile
-# 指令格式: vpath pattern directory list
-vpath %.c src
+vpath %.c src     # 指定特定文件的查找目录
 vpath %.l src
 vpath %.h include
 ```
 
 ##### 模式规则
 
-`%`表示任意数量的字符, 在模式中只能出现一次.
+模式规则与一般的规则类似, 除了文件的stem用字符`%`表示.
+
+通过识别常见的文件名称模式, 提供內建规则来简化规则创建, 例:
 
 ``` Makefile
-# 由xxx.c生成xxx.o文件
-%.o: %.c
-    $(COMPILE.c) $(OUTPUT_OPTION) $<
+VPATH = src
+CPPFLAGS = -I include
 
-# 由xxx.o生成xxx文件
-%: %.o
-    $(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+word_count: counter.o lexer.o -lfl
+word_count.o: include/counter.h
+counter.o: include/counter.h include/lexer.h
+lexer.o: include/lexer.h
 ```
 
-静态模式规则: 只能应用于特定的目标
+查看默认规则和变量:
+
+```
+$ make --print-data-base
+```
 
 ``` Makefile
-# OBJECTS变量中指定的文件
+# ...
+%.o: %.c
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+# ...
+%.c: %.l
+	@$(RM) $@
+	 $(LEX.l) $< > $@
+# ...
+%: %.o
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+```
+
+###### 模式
+
+字符`%`可以在模式中任意位置出现, 但只能出现一次.
+
+例:
+
+```
+%,v
+s%.o
+wrapper_%
+```
+
+###### 静态模式规则
+
+静态模式规则只能应用于特定的目标.
+
+``` Makefile
 $(OBJECTS): %.o: %.c
     $(CC) -c $(CFLAGS) $< -o $@
 ```
 
-后缀规则: obsolete, 兼容性目的支持
+- `$(OBJECTS):`描述在`$(OBJECTS)`中的每个对象文件与模式`%.o`匹配, 提取文件stem;
+- 将文件stem在`%.c`中替换来产生prerequisite.
+
+###### 后缀规则
+
+后缀规则(suffix rules)是最初定义隐式规则的方式, 现已废弃.
 
 ``` Makefile
 .c.o:
@@ -218,7 +261,7 @@ $(OBJECTS): %.o: %.c
     $(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
 ```
 
-特殊的目标
+使用特殊的目标`.SUFFIXES`定义已知的后缀列表:
 
 ``` Makefile
 .SUFFIXES: .out .a .ln .o .c .cc .C .cpp .p .f .F .r .y .l
@@ -226,147 +269,161 @@ $(OBJECTS): %.o: %.c
 
 ##### 隐式规则数据库
 
-- --print-data-base/-p: 查看模式规则
-无命令脚本的模式规则将规则从数据库中移除.
-- --just-print/-n: 查看构建动作
-- --no-builtin-rules/-r: 不使用内建规则
-- --no-builtin-variables/-R: 不使用内建变量
+- `--print-data-base`/`-p`: 查看规则数据库和变量.
+- `--just-print`/`-n`: 查看构建动作.
+- `--no-builtin-rules`/`-r`: 不使用内建规则.
+- `--no-builtin-variables`/`-R`: 不使用内建变量.
+
+###### 使用隐式规则
+
+每当处理一个target时, 没有更新它的显式规则, `make`会引用內建的隐式规则.
+
+无命令脚本的模式规则将规则从数据库中移除,
+
+例: 有Lisp和C源文件editor.l, editor.c; 不应用使用flex
 
 ``` Makefile
-# 示例隐式规则
+%.o: %.l
+%.c: %.l
+```
+
+`make`尝试更新target时使用规则链:
+
+- 需要更新一个target时, 搜索隐式规则以找到匹配该target的target模式;
+- 对每个匹配的target模式, 查找已存在的匹配prerequisite源文件;
+- 如果找到prerequisite, 则使用该规则;
+- 如果在所有规则中没有找到prerequisite, 则假设匹配的prerequisite源文件应该是需要更新的target, 继续搜索规则.
+
+由规则链生成的文件称为中间文件(intermediate file):
+
+- `make`不会简单的更新中间文件;
+- `make`在退出前会删除中间文件.
+
+例:
+
+```
+$ touch foo.y
+$ make -n foo
+yacc  foo.y
+mv -f y.tab.c foo.c
+cc    -c -o foo.o foo.c
+cc   foo.o   -o foo
+rm foo.c foo.o
+```
+
+###### 规则结构
+
+内建规则有标准的结构, 便于定制. 定制是通过规则中使用的变量控制的.
+
+例: 内置规则
+
+``` Makefile
 %.o: %.c
-$(COMPILE.c) $(OUTPUT_OPTION) $<
-# 变量
+  $(COMPILE.c) $(OUTPUT_OPTION) $<
+```
+
+例: 定制内置规则
+
+``` Makefile
 COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
 CC = gcc
 OUTPUT_OPTION = -o $@
-# 在Makefile中覆盖
-CPPFLAGS = -I project/include
-# 在命令中覆盖, 自定义变量INCLUDES
-$ make CPPFLAGS=-DDEBUG
-COMPILE.c = $(CC) $(CFLAGS) $(INCLUDES) $(CPPFLAGS) $(TARGET_ARCH) -c
-INCLUDES = -I project/include
 ```
+
+- `CC`: 用于选择C编译器的变量;
+- `CFLAGS`: 编译选项;
+- `CPPFLAGS`: 预处理器选项;
+- `TARGET_ARCH`: 体系结构特定选项.
+- 在命令行中覆盖: `$ make CPPFLAGS=-DDEBUG`.
 
 ##### 特殊目标
 
-特殊的目标(12个):
+特殊的目标是用于修改`make`默认行为的内建伪目标:
 
-- .PHONY
-- .INTERMEDIATE
-- .SECONDARY
-- .PRECIOUS
-- .DELETE_ON_ERROR
-- .EXPORT_ALL_VARIABLES
+- `.PHONY`: 声明prerequisite不引用实际的文件, 总是out of date;
+- `.SUFFIXES`: 指定后缀规则;
+- `.INTERMEDIATE`: prerequisite是中间文件;
+- `.SECONDARY`: prerequisite是中间文件, 但不自动删除;
+- `.PRECIOUS`: 默认情况下`make`执行中断后会删除更新的target文件; 将文件标记为`.PRECIOUS`则中断时不会被删除;
+- `.DELETE_ON_ERROR`: 与`.PRECIOUS`行为相反.
+- `.EXPORT_ALL_VARIABLES`
 
 ##### 自动依赖生成
 
-自动生成依赖
-
-``` Makefile
-VPATH = src include
-CPPFLAGS = -I include
-SOURCES = count_words.c \
-    lexer.c \
-    counter.c
-count_words: counter.o lexer.o -lfl
-count_words.o: counter.h
-counter.o: counter.h lexer.h
-lexer.o: lexer.h
-
-include $(subst .c,.d,$(SOURCES))
-# 使用gcc -M生成依赖xxx.d文件
-%.d: %.c
-    $(CC) -M $(CPPFLAGS) $< > $@.$$$$; \
-    sed 's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.$$$$ > $@; \
-    rm -f $@.$$$$
-```
+自动生成C中`include`预处理指令包含的依赖, 例见`codes/make/ch02/work_count_defaults`.
 
 ##### 管理库
 
-生成库归档: ar
+生成库归档: `ar`
 
-``` shell
-# ar -- create and maintain library archives
-# 添加
-ar rv libcounter.a counter.o lexer.o
-# 更新
-ar rv libcounter.a counter.o
+```
+ar rv libcounter.a counter.o lexer.o  # 添加
+ar rv libcounter.a counter.o          # 更新
 ```
 
-创建和更新库
+###### 创建和更新库
+
+例见`codes/make/ch02/work_count_lib`.
+
+###### 使用库作为prerequisite
+
+当库作为prerequisite出现时, 可以用标准文件名称或使用`-l`语法引用库.
 
 ``` Makefile
-libcounter.a: counter.o lexer.o
-    $(AR) $(ARFLAGS) $@ $?
-
-# 使用members in archive
-libcounter.a: libcounter.a(lexer.o) libcounter.a(counter.o)
-
-libcounter.a(lexer.o): lexer.o
-    $(AR) $(ARFLAGS) $@ $<
-
-libcounter.a(counter.o): counter.o
-    $(AR) $(ARFLAGS) $@ $<
-
-# 更新index in archive
-libcounter.a: counter.o lexer.o
-    $(RM) $@
-    $(AR) $(ARFLGS) $@ $^
-    $(RANLIB) $@
+xpong: $(OBJECTS) /lib/X11/libX11.a /lib/X11/libXaw.a # 标准文件名称
+    $(LINK) $^ -o $@
+xpong: $(OBJECTS) -lX11 -lXaw                         # -l语法
+    $(LINK) $^ -o $@
 ```
 
-使用库作为前提
+处理库中循环依赖: `-lA -lB -lA`.
 
-``` Makefile
-xpong: $(OBJECTS) /lib/X11/libX11.a /lib/X11/libXaw.a
-    $(LINK) $^ -o $@
-# 或者使用-l语法
-xpong: $(OBJECTS) -lX11 -lXaw
-    $(LINK) $^ -o $@
+###### 双冒号规则
 
-# 处理库中循环依赖: -lA -lB -lA
-xpong: xpong.o libui.a libdynamics.a libui.a -lX11
-    $(CC) $+ -o $@
-```
+根据不同的prerequisite使用不同的命令来更新target:
 
-双冒号规则: 根据不同的条件更新构建目标
+- 多个同名target的常规的规则, 各prerequisite会追加在一起; 而双冒号规则不会;
+- 对某一特定的target, 其规则必须是同一类型: 即都是双冒号规则, 或都是单冒号规则.
 
 ``` Makefile
 file-list:: generate-list-script
-chmod +x $<
-generate-list-script $(files) > file-list
+  chmod +x $<
+  generate-list-script $(files) > file-list
+
 file-list:: $(files)
-generate-list-script $(files) > file-list
+  generate-list-script $(files) > file-list
 ```
 
 #### 3. Variables and Macros
 
-简单变量(:=)
+`make`中包含两种语言:
+
+- 通过target和prerequisite描述依赖图的语言;
+- 执行文本替换的宏语言.
+
+变量是大小写敏感的, 获取变量的值: `$()`、`$letter`、`${}`.
+
+命名约定:
 
 ``` Makefile
-MAKE_DEPEND := $(CC) -M
+# 常量: 全大写, 单词用_分隔
+CC := gcc
+# 内部变量: 全小写, 单词用_分隔
+sources = *.c
+# 函数:全小写, 单词用-分隔
+maybe-make-dir = $(if $(wildcard $1),,$(MKDIR) $1)
 ```
 
-递归(展开)变量(=)
+##### 变量类型
 
-``` Makefile
-MAKE_DEPEND = $(CC) -M
-# Some time later
-CC = gcc
-```
+- `:=`: 简单变量(简单展开的变量);
+- `=`: 递归变量(递归展开的变量);
+- `?=`: 条件变量赋值操作符, 变量没有值时才执行赋值;
+- `+=`: 追加操作符.
 
-条件赋值(?=): 变量没有值时才执行赋值
+##### 宏
 
-``` Makefile
-# Put all generated files in the directory $(PROJECT_DIR)/out.
-OUTPUT_DIR ?= $(PROJECT_DIR)/out
-```
-
-追加(+=)
-
-
-宏: 包含内嵌换行的变量
+使用`define`指令定义宏, 例:
 
 ``` Makefile
 define sample-macro
@@ -375,37 +432,40 @@ define sample-macro
 endef
 
 .POHNY: test
-test-macro:
+test:
 	$(sample-macro)
 ```
 
 ##### 变量何时展开?
 
-make工作机制的两个阶段:
+`make`工作机制的两个阶段:
 
 - (1) 读取makefile和导入的makefile, 将变量和规则加载到内部数据库, 创建依赖图;
 - (2) 分析依赖图, 确定需要更新的目标, 执行更新目标所需的命令脚本.
 
-make元素展开规则:
+当`make`处理遇到递归变量或`define`指令时, 存储该变量内容或宏的体. 当宏展开时, 在展开的文本中扫描需要进一步处理的宏和变量引用, 并递归的展开这些宏和变量.
 
-- For variable assignments, the lefthand side of the assignment is always expanded immediately when make  reads the line during its first phase.
-- The righthand side of `=`  and `?=`  are deferred until they are used in the second phase.
-- The righthand side of `:=`  is expanded immediately.
-- The righthand side of `+=`  is expanded immediately if the lefthand side was originally defined as a simple variable. Otherwise, its evaluation is deferred.
-- For macro definitions (those using define ), the macro variable name is immediately expanded and the body of the macro is deferred until used.
+makefile中元素的展开规则:
+
+- For variable assignments, the lefthand side of the assignment is always expanded immediately when `make` reads the line during its first phase.
+- The righthand side of `=` and `?=` are deferred until they are used in the second phase.
+- The righthand side of `:=` is expanded immediately.
+- The righthand side of `+=` is expanded immediately if the lefthand side was originally defined as a simple variable. Otherwise, its evaluation is deferred.
+- For macro definitions (those using `define`), the macro variable name is immediately expanded and the body of the macro is deferred until used.
 - For rules, the targets and prerequisites are always immediately expanded while the commands are always deferred.
 
-特定于目标/模式的变量
+##### 特定于目标/模式的变量
 
 ``` Makefile
-# 使用特殊编译选项
 gui.o: gui.h
-    $(COMPILE.c) -DUSE_NEW_MALLOC=1 $(OUTPUT_OPTION) $<
-# 使用特定于目标的变量
-gui.o: CPPFLAGS += -DUSE_NEW_MALLOC=1
+    $(COMPILE.c) -DUSE_NEW_MALLOC=1 $(OUTPUT_OPTION) $< # 使用特殊编译选项
+
+gui.o: CPPFLAGS += -DUSE_NEW_MALLOC=1                   # 使用特定于目标的变量
 gui.o: gui.h
     $(COMPILE.c) $(OUTPUT_OPTION) $<
 ```
+
+目标特定变量的通用语法:
 
 ``` Makefile
 target...: variable = value
@@ -414,136 +474,226 @@ target...: variable += value
 target...: variable ?= value
 ```
 
-变量的来源: makefile文件, 命令行, 环境变量, 自动变量
+#####  变量的来源
 
-条件和导入处理:
+- makefile文件;
+- 命令行: 例`$ make CFLAGS=-g CPPFLAGS='-DBSD -DDEBUG'`;
+- 环境变量;
+- 自动变量: `make`在执行规则的命令脚本之前创建自动变量.
+
+优先级: 命令行 > makefile > 环境变量
+
+- 命令行中变量赋值会覆盖makefile文件中变量和环境变量的赋值; 在makefile中使用`override`指令修改这一行为;
+- makefile中变量赋值会覆盖环境变量的赋值, 使用`--environment-overrides`/`-e`命令行选项修改这一行为.
+
+当递归调用`make`时, 默认情况下, 子`make`可见父`make`中的原始环境变量, 可以使用`export`和`unexport`指令控制导出的环境变量.
+
+##### 条件化和导入处理
+
+条件化处理指令: `ifdef`、`ifndef`、`ifeq`、`ifneq`
 
 ```
-if-condition
-    text if the condition is true
-endif
+<conditional-stmt>:            
+  <if-condition> text if the condition is true [endif]
+  |<if-condition> text if the condition is true [else] text if the condition is false [endif]
 
-if-condition
-    text if the condition is true
-else
-    text if the condition is false
-endif
-# if-condition
-# 变量名variable-name不能使用$()
-ifdef variable-name
-ifndef variable-name
-ifeq test
-ifneq test
-# test的两种表达方式
-"a" "b"
-(a,b)
+<if-condition>:
+  [ifdef] variable-name     # 变量名variable-name不能使用$()
+  | [ifndef] variable-name
+  | [ifeq] <test>
+  | [ifneq] <test>
+
+<test>:
+  "a" "b"
+  | (a,b)
 ```
+
+makefile中可以使用`include`指令包含其他文件, 例: `include definitions.mk`.
+
+`make`处理`include`指令的方式:
+
+- 遇到`include`指令时, 展开通配符和变量引用, 尝试读取被包含的文件;
+- 如果文件存在, 继续常规的处理; 如果文件不存在, `make`报告问题并继续读取剩下的makefile内容;
+- 当所有读取完成时, `make`在规则数据库中查找更新被包含文件的规则;
+- 如果找到匹配的而规则, 则执行更新target的处理逻辑;
+- 如果被包含的文件被规则更新了, `make`清空该文件的内部数据库并重新读取整个makefile;
+- 如果在完成这些读取、更新、再读取操作后, 如果存在因文件缺失而失败的`include`指令, `make`以错误状态退出.
+
+`make`将makefile文件视为target:
+
+- 在读取完整个makefile之后, `make`会查找重新构建(remake)当前执行的makefile的规则;
+- 如果找到, `make`处理该规则并检查makefile是否已更新;
+- 如果已更新, `make`清除相应的内部状态并重新读取makefile, 再次执行整个分析.
+
+`make`查找导入文件的顺序:
+
+- 如果`include`指令是绝对文件引用, 则直接读取该文件;
+- 如果是相对引用, 首先在当前工作目录中查找;
+- 如果没有找到, 在`--include-dir`/`-I`命令行参数指令的目录中查找;
+- 如果没有找到, 在编译搜索路径中查找.
+
+如果`make`无法找到被包含文件且无法使用规则创建它, 则以错误状态退出.
+
+在makefile第一个目标之前使用`include`指令导入文件可能会修改默认目标, 解决方法:
 
 ``` Makefile
-# 文件: Makefile
-# Simple makefile including a generated file.
-include foo.mk
-# 未找到导入文件时不报错:
-#-include foo.mk
-$(warning Finished include)
-foo.mk: bar.mk
-    m4 --define=FILENAME=$@ bar.mk > $@
-
-# 文件: bar.mk - Report when I am being read.
-$(warning Reading FILENAME)
-```
-
-make将makefile文件视为目标
-
-make查找导入文件的顺序: include指令, --include-dir命令行参数, 编译搜索路径.
-
-在makefile第一个目标之前导入文件可能会修改默认目标, 解决方法:
-
-``` Makefile
-# Ensure all is the default goal.
 all:
 include support.mk
-# Now that we have our variables defined, complete the all target.
 all: $(programs)
 ```
 
-标准make变量:
+##### 标准make变量
 
-- `MAKE_VERSION`
-- `CURDIR`
-- `MAKEFILE_LIST`
-- `MAKECMDGOALS`
-- `.VARIABLES`
+- `MAKE_VERSION`: `make`的版本号;
+- `CURDIR`: 执行`make`进程的当前工作路径;
+- `MAKEFILE_LIST`: `make`读取的文件列表;
+- `MAKECMDGOALS`: 当前`make`执行的命令行参数中指定的目标列表;
+- `.VARIABLES`: 当前读取到的变量名称列表, 不包括特定于目标的变量.
+
+变量也用定制`make`中内建的隐式规则:
+
+- 变量形式: `ACTION.suffix`;
+- `ACTION`: `COMPILE`、`LINK`、`PREPROCESS`、`YACC`、`LEX`;
+- `suffix`: `C`、`cc`、`c`、`y`、`l`等;
+- `CC`: 指定C编译器, 默认为`gcc`;
+- `CXX`: 指定C++编译器, 默认为`g++`;
+- `CXXFLAGS`: C++编译器标志;
+- `CPPFLAGS`: C预处理器标志;
+- `TARGET_ARCH`: 体系结构特定编译选项;
+- `OUTPUT_OPTION`: 输出文件选项;
+- `LD`: 指定连接器;
+- `LDFLAGS`: 连接器选项;
+- `LOADLIBES`、`LDLIBS`: 指定链接时使用的库.
+
 
 #### 4. Functions
 
-内建和用户自定义函数
-用户自定义函数保存在变量或宏中
+函数调用与变量引用类似, 但包含由逗号`,`分隔的参数.
+
+##### 用户自定义函数
+
+用户自定义函数存储为变量或宏, 预期一个或多个参数.
+
+展开变量或宏的语法:
 
 ``` Makefile
-define simple-function1
-	@echo hello
-endef
-
-define simple-function2
-	@echo $1
-endef
-
-# NOT WORK: $(simple-function1 'there2')
-test-udf:
-	$(simple-function1)
-	$(call simple-function2, 'there')
+$(call macro-name[, param1...])
 ```
 
-内建函数(Built-in Functions)
+- `call`: 内建函数;
+- 展开第一个参数`macro-name`, 并使用剩余的参数依次替换其中`$1`、`$2`等.
+
+##### 内建函数
+
+内建函数的形式:
 
 ``` Makefile
 $(function-name arg1[, argn])
 ```
 
-可以使用模式作为参数, 与模式规则中语法相同.
+部分内建函数接收模式参数`pattern`, 使用与模式规则中相同的模式语法.
 
-- 字符串函数: filter, filter-out, findstring, subst, patsubst, words, word, firstword, wordlist
-- 文件名函数: wildcard, dir, notdir, suffix, basename, addsuffix, addprefix, join
-- 流程控制函数: if, error, foreach
-- 杂项函数: sort, shell, strip, origin, warning
+- 字符串函数
 
+``` Makefile
+$(filter pattern...,text)
+$(filter-out pattern...,text)
+$(findstring string,text)
+$(subst search-string,replace-string,text)
+$(patsubst search-pattern,replace-pattern,text)
+$(words text)
+$(word n,text)
+$(firstword text)
+$(wordlist start,end,text)
+```
+
+- 杂项函数
+
+``` Makefile
+$(sort list)
+$(shell command)
+$(strip text)
+$(origin variable)
+$(warning text)
+```
+
+- 文件名函数
+
+``` Makefile
+$(wildcard pattern...)
+$(dir list...)
+$(notdir name...)
+$(suffix name...)
+$(basename name...)
+$(addsuffix suffix,name...)
+$(addprefix prefix,name...)
+$(join prefix-list,suffix-list)
+```
+
+- 流程控制函数
+
+``` Makefile
+$(if condition,then-part,else-part)
+$(error text)
+$(foreach variable,list,body)
+```
+
+##### 高级的用户自定义函数
+
+`eval`函数: 将文本直接传给`make`解析器.
+
+钩子函数(hooking function): 用户可以自定义的钩子函数.
+
+传递参数: 函数中数据来源可以是通过`call`传递的参数、全局变量、自动变量和目标特定的变量.
 
 #### 5. Commands
 
-命令脚本处理顺序:
+命令本质上是单行shell脚本, `make`逐行将命令放在子shell中执行. `SHELL`变量控制使用的shell, 默认为`/bin/sh`.
 
-- (1) 读取代码;
-- (2) 展开变量;
-- (3) 求值make表达式;
-- (4) 执行命令.
+##### 解析命令
+
+在target之后, 以TAB字符开始的行被认为是命令(除了上一行以`\`结尾). 当解析器遇到合法上下文中的命令, 则切换到命令解析模式.
+
+
+命令的修饰符(command modifier):
+
+- 前缀`@`: 不输出该命令; 特殊目标`.SILENT`和命令行选项`--silent`/`-s`;
+- 前缀`-`: 指定命令中的错误应该被忽略; 特殊目标`.IGNORE`和命令行选项`--ignore-errors`/`-i`;
+- 前缀`+`: 指定必须执行命令, 甚至使用了命令行选项`--just-print`/`-n`时也需要执行.
+
+`make`执行的每个命令均返回状态码, 0表示命令执行成功.
+
+##### 空命令
+
+例:
 
 ``` Makefile
-# $(call strip-program, file)
-define strip-program
-    strip $1
-endef
-complex_script:
-    $(CC) $^ -o $@
-ifdef STRIP
-    $(call strip-program, $@)
-endif
-    $(if $(PACK), upx --best $@)
-    $(warning Final size: $(shell ls -s $@))
+header.h: ;
 ```
 
-ifdef指令在出现时立即被处理
+##### 命令环境
 
-warning在执行命令前被求值, 即在complex_script修改前执行.
+`make`执行的命令会继承`make`进程的环境, 同时命令执行所处的子shell中会有新的变量:
+
+- `MAKEFLAGS`: 传递给`make`的命令行选项;
+- `MFLAGE`: 同`MAKEFLAGS`;
+- `MAKELEVEL`: 嵌套`make`调用的层级;
+- 通过`export`指令添加的变量.
+
+###### 求值命令
+
+命令脚本处理顺序: 读取代码, 展开变量, 求值`make`表达式, 执行命令.
 
 ### Part II. Advanced and Specialized Topics
 #### 6. Managing Large Projects
+
 #### 7. Portable Makefiles
 #### 8. C and C++
 #### 9. Java
 #### 10. Improving the Performance of make
 #### 11. Example Makefiles
 #### 12. Debugging Makefiles
+
 ### Part III. Appendixes
 #### A. Running make
 #### B. The Outer Limits
