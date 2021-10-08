@@ -4,6 +4,7 @@
 
 - [Book website](http://man7.org/tlpi/index.html): With 1552 pages, 115 diagrams, 88 tables, nearly 200 example programs, and over 200 exercises, TLPI is the most comprehensive description of Linux and UNIX system programming available.
 - [系统调用的概览](syscall.md)
+- [Source Code for The Linux Programming Interface](https://man7.org/tlpi/code/)
 
 
 ## 1 历史和标准

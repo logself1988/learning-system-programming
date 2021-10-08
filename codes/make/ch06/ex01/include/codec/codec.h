@@ -1,0 +1,6 @@
+#ifndef CH06_MP3_INCLUDE_CODEC_CODEC
+#define CH06_MP3_INCLUDE_CODEC_CODEC
+
+extern int codec();
+
+#endif /* CH06_MP3_INCLUDE_CODEC_CODEC */

@@ -13,6 +13,7 @@
 - target: 目标
 - prerequisite: 前提
 - stem of a file: 词干, 即文件名称中后缀之前的部分, 例如`xxx.c`中的`xxx`
+- RHS: righthand side, 右手侧
 
 ## 介绍
 
@@ -184,7 +185,7 @@ vpath %.h include
 
 ##### 模式规则
 
-模式规则与一般的规则类似, 除了文件的stem用字符`%`表示.
+模式规则(pattern rules)与一般的规则类似, 除了文件的stem用字符`%`表示.
 
 通过识别常见的文件名称模式, 提供內建规则来简化规则创建, 例:
 
@@ -198,13 +199,10 @@ counter.o: include/counter.h include/lexer.h
 lexer.o: include/lexer.h
 ```
 
-查看默认规则和变量:
-
-```
-$ make --print-data-base
-```
+使用了内建规则:
 
 ``` Makefile
+$ make --print-data-base              # 查看默认规则和变量
 # ...
 %.o: %.c
 	$(COMPILE.c) $(OUTPUT_OPTION) $<
@@ -382,7 +380,7 @@ xpong: $(OBJECTS) -lX11 -lXaw                         # -l语法
 
 根据不同的prerequisite使用不同的命令来更新target:
 
-- 多个同名target的常规的规则, 各prerequisite会追加在一起; 而双冒号规则不会;
+- 多个同名target的常规规则, 各prerequisite会追加在一起; 而双冒号规则不会;
 - 对某一特定的target, 其规则必须是同一类型: 即都是双冒号规则, 或都是单冒号规则.
 
 ``` Makefile
@@ -417,7 +415,7 @@ maybe-make-dir = $(if $(wildcard $1),,$(MKDIR) $1)
 ##### 变量类型
 
 - `:=`: 简单变量(简单展开的变量);
-- `=`: 递归变量(递归展开的变量);
+- `=`: 递归变量(递归展开的变量), `make`不会对RHS进行求值或展开, 直接将RHS存储为变量的值; 只在使用变量时展开;
 - `?=`: 条件变量赋值操作符, 变量没有值时才执行赋值;
 - `+=`: 追加操作符.
 
@@ -508,7 +506,11 @@ target...: variable ?= value
   | (a,b)
 ```
 
-makefile中可以使用`include`指令包含其他文件, 例: `include definitions.mk`.
+makefile中可以使用`include`指令包含其他文件, 例:
+
+``` Makefile
+include definitions.mk
+```
 
 `make`处理`include`指令的方式:
 
@@ -532,7 +534,11 @@ makefile中可以使用`include`指令包含其他文件, 例: `include definiti
 - 如果没有找到, 在`--include-dir`/`-I`命令行参数指令的目录中查找;
 - 如果没有找到, 在编译搜索路径中查找.
 
-如果`make`无法找到被包含文件且无法使用规则创建它, 则以错误状态退出.
+如果`make`无法找到被包含文件且无法使用规则创建它, 则以错误状态退出. 在无法找到时忽略被包含文件:
+
+``` Makefile
+-include i-mqy-not-exist.mk
+```
 
 在makefile第一个目标之前使用`include`指令导入文件可能会修改默认目标, 解决方法:
 

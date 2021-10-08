@@ -1,0 +1,141 @@
+# ex01
+
+递归的使用make.
+
+$ tree
+.
+├── Makefile
+├── app
+│   └── player
+│       ├── Makefile
+│       └── player.c
+├── common.mk
+├── include
+│   ├── codec
+│   │   └── codec.h
+│   ├── db
+│   │   └── scanner.h
+│   ├── player
+│   │   └── player.h
+│   └── ui
+│       └── ui.h
+└── lib
+    ├── codec
+    │   ├── Makefile
+    │   └── codec.c
+    ├── db
+    │   ├── Makefile
+    │   ├── playlist.y
+    │   └── scanner.l
+    └── ui
+        ├── Makefile
+        └── ui.c
+
+$ make
+make --directory=lib/db
+make[1]: Entering directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/mp3/lib/db'
+yacc  --defines playlist.y
+mv -f y.tab.c playlist.c
+mv -f y.tab.h playlist.h
+cc  -I .. -I ../../include  -M playlist.c |     \
+sed 's,\(playlist\.o\) *:,\1 playlist.d: ,' > playlist.d.tmp
+mv -f playlist.d.tmp playlist.d
+lex  -t scanner.l > scanner.c
+cc  -I .. -I ../../include  -M scanner.c |      \
+sed 's,\(scanner\.o\) *:,\1 scanner.d: ,' > scanner.d.tmp
+mv -f scanner.d.tmp scanner.d
+cc  -I .. -I ../../include  -c -o scanner.o scanner.c
+scanner.l: In function ‘yylex’:
+scanner.l:9:8: warning: returning ‘char *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+    9 | \"[^\"]+\" return yytext;
+      |        ^~~~~~
+cc  -I .. -I ../../include  -c -o playlist.o playlist.c
+y.tab.c: In function ‘yyparse’:
+y.tab.c:1217:16: warning: implicit declaration of function ‘yylex’ [-Wimplicit-function-declaration]
+y.tab.c:1344:7: warning: implicit declaration of function ‘yyerror’; did you mean ‘yyerrok’? [-Wimplicit-function-declaration]
+ar rv libdb.a scanner.o playlist.o
+ar: creating libdb.a
+a - scanner.o
+a - playlist.o
+make[1]: Leaving directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/mp3/lib/db'
+make --directory=lib/codec
+make[1]: Entering directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/mp3/lib/codec'
+cc  -I .. -I ../../include  -M codec.c |        \
+sed 's,\(codec\.o\) *:,\1 codec.d: ,' > codec.d.tmp
+mv -f codec.d.tmp codec.d
+cc  -I .. -I ../../include  -c -o codec.o codec.c
+ar rv libcodec.a codec.o
+ar: creating libcodec.a
+a - codec.o
+make[1]: Leaving directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/mp3/lib/codec'
+make --directory=lib/ui
+make[1]: Entering directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/mp3/lib/ui'
+cc  -I .. -I ../../include  -M ui.c |   \
+sed 's,\(ui\.o\) *:,\1 ui.d: ,' > ui.d.tmp
+mv -f ui.d.tmp ui.d
+cc  -I .. -I ../../include  -c -o ui.o ui.c
+ar rv libui.a ui.o
+ar: creating libui.a
+a - ui.o
+make[1]: Leaving directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/mp3/lib/ui'
+make --directory=app/player
+make[1]: Entering directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/mp3/app/player'
+cc  -I .. -I ../../include  -M player.c |       \
+sed 's,\(player\.o\) *:,\1 player.d: ,' > player.d.tmp
+mv -f player.d.tmp player.d
+cc  -I .. -I ../../include  -c -o player.o player.c
+player.c: In function ‘main’:
+player.c:10:3: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+   10 |   printf ("Calling codec(): %d", codec ());
+      |   ^~~~~~
+player.c:10:3: warning: incompatible implicit declaration of built-in function ‘printf’
+player.c:5:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    4 | #include "ui/ui.h"
+  +++ |+#include <stdio.h>
+    5 |
+cc   player.o ../../lib/db/libdb.a ../../lib/codec/libcodec.a ../../lib/ui/libui.a   -o player
+make[1]: Leaving directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/mp3/app/player'
+
+$ make TARGET=clean
+make --directory=lib/db clean
+make[1]: Entering directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/ex01/lib/db'
+rm -f scanner.o playlist.o  libdb.a scanner.d playlist.d scanner.c playlist.c playlist.h
+make[1]: Leaving directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/ex01/lib/db'
+make --directory=lib/codec clean
+make[1]: Entering directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/ex01/lib/codec'
+rm -f codec.o  libcodec.a codec.d
+make[1]: Leaving directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/ex01/lib/codec'
+make --directory=lib/ui clean
+make[1]: Entering directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/ex01/lib/ui'
+rm -f ui.o  libui.a ui.d
+make[1]: Leaving directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/ex01/lib/ui'
+make --directory=app/player clean
+make[1]: Entering directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/ex01/app/player'
+rm -f player.o player  player.d
+make[1]: Leaving directory '/mnt/d/workspace/learning-system-programming/codes/make/ch06/ex01/app/player'
+
+
+# ex02
+
+非递归的使用make.
+
+$ make
+cc  -I lib -I include  -c -o lib/codec/codec.o lib/codec/codec.c
+ar rv lib/codec/libcodec.a lib/codec/codec.o
+ar: creating lib/codec/libcodec.a
+a - lib/codec/codec.o
+cc  -I lib -I include  -c -o lib/db/playlist.o lib/db/playlist.c
+y.tab.c: In function ‘yyparse’:
+y.tab.c:1217:16: warning: implicit declaration of function ‘yylex’ [-Wimplicit-function-declaration]
+y.tab.c:1344:7: warning: implicit declaration of function ‘yyerror’; did you mean ‘yyerrok’? [-Wimplicit-function-declaration]
+ar rv lib/db/libdb.a lib/db/playlist.o
+ar: creating lib/db/libdb.a
+a - lib/db/playlist.o
+cc  -I lib -I include  -c -o lib/ui/ui.o lib/ui/ui.c
+ar rv lib/ui/libui.a lib/ui/ui.o
+ar: creating lib/ui/libui.a
+a - lib/ui/ui.o
+cc  -I lib -I include   app/player/player.c lib/codec/libcodec.a lib/db/libdb.a lib/ui/libui.a   -o app/player/player
+
+$ make clean
+rm -f lib/codec/codec.o lib/db/playlist.o lib/ui/ui.o    app/player/player  lib/codec/libcodec.a lib/db/libdb.a lib/ui/libui.a lib/codec/codec.d lib/db/playlist.d lib/ui/ui.d
