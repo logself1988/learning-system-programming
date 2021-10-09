@@ -11,6 +11,7 @@ nav:
       - 'GNU':
         - 'Toolchain': tools/gnu/gnu-toolchain.md
         - 'An Introduction to GCC': tools/gnu/gcc-intro.md
+        - 'glibc': tools/gnu/gnu-glibc.md
         - 'Managing Projects with GNU Make': tools/gnu/gnu-make.md
         - 'Autotools': tools/gnu/gnu-autotools.md
       - 'Programming':
@@ -42,7 +43,8 @@ nav:
       - 'Instructions': assembly/instructions.md
     - C:
       - Home: c/index.md
-      - 'Core': c/clang-core.md
+      - 'Headers': c/c-headers.md
+      - 'Core': c/c-core.md
     - 'C++':
       - Home: cpp/index.md
       - 'Q&A': cpp/QA.md

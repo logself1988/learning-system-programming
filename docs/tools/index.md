@@ -4,6 +4,7 @@
 
 - [GNU toolchain](./gnu/gnu-toolchain.md)
 - [An Introduction to GCC](./gnu/gcc-intro.md)
+- [The GNU C Library Reference Manual](./gnu/gnu-glibc.md)
 - [Managing Projects with GNU Make](./gnu/gnu-make.md)
 - [GNU Autotools](./gnu/gnu-autotools.md)
 
