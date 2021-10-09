@@ -73,9 +73,9 @@
 - 由于内核支持异步中断、抢占和SMP, 必须时刻注意同步与并发;
 - 需要考虑可移植性.
 
-### [> 3 进程管理](/kernel/kernel-dev/kernel-dev1/#3)
-### [> 4 进程调度](/kernel/kernel-dev/kernel-dev1/#4)
-### [> 5 系统调用](/kernel/kernel-dev/kernel-dev1/#5)
+### [> 3 进程管理](/kernel/linux-arch/kernel-dev/kernel-dev1/#3)
+### [> 4 进程调度](/kernel/linux-arch/kernel-dev/kernel-dev1/#4)
+### [> 5 系统调用](/kernel/linux-arch/kernel-dev/kernel-dev1/#5)
 
 ### 6 内核数据结构
 #### 6.1 链表
@@ -243,21 +243,21 @@ rbtree的实现没有提供搜索和插入例程, 这些例程希望由rbtree的
 
 > skip
 
-### [> 7 中断和中断处理](/kernel/kernel-dev/kernel-dev1/#7)
-### [> 8 下半部和推后执行的工作](/kernel/kernel-dev/kernel-dev1/#8)
-### [> 9 内核同步介绍](/kernel/kernel-dev/kernel-dev1/#9)
-### [> 10 内核同步方法](/kernel/kernel-dev/kernel-dev1/#10)
+### [> 7 中断和中断处理](/kernel/linux-arch/kernel-dev/kernel-dev1/#7)
+### [> 8 下半部和推后执行的工作](/kernel/linux-arch/kernel-dev/kernel-dev1/#8)
+### [> 9 内核同步介绍](/kernel/linux-arch/kernel-dev/kernel-dev1/#9)
+### [> 10 内核同步方法](/kernel/linux-arch/kernel-dev/kernel-dev1/#10)
 
-### [> 11 定时器和时间管理](/kernel/kernel-dev/kernel-dev2/#11)
-### [> 12 内存管理](/kernel/kernel-dev/kernel-dev2/#12)
-### [> 13 虚拟文件系统](/kernel/kernel-dev/kernel-dev2/#13)
-### [> 14 块I/O层](/kernel/kernel-dev/kernel-dev2/#14)
-### [> 15 进程地址空间](/kernel/kernel-dev/kernel-dev2/#15)
-### [> 16 页高速缓存和页回写](/kernel/kernel-dev/kernel-dev2/#16)
-### [> 17 设备与模块](/kernel/kernel-dev/kernel-dev2/#17)
-### [> 18 调试](/kernel/kernel-dev/kernel-dev2/#18)
-### [> 19 可移植性](/kernel/kernel-dev/kernel-dev2/#19)
-### [> 20 补丁、开发和社区](/kernel/kernel-dev/kernel-dev2/#20)
+### [> 11 定时器和时间管理](/kernel/linux-arch/kernel-dev/kernel-dev2/#11)
+### [> 12 内存管理](/kernel/linux-arch/kernel-dev/kernel-dev2/#12)
+### [> 13 虚拟文件系统](/kernel/linux-arch/kernel-dev/kernel-dev2/#13)
+### [> 14 块I/O层](/kernel/linux-arch/kernel-dev/kernel-dev2/#14)
+### [> 15 进程地址空间](/kernel/linux-arch/kernel-dev/kernel-dev2/#15)
+### [> 16 页高速缓存和页回写](/kernel/linux-arch/kernel-dev/kernel-dev2/#16)
+### [> 17 设备与模块](/kernel/linux-arch/kernel-dev/kernel-dev2/#17)
+### [> 18 调试](/kernel/linux-arch/kernel-dev/kernel-dev2/#18)
+### [> 19 可移植性](/kernel/linux-arch/kernel-dev/kernel-dev2/#19)
+### [> 20 补丁、开发和社区](/kernel/linux-arch/kernel-dev/kernel-dev2/#20)
 
 ## 总结
 

@@ -1,4 +1,4 @@
-# Notes of Netty in Action
+# Notes of **Netty in Action**
 
 
 Netty高层次的组件图:

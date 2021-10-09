@@ -8,21 +8,18 @@ nav:
     - Home: index.md
     - Tools:
       - Home: tools/index.md
-      - 'GNU toolchain':
-        - Home: tools/gnu/gnu-toolchain.md
+      - 'GNU':
+        - 'Toolchain': tools/gnu/gnu-toolchain.md
         - 'An Introduction to GCC': tools/gnu/gcc-intro.md
-        - 'Managing Projects with GNU Make': tools/gnu/make.md
-        - 'Autotools': tools/gnu/autotools.md
-      - CMake: tools/cmake.md
-      - 'C Tool': tools/c-tool.md
-      - 'C++ Tool': tools/cpp-tool.md
-      - Ninja: tools/ninja.md
-      - LLVM:
-        - 'Home': tools/llvm/llvm.md
-        - 'LLVM Essentials': tools/llvm/llvm-essentials.md
-        - 'LLVM Paper': tools/llvm/llvm-paper.md
-        - 'LLVM Core Libraries': tools/llvm/llvm-core-libraries.md
+        - 'Managing Projects with GNU Make': tools/gnu/gnu-make.md
+        - 'Autotools': tools/gnu/gnu-autotools.md
+      - 'Programming':
+        - 'C Tool': tools/programming/c-tool.md
+        - 'C++ Tool': tools/programming/cpp-tool.md
+        - CMake: tools/programming/cmake.md
+        - Ninja: tools/programming/ninja.md
     - 'Architecture':
+      - Home: architecture/index.md
       - 'System V Application Binary Interface': architecture/ABI.md
       - 'The Linux Kernel CPU Architectures': architecture/linux-cpu-architecture.md
       - 'Intel':
@@ -30,7 +27,13 @@ nav:
         - 'Volume 3A: System Programming Guide': architecture/intel/vol3a-system-programming-guide.md
         - 'Volume 3B: System Programming Guide': architecture/intel/vol3b-system-programming-guide.md
     - Compiler:
+      - 'Home': compiler/index.md
       - 'References': compiler/Engineering-a-Compiler-refs.md
+      - LLVM:
+        - 'Home': compiler/llvm/llvm.md
+        - 'LLVM Paper': compiler/llvm/llvm-paper.md
+        - 'LLVM Essentials': compiler/llvm/llvm-essentials.md
+        - 'LLVM Core Libraries': compiler/llvm/llvm-core-libraries.md
     - Assembly:
       - Home: assembly/index.md
       - 'Professional Assembly Language': assembly/pro-assembly.md
@@ -46,21 +49,25 @@ nav:
       - 'C++ 11': cpp/CXX11-Standard.md
     - 'Kernel':
       - Home: kernel/index.md
-      - 'Linux Referenced Specifications': kernel/linux-ref-spec.md
-      - 'Linux Standard Base': kernel/linux-standard-base.md
-      - 'Linux手册页': kernel/linux-man.md
-      - '系统调用': kernel/syscall.md
-      - 'UNIX环境高级编程': kernel/apue.md
-      - 'Linux编程接口': kernel/tlpi.md
-      - 'Linux内核设计与实现':
-        - 'Home': kernel/kernel-dev/kernel-dev.md
-        - 'Part 1': kernel/kernel-dev/kernel-dev1.md
-        - 'Part 2': kernel/kernel-dev/kernel-dev2.md
-      - '深入Linux内核架构': kernel/linux-arch.md
-      - '网络':
+      - 'Programming':
+        - 'UNIX环境高级编程': kernel/programming/apue.md
+        - 'Linux编程接口': kernel/programming/tlpi.md
+        - '系统调用': kernel/programming/syscall.md
+      - 'Linux Specifications':
+        - 'Linux手册页': kernel/specification/linux-man.md
+        - 'Linux Standard Base': kernel/specification/linux-standard-base.md
+        - 'Linux Referenced Specifications': kernel/specification/linux-ref-spec.md
+      - 'Linux Architecture':
+        - 'Linux内核设计与实现':
+          - 'Home': kernel/linux-arch/kernel-dev/kernel-dev.md
+          - 'Part 1': kernel/linux-arch/kernel-dev/kernel-dev1.md
+          - 'Part 2': kernel/linux-arch/kernel-dev/kernel-dev2.md
+          - '深入Linux内核架构': kernel/linux-arch/linux-arch.md
+          - 'Linux内核设计的艺术': kernel/linux-arch/linux-0.11.md
+      - 'Network':
         - 'TCP/IP': kernel/network/network.md
-        - 'Netty': kernel/network/netty.md
         - 'NS2': kernel/network/ns2.md
+        - 'Netty': kernel/network/netty.md
 
 #theme: readthedocs
 theme:

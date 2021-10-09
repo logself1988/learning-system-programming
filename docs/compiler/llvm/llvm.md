@@ -41,19 +41,19 @@
 ### llvm-project/llvm
 
 --8<--
-tools/llvm/snippets/llvm-code-dir.md
+compiler/llvm/snippets/llvm-code-dir.md
 --8<--
 
 ### LLVM_INSTALL_PATH/lib
 
 --8<--
-tools/llvm/snippets/llvm-lib-dir.md
+compiler/llvm/snippets/llvm-lib-dir.md
 --8<--
 
 ### LLVM_INSTALL_PATH/include
 
 --8<--
-tools/llvm/snippets/llvm-include-dir.md
+compiler/llvm/snippets/llvm-include-dir.md
 --8<--
 
 ## 使用
@@ -88,7 +88,5 @@ tools/llvm/snippets/llvm-include-dir.md
 - [Getting Started/Tutorials](https://llvm.org/docs/GettingStartedTutorials.html): For those new to the LLVM system.
 - [User Guides](https://llvm.org/docs/UserGuides.html): User guides and How-tos.
 - [Reference](https://llvm.org/docs/Reference.html): LLVM and API reference documentation.
-
-####
 
 ## 其他备注

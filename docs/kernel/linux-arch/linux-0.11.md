@@ -1,6 +1,4 @@
-docs\kernel\linux-0.11.md
-
-# Notes of Linux内核设计的艺术
+# Notes of **Linux内核设计的艺术**
 
 
 |时间|内容|

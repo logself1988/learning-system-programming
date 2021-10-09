@@ -1,4 +1,4 @@
-# Notes of LLVM Essentials
+# Notes of **LLVM Essentials**
 
 
 |时间|内容|
@@ -298,7 +298,7 @@ MachineInstr
 MCInst
 ```
 
-TOY machine: 
+TOY machine:
 Simple RISC-type architecture,
 registers r0-r3,
 a stack pointer SP,
