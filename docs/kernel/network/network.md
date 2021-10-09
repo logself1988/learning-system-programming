@@ -819,6 +819,11 @@ $$
 2. 每次收到其他重复的ACK时, 给cwnd增加1个片段, 新的cwnd允许时发送包.
 3. 当收到确认新数据的ACK时, 设置cwnd=ssthresh.(拥塞避免)
 
+### QUIC: Quick UDP Internet Connections
+
+- [QUIC, a multiplexed transport over UDP](https://www.chromium.org/quic)
+
+QUIC was proposed as a draft standard at the IETF in 2015, and HTTP-over-QUIC, a re-write of HTTP on top of QUIC instead of TCP, was proposed a year later, in July 2016.
 
 ## Application Layer
 
@@ -927,3 +932,16 @@ snmp         OBJECT IDENTIFIER ::= { mib-2 11 }
 - [RFC 7530 Network File System (NFS) Version 4 Protocol](https://tools.ietf.org/html/rfc7530): NFS v4<br>
 [RFC 5661 Network File System (NFS) Version 4 Minor Version 1 Protocol](https://tools.ietf.org/html/rfc5661): NFS v4.1<br>
 [RFC 7862 Network File System (NFS) Version 4 Minor Version 2 Protocol](https://tools.ietf.org/html/rfc7862): NFS v4.2
+
+### HTTP: Hypertext Transfer Protocol
+
+- [Hypertext Transfer Protocol at wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- [HTTP 资源与规范 at MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Resources_and_specifications)
+- [Core HTTP Specifications at Github](https://github.com/httpwg/http-core)
+- [The IETF HTTP Working Group](https://httpwg.org/)
+
+HTTP/1 was first documented (as version 1.1) in 1997.
+
+HTTP/2 is a more efficient expression of HTTP's semantics "on the wire", and was published in 2015.
+
+HTTP/3 is the proposed successor to HTTP/2, it uses QUIC instead of TCP for the underlying transport protocol.
