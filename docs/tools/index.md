@@ -12,5 +12,5 @@
 
 - [C工具](./programming/c-tool.md)
 - [C++工具](./programming/cpp-tool.md)
-- [CMake](./programming/cmake.md)
+- [CMake](./programming/cmake/mastering-cmake.md)
 - [The Ninja build system](./programming/ninja.md)

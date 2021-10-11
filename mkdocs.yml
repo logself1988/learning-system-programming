@@ -17,7 +17,7 @@ nav:
       - 'Programming':
         - 'C Tool': tools/programming/c-tool.md
         - 'C++ Tool': tools/programming/cpp-tool.md
-        - CMake: tools/programming/cmake.md
+        - CMake: tools/programming/cmake/mastering-cmake.md
         - Ninja: tools/programming/ninja.md
     - 'Architecture':
       - Home: architecture/index.md
