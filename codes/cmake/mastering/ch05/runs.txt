@@ -1,0 +1,18 @@
+# sys_prop
+
+$ cmake -S sys_prop -B sys_prop-build
+-- HAS_FOOBAR_CALL=FALSE
+-- RUN_RESULT_VAR=0
+-- COMPILE_RESULT_VAR=TRUE
+-- OUTPUT=... .
+-- CMAKE_C_COMPILER_WORKS=TRUE
+
+# symbols
+
+$ cmake -S symbols -B symbols-build
+-- INCLUDES=
+-- LIBS=dl
+-- HAVE_SOCKET=
+-- HAVE_POLL=
+-- SIZEOF_INT=4
+-- SIZEOF_SIZE_T=8

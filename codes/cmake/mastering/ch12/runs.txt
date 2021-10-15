@@ -1,0 +1,43 @@
+# tutorial
+
+$ cmake -S tutorial -B tutorial-build
+
+$ cd tutorial-build/
+zhoujiagen:tutorial-build$ ls
+CMakeCache.txt  CTestTestfile.cmake    Makefile       Testing           cmake_install.cmake
+CMakeFiles      DartConfiguration.tcl  MathFunctions  TutorialConfig.h
+
+$ make
+Scanning dependencies of target MakeTable
+make[2]: Warning: File 'MathFunctions/CMakeFiles/MakeTable.dir/depend.make' has modification time 0.36 s in the future
+[ 14%] Building CXX object MathFunctions/CMakeFiles/MakeTable.dir/MakeTable.cxx.o
+[ 28%] Linking CXX executable MakeTable
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 28%] Built target MakeTable
+make[2]: Warning: File 'MathFunctions/MakeTable' has modification time 0.33 s in the future
+[ 42%] Generating Table.h
+Scanning dependencies of target MathFunctions
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[2]: Warning: File 'MathFunctions/CMakeFiles/MathFunctions.dir/depend.make' has modification time 0.36 s in the future
+[ 57%] Building CXX object MathFunctions/CMakeFiles/MathFunctions.dir/mysqrt.cxx.o
+[ 71%] Linking CXX static library libMathFunctions.a
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[ 71%] Built target MathFunctions
+Scanning dependencies of target Tutorial
+make[2]: Warning: File 'CMakeFiles/Tutorial.dir/depend.make' has modification time 0.36 s in the future
+[ 85%] Building CXX object CMakeFiles/Tutorial.dir/tutorial.cxx.o
+[100%] Linking CXX executable Tutorial
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[100%] Built target Tutorial
+
+$ make test
+Running tests...
+Test project /mnt/d/workspace/learning-system-programming/codes/cmake/mastering/ch12/tutorial-build
+    Start 1: TutorialComp25
+1/2 Test #1: TutorialComp25 ...................   Passed    0.00 sec
+    Start 2: TutorialComp-25
+2/2 Test #2: TutorialComp-25 ..................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.03 sec

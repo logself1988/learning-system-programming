@@ -1,0 +1,28 @@
+# flow_control
+
+$ cmake -S flow_control -B flow_control-build
+
+1
+2
+3
+a=10
+a=9
+a=8
+a=7
+a=6
+a=5
+Found 5
+a=4
+a=3
+a=2
+a=1
+-- The time is now: 1:23:45
+Assertion failed: Unable to find library foo
+
+# modules
+
+$ cmake -S modules -B modules-build
+
+-- CMAKE_MODULE_PATH=
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11")
+-- Found ZLIB!!!
