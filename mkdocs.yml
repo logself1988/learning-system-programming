@@ -11,6 +11,7 @@ nav:
       - 'GNU':
         - 'Toolchain': tools/gnu/gnu-toolchain.md
         - 'An Introduction to GCC': tools/gnu/gcc-intro.md
+        - '深入分析GCC': tools/gnu/gcc-analysis.md
         - 'glibc': tools/gnu/gnu-glibc.md
         - 'Managing Projects with GNU Make': tools/gnu/gnu-make.md
         - 'Autotools': tools/gnu/gnu-autotools.md
