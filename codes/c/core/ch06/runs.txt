@@ -1,0 +1,22 @@
+# point.c
+
+$ ch06/point
+struct {x=50, y=50}
+
+# tree.c, tree2.c
+
+$ ch06/tree
+   1 aid
+   1 all
+   1 come
+   1 for
+   1 good
+   1 is
+   1 men
+   1 now
+   1 of
+   1 party
+   2 the
+   1 their
+   1 time
+   2 to

@@ -1,0 +1,6 @@
+# echo.c
+
+$ ch08/echo
+hello, word
+hello, word
+^C

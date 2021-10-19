@@ -1,0 +1,38 @@
+# swap.c
+
+$ ch05/swap
+before: a=1, b=2
+after: a=2, b=1
+
+# array
+
+$ ch05/array
+12
+_strlen(array)=12
+_strlen(ptr)=14
+_strlen(ptr)=12
+_strlen(ptr)=12
+_strlen(ptr)=11
+
+# ptr.c
+
+$ ch05/ptr
+_strlen("hello, world")=12
+
+
+# arrays.c
+
+$ ch05/arrays
+_day_of_year(2021,10,19)=292
+month=10, day=19
+
+# echo.c
+
+$ ch05/echo hello, world
+hello, world
+
+# func_ptr.c
+
+ch05/func_ptr
+before: 1 6 4 8 3 2
+after: 1 2 3 4 6 8

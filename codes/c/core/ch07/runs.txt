@@ -1,0 +1,4 @@
+# print.c
+
+$ ch07/print
+1 2.000000 hello, world
