@@ -1,0 +1,13 @@
+LD_FLAG = -lfl
+CC_FLAG = -DYYDEBUG=1
+
+TARGET_FLEX_BISON = ex_mysql
+
+$(TARGET_FLEX_BISON): $(TARGET_FLEX_BISON).y $(TARGET_FLEX_BISON).l
+	bison -d $(TARGET_FLEX_BISON).y # *.tab.h, *.tab.c
+	flex -o $(TARGET_FLEX_BISON).lex.c $(TARGET_FLEX_BISON).l 
+	cc $(CC_FLAG) -o $@ $(TARGET_FLEX_BISON).tab.c $(TARGET_FLEX_BISON).lex.c $(LD_FLAG)
+
+clean:
+	# rm $(TARGET_FLEX).c $(TARGET_FLEX) 
+	rm $(TARGET_FLEX_BISON) $(TARGET_FLEX_BISON).lex.c $(TARGET_FLEX_BISON).tab.*

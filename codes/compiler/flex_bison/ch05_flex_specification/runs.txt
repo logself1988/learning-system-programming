@@ -1,0 +1,16 @@
+# ex_wc
+
+start lexing
+12 ab .+
+  .+
+       2       2       6
+
+# ex_yy_decl
+
+ex_yy_decl.c中:
+
+/** The main scanner function which does all the work.
+ */
+YY_DECL
+{
+	yy_state_type yy_current_state;

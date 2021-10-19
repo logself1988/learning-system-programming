@@ -37,6 +37,12 @@ nav:
     - Compiler:
       - 'Home': compiler/index.md
       - 'References': compiler/Engineering-a-Compiler-refs.md
+      - 'Flex and Bison':
+        - 'Tutorial': compiler/flex_bison/flex_and_bison.md
+        - 'Flex Specification': compiler/flex_bison/flex_spec.md
+        - 'Bison Specification': compiler/flex_bison/bison_spec.md
+      - 'ANTLR': compiler/antlr.md
+      - 'JavaCC': compiler/javacc.md
       - LLVM:
         - 'Home': compiler/llvm/llvm.md
         - 'LLVM Paper': compiler/llvm/llvm-paper.md

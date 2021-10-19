@@ -1,0 +1,53 @@
+# ex_wc
+The boy stood on the burning deck
+shelling peanuts by the peck
+       2      12      63
+
+# ex_print_tokens
+12+34
+NUMBER 12
+PLUS
+NUMBER 34
+NEWLINE
+5 6 / 7q
+NUMBER 5
+NUMBER 6
+DIVIDE
+NUMBER 7
+Mystery character q
+NEWLINE
+
+# ex_print_tokens2
+a / 34 + |45
+Mystery character a
+262
+258 = 34
+259
+263
+258 = 45
+264
+
+# ex_calc
+> 2
+yylval = 2
+= 2
+
+> 2 + 3 * 4
+yylval = 2
+yylval = 3
+yylval = 4
+= 14
+
+> a
+Mystery character a
+> 20 - 4 / 2
+yylval = 20
+yylval = 4
+yylval = 2
+= 18
+
+> (2 + 3) * 4
+yylval = 2
+yylval = 3
+yylval = 4
+= 20
