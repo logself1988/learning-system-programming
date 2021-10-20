@@ -1,0 +1,59 @@
+# hello.c
+
+✗ ch07/hello
+hello, world
+
+# ex_atexit.c
+
+✗ ch07/ex_atexit
+main is done
+exit handler: my_exit1
+exit handler: my_exit1
+exit handler: my_exit2
+
+# echoarg.c
+
+✗ ch07/echoarg arg1 TEST foo
+argv[0]: ch07/echoarg
+argv[1]: arg1
+argv[2]: TEST
+argv[3]: foo
+
+# ex_malloc.c
+
+✗ ch07/ex_malloc            
+0x7f9ed1405950
+
+# env.c
+
+✗ ch07/env
+shell: /bin/zsh
+NAME1: VALUE2
+NAME1: (null)
+
+# ex_setjmp.c
+
+cc -g -I../include -L../lib -lapue  ex_setjmp.c   -o ex_setjmp
+✗ ch07/ex_setjmp
+in f1():
+globval=11,autoval=12,regival=13,volaval=14,statval=15
+after longjmp: 
+globval=11,autoval=12,regival=13,volaval=14,statval=15
+
+cc -g -O -I../include -L../lib -lapue  ex_setjmp.c   -o ex_setjmp
+✗ ch07/ex_setjmp
+in f1():
+globval=11,autoval=12,regival=13,volaval=14,statval=15
+after longjmp: 
+globval=11,autoval=2,regival=3,volaval=14,statval=15
+
+# limits.c
+
+✗ ch07/limits
+RLIMIT_AS      (infinite) (infinite) 
+RLIMIT_CORE             0 (infinite) 
+RLIMIT_CPU     (infinite) (infinite) 
+RLIMIT_DATA    (infinite) (infinite) 
+RLIMIT_FSIZE   (infinite) (infinite) 
+RLIMIT_NOFILE       10240 (infinite) 
+RLIMIT_STACK      8388608   67104768 

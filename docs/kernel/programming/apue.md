@@ -1,4 +1,5 @@
-# APUE: Advanced Programming in the UNIX® Environment, UNIX环境高级编程
+# Notes of APUE: Advanced Programming in the UNIX® Environment, UNIX环境高级编程
+
 
 |时间|内容|
 |:------|:----|
@@ -9,49 +10,23 @@
 |20190325|第一遍skimming, 除了:<br>终端IO, 伪终端, 数据库函数库, 与网络打印机通信|
 |20191127|添加资源|
 
+## 术语
 
-## 资源
+<!-- 记录阅读过程中出现的关键字及其简单的解释. -->
 
-- [Advanced Programming in the UNIX® Environment, Third Edition](http://www.apuebook.com/apue3e.html)
-- UNIX Systems Programming: Communication, Concurrency and Threads, 2nd Edition, by Kay Robbins and Steve Robbins
+## 介绍
 
-### [The Open Group Base Specifications Issue 7, 2018 edition](https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/)
+<!-- 描述书籍阐述观点的来源、拟解决的关键性问题和采用的方法论等. -->
 
-> Base Definitions
->> Introduction<br>
->> Conformance<br>
->> Definitions<br>
->> General Concepts<br>
->> File Format Notation<br>
->> Character Set<br>
->> Locale<br>
->> Environment Variables<br>
->> Regular Expressions<br>
->> Directory Structure and Devices<br>
->> General Terminal Interface<br>
->> Utility Conventions<br>
->> Headers<br>
+## 动机
 
-> System Interfaces
->> Introduction<br>
->> General Information<br>
->> System Interfaces
+<!-- 描述阅读书籍的动机, 要达到什么目的等. -->
 
-> Shell & Utilities
->> Introduction<br>
->> Shell Command Language<br>
->> Batch Environment Services<br>
->> Utilities
+## 概念结构
 
-> Rationale
->> Rationale for Base Definitions<br>
->> Rationale for System Interfaces<br>
->> Rationale for Shell & Utilities<br>
->> Portability Considerations (Informative)<br>
->> Subprofiling Considerations (Informative)
+<!-- 描述书籍的行文结构, 核心主题和子主题的内容结构和关系. -->
 
-
-## 问题
+### 问题
 - 信号处理<br>
 信号屏蔽字与可重入函数的相互作用<br>
 信号处理在父子进程和多线程进程中的处理
@@ -64,18 +39,21 @@
 - IO<br>
 如何判断IO函数是阻塞的还是非阻塞的
 
+### ch01 UNIX基础知识
 
-## 限制
+### ch02 UNIX标准及实现
+
+#### 限制
 
 - 编译时限制: 头文件. ISO C: `<limits.h>`
 - 运行时限制: 与文件/目录无关(sysconf()), 与文件/目录有关(pathconf(), fpathconf())
 
-## 选项
+#### 选项
 
 - 编译时选项: `<unistd.h>`
 - 运行时选项: 与文件/目录无关(sysconf()), 与文件/目录有关(pathconf(), fpathconf())
 
-## 系统调用
+#### 系统调用
 
 ``` Shell
 $ uname -a
@@ -88,12 +66,12 @@ Linux gda 4.4.0-143-generic #169~14.04.2-Ubuntu SMP Wed Feb 13 15:00:41 UTC 2019
 ls /usr/share/man/man2 | sed -e s/.2.gz//g | xargs man -s 2 -k  | sort | grep -v 'unimplemented system calls'
 ```
 
-## 权限管理
+#### 权限管理
 
 > TODO(zhoujiagen) 文件访问, 进程权限; after 数据和指令
 
-## 数据
-### 文件IO
+### 数据
+#### ch03 文件IO
 文件描述符
 
 - 打开或创建文件: open(), openat()
@@ -123,7 +101,7 @@ IO操作的杂物箱: ioctl()
 
 /dev/fd目录
 
-### 文件和目录
+#### ch04 文件和目录
 
 文件属性: 数据结构stat
 
@@ -203,7 +181,7 @@ opendir(), fdopendir(), readdir(), rewinddir(), closedir(), telldir(), seekdir()
 - 字符特殊文件和块特殊文件: st_rdev, 实际设备的设备号
 
 
-### 标准IO库
+#### ch05 标准IO库
 
 ``` C
 <stdio.h>
@@ -241,7 +219,7 @@ vscanf(), vfscanf(), vsscanf()
 
 标准IO的替代软件: fio, sfio, ASI, uClibc, Newlib
 
-### 系统数据文件和信息
+#### ch06 系统数据文件和信息
 
 > TODO: 口令文件, 阴影文件, 组文件, 附属组ID, 登录账户记录
 
@@ -272,7 +250,8 @@ gmtime(), localtime(), mktime(), strftime(), strftime_l(), strptime()
 
 环境变量TZ
 
-### 高级IO
+#### ch14 高级IO
+
 非阻塞IO:
 
 ``` C
@@ -316,17 +295,17 @@ readv(), writev()
 mmap(), mprotect(), msync(), munmap()
 ```
 
-### 终端IO
+#### ch18 终端IO
 
 > TODO(zhoujiagen) at last
 
-### 伪终端
+#### ch19 伪终端
 
 > TODO(zhoujiagen) at last
 
-## 指令
+### 指令
 
-### 进程环境
+#### ch07 进程环境
 
 main(): exec()
 
@@ -358,7 +337,7 @@ C程序存储空间布局: 正文段、数据段、未初始化数据段(bss段)
 
 进程资源限制: getrlimit(), setrlimit()
 
-### 进程控制
+#### ch08 进程控制
 
 获取进程相关ID: getpid, getppid, getuid, geteuid, getgid, getegid
 
@@ -438,7 +417,7 @@ times()
 ```
 
 
-### 进程关系
+#### ch09 进程关系
 
 终端登录, 网络登录
 
@@ -460,7 +439,7 @@ tcgetpgrp(), tcsetpgrp(), tcgetsid()
 
 登录shell, 从登录shell启动的进程
 
-### 信号
+#### ch10 信号
 
 > 需要多读几遍.
 
@@ -500,7 +479,7 @@ sigqueue()
 
 信号名和编号
 
-### 线程
+#### ch11 线程
 
 POSIX线程/pthread
 
@@ -513,9 +492,9 @@ POSIX线程/pthread
 - 取消线程: pthread_cancel()
 - 线程清理处理程序: pthread_cleanup_push(), pthread_cleanup_pop()
 
-#### 线程同步
+##### 线程同步
 
-##### 互斥量(mutex)
+###### 互斥量(mutex)
 
 ``` C
 pthread_mutex_t             // 互斥锁类型
@@ -528,7 +507,7 @@ pthread_mutex_unlock()      // 释放
 pthread_mutex_timedlock()   // 指定线程阻塞时间
 ```
 
-##### 读写锁(reader-writer lock)
+###### 读写锁(reader-writer lock)
 
 ``` C
 pthread_rwlock_t              // 读写锁类型
@@ -543,7 +522,7 @@ pthread_rwlock_timedrdlock()  // 申请读, 带时间
 pthread_rwlock_timedwrlock()  // 申请写, 带时间
 ```
 
-##### 条件变量(condition variable)
+###### 条件变量(condition variable)
 
 ``` C
 pthread_cond_t                  // 条件变量类型
@@ -556,7 +535,7 @@ pthread_cond_signal()           // 唤醒至少一个
 pthread_cond_broadcast()        // 唤醒所有
 ```
 
-##### 自旋锁
+###### 自旋锁
 
 不是通过休眠阻塞, 而是在获取锁之前一直处于忙等(自旋)阻塞状态
 
@@ -568,7 +547,7 @@ pthread_spin_trylock()
 pthread_spin_unlock()
 ```
 
-##### 屏障(barrier)
+###### 屏障(barrier)
 
 pthread_join()是一种屏障
 
@@ -578,7 +557,7 @@ pthread_barrier_destroy()
 pthread_barrier_wait()
 ```
 
-#### 线程与信号
+##### 线程与信号
 
 信号处理器是进程级的, 线程级的信号屏蔽.
 
@@ -589,7 +568,7 @@ pthread_kill()    // 产生信号
 pthread_sigmask() // 屏蔽信号
 ```
 
-#### 线程控制
+#### ch12 线程控制
 
 线程属性:
 
@@ -667,7 +646,7 @@ pthread_barrierattr_setpshared()
 ftrylockfile(), flockfile(), funlockfile()
 ```
 
-### 守护进程
+#### ch13 守护进程
 
 编写守护进程的基本规则:
 
@@ -700,9 +679,9 @@ openlog(), syslog(), closelog(), setlogmask()
 - 配置文件变更: 捕获SIGHUP信号后重新读取.
 
 
-## 通信
-### 进程间通信
-#### 管道
+### 通信
+#### ch15 进程间通信
+##### 管道
 
 历史上是半双工的, 只能在具有公共祖先的两个进程之间使用
 
@@ -712,7 +691,7 @@ pipe()
 
 PIPE_BUF: 内核的管道缓冲区大小
 
-#### FIFO: 命名管道
+##### FIFO: 命名管道
 
 通过FIFO, 不相关的进程也能交换数据.
 S_ISFIFO宏: 测试文件是否是FIFO类型
@@ -721,7 +700,7 @@ S_ISFIFO宏: 测试文件是否是FIFO类型
 mkfifo(), mkfifoat()
 ```
 
-#### XSI IPC
+##### XSI IPC
 
 三种XSI IPC(结构): 消息队列、信号量、共享内存
 IPC结构在系统范围内起作用, 没有引用计数; 在文件系统中没有名字.
@@ -742,7 +721,7 @@ semctl()
 shmctl()
 ```
 
-##### 消息队列
+###### 消息队列
 
 存储在内核中的消息链接表
 数据结构: 队列当前状态msqid_ds
@@ -754,7 +733,7 @@ msgsnd()
 msgrcv()
 ```
 
-##### 信号量
+###### 信号量
 
 是一个计数器, 用于为多个进程提供对共享数据对象的访问.
 数据结构: semid_ds, 由内核维护
@@ -765,7 +744,7 @@ semctl()
 semop()
 ```
 
-##### 共享内存
+###### 共享内存
 
 允许两个或多个进程共享一个给定的存储区(内存的匿名段).
 数据结构: shmid_ds, 由内核维护
@@ -777,7 +756,7 @@ shmat()
 shmdt()
 ```
 
-#### POSIX信号量
+##### POSIX信号量
 
 两种形式: 命名的和未命名的
 
@@ -794,14 +773,14 @@ sem_timedwait()
 sem_post()
 ```
 
-### 高级进程间通信
+#### ch17 高级进程间通信
 
 UNIX域套接字: socketpair()
 
 命名UNIX域套接字
 数据结构: sockaddr_un.sun_path
 
-### 网络IPC: 套接字
+#### ch16 网络IPC: 套接字
 
 TCP/IP协议栈
 
@@ -865,7 +844,7 @@ setsockopt(), getsockopt()
 
 带外数据(out-of-band data): TCP支持的紧急数据(urgent data); sockatmark()
 
-#### 非阻塞和异步IO
+##### 非阻塞和异步IO
 
 send(), recv()指定套接字非阻塞模式
 
@@ -875,3 +854,20 @@ send(), recv()指定套接字非阻塞模式
 fcntl(F_SETOWN), ioctl(FIOSETOWN)/ioctl(SIOCSPGRP)
 - (2) 通知套接字当IO操作不会阻塞时发信号<br>
 fcntl(F_SETFL, O_ASYNC), ioctl(FIOASYNC)
+
+
+## 总结
+
+<!-- 概要记录书籍中如何解决关键性问题的. -->
+
+## 应用
+
+<!-- 记录如何使用书籍中方法论解决你自己的问题. -->
+
+## 文献引用
+
+<!-- 记录相关的和进一步阅读资料: 文献、网页链接等. -->
+
+- - [Advanced Programming in the UNIX® Environment, Third Edition](http://www.apuebook.com/apue3e.html)
+
+## 其他备注
