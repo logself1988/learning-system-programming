@@ -202,7 +202,7 @@ lexer.o: include/lexer.h
 使用了内建规则:
 
 ``` Makefile
-$ make --print-data-base              # 查看默认规则和变量
+$ make --print-data-base              # 查看内建规则和变量
 # ...
 %.o: %.c
 	$(COMPILE.c) $(OUTPUT_OPTION) $<
@@ -313,14 +313,14 @@ rm foo.c foo.o
 
 内建规则有标准的结构, 便于定制. 定制是通过规则中使用的变量控制的.
 
-例: 内置规则
+例: 内建规则
 
 ``` Makefile
 %.o: %.c
   $(COMPILE.c) $(OUTPUT_OPTION) $<
 ```
 
-例: 定制内置规则
+例: 定制内建规则
 
 ``` Makefile
 COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c

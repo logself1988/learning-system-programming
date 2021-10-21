@@ -1,8 +1,6 @@
 include ../common.mk
 
-vpath %.h ../include
-
-SOURCES = error.c
+SOURCES = error.c prexit.c
 OBJECTS = $(subst .c,.o,$(SOURCES))
 LIB = libapue.a
 
