@@ -137,6 +137,51 @@
 
 <!-- 记录如何使用书籍中方法论解决你自己的问题. -->
 
+### 编译
+
+version: 9.3.0
+
+1. 下载依赖
+
+``` shell
+./contrib/download_prerequisites
+
+tar jxvf gmp-6.1.0.tar.bz2
+cd gmp-6.1.0
+./configure --prefix=/usr/local/gmp
+make && sudo make install
+cd ..
+
+tar jxvf mpfr-3.1.4.tar.bz2
+cd mpfr-3.1.4
+./configure --prefix=/usr/local/mpfr --with-gmp=/usr/local/gmp
+make -j2 && sudo make install
+cd ..
+
+tar zxvf mpc-1.0.3.tar.gz
+cd mpc-1.0.3
+./configure --prefix=/usr/local/mpc --with-gmp=/usr/local/gmp --with-mpfr=/usr/local/mpfr
+make -j2 && sudo make install
+cd ..
+
+tar jxvf isl-0.18.tar.bz2
+cd isl-0.18
+./configure --prefix=/usr/local/isl --with-gmp-prefix=/usr/local/gmp
+make -j2 && sudo make install
+cd ..
+```
+
+2. 编译和安装
+
+``` shell
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/mpc/lib:/usr/local/gmp/lib:/usr/local/mpfr/lib/:/usr/local/isl/lib
+
+./configure CFLAGS="-w -g -O0" --prefix=/home/zhoujiagen/gnu/gcc-9.3.0/bin --with-gmp=/usr/local/gmp/ --with-mpfr=/usr/local/mpfr/ --with-mpc=/usr/local/mpc/ --with-isl=/usr/local/isl --disable-multilib
+make -j2
+make install
+```
+
+
 ## 文献引用
 
 <!-- 记录相关的和进一步阅读资料: 文献、网页链接等. -->
