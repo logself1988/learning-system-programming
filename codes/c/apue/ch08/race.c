@@ -7,12 +7,20 @@ main (int argc, char *argv[])
 {
   pid_t pid;
 
+  TELL_WAIT ();
+
   if ((pid = fork ()) < 0)
     err_sys ("fork error");
   else if (pid == 0)
-    charatatime ("output from child\n");
+    {
+      WAIT_PARENT (); // parent go first
+      charatatime ("output from child\n");
+    }
   else
-    charatatime ("output from parent\n");
+    {
+      charatatime ("output from parent\n");
+      TELL_CHILD (pid);
+    }
 
   exit (0);
 }

@@ -1,5 +1,4 @@
-TARGETS = lib ch07 ch08
-TARGETS = lib ch08
+TARGETS = lib ch07 ch08 ch10 ch11
 
 all: $(TARGETS)
 	for t in $(TARGETS); do \
