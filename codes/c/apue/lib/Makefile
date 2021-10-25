@@ -1,6 +1,6 @@
 include ../common.mk
 
-SOURCES = error.c print.c sync.c
+SOURCES = error.c print.c sync.c thread.c
 OBJECTS = $(subst .c,.o,$(SOURCES))
 LIB = libapue.a
 
