@@ -1,4 +1,5 @@
 #include "apue.h"
+#include <signal.h>
 
 static void sig_usr (int);
 
