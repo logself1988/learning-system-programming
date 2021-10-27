@@ -4,7 +4,7 @@ Code of Advanced Programming in the UNIX® Environment.
 
 Code Style: GNU
 
-file name of example for function `xxx`: `ex_xxx.c`
+file name of example for function or data structure `xxx`: `ex_xxx.c`
 
 VSCode Extensions:
 

@@ -1,4 +1,5 @@
 #include "apue.h"
+#include "apue_sync.h"
 
 static void charatatime (char *);
 

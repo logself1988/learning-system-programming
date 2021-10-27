@@ -41,7 +41,7 @@
 |header|description|source|
 |:---|:---|:---|
 |`<aio.h>`          | 异步IO                 ||
-|`<arpa/inet.h>`    | 因特网定义             ||
+|`<arpa/inet.h>`    | 因特网操作定义         ||
 |`<assert.h>`       | 验证程序断言           |C标准库|
 |`<complex.h>`      | 复数算术               |C标准库|
 |`<cpio.h>`         | cpio归档值[^1]         ||

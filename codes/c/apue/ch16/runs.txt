@@ -1,0 +1,14 @@
+# ex_addrinfo.c
+
+$ ch16/ex_addrinfo localhost ""
+servent: name=tcpmux, port=256, protocol=tcp
+flags canon family inet type stream protocol TCP
+        host localhost address 127.0.0.1 port 0
+flags canon family inet type datagram protocol UDP
+        host - address 127.0.0.1 port 0
+flags canon family inet type raw protocol default
+        host - address 127.0.0.1 port 0
+$ ch16/ex_addrinfo localhost tcpmux
+servent: name=tcpmux, port=256, protocol=tcp
+flags canon family inet type stream protocol TCP
+        host localhost address 127.0.0.1 port 1

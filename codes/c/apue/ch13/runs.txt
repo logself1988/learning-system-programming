@@ -1,0 +1,15 @@
+# singleton.c
+
+$ sudo ch13/singleton &
+[1] 10132
+$ not running
+
+$ sudo ch13/singleton &
+[2] 10134
+$ already running
+
+[2]+  Exit 1                  sudo ch13/singleton
+$ ps -ef | grep singleton
+root     10132   265  0 16:51 pts/2    00:00:00 sudo ch13/singleton
+root     10133 10132  0 16:51 pts/2    00:00:00 ch13/singleton
+

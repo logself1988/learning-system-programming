@@ -71,7 +71,7 @@ ls /usr/share/man/man2 | sed -e s/.2.gz//g | xargs man -s 2 -k  | sort | grep -v
 > TODO(zhoujiagen) 文件访问, 进程权限; after 数据和指令
 
 ### 数据
-#### ch03 文件IO
+### ch03 文件IO
 文件描述符
 
 - 打开或创建文件: open(), openat()
@@ -101,7 +101,7 @@ IO操作的杂物箱: ioctl()
 
 /dev/fd目录
 
-#### ch04 文件和目录
+### ch04 文件和目录
 
 文件属性: 数据结构stat
 
@@ -181,7 +181,7 @@ opendir(), fdopendir(), readdir(), rewinddir(), closedir(), telldir(), seekdir()
 - 字符特殊文件和块特殊文件: st_rdev, 实际设备的设备号
 
 
-#### ch05 标准IO库
+### ch05 标准IO库
 
 ``` C
 <stdio.h>
@@ -219,7 +219,7 @@ vscanf(), vfscanf(), vsscanf()
 
 标准IO的替代软件: fio, sfio, ASI, uClibc, Newlib
 
-#### ch06 系统数据文件和信息
+### ch06 系统数据文件和信息
 
 > TODO: 口令文件, 阴影文件, 组文件, 附属组ID, 登录账户记录
 
@@ -250,7 +250,7 @@ gmtime(), localtime(), mktime(), strftime(), strftime_l(), strptime()
 
 环境变量TZ
 
-#### ch14 高级IO
+### ch14 高级IO
 
 非阻塞IO:
 
@@ -295,17 +295,17 @@ readv(), writev()
 mmap(), mprotect(), msync(), munmap()
 ```
 
-#### ch18 终端IO
+### ch18 终端IO
 
 > TODO(zhoujiagen) at last
 
-#### ch19 伪终端
+### ch19 伪终端
 
 > TODO(zhoujiagen) at last
 
 ### 指令
 
-#### ch07 进程环境
+### ch07 进程环境
 
 main(): exec()
 
@@ -337,7 +337,7 @@ C程序存储空间布局: 正文段、数据段、未初始化数据段(bss段)
 
 进程资源限制: getrlimit(), setrlimit()
 
-#### ch08 进程控制
+### ch08 进程控制
 
 获取进程相关ID: getpid, getppid, getuid, geteuid, getgid, getegid
 
@@ -417,7 +417,7 @@ times()
 ```
 
 
-#### ch09 进程关系
+### ch09 进程关系
 
 终端登录, 网络登录
 
@@ -439,7 +439,7 @@ tcgetpgrp(), tcsetpgrp(), tcgetsid()
 
 登录shell, 从登录shell启动的进程
 
-#### ch10 信号
+### ch10 信号
 
 > 需要多读几遍.
 
@@ -479,7 +479,7 @@ sigqueue()
 
 信号名和编号
 
-#### ch11 线程
+### ch11 线程
 
 POSIX线程/pthread
 
@@ -568,7 +568,7 @@ pthread_kill()    // 产生信号
 pthread_sigmask() // 屏蔽信号
 ```
 
-#### ch12 线程控制
+### ch12 线程控制
 
 线程属性:
 
@@ -646,7 +646,7 @@ pthread_barrierattr_setpshared()
 ftrylockfile(), flockfile(), funlockfile()
 ```
 
-#### ch13 守护进程
+### ch13 守护进程
 
 编写守护进程的基本规则:
 
@@ -680,7 +680,7 @@ openlog(), syslog(), closelog(), setlogmask()
 
 
 ### 通信
-#### ch15 进程间通信
+### ch15 进程间通信
 ##### 管道
 
 历史上是半双工的, 只能在具有公共祖先的两个进程之间使用
@@ -773,28 +773,51 @@ sem_timedwait()
 sem_post()
 ```
 
-#### ch17 高级进程间通信
+### ch16 网络IPC: 套接字
 
-UNIX域套接字: socketpair()
+TCP/IP协议栈.
 
-命名UNIX域套接字
-数据结构: sockaddr_un.sun_path
-
-#### ch16 网络IPC: 套接字
-
-TCP/IP协议栈
-
-套接字描述符
+#### 套接字描述符
 
 ``` C
-socket(domain, type, protocol)
+// sys/socket.h
+
+int socket(int domain, int type, int protocol);
+int shutdown(int sockfd, int how);
 ```
 
-- domain: AF_INET, AF_INET6, AF_UNIX, AF_UPSPEC
-- type: SOCK_DGRAM, SOCK_RAW, SOCK_SEQPACKET, SOCK_STREAM
-- protocol: IPPROTO_IP, IPPROTO_IPV6, IPPROTO_ICMP, IPPROTO_RAW, IPPROTO_TCP, IPPROTO_UDP
+`domain`:
 
-文件描述符函数: shutdown()
+- `AF_INET`: IPv4因特网域
+- `AF_INET6`: IPv6因特网域
+- `AF_UNIX`: UNIX域
+- `AF_UPSPEC`: 未指定
+
+`type`:
+
+- `SOCK_DGRAM`: 固定长度的、无连接的、不可靠的报文传递
+- `SOCK_RAW`: IP协议的数据报接口
+- `SOCK_SEQPACKET`: 固定长度的、有序的、可靠的、面向连接的报文传递
+- `SOCK_STREAM`: 有序的、可靠的、双向的、面向连接的字节流
+
+`protocol`:
+
+- `IPPROTO_IP`: IPv4网际协议
+- `IPPROTO_IPV6`: IPv6网际协议
+- `IPPROTO_ICMP`: Internet Control Message Protocol, 因特网控制报文协议
+- `IPPROTO_RAW`: 原始IP数据包协议
+- `IPPROTO_TCP`: Transmission Control Protocol, 传输控制协议
+- `IPPROTO_UDP`: User Datagram Protocol, 用户数据报协议
+
+`sockfd`: 套接字文件描述符.
+
+`how`:
+
+- `SHUT_RD`: 关闭读端
+- `SHUT_WR`: 关闭写端
+- `SHUT_RDWR`: 关闭读写端
+
+#### 寻址
 
 字节序
 
@@ -802,39 +825,262 @@ socket(domain, type, protocol)
 - TCP/IP协议栈使用大端字节序.
 
 ``` C
-<apra/inet.h> // internet操作的定义
-htonl()       // host long
-htons()       // host short
-ntohl()       // network long
-htohs()       // network short
+// apra/inet.h
+
+uint32_t htonl(uint32_t hostint32); // 放回网络字节序表示的32位整数
+uint16_t htons(uint16_t hostint16); // 放回网络字节序表示的16位整数
+uint32_t ntohl(uint32_t netint32);  // 放回主机字节序表示的32位整数
+uint16_t ntohs(uint16_t netint16);  // 放回主机字节序表示的16位整数
 ```
 
-地址格式: `<netinet/in.h>`
+- `h`: 表示主机字节序
+- `n`: 表示网络字节序
 
-- 通用的地址格式: sockaddr
-- AF_INET: sockaddr_in
-- AF_INET6: sockaddr_in6
-- 二进制地址格式与点分十进制表示间转换: inet_ntop(), inet_pton()
+地址格式
+
+套接字函数使用的通用地址结构:
+
+``` C
+// sys/socket.h
+
+struct sockaddr {
+  sa_family_t  sa_family; // Address family.
+  char         sa_data[]; // Socket address (variable-length data).
+  ...
+};
+```
+
+因特网地址:
+
+``` C
+// netinet/in.h
+
+struct in_addr {
+  in_addr_t  s_addr;
+  ...
+};
+
+struct sockaddr_in {
+  sa_family_t     sin_family;   // AF_INET.
+  in_port_t       sin_port;     // Port number.
+  struct in_addr  sin_addr;     // IP address.
+  ...
+};
+
+struct in6_addr {
+  uint8_t s6_addr[16];
+  ...
+};
+
+struct sockaddr_in6 {
+  sa_family_t      sin6_family;   // AF_INET6.
+  in_port_t        sin6_port;     // Port number.
+  uint32_t         sin6_flowinfo; // IPv6 traffic class and flow information.
+  struct in6_addr  sin6_addr;     // IPv6 address.
+  uint32_t         sin6_scope_id; // Set of interfaces for a scope.
+  ...
+};
+```
+
+二进制地址格式与点分十进制字符表示(a.b.c.d)之间的相互转换:
+
+``` C
+// arpa/inet.h
+
+in_addr_t inet_addr(const char *);
+char *inet_ntoa(struct in_addr);
+
+// domain仅支持AF_INET, AF_INET6
+// 将网络字节序的二进制地址转完成文本字符串格式
+const char *inet_ntop(int domain, const void *restrict addr, char *restrict str, socklen_t size);
+// 将文本字符串格式转换成网络字节序的二进制地址
+int inet_pton(int domain, const char *restrict str, void *restrict addr);
+```
 
 地址查询
 
-- 数据结构hostent, gethostent(), sethostent(), endhostent()
-- 数据结构netent, getnetbyaddr(), getnetbyname()
-- 数据结构protoent, getprotobyname(), getprotobynumber(), getprotoent(), setprotoent(), endprotoent()
-- 数据结构servent, getservbyname(), getserbyport(), getservent(), setservent(), endservent()
-- 数据结构addrinfo, getaddrinfo(), freeaddrinfo(), gai_strerror()
-- getnameinfo()
+获取给定计算机系统的主机信息:
 
-将套接字与地址关联: bind(), getsockname(), getpeername()
+``` C
+// netdb.h
 
-建立连接: connect(), listen(), accept()
+struct hostent {
+  char   *h_name;       // Official name of the host.
+  char  **h_aliases;    // A pointer to an array of pointers to
+                        // alternative host names, terminated by a
+                        // null pointer.
+  int     h_addrtype;   // Address type.
+  int     h_length;     // The length, in bytes, of the address.
+  char  **h_addr_list;  // A pointer to an array of pointers to network
+                        // addresses (in network byte order) for the host,
+                        // terminated by a null pointer.
+  ...
+};
 
-数据传输
+struct hostent   *gethostent(void);
+void              sethostent(int);
+struct hostent   *gethostent(void);
+void              endhostent(void);
+```
+
+获取网络信息:
+
+``` C
+// netdb.h
+
+struct netent {
+  char     *n_name;      // Official, fully-qualified (including the domain) name of the host.
+  char    **n_aliases;   // A pointer to an array of pointers to
+                         // alternative network names, terminated by a
+                         // null pointer.
+  int       n_addrtype;  // The address type of the network.
+  uint32_t  n_net;       // The network number, in host byte order.
+  ...
+};
+
+struct netent    *getnetent(void);
+struct netent    *getnetbyaddr(uint32_t, int);
+struct netent    *getnetbyname(const char *);
+void              setnetent(int);
+struct netent    *getnetent(void);
+void              endnetent(void);
+```
+
+获取协议信息:
+
+``` C
+// netdb.h
+
+struct protoent {
+  char   *p_name;     // Official name of the protocol.
+  char  **p_aliases;  // A pointer to an array of pointers to
+                      // alternative protocol names, terminated by
+                      // a null pointer.
+  int     p_proto;    // The protocol number.
+  ...
+};
+
+struct protoent  *getprotoent(void);
+struct protoent  *getprotobyname(const char *);
+struct protoent  *getprotobynumber(int);
+void              setprotoent(int);
+void              endprotoent(void);
+```
+
+获取服务信息: 服务是由地址的端口号部分表示的
+
+``` C
+// netdb.h
+
+struct servent {
+  char   *s_name;    // Official name of the service.
+  char  **s_aliases; // A pointer to an array of pointers to
+                     // alternative service names, terminated by
+                     // a null pointer.
+  int     s_port;    // A value which, when converted to uint16_t,
+                     // yields the port number in network byte order
+                     // at which the service resides.
+  char   *s_proto;   // The name of the protocol to use when
+                     // contacting the service.   
+};
+
+struct servent   *getservent(void);
+struct servent   *getservbyname(const char *, const char *);
+struct servent   *getservbyport(int, const char *);
+void              setservent(int);
+void              endservent(void);
+```
+
+将主机名和服务命映射到一个地址``:
+
+``` C
+// netdb.h
+
+struct addrinfo {
+  int               ai_flags;      // Input flags.
+  int               ai_family;     // Address family of socket.
+  int               ai_socktype;   // Socket type.
+  int               ai_protocol;   // Protocol of socket.
+  socklen_t         ai_addrlen;    // Length of socket address.
+  struct sockaddr  *ai_addr;       // Socket address of socket.
+  char             *ai_canonname;  // Canonical name of service location.
+  struct   *ai_next;       // Pointer to next in list.
+};
+
+int               get(const char *restrict host, const char *restrict service,
+                      const struct  *restrict hint,
+                      struct  **restrict res);
+void              freeaddrinfo(struct addrinfo *ai);
+```
+
+将地址`sockaddr`转换为主机名和服务名:
+
+``` C
+#include <sys/socket.h>
+#include <netdb.h>
+
+int getnameinfo(const struct sockaddr *restrict sa, socklen_t salen,
+       char *restrict node, socklen_t nodelen, char *restrict service,
+       socklen_t servicelen, int flags);
+```
+
+将套接字与地址关联:
+
+``` C
+// sys/socket.h
+
+// 关联地址和套接字
+int     bind(int sockfd, const struct sockaddr *addr, socklen_t len);
+// 发现绑定到套接字上的地址
+int     getsockname(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict alenp);
+// 套接字已和对端连接后, 找到对方的地址
+int     getpeername(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict alenp);
+```
+
+#### 建立连接
+
+
+``` C
+// sys/socket.h
+
+// 服务端宣告愿意接受连接请求
+int     listen(int sockfd, int backlog);
+// 服务端获取连接请求并建立连接
+int     accept(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict len);
+
+// 客户端建立服务端连接
+int     connect(int sockfd, const struct sockaddr * addr, socklen_t len);
+
+```
+
+#### 数据传输
+
+``` C
+// sys/socket.h
+
+struct msghdr {
+  void          *msg_name;        // Optional address.
+  socklen_t      msg_namelen;     // Size of address.
+  struct iovec  *msg_iov;         // Scatter/gather array.
+  int            msg_iovlen;      // Members in msg_iov.
+  void          *msg_control;     // Ancillary data; see below.
+  socklen_t      msg_controllen;  // Ancillary data buffer len.
+  int            msg_flags;       // Flags on received message.
+};
+
+ssize_t send(int sockfd, const void *buf, size_t nbytes, int flags);
+ssize_t sendmsg(int sockfd, const struct msghdr *msg, int flags);
+ssize_t sendto(int sockfd, const void *buf, size_t nbytes, int flags, const struct sockaddr *destaddr, socklen_t destlen);
+
+ssize_t recv(int sockfd, void *buf, size_t nbytes, int flags);
+ssize_t recvfrom(int sockfd, void *restrict buf, size_t len, int flags, struct sockaddr *restrict addr, socklen_t *restrict addrlen);
+ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);
+```
 
 - send(), sendto(), sendmsg(), 数据结构msghdr
 - recv(), recvfrom(), recvmsg()
 
-套接字选项
+#### 套接字选项
 
 三种选项: 通用选项, 在套接字层次管理的选项, 特定于某协议的选项
 
@@ -842,7 +1088,9 @@ htohs()       // network short
 setsockopt(), getsockopt()
 ```
 
-带外数据(out-of-band data): TCP支持的紧急数据(urgent data); sockatmark()
+#### 带外数据(out-of-band data)
+
+TCP支持的紧急数据(urgent data); sockatmark()
 
 ##### 非阻塞和异步IO
 
@@ -855,6 +1103,12 @@ fcntl(F_SETOWN), ioctl(FIOSETOWN)/ioctl(SIOCSPGRP)
 - (2) 通知套接字当IO操作不会阻塞时发信号<br>
 fcntl(F_SETFL, O_ASYNC), ioctl(FIOASYNC)
 
+### ch17 高级进程间通信
+
+UNIX域套接字: socketpair()
+
+命名UNIX域套接字
+数据结构: sockaddr_un.sun_path
 
 ## 总结
 
