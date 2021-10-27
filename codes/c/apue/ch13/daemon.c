@@ -4,10 +4,14 @@
 int
 main (int argc, char *argv[])
 {
-  char *cmd = "sleep 10 && uptime && echo \"xyz\"";
-
+  // char *cmd = "sleep 10 && uptime && echo \"xyz\"";
+  char *cmd = "demo daemon";
   daemonize (cmd);
 
-  sleep (15);
+  for (;;)
+    {
+      printf (".");
+      sleep (2);
+    }
   exit (0);
 }

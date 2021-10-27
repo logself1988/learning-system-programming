@@ -1,6 +1,6 @@
 include ../common.mk
 
-TARGET = daemon ex_syslog singleton reread_m
+TARGET = daemon ex_syslog singleton reread
 
 all: $(TARGET)
 
