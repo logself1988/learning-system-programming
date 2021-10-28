@@ -991,7 +991,7 @@ void              setservent(int);
 void              endservent(void);
 ```
 
-将主机名和服务命映射到一个地址``:
+将主机名和服务命映射到一个地址`addrinfo`:
 
 ``` C
 // netdb.h
@@ -1004,7 +1004,7 @@ struct addrinfo {
   socklen_t         ai_addrlen;    // Length of socket address.
   struct sockaddr  *ai_addr;       // Socket address of socket.
   char             *ai_canonname;  // Canonical name of service location.
-  struct   *ai_next;       // Pointer to next in list.
+  struct   *ai_next;               // Pointer to next in list.
 };
 
 int               get(const char *restrict host, const char *restrict service,
@@ -1077,31 +1077,47 @@ ssize_t recvfrom(int sockfd, void *restrict buf, size_t len, int flags, struct s
 ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);
 ```
 
-- send(), sendto(), sendmsg(), 数据结构msghdr
-- recv(), recvfrom(), recvmsg()
-
 #### 套接字选项
 
 三种选项: 通用选项, 在套接字层次管理的选项, 特定于某协议的选项
 
 ``` C
-setsockopt(), getsockopt()
+// sys/socket.h
+
+int setsockopt(int socket, int level, int option_name,
+       const void *option_value, socklen_t option_len);
+int getsockopt(int socket, int level, int option_name,
+       void *restrict option_value, socklen_t *restrict option_len);
 ```
+
+- `level`: `SOL_SOCKET`, `IPPROTO_TCP`等;
+- `option_name`: 定义在`<sys/socket.h>`中的`SO_ACCEPTCONN`等;
+- `option_value`: 根据选项的不同指向一个数据结构或者一个整数.
 
 #### 带外数据(out-of-band data)
 
-TCP支持的紧急数据(urgent data); sockatmark()
+TCP支持的紧急数据(urgent data).
 
 ##### 非阻塞和异步IO
 
-send(), recv()指定套接字非阻塞模式
+在套接字非阻塞模式下, `send()`和`recv()`函数分别在套接字输出队列没有足够空间来发送消息和没有数据可用时, 不会阻塞而是会失败, 将`errno`设置为`EWOULDBLOCK`或`EAGAIN`. 在这种情况下, 可以使用`poll`或`select`来判断是否接收或者传输数据.
 
 启用异步IO:
 
-- (1) 建立套接字所有权, 这样信号可以呗传递到合适的进程 <br>
-fcntl(F_SETOWN), ioctl(FIOSETOWN)/ioctl(SIOCSPGRP)
-- (2) 通知套接字当IO操作不会阻塞时发信号<br>
-fcntl(F_SETFL, O_ASYNC), ioctl(FIOASYNC)
+- (1) 建立套接字所有权, 这样信号可以被传递到合适的进程
+
+``` C
+fcntl(F_SETOWN)
+ioctl(FIOSETOWN)
+ioctl(SIOCSPGRP)
+```
+
+- (2) 通知套接字当IO操作不会阻塞时发信号
+
+``` C
+fcntl(F_SETFL, O_ASYNC)
+ioctl(FIOASYNC)
+```
 
 ### ch17 高级进程间通信
 

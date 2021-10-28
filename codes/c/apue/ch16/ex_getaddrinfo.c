@@ -7,7 +7,7 @@
 void
 print_family (struct addrinfo *aip)
 {
-  printf (" family ");
+  printf (" family=");
   switch (aip->ai_family)
     {
     case AF_INET:
@@ -30,7 +30,7 @@ print_family (struct addrinfo *aip)
 void
 print_type (struct addrinfo *aip)
 {
-  printf (" type ");
+  printf (" type=");
   switch (aip->ai_socktype)
     {
     case SOCK_STREAM:
@@ -53,7 +53,7 @@ print_type (struct addrinfo *aip)
 void
 print_protocol (struct addrinfo *aip)
 {
-  printf (" protocol ");
+  printf (" protocol=");
   switch (aip->ai_protocol)
     {
     case 0:
@@ -76,7 +76,7 @@ print_protocol (struct addrinfo *aip)
 void
 print_flags (struct addrinfo *aip)
 {
-  printf ("flags");
+  printf ("flags=");
   if (aip->ai_flags == 0)
     printf (" 0");
   else
@@ -96,23 +96,15 @@ print_flags (struct addrinfo *aip)
     }
 }
 
-int
-main (int argc, char *argv[])
+void
+_getaddrinfo (const char *restrict host, const char *restrict service)
 {
-  struct servent *sep;
-  sep = getservent ();
-  printf ("servent: name=%s, port=%d, protocol=%s\n", sep->s_name, sep->s_port,
-          sep->s_proto);
-
   struct addrinfo *ailist, *aip;
   struct addrinfo hint;
   struct sockaddr_in *sinp;
   const char *addr;
   int err;
   char abuf[INET_ADDRSTRLEN];
-
-  if (argc != 3)
-    err_quit ("usage: %s nodename service", argv[0]);
 
   hint.ai_flags = AI_CANONNAME;
   hint.ai_family = 0;
@@ -122,7 +114,7 @@ main (int argc, char *argv[])
   hint.ai_canonname = NULL;
   hint.ai_addr = NULL;
   hint.ai_next = NULL;
-  if ((err = getaddrinfo (argv[1], argv[2], &hint, &ailist)) != 0)
+  if ((err = getaddrinfo (host, service, &hint, &ailist)) != 0)
     err_quit ("getaddrinfo error: %s", gai_strerror (err));
 
   for (aip = ailist; aip != NULL; aip = aip->ai_next)
@@ -131,17 +123,29 @@ main (int argc, char *argv[])
       print_family (aip);
       print_type (aip);
       print_protocol (aip);
-      printf ("\n\thost %s", aip->ai_canonname ? aip->ai_canonname : "-");
+      printf ("\n\thost=%s", aip->ai_canonname ? aip->ai_canonname : "-");
 
       if (aip->ai_family == AF_INET)
         {
           sinp = (struct sockaddr_in *)aip->ai_addr;
           addr = inet_ntop (AF_INET, &sinp->sin_addr, abuf, INET_ADDRSTRLEN);
-          printf (" address %s", addr ? addr : "unknown");
-          printf (" port %d", ntohs (sinp->sin_port));
+          printf (" address=%s", addr ? addr : "unknown");
+          printf (" port=%d", ntohs (sinp->sin_port));
         }
       printf ("\n");
     }
+}
+
+int
+main (int argc, char *argv[])
+{
+  _getaddrinfo ("127.0.0.1", NULL);
+  printf ("\n");
+  _getaddrinfo ("127.0.0.1", "time");
+  printf ("\n");
+  _getaddrinfo ("127.0.0.1", "uptime_stream_s");
+  printf ("\n");
+  _getaddrinfo ("127.0.0.1", "uptime_dgram_s");
 
   exit (0);
 }

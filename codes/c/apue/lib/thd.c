@@ -1,6 +1,6 @@
 #include "apue.h"
 #include "apue_thd.h"
-// #include "log.h" // log_trace
+#include "log.h" // log_trace
 #include <errno.h>
 #include <fcntl.h>
 #include <pthread.h>
@@ -38,9 +38,8 @@ already_running (const char *lockfilepath)
   if (fd < 0)
     {
       syslog (LOG_ERR, "can not open %s: %s", lockfilepath, strerror (errno));
-      // log_trace ("can not open %s: %s", lockfilepath, strerror (errno));
+      log_trace ("can not open %s: %s", lockfilepath, strerror (errno));
       exit (1);
-      // err_quit ("can not open %s: %s", lockfilepath, strerror (errno));
     }
 
   // try to lock file
@@ -53,9 +52,8 @@ already_running (const char *lockfilepath)
         }
 
       syslog (LOG_ERR, "can not lock %s: %s", lockfilepath, strerror (errno));
-      // log_trace ("can not lock %s: %s", lockfilepath, strerror (errno));
+      log_trace ("can not lock %s: %s", lockfilepath, strerror (errno));
       exit (1);
-      // err_quit ("can not open %s: %s", lockfilepath, strerror (errno));
     }
 
   ftruncate (fd, 0);
@@ -72,21 +70,21 @@ daemonize (const char *cmd)
   struct rlimit rl;
   struct sigaction sa;
 
-  // log_trace ("clean file creation mask");
+  log_trace ("clean file creation mask");
   umask (0);
 
-  // log_trace ("get maximum number of file descriptors");
+  log_trace ("get maximum number of file descriptors");
   if (getrlimit (RLIMIT_NOFILE, &rl) < 0)
     err_quit ("%s: can not get file limit", cmd);
 
-  // log_trace ("become a session leader to lose controlling TTY");
+  log_trace ("become a session leader to lose controlling TTY");
   if ((pid = fork ()) < 0)
     err_quit ("%s: can not fork", cmd);
   else if (pid != 0) // parent
     exit (0);
   setsid ();
 
-  // log_trace ("ensure future opens will not allocate controlling TTYs");
+  log_trace ("ensure future opens will not allocate controlling TTYs");
   sa.sa_handler = SIG_IGN;
   sigemptyset (&sa.sa_mask);
   sa.sa_flags = 0;
@@ -102,25 +100,24 @@ daemonize (const char *cmd)
 
   if (rl.rlim_max == RLIM_INFINITY)
     rl.rlim_max = 1024;
-  // log_trace ("close all open fds up to %d", rl.rlim_max);
+  log_trace ("close all open fds up to %d", rl.rlim_max);
   for (i = 0; i < rl.rlim_max; i++)
     close (i);
 
-  // log_trace ("attach fd 0,1,2 to /dev/null");
+  log_trace ("attach fd 0,1,2 to /dev/null");
   fd0 = open ("/dev/null", O_RDWR);
   fd1 = dup (0);
   fd2 = dup (0);
 
-  // log_trace ("initialze log file");
+  log_trace ("initialze log file");
   openlog (cmd, LOG_CONS, LOG_DAEMON);
   syslog (LOG_INFO, "%s", cmd);
-  // log_trace ("%s", cmd);
+  log_trace ("%s", cmd);
 
   if (fd0 != 0 || fd1 != 1 || fd2 != 2)
     {
       syslog (LOG_ERR, "unexpected fd %d %d %d", fd0, fd1, fd2);
-      // log_trace ("unexpected fd %d %d %d", fd0, fd1, fd2);
+      log_trace ("unexpected fd %d %d %d", fd0, fd1, fd2);
       exit (1);
-      // err_quit ("unexpected fd %d %d %d", fd0, fd1, fd2);
     }
 }

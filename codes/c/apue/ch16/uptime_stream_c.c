@@ -32,7 +32,7 @@ main (int argc, char *argv[])
   hint.ai_addr = NULL;
   hint.ai_next = NULL;
 
-  if ((err = getaddrinfo (argv[1], "uptime_s", &hint, &ailist)) != 0)
+  if ((err = getaddrinfo (argv[1], "uptime_stream_s", &hint, &ailist)) != 0)
     err_quit ("getaddrinfo error: %s", gai_strerror (err));
 
   for (aip = ailist; aip != NULL; aip = aip->ai_next)

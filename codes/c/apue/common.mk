@@ -13,7 +13,9 @@ vpath %.h ../include
 PLATFORM=$(shell ../systype.sh)
 
 ifeq "$(PLATFORM)" "linux"
-CFLAGS += -static -DLINUX -D_GNU_SOURCE -pthread
+# getaddrinfo()
+#CFLAGS += -static -DLINUX -D_GNU_SOURCE -pthread
+CFLAGS += -DLINUX -D_GNU_SOURCE -pthread
 endif
 ifeq "$(PLATFORM)" "macos"
 CFLAGS += -DMACOS -D_DARWIN_C_SOURCE
