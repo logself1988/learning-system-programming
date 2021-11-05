@@ -1,0 +1,34 @@
+# hello.asm
+
+$ ch02/hello
+hello, world!
+
+# print_rax.asm
+
+$ ch02/print_rax
+1122334455667788
+
+# print_call.asm
+
+$ ch02/print_call
+1122334455667788
+$ 
+
+# endianness.asm
+
+$ ch02/endianness
+0123456789abcdef
+efcdab8967452301
+
+# strlen.asm
+
+$ ch02/strlen
+$ echo $?
+6
+
+# test_lib.s
+
+$ ch02/test_lib
+hello, world!
+$ echo $?
+0

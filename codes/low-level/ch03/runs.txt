@@ -1,0 +1,47 @@
+# risc_cisc.asm
+
+$ gdb risc_cisc
+(gdb) list
+1       section .data
+2
+3       section .text
+4       global _start
+5       _start:
+6         mov rax, 0x1122334455667788
+7         mov eax, 0x42
+8
+9         mov rax, 0x1122334455667788
+10        mov ax, 0x9999
+(gdb) b 5
+Breakpoint 1 at 0x401000: file risc_cisc.asm, line 6.
+(gdb) r
+Starting program: /mnt/d/workspace/learning-system-programming/codes/low-level/ch03/risc_cisc 
+
+Breakpoint 1, _start () at risc_cisc.asm:6
+6         mov rax, 0x1122334455667788
+(gdb) print/x $rax
+$1 = 0x0
+(gdb) n
+7         mov eax, 0x42
+(gdb) print/x $rax
+$2 = 0x1122334455667788
+(gdb) n
+9         mov rax, 0x1122334455667788
+(gdb) print/x $rax
+$3 = 0x42
+(gdb) n
+10        mov ax, 0x9999
+(gdb) print/x $rax
+$4 = 0x1122334455667788
+(gdb) n
+12        mov rax, 0x1122334455667788
+(gdb) print/x $rax
+$5 = 0x1122334455669999
+(gdb) n
+13        xor eax, eax
+(gdb) print/x $rax
+$6 = 0x1122334455667788
+(gdb) n
+15        mov rax, 60         ; system call: exit
+(gdb) print/x $rax
+$7 = 0x0
