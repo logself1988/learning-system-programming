@@ -28,6 +28,7 @@ nav:
         - Ninja: tools/programming/ninja.md
     - 'Architecture':
       - Home: architecture/index.md
+      - 'Low-Level Programming': architecture/Low-Level-Programming.md
       - 'System V Application Binary Interface': architecture/ABI.md
       - 'The Linux Kernel CPU Architectures': architecture/linux-cpu-architecture.md
       - 'Intel':

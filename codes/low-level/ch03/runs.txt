@@ -1,5 +1,7 @@
 # risc_cisc.asm
 
+GDB:
+
 $ gdb risc_cisc
 (gdb) list
 1       section .data
@@ -45,3 +47,28 @@ $6 = 0x1122334455667788
 15        mov rax, 60         ; system call: exit
 (gdb) print/x $rax
 $7 = 0x0
+
+LLDB:
+
+✗ lldb risc_cisc 
+(lldb) target create "risc_cisc"
+Current executable set to '/Users/zhang/workspace/github/learning-system-programming/codes/low-level/ch03/risc_cisc' (x86_64).
+(lldb) br set -f risc_cisc.asm -l 7
+Breakpoint 2: where = risc_cisc`start, address = 0x0000000100003f85
+(lldb) r
+Process 91945 launched: '/Users/zhang/workspace/github/learning-system-programming/codes/low-level/ch03/risc_cisc' (x86_64)
+This version of LLDB has no plugin for the mipsassem language. Inspection of frame variables will be limited.
+Process 91945 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
+    frame #0: 0x0000000100003f85 risc_cisc`start at risc_cisc.asm:8
+   5    section .text
+   6    global _start
+   7    _start:
+-> 8      mov rax, 0x1122334455667788
+   9      mov eax, 0x42                 ; rax: 0x42
+   10  
+   11     mov rax, 0x1122334455667788
+(lldb) print/x $rax
+(unsigned long) $0 = 0x1122334455667788   
+(lldb) register read rax
+     rax = 0x1122334455667788

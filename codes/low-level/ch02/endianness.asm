@@ -10,7 +10,11 @@ global _start
 
 ; tow function same as print_call.asm
 print_newline:
-  mov rax, 1              ; system call: write
+%ifdef MACOS
+  mov rax, 0x2000004  ; system call: write
+%else
+  mov rax, 1          ; system call: write
+%endif
   mov rdi, 1
   mov rsi, newline_char
   mov rdx, 1
@@ -28,11 +32,24 @@ iterate:
   sar rax, cl
 
   and rax, 0xf
-  lea rsi, [codes + rax]
+%ifdef MACOS
+  lea rsi, [rel codes]
+  add rsi, rax
+%else
+  lea rsi, [codes+rax]
+%endif
 
-  mov rax, 1              ; system call: write
+%ifdef MACOS
+  mov rax, 0x2000004  ; system call: write
+%else
+  mov rax, 1          ; system call: write
+%endif
 
   push rcx
+%ifdef MACOS
+  mov rdi, 1
+  mov rdx, 1
+%endif
   syscall
   pop rcx
 
@@ -43,14 +60,18 @@ iterate:
   ret
 
 _start:
-  mov rdi, [demo1]
+  mov rdi, [rel demo1]
   call print_hex
   call print_newline
 
-  mov rdi, [demo2]
+  mov rdi, [rel demo2]
   call print_hex
   call print_newline
   
+%ifdef MACOS
+  mov rax, 0x2000001  ; system call: exit
+%else  
   mov rax, 60         ; system call: exit
+%endif  
   xor rdi, rdi
   syscall

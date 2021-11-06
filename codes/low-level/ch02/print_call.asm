@@ -20,7 +20,11 @@ section .text
 global _start
 
 print_newline:
-  mov rax, 1              ; system call: write
+%ifdef MACOS
+  mov rax, 0x2000004  ; system call: write
+%else
+  mov rax, 1          ; system call: write
+%endif
   mov rdi, 1
   mov rsi, newline_char
   mov rdx, 1
@@ -36,11 +40,22 @@ iterate:
   push rax
   sub rcx, 4              ; 4 bits
   sar rax, cl
-
   and rax, 0xf
-  lea rsi, [codes + rax]
 
-  mov rax, 1              ; system call: write
+%ifdef MACOS
+  lea rsi, [rel codes]    ; use relative addressing
+  add rsi, rax
+%else
+  lea rsi, [codes+rax]
+%endif
+
+%ifdef MACOS
+  mov rax, 0x2000004  ; system call: write
+  mov rdi, 1
+  mov rdx, 1
+%else
+  mov rax, 1          ; system call: write
+%endif
 
   push rcx
   syscall
@@ -57,6 +72,10 @@ _start:
   call print_hex
   call print_newline
 
+%ifdef MACOS
+  mov rax, 0x2000001  ; system call: exit
+%else  
   mov rax, 60         ; system call: exit
+%endif
   xor rdi, rdi
   syscall

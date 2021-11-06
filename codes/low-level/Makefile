@@ -1,5 +1,5 @@
 TARGETS = lib ch02 ch03
-TARGETS = lib ch03
+#TARGETS = lib ch03
 
 all: $(TARGETS)
 	for t in $(TARGETS); do \

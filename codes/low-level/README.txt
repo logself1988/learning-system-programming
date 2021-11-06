@@ -66,3 +66,8 @@ ch19: Appendix B. Using Make
 ch20: Appendix C. System Calls
 ch21: Appendix D. Performance Tests Information
 ch22: Bibliography
+
+
+Portablility:
+
+- system call number and style: Linux, MacOS(with all parameters each)

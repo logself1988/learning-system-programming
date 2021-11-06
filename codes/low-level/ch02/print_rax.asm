@@ -1,7 +1,9 @@
+default rel             ; use relative addressing
 ; output rax value in hexadecimal format
 
 section .data
-codes: db '0123456789ABCDEF'
+codes: db "0123456789ABCDEF"
+newline_char: db 10
 
 section .text
 global _start
@@ -20,10 +22,26 @@ _start:
   sar rax, cl
   and rax, 0xf
 
+; WARN: effective address in MACOS
+%ifdef MACOS
+  lea rsi, [codes]
+  add rsi, rax
+%else
   lea rsi, [codes+rax]
-  mov rax, 1              ; system call: write
+%endif
+
+%ifdef MACOS
+  mov rax, 0x2000004  ; system call: write
+%else
+  mov rax, 1          ; system call: write
+%endif
 
   push rcx                ; syscall changes rcx
+; WARN: system call in MACOS: pass the parameters again
+%ifdef MACOS
+  mov rdi, 1
+  mov rdx, 1
+%endif
   syscall
   pop rcx
 
@@ -31,9 +49,22 @@ _start:
 
   test rcx, rcx           ; is zero?
   jnz .loop
-  
-  
-  mov rax, 60             ; system call: exit
+
+%ifdef MACOS
+  mov rax, 0x2000004  ; system call: write
+%else
+  mov rax, 1          ; system call: write
+%endif
+  mov rdi, 1
+  mov rdx, 1
+  lea rsi, [newline_char]
+  syscall
+
+%ifdef MACOS
+  mov rax, 0x2000001  ; system call: exit
+%else  
+  mov rax, 60         ; system call: exit
+%endif
   xor rdi, rdi
   syscall
 
