@@ -1,9 +1,11 @@
+# common definitions for NASM
+
 # distinguish platform
 PLATFORM=$(shell ../systype.sh)
 
 ifeq "$(PLATFORM)" "linux"
 #NASM_FLAG = -f elf64 -g -F stabs
-NASM_FLAG = -f elf64 -g -F dwarf
+NASM_FLAG = -f elf64 -g -F dwarf -DLINUX
 LD_FLAG = -m elf_x86_64
 endif
 ifeq "$(PLATFORM)" "macos"

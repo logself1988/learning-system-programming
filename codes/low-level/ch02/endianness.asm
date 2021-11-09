@@ -1,3 +1,5 @@
+%include "../lib/syscall.inc"
+
 section .data
 newline_char: db 10
 codes: db '0123456789abcdef'
@@ -10,11 +12,7 @@ global _start
 
 ; tow function same as print_call.asm
 print_newline:
-%ifdef MACOS
-  mov rax, 0x2000004  ; system call: write
-%else
-  mov rax, 1          ; system call: write
-%endif
+  mov rax, NR_WRITE
   mov rdi, 1
   mov rsi, newline_char
   mov rdx, 1
@@ -39,11 +37,7 @@ iterate:
   lea rsi, [codes+rax]
 %endif
 
-%ifdef MACOS
-  mov rax, 0x2000004  ; system call: write
-%else
-  mov rax, 1          ; system call: write
-%endif
+  mov rax, NR_WRITE
 
   push rcx
 %ifdef MACOS
@@ -68,10 +62,6 @@ _start:
   call print_hex
   call print_newline
   
-%ifdef MACOS
-  mov rax, 0x2000001  ; system call: exit
-%else  
-  mov rax, 60         ; system call: exit
-%endif  
+  mov rax, NR_EXIT
   xor rdi, rdi
   syscall

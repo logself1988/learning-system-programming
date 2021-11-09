@@ -1,3 +1,4 @@
+%include "../lib/syscall.inc"
 section .data
 test_string: db "abcdef", 0
 
@@ -21,5 +22,5 @@ _start:
   call strlen
   mov rdi, rax
 
-  mov rax, 60         ; system call: exit
+  mov rax, NR_EXIT
   syscall

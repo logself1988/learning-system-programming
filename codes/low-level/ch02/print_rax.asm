@@ -1,3 +1,4 @@
+%include "../lib/syscall.inc"
 default rel             ; use relative addressing
 ; output rax value in hexadecimal format
 
@@ -30,11 +31,7 @@ _start:
   lea rsi, [codes+rax]
 %endif
 
-%ifdef MACOS
-  mov rax, 0x2000004  ; system call: write
-%else
-  mov rax, 1          ; system call: write
-%endif
+  mov rax, NR_WRITE
 
   push rcx                ; syscall changes rcx
 ; WARN: system call in MACOS: pass the parameters again
@@ -50,21 +47,14 @@ _start:
   test rcx, rcx           ; is zero?
   jnz .loop
 
-%ifdef MACOS
-  mov rax, 0x2000004  ; system call: write
-%else
-  mov rax, 1          ; system call: write
-%endif
+
+  mov rax, NR_WRITE
   mov rdi, 1
   mov rdx, 1
   lea rsi, [newline_char]
   syscall
 
-%ifdef MACOS
-  mov rax, 0x2000001  ; system call: exit
-%else  
-  mov rax, 60         ; system call: exit
-%endif
+  mov rax, NR_EXIT
   xor rdi, rdi
   syscall
 

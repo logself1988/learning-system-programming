@@ -16,19 +16,24 @@ snippets:
 	"NASM main": {
 		"prefix": "nasm",
 		"body": [
+			"%include \"../lib/syscall.inc\"",
+			"",
 			"section .data",
 			"message: db 'hello, world!', 10",
 			"",
 			"section .text",
+			"; syscall arguments: rax, rdi, rsi, rdx, r10, r8, r9",
+			"; syscall returns: rax; destroys: rcx, r11",
+			"; function arguments: rax, rdi, rsi, rdx, rcx, r8, r9",
+			"; function returns: rax, rdx",
 			"global _start",
 			"_start:",
-			"  ; syscall arguments: rax, rdi, rsi, rdx, r10, r8, r9",
-			"  ; syscall changes: rcx, r11",
 			"  $1",
-			"  mov rax, 60         ; system call: exit",
+			"",
+			"  mov rax, NR_EXIT",
 			"  xor rdi, rdi",
 			"  syscall",
-			""			
+			""
 		],
 		"description": "NASM main routine."
 	}

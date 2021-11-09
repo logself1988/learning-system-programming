@@ -1,0 +1,148 @@
+# define_cat_count.asm
+
+✗ nasm -E define_cat_count.asm
+%line 2+1 define_cat_count.asm
+mov rax, 42
+
+# macro_asm_parts.asm
+
+✗ nasm -E macro_asm_parts.asm 
+%line 3+1 macro_asm_parts.asm
+ mov rax, rbx
+
+# macro_simple_3arg.asm
+
+✗ nasm -E macro_simple_3arg.asm 
+%line 2+1 macro_simple_3arg.asm
+dq 666
+dq 555
+dq 444
+
+# macroif.asm
+
+✗ nasm -E macroif.asm 
+%line 1+1 macroif.asm
+[bits 64]
+
+
+%line 11+1 macroif.asm
+mov rax, rbx
+
+# defining_in_cla.asm
+
+✗ nasm -d flag -E defining_in_cla.asm
+%line 2+1 defining_in_cla.asm
+hellostring: db "hello", 0
+✗ nasm -d flag2 -E defining_in_cla.asm
+✗ 
+
+# pushr.asm
+
+✗ nasm -E pushr.asm 
+%line 5+1 pushr.asm
+push rax
+%line 3+1 pushr.asm
+pushf
+
+# macro_arg_types.asm
+
+✗ nasm -e macro_arg_types.asm 
+%line 15+1 macro_arg_types.asm
+myhello: db 'hello', 10, 0
+_start:
+%line 3+1 macro_arg_types.asm
+ mov rdi, myhello
+ call print_string
+%line 7+1 macro_arg_types.asm
+ mov rdi, 42
+ call print_uint
+%line 19+1 macro_arg_types.asm
+ mov rax, NR_EXIT
+ xor rdi, rdi
+ syscall
+
+# defines.asm
+
+✗ nasm -E defines.asm 
+%line 7+1 defines.asm
+mov rax, 1 * 3
+mov rax, 1 * 3
+mov rax, 3
+
+
+
+mov rax, 100 * 3
+mov rax, 1 * 3
+mov rax, 3
+
+# rep.asm
+
+✗ nasm -E rep.asm
+%line 8+1 rep.asm
+result: dq 55
+
+# prime.asm
+
+✗ nasm -E prime.asm 
+%line 2+1 prime.asm
+is_prime: db 0, 0, 1
+
+
+%line 15+1 prime.asm
+
+db 1                    - 3
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 1
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 1
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 1
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 1
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 0
+%line 15+1 prime.asm
+
+db 1                    - 17
+
+# macro_local_labels.asm
+
+✗ nasm -E macro_local_labels.asm
+%line 2+1 macro_local_labels.asm
+..@0.labelname:
+..@0.labelname:
+%line 2+1 macro_local_labels.asm
+..@1.labelname:
+..@1.labelname:
+%line 2+1 macro_local_labels.asm
+..@2.labelname:
+..@2.labelname:

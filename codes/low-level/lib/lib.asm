@@ -1,3 +1,4 @@
+%include "syscall.inc"
 section .text
 
 global exit
@@ -7,11 +8,7 @@ global read_char, read_word
 global parse_uint, parse_int
 
 exit: 
-%ifdef MACOS
-  mov rax, 0x2000001  ; system call: exit
-%else  
-  mov rax, 60         ; system call: exit
-%endif
+  mov rax, NR_EXIT
   xor rdi, rdi
   syscall
 
@@ -41,11 +38,7 @@ print_string:
   call string_length
   pop rsi
   mov rdx, rax 
-%ifdef MACOS
-  mov rax, 0x2000004  ; system call: write
-%else
-  mov rax, 1          ; system call: write
-%endif
+  mov rax, NR_WRITE
   mov rdi, 1 
   syscall
   ret

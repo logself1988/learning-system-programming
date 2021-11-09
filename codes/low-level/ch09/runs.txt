@@ -1,0 +1,97 @@
+# struct_anon.c
+
+> NONE
+
+# struct_named.c
+
+> NONE
+
+# struct_namespace.c
+
+> NONE
+
+# struct_typedef.c
+
+> NONE
+
+# struct_init.c
+
+> NONE
+
+# union_example.c
+
+✗ ch09/union_example
+aabbccdd, ffffccdd ffffaabb
+
+# anon.c
+
+> NONE
+
+# enum_example
+
+✗ ch09/enum_example
+4
+
+# macro_str.c
+
+✗ ch09/macro_str
+hello
+
+# macro_concat.c
+
+✗ ch09/macro_concat
+Hello
+ World
+
+# c_parametric_polymorphism.c
+
+✗ ch09/c_parametric_polymorphism
+1
+
+✗ cc -E ch09/c_parametric_polymorphism.c
+...
+# 3 "ch09/c_parametric_polymorphism.c" 2
+# 18 "ch09/c_parametric_polymorphism.c"
+struct pair_int { int fst; int snd; }; _Bool pair_int_any (struct pair_int pair, _Bool (*predicate) (int)) { return predicate (pair.fst) || predicate (pair.snd); }
+
+_Bool
+is_positive (int x)
+{
+  return x > 0;
+}
+
+int
+main (int argc, char const *argv[])
+{
+  struct pair_int obj;
+  obj.fst = 1;
+  obj.snd = -1;
+  printf ("%d\n", pair_int_any (obj, is_positive));
+  return 0;
+}
+
+# c_inclusion.c
+
+✗ ch09/c_inclusion
+parent
+
+# c_overload.c
+
+✗ ch09/c_overload
+101
+42.420000
+
+✗ cc -E ch09/c_overload.c
+...
+# 2 "ch09/c_overload.c" 2
+
+int
+main (int argc, char const *argv[])
+{
+  int x = 101;
+  double y = 42.42;
+
+  printf ((_Generic((x), int : "%d", double : "%f", default : "%x")), x); puts ("");
+  printf ((_Generic((y), int : "%d", double : "%f", default : "%x")), y); puts ("");
+  return 0;
+}
