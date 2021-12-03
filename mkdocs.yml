@@ -63,6 +63,8 @@ nav:
       - Home: cpp/index.md
       - 'Q&A': cpp/QA.md
       - 'C++ 11': cpp/CXX11-Standard.md
+      - 'C++ Concurrency in Action': cpp/cpp_concurrency.md
+      - 'C++ Primer Plus': cpp/cpp_primer_plus.md
     - 'Kernel':
       - Home: kernel/index.md
       - 'Programming':

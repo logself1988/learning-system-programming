@@ -1,0 +1,5 @@
+# hello_world.cc
+
+$ g++ -std=c++17 -o hello_world hello_world.cc -pthread
+$ ./hello_world
+Hello Concurrent World
