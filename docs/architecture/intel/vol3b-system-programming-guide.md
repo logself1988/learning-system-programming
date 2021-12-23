@@ -13,6 +13,8 @@
 
 <!-- 描述书籍阐述观点的来源、拟解决的关键性问题和采用的方法论等. -->
 
+Address the programming environment for classes of software that host operating systems.
+
 ## 动机
 
 <!-- 描述阅读书籍的动机, 要达到什么目的等. -->

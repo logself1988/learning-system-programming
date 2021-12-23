@@ -13,6 +13,8 @@
 
 <!-- 描述书籍阐述观点的来源、拟解决的关键性问题和采用的方法论等. -->
 
+Describe the operating-system support environment of Intel 64 and IA-32 processors.
+
 ## 动机
 
 <!-- 描述阅读书籍的动机, 要达到什么目的等. -->
