@@ -35,20 +35,6 @@ nav:
         - 'Volume 1: Basic Architecture': architecture/intel/vol1-basic-architecture.md
         - 'Volume 3A: System Programming Guide': architecture/intel/vol3a-system-programming-guide.md
         - 'Volume 3B: System Programming Guide': architecture/intel/vol3b-system-programming-guide.md
-    - Compiler:
-      - 'Home': compiler/index.md
-      - 'References': compiler/Engineering-a-Compiler-refs.md
-      - 'Flex and Bison':
-        - 'Tutorial': compiler/flex_bison/flex_and_bison.md
-        - 'Flex Specification': compiler/flex_bison/flex_spec.md
-        - 'Bison Specification': compiler/flex_bison/bison_spec.md
-      - 'ANTLR': compiler/antlr.md
-      - 'JavaCC': compiler/javacc.md
-      - LLVM:
-        - 'Home': compiler/llvm/llvm.md
-        - 'LLVM Paper': compiler/llvm/llvm-paper.md
-        - 'LLVM Essentials': compiler/llvm/llvm-essentials.md
-        - 'LLVM Core Libraries': compiler/llvm/llvm-core-libraries.md
     - Assembly:
       - Home: assembly/index.md
       - 'Professional Assembly Language': assembly/pro-assembly.md
@@ -61,10 +47,16 @@ nav:
       - 'Core': c/c-core.md
     - 'C++':
       - Home: cpp/index.md
+      - 'Programming: Principles and Practice Using C++':
+        - 'Home': cpp/PPP2/PPP2.md
+        - 'Part I The Basics': cpp/PPP2/PPP2-1-The-Basics.md
+        - 'Part II Input and Output': cpp/PPP2/PPP2-2-Input-and-Output.md
+        - 'Part III Data and Algorithms': cpp/PPP2/PPP2-3-Data-and-Algorithms.md
+        - 'Part IV Broadening the View': cpp/PPP2/PPP2-4-Broadening-the-View.md
+        - 'Part V Appendices': cpp/PPP2/PPP2-5-Appendices.md
       - 'Q&A': cpp/QA.md
       - 'C++ 11': cpp/CXX11-Standard.md
       - 'C++ Concurrency in Action': cpp/cpp_concurrency.md
-      - 'C++ Primer Plus': cpp/cpp_primer_plus.md
     - 'Kernel':
       - Home: kernel/index.md
       - 'Programming':
@@ -82,10 +74,6 @@ nav:
           - 'Part 2': kernel/linux-arch/kernel-dev/kernel-dev2.md
           - '深入Linux内核架构': kernel/linux-arch/linux-arch.md
           - 'Linux内核设计的艺术': kernel/linux-arch/linux-0.11.md
-      - 'Network':
-        - 'TCP/IP': kernel/network/network.md
-        - 'NS2': kernel/network/ns2.md
-        - 'Netty': kernel/network/netty.md
 
 #theme: readthedocs
 theme:

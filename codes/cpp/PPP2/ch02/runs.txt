@@ -1,0 +1,41 @@
+# hello_world.cc
+
+Hello, World!
+
+# read_name_age.cc
+
+Please enter your first name and age
+Carlos 22
+Hello, Carlos (age 22)
+
+# operators.cc
+
+Please enter a floating-pointer value: 12.34
+n == 12.34
+n+1 == 13.34
+three times n == 37.02
+twice n == 24.68
+n squared == 152.276
+half of n == 6.17
+square root of n == 3.51283
+
+# detect_repeated_words.cc
+The cat cat jumped
+repeated word: cat
+
+She she laughed He He He because what he did did not look very very good good
+repeated word: He
+repeated word: He
+repeated word: did
+repeated word: very
+repeated word: good
+
+# ex_vector.cc
+
+a man a plan a canal panama
+Number of words: 7
+a
+canal
+man
+panama
+plan

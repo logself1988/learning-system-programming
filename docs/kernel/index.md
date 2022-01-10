@@ -17,9 +17,3 @@
 - [Linux内核设计与实现](./linux-arch/kernel-dev/kernel-dev.md)
 - [深入Linux内核架构](./linux-arch/linux-arch.md)
 - [Linux内核设计的艺术](./linux-arch/linux-0.11.md): kernel 0.11
-
-## Network
-
-- [TCP/IP](./network/network.md)
-- [NS2](./network/ns2.md)
-- [Netty in Action](./network/netty.md)
