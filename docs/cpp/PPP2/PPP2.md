@@ -4,6 +4,7 @@
 |时间|内容|
 |:---|:---|
 |2022-01-09|kick off.|
+|2022-01-14|skimming: Part I The Basics.|
 
 ## 术语
 

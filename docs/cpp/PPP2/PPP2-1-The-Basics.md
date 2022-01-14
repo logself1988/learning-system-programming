@@ -218,9 +218,25 @@ for(int x : v)
 ###### 5.1 Introduction
 ###### 5.2 Sources of errors
 ###### 5.3 Compile-time errors
+
+``` c++
+int area(int length, int width);
+```
+
 ###### 5.4 Link-time errors
 ###### 5.5 Run-time errors
 ###### 5.6 Exceptions
+
+``` c++
+try {}
+catch () {}
+
+
+exception
+out_of_range
+runtime_error
+```
+
 ###### 5.7 Logic errors
 ###### 5.8 Estimation
 ###### 5.9 Debugging
@@ -228,11 +244,54 @@ for(int x : v)
 ###### 5.11 Testing
 
 #### 6 Writing a Program
+
+In this chapter and the next, we will develop a program from a first vague idea through stages of analysis, design, implementation, testing, redesign, and re-implementation.
+
+
 ###### 6.1 A problem
+
+a simple calculator: "Get the computer to do ordinary arithmetic on expression we type in".
+
 ###### 6.2 Thinking about the problem
 ###### 6.3 Back to the calculator!
 ###### 6.4 Grammars
+
+a simple expression grammar:
+
+```
+Expression:
+  Term
+  Expression "+" Term     // addition
+  Expression "-" Term     // subtraction
+
+Term:
+  Primary
+  Term "*" Primary        // multiplication
+  Term "/" Primary        // division
+  Term "%" Primary        // remainder
+
+Primary:
+  Number
+  "(" Expression ")"      // grouping
+
+Number:
+  floating-point-literal
+```
+
 ###### 6.5 Turning a grammar into code
+
+we simply write one function for each grammar rule and use our type `Token` to represent tokens.
+
+
+a slightly different grammar:
+
+```
+Expression:
+  Term
+  Term "+" Expression     // addition
+  Term "-" Expression     // subtraction
+```
+
 ###### 6.6 Trying the first version
 ###### 6.7 Trying the second version
 ###### 6.8 Token streams
@@ -243,19 +302,106 @@ for(int x : v)
 ###### 7.2 Input and output
 ###### 7.3 Error handling
 ###### 7.4 Negative numbers
+
+```
+Primary:
+  Number
+  "(" Expression ")"
+  "-" Primary
+  "+" Primary
+```
+
 ###### 7.5 Remainder: %
 ###### 7.6 Cleaning up the code
 ###### 7.7 Recovering from errors
+
+read input until we find a semicolon(`;`)
+
+
+``` c++
+// discard characters up to and including a c
+void Token_stream::ignore(char c);
+```
+
 ###### 7.8 Variables
+
+grammar:
+
+```
+Calculation:
+  Statement
+  Print
+  Quit
+  Calculation Statement
+
+Statement:
+  Declaration
+  Expression
+
+Declaration:
+  "let" Name "=" Expression
+```
+
+`class Variable` and symbol tables
 
 #### 8 Technicalities: Functions, etc.
 ###### 8.1 Technicalities
 ###### 8.2 Declarations and definitions
+
+define entities in C++:
+
+- variables,
+- constants,
+- functions,
+- namespaces,
+- types: classes, enumerations,
+- templates.
+
 ###### 8.3 Header files
+
+To ease consistency checking, we `#include` a header both in:
+
+- source files that use its declarations, and
+- source files that provide definitions for those declarations.
+
+
+a header should only contain declarations that can be duplicated in several files, sunch as:
+
+- function declarations,
+- class definitions,
+- definitions of numeric constants.
+
 ###### 8.4 Scope
+
+a scope is a region of program text.
+
+kinds of scopes:
+
+- global scope: the area of text outside any other scope,
+- namespace scope: a named scope nested in the global scope or in another namespace,
+- class scope: the area of text within a class,
+- local scope: between `{...}` braces of a block or in a function argument list,
+- statement scope: e.g. in a `for`-statement.
+
 ###### 8.5 Function call and return
+
+rule of thumb:
+
+- use **pass-by-value** to pass very small objects,
+- use **pass-by-const-reference** to pass large objects that you don't need to modify,
+- return a result rather than modifying an object through a reference argument,
+- use **pass-by-reference** only when you have to.
+
+
+passing an argument is the initialization of the function's formal argument with the actual argument specified in the call.
+
 ###### 8.6 Order of evaluation
 ###### 8.7 Namespaces
+
+`using` declaration: `using std::string;`
+
+`using` directive: `using namespace std;`
+
 
 #### 9 Technicalities: Classes, etc.
 ###### 9.1 User-defined types
@@ -263,6 +409,45 @@ for(int x : v)
 ###### 9.3 Interface and implementation
 ###### 9.4 Evolving a class
 ###### 9.5 Enumerations
+
+scoped enumerations: new in C++11
+
+``` c++
+enum class Month {
+  jan=1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+};
+```
+
+plain enumerations: implicitly export their enumerators to the scope of the enumeration, and allow implicit conversions to `int`
+
+``` c++
+enum Month {
+  jan=1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
+};
+```
+
+
 ###### 9.6 Operator overloading
+
+example of C++ provided operators:
+
+``` c++
++ - * / % [] () ^ ! & < <= > >=
+```
+
+references: [C++ - C++ language - Expressions - operator overloading](https://en.cppreference.com/w/cpp/language/operators)
+
+
 ###### 9.7 Class interfaces
+
+general principles to design interfaces:
+
+- keep interfaces complete,
+- keep interfaces minimal,
+- provide constructors,
+- support copying or prohibit it,
+- use types to provide good argument checking,
+- identify nonmodifying member functions,
+- free all resources in the destructor.
+
 ###### 9.8 The Date class

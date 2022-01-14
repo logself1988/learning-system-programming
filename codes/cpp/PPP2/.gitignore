@@ -1,2 +1,10 @@
 .vscode/
 build/
+
+ex_antlr/*.interp
+ex_antlr/*.tokens
+ex_antlr/*.h
+ex_antlr/*.cpp
+ex_antlr/*.java
+ex_antlr/*.class
+ex_antlr/.antlr/

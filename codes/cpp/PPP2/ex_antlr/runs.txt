@@ -1,0 +1,21 @@
+
+- ANTLR cpp runtime: https://www.antlr.org/download/antlr4-cpp-runtime-4.9.3-macos.zip
+- generate cpp target: antlr4 -Dlanguage=Cpp Calculator.g4 -visitor -no-listener
+
+# test_Calculator.cc
+
+visitPrimary: NUMBER=3
+visitPrimary: NUMBER=2
+visitPrimary: NUMBER=1
+visitExpression: 1 - 2
+visitExpression: -1 - 3
+=-4
+visitPrimary: NUMBER=1
+Declaration: NAME=a, value=1.000000
+visitPrimary: NUMBER=3
+visitPrimary: NUMBER=2
+visitPrimary: NAME=a
+visitPrimary: NAME=a, value=1
+visitExpression: 1 - 2
+visitExpression: -1 - 3
+=-4

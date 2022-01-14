@@ -1,5 +1,10 @@
 Code of Programming: Principles and Practice Using C++, 2nd Edition
 
+=== CMake Tools
+
+"cmake.configureArguments": "-DPPP2_DEBUG=ON -Wno-dev",
+
+=== FLTK
 
 ➜  ~ brew info fltk
 fltk: stable 1.3.8 (bottled), HEAD
@@ -7,7 +12,7 @@ Cross-platform C++ GUI toolkit
 https://www.fltk.org/
 /usr/local/Cellar/fltk/1.3.8 (330 files, 5.3MB) *
 
-Contents:
+=== Contents
 
 0 Notes to the Reader
 1 Computers, People, and Programming
@@ -42,3 +47,7 @@ Appendix B Standard Library Summary
 Appendix C Getting Started with Visual Studio
 Appendix D Installing FLTK
 Appendix E GUI Implementation
+
+=== ANTLR cpp target
+
+ex_antlr: ANTLR cpp target demonstration

@@ -1,0 +1,39 @@
+# calculator.cc
+
+Token = '' 
+2
+Token = '8' 2
+;
+Token = ';' 
+=2
+2+3;
+Token = '8' 2
+Token = '+' 
+Token = '8' 3
+Token = ';' 
+=5
+1-2-3;
+Token = '8' 1
+Token = '-' 
+Token = '8' 2
+Token = '-' 
+Token = '8' 3
+Token = ';' 
+=-4
+
+3+4*5;
+Token = '8' 3
+Token = '+' 
+Token = '8' 4
+Token = '*' 
+Token = '8' 5
+Token = ';' 
+=23
+
+;
+Token = ';' 
+=23
+q
+Token = 'q' 
+Please enter a character to exit
+q

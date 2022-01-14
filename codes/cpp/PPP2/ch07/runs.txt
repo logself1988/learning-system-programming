@@ -1,0 +1,55 @@
+# calculator.cc
+
+> let x = 3.4;
+= 3.4
+> let y = 2;
+= 2
+> x+y*2;
+= 7.4
+> pi*5;
+= 15.708
+> 3.1415926535 * 5 
+= ;
+15.708
+
+
+Token = '' 
+Variable = 'pi' 3.14159
+Variable = 'e' 2.71828
+> let x = 3.4;
+Token = 'L' 
+= Token = 'a' x
+Token = '=' 
+Token = '8' 3.4
+Token = ';' 
+Variable = 'x' 3.4
+3.4
+> let y = 2;
+Token = 'L' 
+= Token = 'a' y
+Token = '=' 
+Token = '8' 2
+Token = ';' 
+Variable = 'y' 2
+2
+> x+y*2;
+Token = 'a' x
+= Token = '+' 
+Token = 'a' y
+Token = '*' 
+Token = '8' 2
+Token = ';' 
+7.4
+> pi*5;
+Token = 'a' pi
+= Token = '*' 
+Token = '8' 5
+Token = ';' 
+15.708
+> 3.1415926535 * 5
+Token = '8' 3.14159
+= Token = '*' 
+Token = '8' 5
+;
+Token = ';' 
+15.708

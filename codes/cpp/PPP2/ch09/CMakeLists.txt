@@ -1,0 +1,1 @@
+add_executable(test_Chrono test_Chrono.cc Chrono.cc Chrono.h)
