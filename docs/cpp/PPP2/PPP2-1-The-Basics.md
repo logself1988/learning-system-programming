@@ -1,11 +1,11 @@
-### Part I The Basics
+# Part I The Basics
 
-#### 2 Hello, World!
-###### 2.1 Programs
-###### 2.2 The classic first program
-###### 2.3 Compilation
-###### 2.4 Linking
-###### 2.5 Programming environments
+## 2 Hello, World!
+### 2.1 Programs
+### 2.2 The classic first program
+### 2.3 Compilation
+### 2.4 Linking
+### 2.5 Programming environments
 
 ``` c++
 // std_lib_facilities.h
@@ -21,9 +21,9 @@ using namespace std;
 inline void keep_window_open() { char ch; cin>>ch; }
 ```
 
-#### 3 Objects, Types, and Values
-###### 3.1 Input
-###### 3.2 Variables
+## 3 Objects, Types, and Values
+### 3.1 Input
+### 3.2 Variables
 
 - objects: the places in which we store data are called **objects**;
 - name: to access an object we need a **name**;
@@ -33,14 +33,14 @@ inline void keep_window_open() { char ch; cin>>ch; }
 - definition: a statement that defines a variable is called a **definition**, and a definition can provide an initial value.
 
 
-###### 3.3 Input and type
+### 3.3 Input and type
 
 输入操作`>>`和输出操作`<<`是类型敏感的:
 
 - 通常读取字符串以whitespace终止;
 - 其他情况忽略whitespace.
 
-###### 3.4 Operations and operators
+### 3.4 Operations and operators
 
 operators for some common and useful types:
 
@@ -71,15 +71,15 @@ operators for some common and useful types:
 |less than or equal     |`<=`     |`<=`     |`<=`     |`<=`     |`<=`     |
 
 
-###### 3.5 Assignment and initialization
-###### 3.6 Composite assignment operators
-###### 3.7 Names
+### 3.5 Assignment and initialization
+### 3.6 Composite assignment operators
+### 3.7 Names
 
 names are case sensitive.
 
 The C++ language reserves about 85 names as **keywords**, we cannot use those to name variables, types, functions, etc.
 
-###### 3.8 Types and objects
+### 3.8 Types and objects
 
 - a **type** defines a set of possible values and a set of operations (for an object);
 - an **object** is some memory that holds a value of a given type;
@@ -88,7 +88,7 @@ The C++ language reserves about 85 names as **keywords**, we cannot use those to
 - a **declaration** is a statement that gives a name to an object;
 - a **definition** is a declaration that sets aside memory for an object.
 
-###### 3.9 Type safety
+### 3.9 Type safety
 
 a program - or a part of a program - is **type-safe** when objects are used only according to the rules for their type.
 
@@ -120,10 +120,10 @@ int y {x};      // error
 ```
 
 
-#### 4 Computation
-###### 4.1 Computation
-###### 4.2 Objectives and tools
-###### 4.3 Expressions
+## 4 Computation
+### 4.1 Computation
+### 4.2 Objectives and tools
+### 4.3 Expressions
 
 symbolic constant: a named object to which you cannot give a new value after it has been initialized.
 
@@ -171,7 +171,7 @@ a list of the most common operators:
 
 `type(value)`, `type{value}`: convert `value` to `type` as if we were initializing a variable of type `type` with the value `value`.
 
-###### 4.4 Statements
+### 4.4 Statements
 
 - expression statements
 - declarations
@@ -189,7 +189,7 @@ iteration:
 - `for`-statements
 
 
-###### 4.5 Functions
+### 4.5 Functions
 
 function definition:
 
@@ -199,7 +199,7 @@ type identifier ( parameter-list ) function-body
 
 function declaration
 
-###### 4.6 vector
+### 4.6 vector
 
 a `vector` is a sequence of elements that you can access by an index.
 
@@ -212,20 +212,20 @@ for(int x : v)
  ```
 
 
-###### 4.7 Language features
+### 4.7 Language features
 
-#### 5 Errors
-###### 5.1 Introduction
-###### 5.2 Sources of errors
-###### 5.3 Compile-time errors
+## 5 Errors
+### 5.1 Introduction
+### 5.2 Sources of errors
+### 5.3 Compile-time errors
 
 ``` c++
 int area(int length, int width);
 ```
 
-###### 5.4 Link-time errors
-###### 5.5 Run-time errors
-###### 5.6 Exceptions
+### 5.4 Link-time errors
+### 5.5 Run-time errors
+### 5.6 Exceptions
 
 ``` c++
 try {}
@@ -237,24 +237,24 @@ out_of_range
 runtime_error
 ```
 
-###### 5.7 Logic errors
-###### 5.8 Estimation
-###### 5.9 Debugging
-###### 5.10 Pre- and post-conditions
-###### 5.11 Testing
+### 5.7 Logic errors
+### 5.8 Estimation
+### 5.9 Debugging
+### 5.10 Pre- and post-conditions
+### 5.11 Testing
 
-#### 6 Writing a Program
+## 6 Writing a Program
 
 In this chapter and the next, we will develop a program from a first vague idea through stages of analysis, design, implementation, testing, redesign, and re-implementation.
 
 
-###### 6.1 A problem
+### 6.1 A problem
 
 a simple calculator: "Get the computer to do ordinary arithmetic on expression we type in".
 
-###### 6.2 Thinking about the problem
-###### 6.3 Back to the calculator!
-###### 6.4 Grammars
+### 6.2 Thinking about the problem
+### 6.3 Back to the calculator!
+### 6.4 Grammars
 
 a simple expression grammar:
 
@@ -278,7 +278,7 @@ Number:
   floating-point-literal
 ```
 
-###### 6.5 Turning a grammar into code
+### 6.5 Turning a grammar into code
 
 we simply write one function for each grammar rule and use our type `Token` to represent tokens.
 
@@ -292,16 +292,16 @@ Expression:
   Term "-" Expression     // subtraction
 ```
 
-###### 6.6 Trying the first version
-###### 6.7 Trying the second version
-###### 6.8 Token streams
-###### 6.9 Program structure
+### 6.6 Trying the first version
+### 6.7 Trying the second version
+### 6.8 Token streams
+### 6.9 Program structure
 
-#### 7 Completing a Program
-###### 7.1 Introduction
-###### 7.2 Input and output
-###### 7.3 Error handling
-###### 7.4 Negative numbers
+## 7 Completing a Program
+### 7.1 Introduction
+### 7.2 Input and output
+### 7.3 Error handling
+### 7.4 Negative numbers
 
 ```
 Primary:
@@ -311,9 +311,9 @@ Primary:
   "+" Primary
 ```
 
-###### 7.5 Remainder: %
-###### 7.6 Cleaning up the code
-###### 7.7 Recovering from errors
+### 7.5 Remainder: %
+### 7.6 Cleaning up the code
+### 7.7 Recovering from errors
 
 read input until we find a semicolon(`;`)
 
@@ -323,7 +323,7 @@ read input until we find a semicolon(`;`)
 void Token_stream::ignore(char c);
 ```
 
-###### 7.8 Variables
+### 7.8 Variables
 
 grammar:
 
@@ -344,9 +344,9 @@ Declaration:
 
 `class Variable` and symbol tables
 
-#### 8 Technicalities: Functions, etc.
-###### 8.1 Technicalities
-###### 8.2 Declarations and definitions
+## 8 Technicalities: Functions, etc.
+### 8.1 Technicalities
+### 8.2 Declarations and definitions
 
 define entities in C++:
 
@@ -357,7 +357,7 @@ define entities in C++:
 - types: classes, enumerations,
 - templates.
 
-###### 8.3 Header files
+### 8.3 Header files
 
 To ease consistency checking, we `#include` a header both in:
 
@@ -371,7 +371,7 @@ a header should only contain declarations that can be duplicated in several file
 - class definitions,
 - definitions of numeric constants.
 
-###### 8.4 Scope
+### 8.4 Scope
 
 a scope is a region of program text.
 
@@ -383,7 +383,7 @@ kinds of scopes:
 - local scope: between `{...}` braces of a block or in a function argument list,
 - statement scope: e.g. in a `for`-statement.
 
-###### 8.5 Function call and return
+### 8.5 Function call and return
 
 rule of thumb:
 
@@ -395,20 +395,20 @@ rule of thumb:
 
 passing an argument is the initialization of the function's formal argument with the actual argument specified in the call.
 
-###### 8.6 Order of evaluation
-###### 8.7 Namespaces
+### 8.6 Order of evaluation
+### 8.7 Namespaces
 
 `using` declaration: `using std::string;`
 
 `using` directive: `using namespace std;`
 
 
-#### 9 Technicalities: Classes, etc.
-###### 9.1 User-defined types
-###### 9.2 Classes and members
-###### 9.3 Interface and implementation
-###### 9.4 Evolving a class
-###### 9.5 Enumerations
+## 9 Technicalities: Classes, etc.
+### 9.1 User-defined types
+### 9.2 Classes and members
+### 9.3 Interface and implementation
+### 9.4 Evolving a class
+### 9.5 Enumerations
 
 scoped enumerations: new in C++11
 
@@ -427,7 +427,7 @@ enum Month {
 ```
 
 
-###### 9.6 Operator overloading
+### 9.6 Operator overloading
 
 example of C++ provided operators:
 
@@ -438,7 +438,7 @@ example of C++ provided operators:
 references: [C++ - C++ language - Expressions - operator overloading](https://en.cppreference.com/w/cpp/language/operators)
 
 
-###### 9.7 Class interfaces
+### 9.7 Class interfaces
 
 general principles to design interfaces:
 
@@ -450,4 +450,4 @@ general principles to design interfaces:
 - identify nonmodifying member functions,
 - free all resources in the destructor.
 
-###### 9.8 The Date class
+### 9.8 The Date class

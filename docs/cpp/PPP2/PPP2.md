@@ -55,6 +55,8 @@
 
 - Sutter, Herb. **Exceptional C++: 47 Engineering Puzzles, Programming Problems, and Solutions**. Addison-Wesley, 1999. ISBN 0201615622
 
+- Angelika Langer and Klaus Kreft. **Standard C++ IOStreams and Locales: Advanced Programmer's Guide and Reference**. Addison-Wesley, 2000. ISBN: 0321585585.
+
 ###### 0.7 Biographies
 
 #### 1 Computers, People, and Programming

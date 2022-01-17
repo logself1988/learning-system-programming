@@ -1,0 +1,5 @@
+add_executable(rw_file rw_file.cc)
+add_executable(rw_error rw_error.cc)
+add_executable(get_input get_input.cc)
+add_executable(r_struct_file r_struct_file.cc)
+add_executable(punct_stream punct_stream.cc)
