@@ -79,6 +79,10 @@ main (int argc, char const *argv[])
       Text sizes{ Point{ 100, 20 }, oss.str () };
       win.attach (sizes);
 
+      Image cal{ Point{ 225, 225 }, "snow_cpp.gif" }; // 320x240
+      cal.set_mask (Point{ 40, 40 }, 200, 150);
+      win.attach (cal);
+
       win.wait_for_button (); // display
     }
   catch (const std::exception &e)

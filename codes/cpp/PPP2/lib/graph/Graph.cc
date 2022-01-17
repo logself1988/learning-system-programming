@@ -4,6 +4,12 @@
 namespace Graph_lib
 {
 
+Shape::Shape (initializer_list<Point> lst)
+{
+  for (Point p : lst)
+    add (p);
+}
+
 void
 Shape::draw_lines () const
 {

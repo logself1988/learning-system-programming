@@ -83,6 +83,7 @@ struct Line_style
     dashdot = FL_DASHDOT,       // - . - .
     dashdotdot = FL_DASHDOTDOT, // -..-..
   };
+
   Line_style (Line_style_type ss) : s (ss), w (0) {}
   Line_style (Line_style_type lst, int ww) : s (lst), w (ww) {}
   Line_style (int ss) : s (ss), w (0) {}
@@ -92,6 +93,7 @@ struct Line_style
   {
     return w;
   }
+
   int
   style () const
   {
@@ -297,7 +299,7 @@ public:
   Shape &operator= (const Shape &) = delete;
 
 private:
-  vector<Point> points; // not used by all shapes
+  vector<Point> points; //!< not used by all shapes
   Color lcolor{ static_cast<int> (fl_color ()) };
   Line_style ls{ 0 };
   Color fcolor{ Color::invisible };
@@ -377,34 +379,40 @@ struct Rectangle : Shape
   }
 
 private:
-  int h; // height
-  int w; // width
+  int h; //!< height
+  int w; //!< width
   //	Color fcolor;	// fill color; 0 means "no fill"
 };
 
 bool intersect (Point p1, Point p2, Point p3, Point p4);
 
+//! open sequence of lines
 struct Open_polyline : Shape
-{ // open sequence of lines
-  using Shape::Shape;
+{
+  Open_polyline () : Shape::Shape () {}
+  Open_polyline (initializer_list<Point> lst) : Shape::Shape (lst) {}
+
   void
   add (Point p)
   {
     Shape::add (p);
   }
+
   void draw_lines () const;
 };
 
+//! closed sequence of lines
 struct Closed_polyline : Open_polyline
-{ // closed sequence of lines
+{
   using Open_polyline::Open_polyline;
   void draw_lines () const;
 
   //	void add(Point p) { Shape::add(p); }
 };
 
+//! closed sequence of non-intersecting lines
 struct Polygon : Closed_polyline
-{ // closed sequence of non-intersecting lines
+{
   using Closed_polyline::Closed_polyline;
   void add (Point p);
   void draw_lines () const;
@@ -602,21 +610,41 @@ struct Mark : Text {
 
 struct Marked_polyline : Open_polyline
 {
-  Marked_polyline (const string &m) : mark (m) {}
+  Marked_polyline (const string &m) : mark (m)
+  {
+    if (m == "")
+      mark = "*";
+  }
+
+  Marked_polyline (const string &m, initializer_list<Point> lst)
+      : Open_polyline (lst), mark (m)
+  {
+    if (m == "")
+      mark = "*";
+  }
+
   void draw_lines () const;
 
 private:
   string mark;
 };
 
+//! marks without lines connecting them
 struct Marks : Marked_polyline
 {
   Marks (const string &m) : Marked_polyline (m)
   {
     set_color (Color (Color::invisible));
   }
+
+  Marks (const string &m, initializer_list<Point> lst)
+      : Marked_polyline{ m, lst }
+  {
+    set_color (Color{ Color::invisible });
+  }
 };
 
+//! marks that is initialized by a point and a character
 struct Mark : Marks
 {
   Mark (Point xy, char c) : Marks (string (1, c)) { add (xy); }
@@ -636,6 +664,7 @@ private:
 struct Bad_image : Fl_Image
 {
   Bad_image (int h, int w) : Fl_Image (h, w, 0) {}
+
   void
   draw (int x, int y, int, int, int, int)
   {
@@ -661,6 +690,7 @@ struct Image : Shape
   Image (Point xy, string s, Suffix::Encoding e = Suffix::none);
   ~Image () { delete p; }
   void draw_lines () const;
+
   void
   set_mask (Point xy, int ww, int hh)
   {
@@ -669,6 +699,7 @@ struct Image : Shape
     cx = xy.x;
     cy = xy.y;
   }
+
   void
   move (int dx, int dy)
   {
@@ -677,8 +708,8 @@ struct Image : Shape
   }
 
 private:
-  int w, h, cx,
-      cy; // define "masking box" within image relative to position (cx,cy)
+  //!< define "masking box" within image relative to position (cx,cy)
+  int w, h, cx, cy;
   Fl_Image *p;
   Text fn;
 };
