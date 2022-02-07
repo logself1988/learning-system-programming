@@ -1,3 +1,119 @@
 # ex_copy1.cc
 
 88 99
+
+# ex_copy2.cc
+
+0 0
+{ 0 99 2.2 }
+{ 0 99 2.2 }
+
+# ex_move.cc
+
+1 2 3
+_vector::_vector(_vector &&) called
+{ 1 2 3 }
+
+3 2 1
+_vector::operator=(_vector &&) called
+{ 3 2 1 }
+
+# ex_cons_des.cc
+
+0x103c8c148->X(int): 2 (2)
+
+0x7ffeebf7f498->X(int): 4 (4)
+loc
+
+0x7ffeebf7f488->X(X&): 4 (4)
+loc2
+
+0x7ffeebf7f480->X(int): 5 (5)
+0x7ffeebf7f498->X::operator=(): 4 (5)
+0x7ffeebf7f480->~X(): 5 (0)
+loc
+
+0x7ffeebf7f470->X(X&): 5 (5)
+0x7ffeebf7f478->X(X&): 5 (5)
+0x7ffeebf7f488->X::operator=(): 4 (5)
+0x7ffeebf7f478->~X(): 5 (0)
+0x7ffeebf7f470->~X(): 5 (0)
+copy
+
+0x7ffeebf7f460->X(X&): 5 (5)
+0x7ffeebf7f468->X(X&): 5 (5)
+0x7ffeebf7f488->X::operator=(): 5 (5)
+0x7ffeebf7f468->~X(): 5 (0)
+0x7ffeebf7f460->~X(): 5 (0)
+copy2
+
+0x7ffeebf7f458->X(int): 6 (6)
+loc3
+r
+
+0x7ffeebf7f378->X(int): 7 (7)
+0x7f97f8d06b70->X(X&): 7 (7)
+0x7ffeebf7f378->~X(): 7 (0)
+0x7f97f8d06b70->~X(): 7 (0)
+make(7)
+
+0x7ffeebf7f378->X(int): 8 (8)
+0x7f97f8d06b70->X(X&): 8 (8)
+0x7ffeebf7f378->~X(): 8 (0)
+0x7f97f8d06b70->~X(): 8 (0)
+make(8)
+
+0x7f97f8d06b70->X(): 8 (0)
+0x7f97f8d06b74->X(): -2147483648 (0)
+0x7f97f8d06b78->X(): 0 (0)
+0x7f97f8d06b7c->X(): -2147483648 (0)
+v
+
+0x7ffeebf7f430->X(): 203768434 (0)
+0x7ffeebf7f434->X(): 1 (0)
+loc4
+
+0x7f97f8d0a380->X(int): 9 (9)
+0x7f97f8d0a380->~X(): 9 (0)
+p
+
+0x7f97f8d0a398->X(): 0 (0)
+0x7f97f8d0a39c->X(): -2147483648 (0)
+0x7f97f8d0a3a0->X(): 778371074 (0)
+0x7f97f8d0a3a4->X(): 1802792038 (0)
+0x7f97f8d0a3a8->X(): 1735552814 (0)
+0x7f97f8d0a3a8->~X(): 0 (0)
+0x7f97f8d0a3a4->~X(): 0 (0)
+0x7f97f8d0a3a0->~X(): 0 (0)
+0x7f97f8d0a39c->~X(): 0 (0)
+0x7f97f8d0a398->~X(): 0 (0)
+pp
+
+0x7ffeebf7f434->~X(): 0 (0)
+0x7ffeebf7f430->~X(): 0 (0)
+0x7f97f8d06b7c->~X(): 0 (0)
+0x7f97f8d06b78->~X(): 0 (0)
+0x7f97f8d06b74->~X(): 0 (0)
+0x7f97f8d06b70->~X(): 0 (0)
+0x7ffeebf7f458->~X(): 6 (0)
+0x7ffeebf7f488->~X(): 5 (0)
+0x7ffeebf7f498->~X(): 5 (0)
+0x103c8c148->~X(): 2 (0)
+
+# ex_access_elem.cc
+
+11 22 33
+_vector::_vector(_vector &&) called
+{ 11 22 33 }
+
+33 22 11
+{ 33 22 11 }
+{ 11 22 33 }
+{ 33 2 11 }
+
+# ex_palindrome.cc
+
+is_palindrome(anna)=1
+is_palindrome(anna, 4)=1
+address of a is0x7ffedfd1b468
+is_palindrome(0x7ffedfd1b468, 0x7ffedfd1b46b)=1

@@ -516,6 +516,21 @@ types that provide deep copy are said to have **value semantics**.
 #### 18.3.4 Moving
 
 ``` c++
+vector fill(istream& is)
+{
+  vector res;
+  for (double x; is >> x;) res.push_back(x);
+  return res;
+}
+
+void use()
+{
+  vector vec = fill(cin); // expensive copying
+  // use vec
+}
+```
+
+``` c++
 vector(vector&&);             // move constructor
 vector& operator=(vector&&);  // move assignment
 ```
@@ -524,22 +539,285 @@ vector& operator=(vector&&);  // move assignment
 
 7 essential operations:
 
-- constructors from one or more arguments
-- default constructor
-- copy constructor (copy object of same type)
-- copy assignment (copy object of same type)
-- move constructor (move object of same type)
-- move assignment (move object of same type)
-- destructor
+- 1. constructors from one or more arguments
+
+usually we need one or more constructors that take arguments needed to initialize an object.
 
 usually we use a **constructor** to establish an invariant.
 
-we need a **default constructor** if we want to be able to make objects
+- 2. default constructor
 
+we need a **default constructor** if we want to be able to make objects of the class without specifying an intializer.
+
+
+Q: when does it make sense to have a default constructor?
+
+A: when we can establish the invariant for the class with a meaningful and obvious default value.
+
+- 3. copy constructor (copy object of same type)
+- 4. copy assignment (copy object of same type)
+- 5. move constructor (move object of same type)
+- 6. move assignment (move object of same type)
+- 7. destructor
+
+a class needs a destructor if it acquires resources.
+
+another sign that a class needs a destructor is simply that it has members that are **pointers** or **references**.
+
+a class that needs a destructor almost also needs a **copy constructor** and a **copy assignment**.
+
+a class that needs a destructor almost also needs a **move constructor** and a **move assignment**.
+
+a base class for which a derived class may have a destructor needs a `virtual` destructor.
+
+#### 18.4.1 Explicit constructors
+
+a constructor that takes a **single** argument defines a **conversion** from its argument type to its class.
+
+``` c++
+class complex {
+public:
+  complex(double);          // defines double-to-complex conversion
+  complex(double, double);
+};
+
+complex z1 = 3.14; // ok: convert 3.14 to (3.14, 0)
+complex z2 = complex{1.2, 3.4};
+```
+
+a constructor defined `explicit` provides only the usual construction semantics and not the implicit conversion:
+
+``` c++
+class vector {
+  // ...
+  explicit vector(int);
+};
+
+vector v = 10;  // error: no int-to-vector conversion
+v = 20;         // error: no int-to-vector conversion
+vector v0(10);  // ok
+
+void f(const vector&);
+f(10);          // error: no int-to-vector conversion
+f(vector(10));  // ok
+```
+
+#### 18.4.2 Debugging constructors and destructors
+
+think of constructors and destructors this way:
+
+- whenever an object of type `X` is created, one of `X`'s constructors is invoked: a variable is intitalized, an object is create using `new`, an object is copied.
+- whenever an object of type `X` is destroyed, `X`'s destructor is invoked: names go out of scope, program terminates, `delete` is used on a pointer to an object.
 
 ### 18.5 Access to vector elements
+
+``` c++
+class vector {
+  // ...
+  double &operator[](int n) { //!< operator[], return reference
+    return elem[n];
+  }
+
+  double operator[](int n) const { //!< for const vectors
+    return elem[n];
+  }
+};
+```
+
 ### 18.6 Arrays
+
+An array is a homogeneous sequence of objects allocated in contiguous memory:
+
+- all element of an array have the same type and
+- there are no gaps between the objects of the sequence,
+- the elements of an array are numbered from 0 upward.
+
+``` c++
+const int max = 100;
+int gai[max]; // a global array of 100 ints
+
+void f(int n)
+{
+  char lac[20];   // local array
+  int lai[60];
+  double lad[n];  // error: array size not a constant
+}
+```
+
+limitation: the number of elements of a named array must be known at compile time. if we want the number of elements to be a variable, we must put it on the free store and acess it through a pointer.
+
+access named arrays using the subscript and dereference operators `[]` and `*`:
+
+``` c++
+void f2()
+{
+  char lac[20];   // local array
+  lac[7] = 'a';
+  *lac = 'b';     // equal to lac[0] = 'b'
+
+  // arrays do not range check
+  lac[-2] = 'b';  // ?
+  lac[2--] = 'c'; // ?
+}
+```
+
+#### 18.6.1 Pointers to array elements
+
+``` c++
+double ad[10];
+double* p = &ad[5]; // point to ad[5]
+
+// subscript and dereference
+*p = 7;
+p[2] = 6;
+p[-3] = 9;
+
+// pointer arithmetic
+
+p += 2;
+p -= 5;
+
+p += 1000;      // ?
+double d = *p;  // ?
+*p = 12.34;     // ?
+
+for (double* p = &ad[0]; p < &ad[10]; ++p) {}
+for (double* p = &ad[9]; p >= &ad[0]; --p) {}
+
+double* p1 = &ad[0];
+double* p2 = p1+7;
+double* p3 = &p1[7]; // p2 == p3
+```
+
+#### 18.6.2 Pointers and arrays
+
+the name of an arry refers to all the elements of the array:
+
+``` c++
+char ch[100]; // sizeof(ch) == 100
+char* p = ch; // p == &ch[0], sizeof(p) == 4
+```
+
+the pointer we get from treating the name of an array as a pointer to its first element is a **value** and not a variable:
+
+``` c++
+char ac[10];
+ac = new char[20];      // error: no assignment to array name
+&ac[0] = new char[20];  // error: no assignment to pointer value
+```
+
+we cannot copy arrays using assignment:
+
+``` c++
+int x[100];
+int y[100];
+
+x = y;          // error
+int z[100] = y; // error
+// use memcpy() or std::copy() instead
+```
+
+#### 18.6.3 Array intialization
+
+an array of `char`s can be initialized with a string literal.
+
+``` c++
+char ac[] = "Beorn"; // C-style string: a terminating zero character
+```
+
+all string literals are C-style strings.
+
+all arrays can be intialized by a list of values of their element type:
+
+``` c++
+int ai[] = {1,2,3,4,5,6};             // array of 6 ints
+int ai2[100] = {0,1,2,3,4,5,6,7,8,9}; // the last 90 elements are intialized to 0
+double ad[100] = {};                  // all elements intialized to 0.0
+char chars[] = {'a','b','c'};         // no terminating 0
+```
+
+#### 18.6.4 Pointer problems
+
+all serious problems with pointers involve:
+
+- trying to access something that isn't an object of the expected type,
+- access outside the bounds of an array.
+
+cautions:
+
+- do not access through the null pointer;
+
+``` c++
+int* p = nullptr;
+*p = 7; // ?
+```
+
+- do intialize pointers;
+
+``` c++
+int* p;
+*p = 9; // ?
+```
+
+- do not access nonexistent array elements;
+
+``` c++
+int a[10];
+int* p = &a[10];
+*p = 11;    // ?
+a[10] = 12; // ?
+```
+
+- do not access through a deleted pointer;
+
+``` c++
+int* p = new int{7};
+// ...
+delete p;
+// ...
+*p = 13; // ?
+```
+
+- do not return a pointer to a local variable.
+
+``` c++
+int* f()
+{
+  int x = 7;
+  // ...
+  return &x;
+}
+
+
+int *p = f();
+// ...
+*p = 15; // ?
+```
+
+
 ### 18.7 Examples: palindrome
+
+a palindrome is a word that is spelled the same from both ends, example: anna, petep, malayalam.
+
+#### 18.7.1 Palindromes using `string`
+
+``` c++
+bool is_palindrome(const string& s);
+```
+
+#### 18.7.2 Palindromes using arrays
+
+``` c++
+// s points to the first character of an arry of n characters
+bool is_palindrome(const char s[], int n);
+```
+
+#### 18.7.3 Palindromes using pointers
+
+``` c++
+// first points to the first letter, last to the last letter
+bool is_palindrome(const char* first, const char* last);
+```
 
 ## 19 Vector, Templates, and Exceptions
 ### 19.1 The problems

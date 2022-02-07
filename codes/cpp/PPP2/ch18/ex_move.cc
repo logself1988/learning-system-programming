@@ -14,12 +14,17 @@ public:
   _vector(const _vector &);            //!< copy constructor
   _vector &operator=(const _vector &); //!< copy assignment
 
+  _vector(_vector &&a);           //!< move constructor
+  _vector &operator=(_vector &&); //!< move assignment
+
   int size() const { return sz; }
   double get(int n) const { return elem[n]; }
   void set(int n, double v) { elem[n] = v; }
 };
 
 _vector::_vector(const _vector &arg) : sz{arg.sz}, elem{new double[arg.sz]} {
+  cout << "_vector::_vector(const _vector &) called\n";
+
   copy(arg.elem, arg.elem + sz, elem); // use std::copy()
   // for (int i = 0; i < sz; i++) {
   // elem[i] = arg.get(i);
@@ -27,6 +32,8 @@ _vector::_vector(const _vector &arg) : sz{arg.sz}, elem{new double[arg.sz]} {
 }
 
 _vector &_vector::operator=(const _vector &arg) {
+  cout << "_vector::operator=(const _vector &) called\n";
+
   double *p = new double[arg.sz];       // allocate new space
   copy(arg.elem, arg.elem + arg.sz, p); // copy elements using std::copy()
 
@@ -35,6 +42,33 @@ _vector &_vector::operator=(const _vector &arg) {
   elem = p; // reset elem
   sz = arg.sz;
   return *this; // return a self reference
+}
+
+_vector::_vector(_vector &&a) : sz{a.sz}, elem{a.elem} {
+  cout << "_vector::_vector(_vector &&) called\n";
+  a.sz = 0;
+  a.elem = nullptr;
+}
+
+_vector &_vector::operator=(_vector &&a) {
+  cout << "_vector::operator=(_vector &&) called\n";
+
+  delete[] elem;
+  elem = a.elem;
+  sz = a.sz;
+  a.elem = nullptr;
+  a.sz = 0;
+  return *this;
+}
+
+_vector fill(istream &is, int n) {
+  _vector res(n);
+  double x;
+  for (int i = 0; i < n; i++) {
+    is >> x;
+    res.set(i, x);
+  }
+  return res;
 }
 
 void print_vector(const _vector &v) {
@@ -46,19 +80,12 @@ void print_vector(const _vector &v) {
 }
 
 int main(int argc, char const *argv[]) {
-  _vector v(3);
-  v.set(2, 2.2);
-
-  _vector v2 = v; // call copy constructor
-
-  v.set(1, 99);
-  v2.set(0, 88);
-  cout << v.get(0) << ' ' << v2.get(1) << '\n'; // 0 0
-
-  _vector v3(4);
-  v3 = v; // call copy assignment
+  _vector v = move(fill(cin, 3)); // force use move
   print_vector(v);
-  print_vector(v3);
+
+  _vector v2(3);
+  v2 = fill(cin, 3);
+  print_vector(v2);
 
   return 0;
 }
