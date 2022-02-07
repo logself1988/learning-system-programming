@@ -312,16 +312,90 @@ container of `Shape` or `Widget`:
 ## 14 Graphics Class Design
 ### 14.1 Design principles
 ### 14.2 Shape
+
+the constructors are `protected`, means that they can only be used directly from classes derived from `Shape`.
+
+default constructor: `Shape() {}`
+
+the initializer-list constructor: `Shape(initializer_list<Point> lst);`
+
+virtual destructor: `virtual ~Shape() {}`
+
+access control:
+
+- `private`
+- `protected`
+- `public`
+
+**overriding**: defining a function in a derived class so that it can be used through the interfaces provided by a base is called overriding.
+
+
+copy constructor: `Shape(const Shape&) = delete;`
+
+copy assignment: `Shape& operator=(const Shape&) = delete;`
+
 ### 14.3 Base and derived classes
+
+**derivation**: a way to build one class from another so that the new class can be used in place of the original. often called **inheritance**.
+
+**virtual functions**: the ability to define a function in a base class and have a function of the same name and type in a derived class called when a user calls the base class definition. ofen called **run-time polymorphism**, **dynamic dispatch**, or **run-time dispatch**.
+
+**private and protected members**: keep the implementation details of our classes private to protect them from direct use that could complicate maintenance. often called **encapsulation**.
+
+#### 14.3.1 Object layout
+
+`vtbl`: virtual table, virtual function table
+
+`vptr`: virtual pointer
+
+#### 14.3.2 Deriving classes and defining virtual functions
+#### 14.3.3 Overriding
+#### 14.3.4 Access
+#### 14.3.5 Pure virtual functions
+
 ### 14.4 Benefits of object-oriented programming
 
 ## 15 Graphing Functions and Data
 ### 15.1 Introduction
 ### 15.2 Graphing simple functions
 ### 15.3 Function
+
+`Function` is a `Shape` with a constructor that generates a lot of line segments and stores them in its `Shape` part.
+
+Those line segments approximate the values of function `f`, with range `[r1, r2)` and *x* coordinates scaled by `xscale`, *y* coordinates scaled by `yscale`.
+
+``` c++
+typedef double Fct (double);
+
+Function (Fct f, double r1, double r2, Point orig, int count = 100,
+          double xscale = 25, double yscale = 25);
+```
+
+default arguments: `count`, `xscale`, `yscale`; can only define default arguments for trailing parameters
+
+lambda expression:
+
+``` c++
+[](double x) { return cos(x)+slope(x); }
+
+// specify the return type explicitly
+[](double x) -> double { return cos(x)+slope(x); }
+```
+
 ### 15.4 Axis
+
+An `Axis` consits of a line, a number of "notches" on that line, and a text label.
+
 ### 15.5 Approximation
+
+animate:
+
+$$
+e^{x} = 1 + x + x^{2}/2! + x^{3}/3! + x^{4}/4! + \cdots
+$$
+
 ### 15.6 Graphing data
+
 
 ## 16 Graphical User Interfaces
 ### 16.1 User interface alternatives

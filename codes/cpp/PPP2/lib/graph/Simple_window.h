@@ -35,8 +35,9 @@ struct Simple_window : Graph_lib::Window
 private:
   bool button_pushed;
 
+  //!< callback for next_button
   static void
-  cb_next (Address, Address addr) // callback for next_button
+  cb_next (Address, Address addr)
   //	{ reference_to<Simple_window>(addr).next(); }
   {
     static_cast<Simple_window *> (addr)->next ();

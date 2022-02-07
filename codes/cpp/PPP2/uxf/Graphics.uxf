@@ -1,0 +1,166 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLNote&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;12&lt;/x&gt;&lt;y&gt;906&lt;/y&gt;&lt;w&gt;190&lt;/w&gt;&lt;h&gt;20&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;14.3 Base and derived classes&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLPackage&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;620&lt;/x&gt;&lt;y&gt;967&lt;/y&gt;&lt;w&gt;140&lt;/w&gt;&lt;h&gt;110&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;_Openpolyline_
+--
+**points**
+**lcolor**
+**ls**
+**fclolor**
+**vptr**
+halign=left
+bg=#ACCEEC
+&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLNote&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;132&lt;/x&gt;&lt;y&gt;906&lt;/y&gt;&lt;w&gt;190&lt;/w&gt;&lt;h&gt;20&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;14.3 Base and derived classes&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLNote&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;138&lt;/x&gt;&lt;y&gt;700&lt;/y&gt;&lt;w&gt;140&lt;/w&gt;&lt;h&gt;20&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;12.4.3 Drawing shapes&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLPackage&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;270&lt;/x&gt;&lt;y&gt;320&lt;/y&gt;&lt;w&gt;140&lt;/w&gt;&lt;h&gt;40&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;FLTK headers
+--
+bg=orange&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;UMLNote&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;60&lt;/x&gt;&lt;y&gt;60&lt;/y&gt;&lt;w&gt;140&lt;/w&gt;&lt;h&gt;20&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;12.6 Shapes&lt;/panel_attributes&gt;&lt;additional_attributes&gt;&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>50</x><y>30</y><w>100</w><h>30</h></coordinates><panel_attributes>Window</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>90</y><w>100</w><h>30</h></coordinates><panel_attributes>Simple_window</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>50</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>30</y><w>100</w><h>30</h></coordinates><panel_attributes>Line_style</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>30</y><w>100</w><h>30</h></coordinates><panel_attributes>Color</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>90</y><w>100</w><h>30</h></coordinates><panel_attributes>Point</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>90</y><w>100</w><h>30</h></coordinates><panel_attributes>Shape</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>180</y><w>50</w><h>30</h></coordinates><panel_attributes>Line</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>180</y><w>50</w><h>30</h></coordinates><panel_attributes>Lines</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>180</y><w>60</w><h>30</h></coordinates><panel_attributes>Polygon</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>180</y><w>70</w><h>30</h></coordinates><panel_attributes>Rectangle</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>180</y><w>30</w><h>30</h></coordinates><panel_attributes>Axis</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>180</y><w>40</w><h>30</h></coordinates><panel_attributes>Text</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>180</y><w>40</w><h>30</h></coordinates><panel_attributes>Image</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>110</y><w>80</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>110</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>60</x><y>110</y><w>210</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>190;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>110</y><w>140</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>120;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>110</y><w>160</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;140;70</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>110</y><w>100</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;80;70</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>110</y><w>210</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;190;70</additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>0</y><w>140</w><h>20</h></coordinates><panel_attributes>12.6 Shapes</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>250</y><w>140</w><h>20</h></coordinates><panel_attributes>12.8 Getting this to run</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>50</x><y>290</y><w>100</w><h>40</h></coordinates><panel_attributes>Point.h
+--
+*struct Point {...};*
+bg=#FFEC95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>60</x><y>400</y><w>160</w><h>70</h></coordinates><panel_attributes>Graph.h
+--
+\\ graphing interface:
+*struct Shape {...};*
+...
+halign=left
+bg=#FFEC95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>20</x><y>500</y><w>90</w><h>40</h></coordinates><panel_attributes>Graph.cpp
+--
+*Graph code*
+halign=left
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>270</x><y>291</y><w>100</w><h>40</h></coordinates><panel_attributes>FLTK headers
+--
+bg=#FFEC95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>440</x><y>311</y><w>90</w><h>40</h></coordinates><panel_attributes>FLTK code
+--
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>260</x><y>360</y><w>160</w><h>70</h></coordinates><panel_attributes>Window.h
+--
+\\ window interface:
+*struct Window {...};*
+...
+halign=left
+bg=#FFEC95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>220</x><y>500</y><w>90</w><h>40</h></coordinates><panel_attributes>Window.cpp
+--
+*Window code*
+halign=left
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>320</x><y>520</y><w>160</w><h>70</h></coordinates><panel_attributes>Simplw_window.h
+--
+\\ window interface:
+*class Simple_window {...};*
+...
+halign=left
+bg=#FFEC95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>460</x><y>400</y><w>160</w><h>70</h></coordinates><panel_attributes>GUI.h
+--
+\\ GUI interface:
+*struct In_box {...};*
+...
+halign=left
+bg=#FFEC95</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>520</x><y>500</y><w>90</w><h>40</h></coordinates><panel_attributes>GUI.cpp
+--
+*GUI code*
+halign=left
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>323</y><w>160</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;140;40</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>110</x><y>610</y><w>170</w><h>80</h></coordinates><panel_attributes>chapter12.cpp
+--
+*#include "Graph.h"*
+*#include "Simple_window.h*
+*int main() {...}*
+halign=left
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>323</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>323</y><w>210</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>190;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>40</x><y>463</y><w>90</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>463</y><w>30</w><h>170</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>553</y><w>210</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>190;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>423</y><w>80</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>60;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>423</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>463</y><w>180</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>160;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>463</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>313</y><w>100</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;80;30</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>323</y><w>170</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;150;80</additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>383</y><w>110</w><h>40</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;90;20</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>323</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLNote</id><coordinates><x>10</x><y>700</y><w>140</w><h>20</h></coordinates><panel_attributes>12.4.3 Drawing shapes</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>733</y><w>140</w><h>60</h></coordinates><panel_attributes>*Shape*
+--
+*Circle*
+*draw_lines()*
+halign=center
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>813</y><w>140</w><h>60</h></coordinates><panel_attributes>*Shape*
+--
+*Square*
+*draw_lines()*
+halign=center
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>752</y><w>100</w><h>30</h></coordinates><panel_attributes>Window
+bg=#C7D994</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>812</y><w>100</w><h>60</h></coordinates><panel_attributes>Our code
+Make object
+Attach objects
+bg=#C7D994</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>723</y><w>90</w><h>50</h></coordinates><panel_attributes>Display 
+engine
+halign=center
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>734</y><w>90</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+m1=*draw()*
+m1pos=-5,7
+</panel_attributes><additional_attributes>10;10;70;30</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>754</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+m1=*draw()*
+m1pos=7,-10
+</panel_attributes><additional_attributes>10;70;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>774</y><w>90</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+m1=*attach()*
+m1pos=7,-10
+</panel_attributes><additional_attributes>10;10;30;40</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>734</y><w>130</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+m1=*draw()*
+m1pos=5,-25
+</panel_attributes><additional_attributes>10;30;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>764</y><w>170</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+m1=*gui_main()*
+m1pos=15,20
+</panel_attributes><additional_attributes>150;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>30</x><y>735</y><w>150</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1=*draw_lines()*
+m1pos=-40,-40
+</panel_attributes><additional_attributes>130;50;80;50;80;10;130;10</additional_attributes></element><element><id>Relation</id><coordinates><x>30</x><y>815</y><w>150</w><h>70</h></coordinates><panel_attributes>lt=&lt;-
+m1=*draw_lines()*
+m1pos=-40,-40
+</panel_attributes><additional_attributes>130;50;80;50;80;10;130;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>12</x><y>906</y><w>190</w><h>20</h></coordinates><panel_attributes>14.3 Base and derived classes</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>462</x><y>1015</y><w>50</w><h>30</h></coordinates><panel_attributes>Line</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>322</x><y>1055</y><w>50</w><h>30</h></coordinates><panel_attributes>Lines</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>192</x><y>1065</y><w>90</w><h>30</h></coordinates><panel_attributes>Open_polyline</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>102</x><y>975</y><w>150</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>102</x><y>1085</y><w>30</w><h>30</h></coordinates><panel_attributes>Axis</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>312</x><y>1095</y><w>70</w><h>30</h></coordinates><panel_attributes>Rectangle</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>282</x><y>965</y><w>160</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;140;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>402</x><y>1015</y><w>40</w><h>30</h></coordinates><panel_attributes>Text</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>22</x><y>1005</y><w>40</w><h>30</h></coordinates><panel_attributes>Image</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>32</x><y>955</y><w>180</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>160;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>232</x><y>975</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>262</x><y>975</y><w>110</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;80</additional_attributes></element><element><id>Relation</id><coordinates><x>282</x><y>955</y><w>220</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;200;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>192</x><y>955</y><w>100</w><h>30</h></coordinates><panel_attributes>Shape</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>22</x><y>1045</y><w>40</w><h>30</h></coordinates><panel_attributes>Circle</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>72</x><y>1045</y><w>40</w><h>30</h></coordinates><panel_attributes>Ellipse</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>42</x><y>975</y><w>170</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>150;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>82</x><y>975</y><w>150</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>402</x><y>1065</y><w>70</w><h>30</h></coordinates><panel_attributes>Function</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>282</x><y>975</y><w>140</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;90</additional_attributes></element><element><id>Relation</id><coordinates><x>252</x><y>975</y><w>80</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>92</x><y>1135</y><w>110</w><h>30</h></coordinates><panel_attributes>Marked_polyline</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>242</x><y>1135</y><w>90</w><h>30</h></coordinates><panel_attributes>Closed_polyline</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>242</x><y>1185</y><w>60</w><h>30</h></coordinates><panel_attributes>Polygon</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>112</x><y>1185</y><w>60</w><h>30</h></coordinates><panel_attributes>Marks</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>112</x><y>1235</y><w>60</w><h>30</h></coordinates><panel_attributes>Mark</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>1085</y><w>90</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>70;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>222</x><y>1085</y><w>70</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;50;50</additional_attributes></element><element><id>Relation</id><coordinates><x>132</x><y>1155</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>262</x><y>1155</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>132</x><y>1205</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>UMLNote</id><coordinates><x>550</x><y>907</y><w>190</w><h>20</h></coordinates><panel_attributes>14.3.1 Object layout</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>550</x><y>967</y><w>140</w><h>110</h></coordinates><panel_attributes>_Openpolyline_
+--
+*points*
+*lcolor*
+*ls*
+*fclolor*
+*vptr*
+halign=left
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>550</x><y>1118</y><w>140</w><h>130</h></coordinates><panel_attributes>_Circle_
+--
+*points*
+*lcolor*
+*ls*
+*fclolor*
+*vptr*
+*r*
+halign=left
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>1003</y><w>130</w><h>60</h></coordinates><panel_attributes>Open_polyline's *vtbl*
+--
+
+--
+halign=center
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>1153</y><w>130</w><h>60</h></coordinates><panel_attributes>Circle's *vtbl*
+--
+
+--
+halign=center
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>1073</y><w>140</w><h>50</h></coordinates><panel_attributes>Shape::move() {...}
+halign=left
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>963</y><w>140</w><h>50</h></coordinates><panel_attributes>Shape::draw_lines() {...}
+halign=left
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>1173</y><w>140</w><h>50</h></coordinates><panel_attributes>Circle::draw_lines() {...}
+halign=left
+bg=#ACCEEC
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>1002</y><w>180</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>160;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>1152</y><w>180</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>160;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>972</y><w>70</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>1172</y><w>70</w><h>40</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;20;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>1042</y><w>70</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>1102</y><w>70</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;100</additional_attributes></element><element><id>UMLNote</id><coordinates><x>10</x><y>1285</y><w>140</w><h>20</h></coordinates><panel_attributes>15.6.2 General layout</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>1356</y><w>360</w><h>160</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>1396</y><w>230</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>1327</y><w>390</w><h>40</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=xmax
+m1pos=150,-20
+</panel_attributes><additional_attributes>10;20;370;20</additional_attributes></element><element><id>Relation</id><coordinates><x>60</x><y>1347</y><w>60</w><h>190</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=ymax
+m1pos=-40,50
+</panel_attributes><additional_attributes>40;10;40;170</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>1347</y><w>70</w><h>70</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=yspace
+m1pos=0,-5
+</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>1467</y><w>60</w><h>70</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=yoffset
+m1pos=0,-5
+</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>1417</y><w>90</w><h>40</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=xoffset
+m1pos=-5,-20
+</panel_attributes><additional_attributes>10;20;70;20</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>1417</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=xspace
+m1pos=5,-20
+</panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>1437</y><w>260</w><h>40</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=xlength
+m1pos=80,-20
+</panel_attributes><additional_attributes>10;20;240;20</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>1387</y><w>70</w><h>110</h></coordinates><panel_attributes>lt=&lt;-&gt;
+m1=ylength
+m1pos=0,0
+</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element></diagram>

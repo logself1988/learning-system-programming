@@ -17,21 +17,22 @@ namespace Graph_lib
 {
 
 typedef void *Address;
-typedef void (*Callback) (
-    Address, Address); // FLTK's required function type for all callbacks
 
+//! FLTK's required function type for all callbacks
+typedef void (*Callback) (Address, Address);
+
+//! treat an address as a reference to a W
 template <class W>
 W &
 reference_to (Address pw)
-// treat an address as a reference to a W
 {
   return *static_cast<W *> (pw);
 }
 
+//! Widget is a handle to a Fl_widget - it is *not* a Fl_widget
+//! We try to keep our interface classes at arm's length from FLTK
 class Widget
 {
-  // Widget is a handle to a Fl_widget - it is *not* a Fl_widget
-  // We try to keep our interface classes at arm's length from FLTK
 public:
   Widget (Point xy, int w, int h, const string &s, Callback cb)
       : loc (xy), width (w), height (h), label (s), do_it (cb)
@@ -45,16 +46,19 @@ public:
     pw->position (loc.x += dx, loc.y += dy);
     show ();
   }
+
   virtual void
   hide ()
   {
     pw->hide ();
   }
+
   virtual void
   show ()
   {
     pw->show ();
   }
+
   //!< each Widgit define at least one action for a window
   virtual void attach (Window &) = 0;
 
@@ -91,6 +95,7 @@ public:
       : Widget (xy, ww, hh, s, cb)
   {
   }
+
   void attach (Window &win);
 };
 

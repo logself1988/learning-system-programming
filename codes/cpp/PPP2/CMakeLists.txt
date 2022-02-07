@@ -51,8 +51,9 @@ add_subdirectory(lib/graph)
 # add_subdirectory (ch09)
 # add_subdirectory (ch10)
 
-add_subdirectory(ch12)
-add_subdirectory(ch13)
+# add_subdirectory(ch12)
+# add_subdirectory(ch13)
+add_subdirectory(ch15)
 
 # add_subdirectory (appendix_d)
 # add_subdirectory (ex_antlr)

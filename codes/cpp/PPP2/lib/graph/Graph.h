@@ -295,13 +295,15 @@ public:
           if (a.attached)error("attempt to copy attached shape");
   }
   */
-  Shape (const Shape &) = delete;
+  Shape (const Shape &) = delete; //!< prevent copying
   Shape &operator= (const Shape &) = delete;
 
 private:
   vector<Point> points; //!< not used by all shapes
+  //!< color for lines and characters
   Color lcolor{ static_cast<int> (fl_color ()) };
   Line_style ls{ 0 };
+  //!< fill color
   Color fcolor{ Color::invisible };
 
   //	Shape(const Shape&);
@@ -310,9 +312,15 @@ private:
 
 struct Function : Shape
 {
-  // the function parameters are not stored
+  //!< graph f(x) for x in [r1, r2) using line segment
+  //!< with (0,0) displayed at orig
+  //!< x coordinates are scaled by xscale, and y coordinates scaled by yscale
+  //!< the function parameters are not stored
   Function (Fct f, double r1, double r2, Point orig, int count = 100,
             double xscale = 25, double yscale = 25);
+  Function (std::function<double (double)> f, double r1, double r2, Point orig,
+            int count = 100, double xscale = 25, double yscale = 25);
+
   // Function(Point orig, Fct f, double r1, double r2, int count, double xscale
   // = 1, double yscale = 1);
 };
@@ -504,6 +512,12 @@ struct Axis : Shape
   Axis (Orientation d, Point xy, int length, int nummber_of_notches = 0,
         string label = "");
 
+  void
+  set_notch_labels (vector<string> labels)
+  {
+    notch_labels = labels;
+  }
+
   void draw_lines () const;
   void move (int dx, int dy);
 
@@ -511,7 +525,8 @@ struct Axis : Shape
 
   Text label;
   Lines notches;
-  //	Orientation orin;
+  vector<string> notch_labels; //!< labels of notches
+  Orientation orin;
   //	int notches;
 };
 
@@ -653,7 +668,7 @@ struct Mark : Marks
 /*
 
 struct Marks : Shape {
-        Marks(char m) : mark(string(1,m)) { }
+        Marks(char m) : mark(1,m)) { }
         void add(Point p) { Shape::add(p); }
         void draw_lines() const;
 private:

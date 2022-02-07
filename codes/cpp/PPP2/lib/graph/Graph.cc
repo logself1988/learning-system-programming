@@ -167,10 +167,27 @@ Text::draw_lines () const
   fl_font (ofnt, osz);
 }
 
+//!< graph f(x) for x in [r1:r2) using count line segments with (0,0) displayed
+//!< at xy x coordinates are scaled by xscale and y coordinates scaled by
+//!< yscale
 Function::Function (Fct f, double r1, double r2, Point xy, int count,
                     double xscale, double yscale)
-// graph f(x) for x in [r1:r2) using count line segments with (0,0) displayed
-// at xy x coordinates are scaled by xscale and y coordinates scaled by yscale
+{
+  if (r2 - r1 <= 0)
+    error ("bad graphing range");
+  if (count <= 0)
+    error ("non-positive graphing count");
+  double dist = (r2 - r1) / count;
+  double r = r1;
+  for (int i = 0; i < count; ++i)
+    {
+      add (Point (xy.x + int (r * xscale), xy.y - int (f (r) * yscale)));
+      r += dist;
+    }
+}
+
+Function::Function (std::function<double (double)> f, double r1, double r2,
+                    Point xy, int count, double xscale, double yscale)
 {
   if (r2 - r1 <= 0)
     error ("bad graphing range");
@@ -203,7 +220,7 @@ Rectangle::draw_lines () const
 }
 
 Axis::Axis (Orientation d, Point xy, int length, int n, string lab)
-    : label (Point (0, 0), lab)
+    : orin (d), label (Point (0, 0), lab)
 {
   if (length < 0)
     error ("bad axis length");
@@ -216,7 +233,8 @@ Axis::Axis (Orientation d, Point xy, int length, int n, string lab)
         if (1 < n)
           {
             int dist = length / n;
-            int x = xy.x + dist;
+            // int x = xy.x + dist;
+            int x = xy.x;
             for (int i = 0; i < n; ++i)
               {
                 notches.add (Point (x, xy.y), Point (x, xy.y - 5));
@@ -234,7 +252,8 @@ Axis::Axis (Orientation d, Point xy, int length, int n, string lab)
         if (1 < n)
           {
             int dist = length / n;
-            int y = xy.y - dist;
+            // int y = xy.y - dist;
+            int y = xy.y;
             for (int i = 0; i < n; ++i)
               {
                 notches.add (Point (xy.x, y), Point (xy.x + 5, y));
@@ -254,8 +273,32 @@ void
 Axis::draw_lines () const
 {
   Shape::draw_lines (); // the line
-  notches.draw ();      // the notches may have a different color from the line
-  label.draw ();        // the label may have a different color from the line
+
+  notches.draw (); // the notches may have a different color from the line
+  int notches_num = notches.number_of_points ();
+  if (notch_labels.size () > 0)
+    for (int i = 0; i < notches_num; i += 2)
+      {
+        Point p = notches.point (i);
+        switch (orin)
+          {
+          case Axis::x:
+            Text{ Point{ notches.point (i).x, notches.point (i).y + 20 },
+                  notch_labels[i / 2] }
+                .draw ();
+            break;
+          case Axis::y:
+            Text{ Point{ notches.point (i).x - 20, notches.point (i).y },
+                  notch_labels[i / 2] }
+                .draw ();
+            break;
+          default:
+            error ("z axis not implemented");
+            break;
+          }
+      }
+
+  label.draw (); // the label may have a different color from the line
 }
 
 void
