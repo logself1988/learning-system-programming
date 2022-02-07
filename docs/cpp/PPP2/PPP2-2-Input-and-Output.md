@@ -313,26 +313,50 @@ container of `Shape` or `Widget`:
 ### 14.1 Design principles
 ### 14.2 Shape
 
+``` c++
+class Shape { // deals with color and style and holds sequence of lines
+public:
+  void draw() const;                  // deal with color and draw lines
+  virtual void move(int dx, int dy);  // move the shape +=dx and +=dy
+
+  void set_color(Color col);
+  Color color() const;
+
+  void set_style(Line_style sty);
+  Line_style style() const;
+
+  void set_fill_color(Color col);
+  Color fill_color() const;
+
+  Point point(int i) const;           // read-only access to points
+  int number_of_points() const;
+
+  Shape(const Shape&) = delete;             // copy construcotr, prevent copying
+  Shape& operator=(const Shape&) = delete;  // copy assignment
+
+  virtual ~Shape() { }                // virtual destructor
+
+protected:
+  Shape() { }                         // default constructor
+  Shape(initializer_list<Point> lst); // initializer-list constructor: add() the Points to this Shape
+
+  virtual void draw_lines() const;    // draw the appropriate lines
+  void add(Point p);                  // add p to points
+  void set_point(int i, Point p);     // points[i]=p;
+
+private:
+  vector<Point> points;               // not used by all shapes
+  Color lcolor {fl_color()};          // color for lines and characters (with default)
+  Line_style ls {0};
+  Color fcolor {Color::invisible};    // fill color
+};
+```
+
 the constructors are `protected`, means that they can only be used directly from classes derived from `Shape`.
 
-default constructor: `Shape() {}`
-
-the initializer-list constructor: `Shape(initializer_list<Point> lst);`
-
-virtual destructor: `virtual ~Shape() {}`
-
-access control:
-
-- `private`
-- `protected`
-- `public`
+access control: `private`, `protected`, `public`.
 
 **overriding**: defining a function in a derived class so that it can be used through the interfaces provided by a base is called overriding.
-
-
-copy constructor: `Shape(const Shape&) = delete;`
-
-copy assignment: `Shape& operator=(const Shape&) = delete;`
 
 ### 14.3 Base and derived classes
 
@@ -350,8 +374,58 @@ copy assignment: `Shape& operator=(const Shape&) = delete;`
 
 #### 14.3.2 Deriving classes and defining virtual functions
 #### 14.3.3 Overriding
+
+`override`:
+
+``` c++
+struct B {
+  virtual void f() const { cout << "B::f "; }
+  void g() const { cout << "B::g "; }           // not virtual
+};
+
+struct D : B {
+  void f() const override { cout << "D::f "; }  // overrides B::f
+  void g() override { cout << "D::g "; }  // error: no virtual B::g to override
+};
+```
+
 #### 14.3.4 Access
 #### 14.3.5 Pure virtual functions
+
+``` c++
+class B {                 // abstract base class
+public:
+  virtual void f() = 0;   // pure virtual function
+  virtual void g() = 0;
+};
+
+B b;  // error: B is abstract
+```
+
+``` c++
+class D1: public B {
+public:
+  void f() override;
+  void g() override;
+};
+
+D1 d1; // ok
+
+class D2: public B {
+public:
+  void f() override;
+  // no g();
+};
+
+D2 d2; // error: D2 is still abstract
+
+class D3: public D2 {
+public:
+  void g() override;
+};
+
+D3 d3; // ok
+```
 
 ### 14.4 Benefits of object-oriented programming
 

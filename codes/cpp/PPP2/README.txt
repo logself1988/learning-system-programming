@@ -1,5 +1,13 @@
 Code of Programming: Principles and Practice Using C++, 2nd Edition
 
+=== Facility
+
+Windows: MSYS2
+
+=== clang-format
+
+SHOULD BE LLVM
+
 === CMake Tools
 
 "cmake.configureArguments": "-DPPP2_DEBUG=ON -Wno-dev",

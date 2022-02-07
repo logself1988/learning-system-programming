@@ -1,0 +1,11 @@
+# ex01_sizeof.cc
+
+the size of char is 1 1
+the size of int is 4 4
+the size of int* is 8 8
+the size of vector<int>(1000) is 24
+
+# ex02_lists.cc
+
+{ Freia, Odin, Thor }
+{ Zeus, Poseidon, Ares, Athena, Hera }
