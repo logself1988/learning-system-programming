@@ -1,0 +1,3 @@
+# ex_changing_size.cc
+
+_vector::operator=(const _vector &) called

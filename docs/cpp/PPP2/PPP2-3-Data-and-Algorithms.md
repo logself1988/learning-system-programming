@@ -821,10 +821,139 @@ bool is_palindrome(const char* first, const char* last);
 
 ## 19 Vector, Templates, and Exceptions
 ### 19.1 The problems
+
+concerns:
+
+- how do we change the size of a `vector`?
+- how do we catch and report out-of-range `vector` element access?
+- how do we specify the element type of a `vector` as an argument?
+
+for `vector`, we can vary two things:
+
+- the number of elements,
+- the type of elements.
+
 ### 19.2 Changing size
+
+``` c++
+vector<double> v(n);
+
+// change v's size
+v.resize(10);
+v.push_back(7);
+v = v2;
+```
+
+#### 19.2.1 Representation
+
+``` c++
+class vector {
+  int sz;         // number of elements
+  double* elem;   // addres of first element
+  int space;      // number of elements pls free space/slots
+  // ...
+};
+```
+
+#### 19.2.2 `reserve` and `capacity`
+
+``` c++
+//  add space for new elements
+void vector::reserve(int newalloc)
+{
+  if (newalloc <= space) return;
+  double* p = new double[newalloc];
+  for (int i = 0; i < sz; i++) p[i] = elem[i]; // copy old elements
+  delete[] elem;
+  elem = p;
+  space = newalloc;
+}
+
+int vector::capacity() const { return space; }
+```
+
+#### 19.2.3 `resize`
+
+``` c++
+void vector::resize(int newsize)
+{
+  reserve(newsize);
+  for (int i = sz; i < newsize; i++) elem[i] = 0;
+  sz = newsize;
+}
+```
+
+#### 19.2.4 `push_back`
+#### 19.2.5 Assignment
+#### 19.2.6 Our `vector` so far
+
 ### 19.3 Templates
+
+basically, a **template** is a mechanism that allows a programmer to use type as parameters for a class or a function; the compiler then generates a specific class or funtion when we later provide specific types as arguments.
+
+#### 19.3.1 Types as template parameters
+#### 19.3.2 Generic programming
+#### 19.3.3 Concepts
+
+we call a set of requirements on a template argument a **concept**.
+
+``` c++
+// C++11
+template<typename T>    // for all types T
+class vector {};
+
+// C++14
+template<typename T>    // for all types T
+  requires Element<T>() // such that T is an Element
+class vector {};
+
+// shorthand notation
+template<Element T>
+class vector {};
+
+// before C++14
+template<typename Elem> // requires Element<Elem>()
+class vector {};
+```
+
+some common and useful concepts:
+
+``` c++
+Element<E>()
+Container<C>()
+Forward_iterator<For>()
+Input_iterator<In>()
+Output_iterator<Out>()
+Random_access_iterator<Ran>()
+Allocator<A>()
+Equal_comparable<T>()
+Equal_comparable<T,U>()
+Predicate<P,T>()
+Binary_predicate<P,T>()
+Binary_predicate<P,T,U>()
+Less_comparable<L,T>()
+Less_comparable<L,T,U>()
+Binary_operation<B,T,U>()
+Binary_operation<B,T,U>()
+Number<N>()
+```
+
+#### 19.3.4 Containers and inheritance
+#### 19.3.5 Integers as template parameters
+#### 19.3.6 Template argument deduction
+#### 19.3.7 Generalizing `vector`
+
 ### 19.4 Range checking and exceptions
+#### 19.4.1 An aside: design considerations
+#### 19.4.2 A confession: macros
+
 ### 19.5 Resources and exceptions
+#### 19.5.1 Potential resource management problems
+#### 19.5.2 Resource acquisition is initialization - RAII
+#### 19.5.3 Guarantees
+#### 19.5.4 `unique_ptr`
+#### 19.5.5 Return by moving
+#### 19.5.5 RAII for `vector`
 
 ## 20 Containers and Iterators
 ### 20.1 Storing and processing data
@@ -838,13 +967,111 @@ bool is_palindrome(const char* first, const char* last);
 ### 20.9 Adapting built-in arrays to the STL
 ### 20.10 Container overview
 
+containers:
+
+``` c++
+vector
+list
+deque
+map
+multimap
+unordered_map
+unordered_multimap
+set
+multiset
+unordered_set
+unordered_multiset
+array
+```
+
+An STL container
+
+- is a sequence of elements `[begin():end()]`,
+- provides copy operations that copy elements. copying can be done with assignment or a copy constructor,
+- names its element type `value_type`,
+- has iterator types called `iterator` and `const_iterator`. <br/>
+iterators provides `*`, `++`, `==`, `!=` with the appropriate semantics. <br/>
+the iterators for `list` also provide `--` for moving backward in the sequence (bidirection iterator)<br/>
+the iterators for `vector` also provide `--`, `[]`, `+`, `-` (random-access iterators),
+- provides `insert()`, `erase()`, `front()`, `back()`, `push_back()`, `pop_back()`, `size()` etc. <br/>
+`vector` and `map` also provide subscripting `[]`,
+- provides comparison operators `==`, `!=`, `<`, `<=`, `>`, `>=` that compare the elememnts. <br/>
+containers use lexicographical ordering for `<`, `<=`, `>`, `>=`, i.e. compare the elements in order starting with the first.
+
+"almost containers":
+
+``` c++
+T[n] // built-in array
+string
+valarray
+```
+
+iterator categories:
+
+- input iterator
+- output iterator
+- forward iterator
+- bidirectional iterator
+- random-access iterator
+
 ## 21 Algorithms and Maps
 ### 21.1 Standard library algorithms
-### 21.2 The simplest algorithm: find()
-### 21.3 The general search: find_if()
+
+selected standard algorithms:
+
+``` c++
+r=find(b,e,v)
+r=find_if(b,e,p)
+
+x=count(b,e,v)
+x=count_if(b,e,p)
+
+sort(b,e)
+sort(b,e,p)
+
+copy(b,e,b2)
+unique_copy(b,e,b2)
+
+merge(b,e,b2,e2,r)
+
+r=equal_range(b,e,v)
+
+equal(b,e,b2)
+
+x=accumulate(b,e,i)
+x=accumulate(b,e,i,op)
+
+x=inner_product(b,e,b2,i)
+x=inner_product(b,e,b2,i,op,op2)
+```
+
+
+### 21.2 The simplest algorithm: `find()``
+### 21.3 The general search: `find_if()``
+
 ### 21.4 Function objects
+#### 21.4.1 An abstract view of function objects
+#### 21.4.2 Predicates on class members
+#### 21.4.3 Lambda expressions
+
 ### 21.5 Numerical algorithms
+#### 21.5.1 Accumulate
+#### 21.5.2 Generalizing `accumulate()`
+#### 21.5.3 Inner product
+#### 21.5.4 Generalizing `inner_product()`
+
 ### 21.6 Associative containers
+#### 21.6.1 `map`
+#### 21.6.2 `map` overview
+#### 21.6.3 Another `map` example
+#### 21.6.4 `unordered_map`
+#### 21.6.5 `set`
+
 ### 21.7 Copying
+#### 21.7.1 Copy
+#### 21.7.2 Stream iterators
+#### 21.7.3 Using a `set` to keep order
+#### 21.7.4 `copy_if`
+
 ### 21.8 Sorting and searching
 ### 21.9 Container algorithms
