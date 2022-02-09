@@ -1046,32 +1046,186 @@ x=inner_product(b,e,b2,i,op,op2)
 ```
 
 
-### 21.2 The simplest algorithm: `find()``
-### 21.3 The general search: `find_if()``
+### 21.2 The simplest algorithm: `find()`
+### 21.3 The general search: `find_if()`
 
 ### 21.4 Function objects
+
+**function object**: an object that can behave like a function (objects can store data).
+
+`()` operator: function call operator, application operator
+
 #### 21.4.1 An abstract view of function objects
+
+use of function objects is the main method of parameterization in the STL.
+
 #### 21.4.2 Predicates on class members
 #### 21.4.3 Lambda expressions
 
+probably the best way of thinking a **lambda expression** is as a shorthand notation for defining a function obbject and then immediately creating an object of it.
+
 ### 21.5 Numerical algorithms
+
+4 STL-style standard library numerical algorithms:
+
+``` c++
+#include <numeric>
+
+x=accumulate(b,e,i);                // for {a,b,c,d}, produce i+a+b+c+d
+x=inner_product(b,e,b2,i);          // for {a,b,c,d} and {e,f,g,h}, produce i+a*e+b*f+c*g+d*h
+r=partial_sum(b,e,r);               // for {a,b,c,d}, produce {a,a+b,a+b+c,a+b+c+d}
+r=adjacent_difference(b,e,b2,r);    // for {a,b,c,d}, produce {a,b-a,c-b,d-c}
+```
+
 #### 21.5.1 Accumulate
 #### 21.5.2 Generalizing `accumulate()`
+
+``` c++
+#include <functional>
+
+multiplies<double>
+plus
+minus
+divides
+modulus
+```
+
 #### 21.5.3 Inner product
 #### 21.5.4 Generalizing `inner_product()`
 
 ### 21.6 Associative containers
+
+8 standard library associative containers:
+
+``` c++
+#include <map>
+#include <set>
+#include <unordered_map>
+#include <unordered_set>
+
+map                 // an ordered container of (key,value) pairs
+set                 // an ordered container of keys
+unordered_map
+unordered_set
+multimap            // a map where a key can occur multiple times
+multiset            // a set where a key can occur multiple times
+unordered_multimap  
+unordered_multiset
+```
+
 #### 21.6.1 `map`
+
+``` c++
+map<string,int> words;
+
+pair<string,int> // element type
+
+for (string s; cin >> s;) {
+  ++words[s]; // default 0 for int
+}
+
+for (const auto& p : words) {
+  cout << p.first << ": " << p.second << '\n';
+}
+```
+
 #### 21.6.2 `map` overview
+
+the STL `map` implementations are red-black trees.
+
+``` c++
+// pair
+pair<Key,Value>
+std::make_pair()
+
+// No_case defines case-insensitive compare
+// default the order is less<Key>
+map<string,double,No_case> m;
+```
+
 #### 21.6.3 Another `map` example
 #### 21.6.4 `unordered_map`
+
+hash table
+
+``` c++
+unordered_map<string,double> dow_price;
+```
+
 #### 21.6.5 `set`
 
+``` c++
+struct Fruit {
+  string name;
+  int count;
+  // ...
+};
+
+struct Fruit_order {
+  bool operator()(const Fruit& a, const Fruit& b) const
+  {
+    return a.name < b.name;
+  }
+};
+
+set<Fruit, Fruit_order> inventory;
+// insert()
+// erase()
+
+for (auto p = inventory.begin(); p != inventory.end(); ++p) {}
+for (const auto& x : inventory) {}
+```
+
 ### 21.7 Copying
+
+STL provides 3 versions of copy:
+
+``` c++
+copy(b,e,b2);         // copy [b:e) to [b2:b2+(e-b))
+unique_copy(b,e,b2);  // copy [b:e) to [b2:b2+(e-b)), suppress adjacent copies
+copy_if(b,e,b2,p);    // copy [b:e) to [b2:b2+(e-b)), but only elements that meet predicate p
+```
+
 #### 21.7.1 Copy
 #### 21.7.2 Stream iterators
+
+``` c++
+ostream_iterator<string> oo;
+istream_iterator<string> ii;  // eos: end of input
+
+vector<string> b(MAX_SIZE);
+copy(ii,eos,b.begin());
+```
+
 #### 21.7.3 Using a `set` to keep order
 #### 21.7.4 `copy_if`
 
 ### 21.8 Sorting and searching
+
+``` c++
+sort()
+
+bool binary_search(first, last, val);
+bool binary_search(first, last, val, cmp);
+
+pair<iter, iter> equal_range(first, last, val);
+pair<iter, iter> equal_range(first, last, val, cmp);
+```
+
 ### 21.9 Container algorithms
+
+``` c++
+template<typename C> // requires Container<C>()
+void sort(C& c)
+{
+  std::sort(c.begin(),c.end());
+}
+
+// leave return types as iterators
+template<typename C, typename V> // requires Container<C>()
+Iterator<C> find(C& c, V v)
+{
+  return std::find(c.begin(),e.end(),v);
+}
+// Iterator<C> is C's iterator type
+```
