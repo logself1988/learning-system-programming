@@ -54,6 +54,12 @@ nav:
         - 'Part III Data and Algorithms': cpp/PPP2/PPP2-3-Data-and-Algorithms.md
         - 'Part IV Broadening the View': cpp/PPP2/PPP2-4-Broadening-the-View.md
         - 'Part V Appendices': cpp/PPP2/PPP2-5-Appendices.md
+      - 'C++ Primer':
+        - 'Home': cpp/CP5/CP5.md
+        - 'Part I The Basics': cpp/CP5/CP5-1-The-Basics.md
+        - 'Part II The C++ Library': cpp/CP5/CP5-2-The-Cpp-Library.md
+        - 'Part III Tools for Class Authors': cpp/CP5/CP5-3-Tools-for-class-authors.md
+        - 'Part IV Advanced Topics': cpp/CP5/CP5-4-Advanced-Topics.md
       - 'Q&A': cpp/QA.md
       - 'C++ 11': cpp/CXX11-Standard.md
       - 'C++ Concurrency in Action': cpp/cpp_concurrency.md

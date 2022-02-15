@@ -3,15 +3,45 @@
 
 |时间|内容|
 |:---|:---|
-|2022-02-10| kick off. |
+|2022-02-10| kick off: Chapter 1. Getting Started. |
+|2022-02-15| start reading Part I: The Basics. |
 
 ## 术语
 
 <!-- 记录阅读过程中出现的关键字及其简单的解释. -->
 
+### Keywords
+
+```
+alignas     continue      friend    register          true
+alignof     decltype      goto      reinterpret_cast  try
+asm         default       if        return            typedef
+auto        delete        inline    short             typeid
+bool        do            int       signed            typename
+break       double        long      sizeof            union
+case        dynamic_cast  mutable   static            unsigned
+catch       else          namespace static_assert     using
+char        enum          new       static_cast       virtual
+char16_t    explicit      noexcept  struct            void
+char32_t    export        nullptr   switch            volatile
+class       extern        operator  template          wchar_t
+const       false         private   this              while
+constexpr   float         protected thread_local
+const_cast  for           public    throw
+```
+
+### Alternative Operator Names
+
+```
+and     bitand  compl not_eq  or_eq xor_eq
+and_eq  bitor   not   or      xor
+```
+
 ## 介绍
 
 <!-- 描述书籍阐述观点的来源、拟解决的关键性问题和采用的方法论等. -->
+
+Bestseller since 1986, completely rewritten for the new C++11 standard.
 
 ## 动机
 
@@ -45,6 +75,17 @@ when we use an `istream` as a conditon, the effect is to test the state of the s
 ###### 1.5.1 The Sales_item Class
 ###### 1.5.2 A First Look at Member Functions
 ##### 1.6 The Bookstore Program
+
+``` c++
+class Sales_item {
+  // ...
+private:
+  std::string bookNo;      // implicitly initialized to the empty string
+  unsigned units_sold = 0; // explicitly initialized
+  double revenue = 0.0;
+};
+```
+
 
 ### Part I: The Basics
 ### Part II The C++ Library  
