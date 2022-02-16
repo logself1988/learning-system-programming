@@ -13,18 +13,19 @@ i = i + j;  // int, Sales_item
 #### 2.1.1 Arithmetic Types
 
 ``` c++
-bool
-char
-wchar_t
-char16_t
-char32_t
-short
-int
-long
-long long
-float
-double
-long double
+            // meaning                            minimum size
+bool        // boolean                            NA
+char        // character                          8 bits
+wchar_t     // wide character                     16 bits
+char16_t    // Unicode character                  16 bits
+char32_t    // Unicode character                  32 bits
+short       // short integer                      16 bits
+int         // integer                            16 bits
+long        // long integer                       32 bits
+long long   // long integer                       64 bits
+float       // single-precision floating-point    6 significant digits
+double      // double-precision floating-point    10 significant digits
+long double // extended-precision floating-point  10 significant digits
 ```
 
 > Except for `bool` and the extended character types, the integral types may be `signed` or `unsigned`.
@@ -36,7 +37,11 @@ signed and unsigned types:
 
 #### 2.1.2 Type Conversions
 
+> Type conversion happen automatically when we use an object of one type where an object of another type is expected.
+
 > We'll have more to say about conversions in § 4.11 (p. 159)
+
+> The compiler applies these same type conversions when we use a value of one arithmetic type where a value of another arithmetic type is expected.
 
 ``` c++
 int i = 42;
@@ -174,17 +179,22 @@ extern double pi = 3.1416;  // definition
 
 > A **reference** defines an alternative name for an object.
 
-When we define a reference, instead of copying the intializer's value, we **bind** the reference to its initializer.
-
-Once initialized, a reference remains bound to its initial object. There is no way to rebind a reference to refer to a different object.
-
 ``` c++
 int ival = 1024;
 int &refVal = ival; // refVal refers to ival
 int &refVal2;       // error: a reference must be initialized
 ```
 
+When we define a reference, instead of copying the intializer's value, we **bind** the reference to its initializer.
+
+Once initialized, a reference remains bound to its initial object. There is no way to rebind a reference to refer to a different object.
+
 a reference is an alias:
+
+> A reference is not an object. Instead, a reference is just another name for an already existing object.
+> We may not define a reference to a reference.
+
+After a reference has been defined, all operations on that reference are actually operations on the object to which the reference is bound:
 
 ``` c++
 refVal = 2;             // assign 2 to the object to which refVal refers, i.e. to ival
@@ -203,7 +213,8 @@ int i3 = 1024, &ri = i3;  // i3: int, ri: a reference bound to i3
 int &r3 = i3, &r4 = i2;   // r3, r4: references
 ```
 
-> With two exceptions that we'll cover in § 2.4.1 (p. 61) and § 15.2.3 (p. 601), the type of a reference and the object to which the reference refers must match exactly.
+!!! info "the type of a reference and the object to which it refers"
+    With two exceptions that we'll cover in § 2.4.1 (p. 61) and § 15.2.3 (p. 601), the type of a reference and the object to which the reference refers must match exactly.
 
 ``` c++
 int &refVal4 = 10;    // error: initializer must be an object
@@ -213,13 +224,17 @@ int &refVal5 = dval;  // error: intializer must be an int object
 
 #### 2.3.2 Pointers
 
+> A **pointer** is a compound type that "points to" another type.
+
+taking the address of an object: the address-of operator `&`
+
 ``` c++
 int ival = 42;
 int *p = &ival; // p holds the address of ival; p is a pointer to ival
 ```
 
-
-> With two exceptions, which we cover in § 2.4.2 (p. 62) and § 15.2.3 (p. 601), the types of the pointer and the object to which it points must match.
+!!! info "type of the pointer and the object to which it points"
+    With two exceptions, which we cover in § 2.4.2 (p. 62) and § 15.2.3 (p. 601), the types of the pointer and the object to which it points must match.
 
 ``` c++
 double dval;
@@ -237,6 +252,17 @@ The value (i.e. the address) stored in a pointer can be:
 3. it can be a null pointer, indicating that it is not bound to any object,
 4. it can be invalid; values other than the preceding three are invalid.
 
+using a pointer to access an object: the deference operator `*`
+
+``` c++
+int ival = 32;
+int *p = &ival;
+cout << *p;       // prints 42
+
+*p = 0;
+cout << p;        // prints 0
+```
+
 null pointers:
 
 > A **null pointer** does not point to any object.
@@ -247,18 +273,62 @@ int *p2 = 0;        // directly intialize p2 from the literal constant 0
 
 #include <cstdlib>
 int *p3 = NULL;     // same as int *p3 = 0;
+                    // NULL: a preprocessor variable
+```
 
+> It is illegal to assign an `int` variable to a pointer, even if the variable's value happends to be 0.
+
+``` c++
 int zero = 0;
 pi = zero;          // error: cannot assign an int to a pointer
 ```
 
+operations on pointers:
+
+> As with other (non-reference) variable, when we **assign** to a pointer, we give the pointer itself a new value.
+> Just as when we use an arithmetic values in a condition, if the pointer is `0`, then the condition is `false`, any non-zero pointer evaluates as `true`.
+> Given two valid pointer of the same type, we can compare them using the `==` or `!=` operators.
 > § 3.5.3 (p. 117) will cover additional pointer operations.
 
 the type `void*` is a special pointer type that can hold the address of any object.
 
+``` c++
+double obj = 3.14, *pd = &obj;
+// ok: void* can hold the address value of any data pointer type
+void *pv = &obj;
+pv = pd;
+```
+
 #### 2.3.3 Understanding Compound Type Declarations
 
 > In this book we use the first style and place the `*`(or the `&`) with the variable name.
+
+``` c++
+int i = 1024, *p = &i, &r = i;  // i is an int
+                                // p is a pointer to int
+                                // r is a reference to int
+
+int* p1, p2;                    // p1 is a pointer to int, p2 is an int
+int *p1, *p2;                   // p1, p2 are pointers to int
+```
+
+pointers to pointers:
+
+``` c++
+int ival = 1024;
+int *pi = &ival;  // pi points to an int
+int **ppi = &pi;  // ppi points to a pointer to an int
+```
+
+references to pointers:
+
+``` c++
+int i = 42;
+int *p;       // p is a pointer to int
+int *&r = p;  // r is a reference to the pointer p
+r = &i;
+*r = 0;
+```
 
 ### 2.4 `const` Qualifier
 
@@ -273,14 +343,15 @@ const int j = 42;         // ok: initialized at compile time
 const int k;              // error: unintialized
 ```
 
-when we use an object to intialize another object, it doesn't matter whether either or both of the objects are `const`s:
+> A `const` type can use most but not all of the same operations as its non-const version. The one restriction is that we may use only those operations that **cannot change an object**.
+
+> Among the operations that don't change the value of an object is **initialization** - when we use an object to intialize another object, it doesn't matter whether either or both of the objects are `const`s:
 
 ``` c++
 int i = 42;
 const int ci = i; // ok: value in i is copied into ci
 int j = ci;       // ok: value in ci is copied into j
 ```
-
 
 By default, `const` objects are local to file. Sometimes we want to share a `const` variable across multiple files, but whose initalizer is not a constant expression:
 
@@ -304,7 +375,8 @@ int &r2 = ci;         // error: non-const reference r2 to a const object ci
 
 > C++ programmers tend to abbreviate the phrase "reference to `const`" as "`const` reference".
 
-**exception for § 2.3.1 (p. 51)** we can intialized a reference to `const` from any expression that can be **converted** to the type of the reference. In particular, we can bind **a reference to `const`** to a non-const object, a literal, or a more general expression:
+!!! info "a reference to `const`"
+    **exception for § 2.3.1 (p. 51)** we can intialized a reference to `const` from any expression that can be **converted** to the type of the reference. In particular, we can bind **a reference to `const`** to a non-const object, a literal, or a more general expression.
 
 ``` c++
 int i = 42;
@@ -338,14 +410,18 @@ const double *cptr = &pi;   // ok
 *cptr = 42;                 // error: cannot assign to *cptr
 ```
 
-**exception for § 2.3.2 (p. 52)** we can use a pointer to `const` to point to a non-const object:
+!!! info "a pointer to `const`"
+    **exception for § 2.3.2 (p. 52)** we can use **a pointer to `const`** to point to a non-const object.
 
 ``` c++
+// const double *cptr = ...
 double dval = 3.14;
 cptr = &dval;         // ok
 ```
 
-`const` pointers:
+`const` pointers: a `const` pointer must be intialized, and once intialized, its value may not be changed.
+
+> We indicate taht the pointer is `const` by putting the `const` after then `*`.
 
 ``` c++
 int errNumb = 0;
@@ -354,22 +430,30 @@ const double pi = 3.14159;
 const double *const pip = &pi;  // pip: a const pointer to a const object
 
 *pip = 2.72;                    // error: pip points to const
+if (*curErr) {
+  errorHandler();
+  *curErr = 0;                  // ok: reset the value of the object to which curErr points
+}
 ```
 
 #### 2.4.3 Top-Level `const`
 
-> we can talk independently about whether a pointer is `const` and whether the objects to which it can point are `const`.
+!!! info "top-level `const`, low-level `const`"
+    We can talk independently about whether a pointer is `const` and whether the objects to which it can point are `const`.
 
-> We use the term **top-level const** to indicate that the pointer itself is a `const`.
+    We use the term **top-level const** to indicate that the pointer itself is a `const`.
 
-> When a pointer can point to a `const` object, we refer to that `const` as **low-level const**.
+    When a pointer can point to a `const` object, we refer to that `const` as **low-level const**.
 
 ``` c++
 int i = 0;
 int *const p1 = &i;       // can not change the value of p1, const is _top-level_
+
 const int ci = 42;        // can not change ci; const is _top-level_
+
 const int *p2 = &ci;      // can change p2; const is low-level
 const int *const p3 = p2; // right-most const is _top-level_, left-most is not
+
 const int &r = ci;        // const in reference types is always low-level
 ```
 
@@ -386,13 +470,23 @@ while low-level `const` is never ignored:
 int *p = p3;        // error: p3 has low-level const, p does not
 p2 = p3;            // ok: p2 and p3 have same low-level const
 p2 = &i;            // ok: we can convert int* to const int*
+
 int &r = ci;        // error: can not bind int& to a const int object
 const int &r2 = i;  // ok: can bind const int& to int
 ```
 
 #### 2.4.4 `constexpr` and Constant Expressions
 
-> A **constant expression** is an expression whose value cannot change and that can be evaluated at compile time.
+> A **constant expression** is an expression whose value cannot change and that can be evaluated **at compile time**.
+
+Whether a given object (or expression) is a constant expression dependes on the types and the intializer:
+
+``` c++
+const int max_files = 20;         // is constant expression
+const int limit = max_files + 1;  // is constant expression
+int staff_size = 27;              // not
+const int sz = get_size();        // not
+```
 
 > Under the new standard, we can ask the compiler to verify that a variable is a constant expression by declaring the variable in a `constexpr` declaration.
 
@@ -402,9 +496,15 @@ constexpr int limit = mf + 1; // mf+1 is constant expression
 constexpr int sz = size();    // ok only if size is a constexpr function
 ```
 
+The types we can use in a `constexpr` are known as **literal types** because they are simple enough to have literal values.
+
+- that arithmetic, reference, and pointer types are literal types,
+- `Sales_item`, `std::string` are not literal types,
+- other kind of literal types in § 7.5.6 (p. 299) and § 19.3 (p. 832).
+
 > we'll see in § 6.5.2 (p. 239) that the new standard lets us define certain functions as `constexpr`.
 
-> It is important to understand that when we define a pointer in a `constexpr` declaration, the `constexpr` specifier applies to the pointer, not the type to which the pointer points.
+> It is important to understand that when we define a pointer in a `constexpr` declaration, the `constexpr` specifier **applies to the pointer**, not the type to which the pointer points.
 
 ``` c++
 const int *p = nullptr;     // p: a pointer to a const int
@@ -413,6 +513,8 @@ constexpr int *q = nullptr; // q: a const pointer to int
 
 ### 2.5 Dealing with Types
 #### 2.5.1 Type Aliases
+
+> A **type alias** is a name that is a synonym for another type.
 
 using `typedef`:
 
@@ -444,8 +546,6 @@ const char *cstr = 0;   // wrong interpretation of const pstring cstr;
 
 #### 2.5.2 The `auto` Type Specifier
 
->　FIXME: read again
-
 > Unlike type specifier, such as `double`, that name a specific type, `auto` tells the compiler to **deduce the type from the initializer**.
 
 ``` c++
@@ -455,14 +555,14 @@ auto sz = 0, pi = 3.14; // error: inconsistent types for sz and pi
 
 The type that the compiler infers for `auto` is not always exactly the same as the initializer's type:
 
-1. when we use a reference as an intializer, the initializer is the corresponding object: drop `&`
+1. when we use a reference as an initializer, the initializer is the corresponding object: drop `&`
 
 ``` c++
 int i = 0; &r = i;  // i: int, r: int&
 auto a = r;         // a is int
 ```
 
-2. `auto` ordinarily ignores (intializer's) top-level `const`s: drop top-level `const`
+2. `auto` ordinarily ignores (initializer's) top-level `const`s: drop top-level `const`
 
 ``` c++
 // int i = 0;
@@ -498,7 +598,9 @@ define several variables in the same statement:
 // const int ci = i;
 auto k = ci, &l = i;    // k: int, l: int&
 auto &m = ci, *p = &ci; // m: const int&, p: a pointer to const int
-auto &n = i, *p2 = &ci; // error: i: int, &ci: const int
+auto &n = i, *p2 = &ci; // error:
+                        // type deduced from i: int,
+                        // type deduced from &ci: const int
 ```
 
 #### 2.5.3 The `decltype` Type Specifier

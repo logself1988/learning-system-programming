@@ -3,8 +3,11 @@
 
 |时间|内容|
 |:---|:---|
-|2022-01-09|kick off.|
-|2022-01-14|skimming: Part I The Basics.|
+|2022-01-09| kick off. |
+|2022-01-14| skimming: Part I The Basics. |
+|2022-01-18| skimming: Part II Input and Output. |
+|2022-02-09| skimming: Part III Data and Algorithms. |
+|2022-02-10| skimming: Part IV Broadening the View. |
 
 ## 术语
 
