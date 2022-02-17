@@ -185,7 +185,7 @@ int &refVal = ival; // refVal refers to ival
 int &refVal2;       // error: a reference must be initialized
 ```
 
-When we define a reference, instead of copying the intializer's value, we **bind** the reference to its initializer.
+When we define a reference, instead of copying the initializer's value, we **bind** the reference to its initializer.
 
 Once initialized, a reference remains bound to its initial object. There is no way to rebind a reference to refer to a different object.
 
@@ -219,7 +219,7 @@ int &r3 = i3, &r4 = i2;   // r3, r4: references
 ``` c++
 int &refVal4 = 10;    // error: initializer must be an object
 double dval = 3.14;
-int &refVal5 = dval;  // error: intializer must be an int object
+int &refVal5 = dval;  // error: initializer must be an int object
 ```
 
 #### 2.3.2 Pointers
@@ -269,7 +269,7 @@ null pointers:
 
 ``` c++
 int *p1 = nullptr;  // same as int *p1 = 0;
-int *p2 = 0;        // directly intialize p2 from the literal constant 0
+int *p2 = 0;        // directly initialize p2 from the literal constant 0
 
 #include <cstdlib>
 int *p3 = NULL;     // same as int *p3 = 0;
@@ -340,12 +340,12 @@ bufSize = 512;            // error: attempt to write to const object
 
 const int j = get_size(); // ok: initialized at run time
 const int j = 42;         // ok: initialized at compile time
-const int k;              // error: unintialized
+const int k;              // error: uninitialized
 ```
 
 > A `const` type can use most but not all of the same operations as its non-const version. The one restriction is that we may use only those operations that **cannot change an object**.
 
-> Among the operations that don't change the value of an object is **initialization** - when we use an object to intialize another object, it doesn't matter whether either or both of the objects are `const`s:
+> Among the operations that don't change the value of an object is **initialization** - when we use an object to initialize another object, it doesn't matter whether either or both of the objects are `const`s:
 
 ``` c++
 int i = 42;
@@ -376,7 +376,7 @@ int &r2 = ci;         // error: non-const reference r2 to a const object ci
 > C++ programmers tend to abbreviate the phrase "reference to `const`" as "`const` reference".
 
 !!! info "a reference to `const`"
-    **exception for § 2.3.1 (p. 51)** we can intialized a reference to `const` from any expression that can be **converted** to the type of the reference. In particular, we can bind **a reference to `const`** to a non-const object, a literal, or a more general expression.
+    **exception for § 2.3.1 (p. 51)** we can initialized a reference to `const` from any expression that can be **converted** to the type of the reference. In particular, we can bind **a reference to `const`** to a non-const object, a literal, or a more general expression.
 
 ``` c++
 int i = 42;
@@ -419,7 +419,7 @@ double dval = 3.14;
 cptr = &dval;         // ok
 ```
 
-`const` pointers: a `const` pointer must be intialized, and once intialized, its value may not be changed.
+`const` pointers: a `const` pointer must be initialized, and once initialized, its value may not be changed.
 
 > We indicate taht the pointer is `const` by putting the `const` after then `*`.
 
@@ -479,7 +479,7 @@ const int &r2 = i;  // ok: can bind const int& to int
 
 > A **constant expression** is an expression whose value cannot change and that can be evaluated **at compile time**.
 
-Whether a given object (or expression) is a constant expression dependes on the types and the intializer:
+Whether a given object (or expression) is a constant expression dependes on the types and the initializer:
 
 ``` c++
 const int max_files = 20;         // is constant expression
@@ -559,21 +559,22 @@ The type that the compiler infers for `auto` is not always exactly the same as t
 
 ``` c++
 int i = 0; &r = i;  // i: int, r: int&
-auto a = r;         // a is int
+auto a = r;         // a is int - drop &
 ```
 
 2. `auto` ordinarily ignores (initializer's) top-level `const`s: drop top-level `const`
 
 ``` c++
-// int i = 0;
-const int ci = i, &cr = ci; // ci: const int, cr: const int&
-auto b = ci;  // b: int
-auto c = cr;  // c: int
+// int i = 0;               // i: int
+const int ci = i, &cr = ci; // ci: const int
+                            // cr: const int&
+auto b = ci;  // b: int - drop const
+auto c = cr;  // c: int - drop const and &
 auto d = &i;  // d: int*
 auto e = &ci; // e: const int*: & of a const object is low-level const
 ```
 
-want the deduced type to have a top-level `const`:
+want the deduced type to have a top-level `const`: `const auto`
 
 ``` c++
 // int i = 0;
@@ -581,54 +582,207 @@ want the deduced type to have a top-level `const`:
 const auto f = ci;  // f: const int
 ```
 
-want a reference to the `auto`-deduced type:
+want a reference to the `auto`-deduced type: `auto &`
 
 ``` c++
-// int i = 0;
-// const int ci = i;
-auto &g = ci;       // g: const int&
-auto &h = 42;       // error: we cannot bind a plain reference to a literal
-const auto &j = 42; // ok: bind a const reference to a literal
+// int i = 0;         // i: int
+// const int ci = i;  // ci: const int
+auto &g = ci;         // g: const int&
+auto &h = 42;         // error: we cannot bind a plain reference to a literal
+const auto &j = 42;   // ok: bind a const reference to a literal
 ```
+
+WHen we ask for a reference to an `auto`-deduced type, top-level `const`s in the initializer are not ignored, see `g` in above example.
 
 define several variables in the same statement:
 
 ``` c++
-// int i = 0;
-// const int ci = i;
-auto k = ci, &l = i;    // k: int, l: int&
-auto &m = ci, *p = &ci; // m: const int&, p: a pointer to const int
+// int i = 0;           // i: int
+// const int ci = i;    // ci: const int
+auto k = ci, &l = i;    // k: int, l: int& - int
+auto &m = ci, *p = &ci; // m: const int&, p: a pointer to const int - const int
 auto &n = i, *p2 = &ci; // error:
-                        // type deduced from i: int,
-                        // type deduced from &ci: const int
+                        // type deduced from i - int
+                        // type deduced from &ci - const int
 ```
 
 #### 2.5.3 The `decltype` Type Specifier
 
+> Sometimes we want to define a variable with a type that the compiler deduces from an expression but do not want to use that expression to initialize the variable.
+> For such cases, the new standard introduced a second type specifier `decltype`, which returns the type of its operand.
+
+When the expression to which we apply `decltype` is a variable, `decltype` returns the type of that variable, **including top-level `const` and references**:
+
+``` c++
+const int ci = 0, &cj = ci; // ci: const int
+                            // cj: const int&
+decltype(ci) x = 0;         // x: const int
+decltype(cj) y = x;         // y: const int&
+decltype(cj) z;             // error: reference must be initialized
+```
+
+Generally speaking, `decltype` returns a reference type for expressions that yield objects that can stand on the left-hand side of the assignment:
+
+``` c++
+int i = 42, *p = &i, &r = i;  // i: int
+                              // p: int*
+                              // r: int&
+decltype(r + 0) b;            // b: int
+decltype(*p) c;               // error, c: int&
+```
+
+When we apply `decltype` to a variable without any parentheses, we get the type of that variable. If we wrap the variable's name in one or more sets of parentheses, the compiler will evaluate the operand as an expression. A variable is an expression that can be the left-hand side of an assignment.
+
+``` c++
+decltype((i)) d;  // error, d: int&
+decltype(i) e;    // e: int
+```
+
 ### 2.6 Defining Our Own Data Structures
-#### 2.6.1 Defining the Sales_data Type
-#### 2.6.2 Using the Sales_data Class
+#### 2.6.1 Defining the `Sales_data` Type
+
+``` c++
+struct Sales_data {
+  std::string bookNo;
+  unsigned units_sold = 0; // in-class initializer
+  double revenue = 0;
+};
+```
+
+> Under the new standard, we can supply an **in-class initializer** for a data member. They must either be enclosed inside curly braces `{}` or follow an `=` sign.
+
+#### 2.6.2 Using the `Sales_data` Class
 #### 2.6.3 Writing Our Own Header Files
 
+`Sales_data.h`
+
+C++ programs also use the preprocessor to define **header guards**.
+
 ## 3 Strings, Vectors, and Arrays
-### 3.1 Namespace using Declarations
-### 3.2 Library string Type
-#### 3.2.1 Defining and Initializing strings
+### 3.1 Namespace `using` Declarations
+
+> A `using` declaration lets us use a name from a namespace without qualifying the name with a `namespace_name::` prefix.
+
+A `using` declaration has the form:
+
+``` c++
+using namespace::name;
+```
+
+Once the `using` declaration has been made, we can access `name` directly.
+
+> § 18.2.2 (p. 793) covers another way to use names from a namespace.
+
+### 3.2 Library `string` Type
+
+examples assume the following code:
+
+``` c++
+#include <string>
+using std::string;
+```
+
+#### 3.2.1 Defining and Initializing `string`s
+
+Ways to initialize a `string`:
+
+``` c++
+string s1;            // default initialization: empty string
+string s2(s1);        // s2 is a copy of s1
+string s2 = s1;       // s2 is a copy of s1
+string s3("value");   // s3 is a copy of the string literal
+string s3 = "value";  // s3 is a copy of the string literal
+string s4(n, 'c');    // initialize s4 with n copies of the character 'c'
+```
+
 #### 3.2.2 Operations on strings
+
+``` c++
+os << s               // write s onto putput stream os
+is >> s               // read whitespace-separated string from is into s
+getline(is,s)         // read a line of input from is into s
+s.empty()             // return true if s is empty
+s.size()              // return the number of characters in s
+s[n]                  // return a reference to the char at position n in s
+s1 + s2               // return a string that is the concatenation of s1 and s2
+s1 = s2               // replace characters in s1 with a copy of s2
+s1 == s2              // return true if they contain the same characters
+s1 != s2              //
+<, <=, >, >=          // comparasions are case-sensitive and use dictionary orderings
+```
+
+
+- reading and writing `string`s
+- reading an unknown number of `string`s
+- using `getline` to read an entire line
+- the `string` `empty` and `size` operation
+
+``` c++
+auto len = line.size(); // len has type string::size_type
+```
+
+- comparing `string`s
+- assignment for `string`s
+- adding two `string`s
+- adding literals and `string`s
+
 #### 3.2.3 Dealing with the Characters in a string
-### 3.3 Library vectorType
+
+- processing every charater? use range-based `for`
+
+``` c++
+#include <cctype> // for ispunct
+
+string str("some string");
+decltype(s.size()) punct_cnt = 0;
+for (auto c : str)
+  if (ispunct(c)) ++punct_cnt;
+  cout << c << endl;
+```
+
+- using a range `for` to change the characters in a `string`
+
+``` c++
+#include <cctype> // for toupper
+
+string s("Hello World!");
+for (auto &c : s)
+  c = toupper(c);
+```
+
+- processing only some characters
+
+``` c++
+string s("some string");
+if (!s.empty())
+  cout << s[0] << endl;
+```
+
+- using a subscript for iteration
+
+``` c++
+for (decltype(s.size()) index = 0; index != s.size() && !isspace(s[index]); ++index)
+  s[index] = toupper(s[index]);
+```
+
+- using a subscript for random access
+
+### 3.3 Library `vector` Type
 #### 3.3.1 Defining and Initializing vectors
 #### 3.3.2 Adding Elements to a vector
 #### 3.3.3 Other vectorOperations
+
 ### 3.4 Introducing Iterators
 #### 3.4.1 Using Iterators
 #### 3.4.2 Iterator Arithmetic
+
 ### 3.5 Arrays
 #### 3.5.1 Defining and Initializing Built-in Arrays
 #### 3.5.2 Accessing the Elementsof an Array
 #### 3.5.3 Pointers and Arrays
 #### 3.5.4 C-Style Character Strings
 #### 3.5.5 Interfacing to Older Code
+
 ### 3.6 Multidimensional Arrays
 
 ## 4 Expressions
