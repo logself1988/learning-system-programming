@@ -7,7 +7,6 @@ repo_url: https://github.com/zhoujiagen/learning-system-programming
 nav:
     - Home: index.md
     - Tools:
-      - Home: tools/index.md
       - 'GNU':
         - 'Toolchain': tools/gnu/gnu-toolchain.md
         - 'An Introduction to GCC': tools/gnu/gcc-intro.md
@@ -27,7 +26,7 @@ nav:
             - 'Modules': tools/programming/cmake/refs/cmake-modules.md
         - Ninja: tools/programming/ninja.md
     - 'Architecture':
-      - Home: architecture/index.md
+      - 'Computer Architecture: A Quantitative Approach': architecture/CAQA.md
       - 'Low-Level Programming': architecture/Low-Level-Programming.md
       - 'System V Application Binary Interface': architecture/ABI.md
       - 'The Linux Kernel CPU Architectures': architecture/linux-cpu-architecture.md
@@ -36,17 +35,14 @@ nav:
         - 'Volume 3A: System Programming Guide': architecture/intel/vol3a-system-programming-guide.md
         - 'Volume 3B: System Programming Guide': architecture/intel/vol3b-system-programming-guide.md
     - Assembly:
-      - Home: assembly/index.md
       - 'Professional Assembly Language': assembly/pro-assembly.md
       - 'NASM': assembly/nasm.md
       - 'Assembly Language Step-by-Step': assembly/assembly-step-by-step.md
       - 'Instructions': assembly/instructions.md
     - C:
-      - Home: c/index.md
       - 'Headers': c/c-headers.md
       - 'Core': c/c-core.md
     - 'C++':
-      - Home: cpp/index.md
       - 'Programming: Principles and Practice Using C++':
         - 'Home': cpp/PPP2/PPP2.md
         - 'Part I The Basics': cpp/PPP2/PPP2-1-The-Basics.md
@@ -64,7 +60,6 @@ nav:
       - 'C++ 11': cpp/CXX11-Standard.md
       - 'C++ Concurrency in Action': cpp/cpp_concurrency.md
     - 'Kernel':
-      - Home: kernel/index.md
       - 'Programming':
         - 'UNIX环境高级编程': kernel/programming/apue.md
         - 'Linux编程接口': kernel/programming/tlpi.md
