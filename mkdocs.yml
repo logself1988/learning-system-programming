@@ -25,8 +25,10 @@ nav:
             - 'Commands': tools/programming/cmake/refs/cmake-commands.md
             - 'Modules': tools/programming/cmake/refs/cmake-modules.md
         - Ninja: tools/programming/ninja.md
-    - 'Architecture':
-      - 'Computer Architecture: A Quantitative Approach': architecture/CAQA.md
+    - Architecture:
+      - 'Computer Architecture: A Quantitative Approach':
+        - 'Home': architecture/CAQA.md
+        - 'Appendix': architecture/CAQA-appendix.md
       - 'Low-Level Programming': architecture/Low-Level-Programming.md
       - 'System V Application Binary Interface': architecture/ABI.md
       - 'The Linux Kernel CPU Architectures': architecture/linux-cpu-architecture.md
