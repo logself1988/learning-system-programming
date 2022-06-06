@@ -36,6 +36,8 @@ nav:
         - 'Volume 1: Basic Architecture': architecture/intel/vol1-basic-architecture.md
         - 'Volume 3A: System Programming Guide': architecture/intel/vol3a-system-programming-guide.md
         - 'Volume 3B: System Programming Guide': architecture/intel/vol3b-system-programming-guide.md
+      - 'RISC-V':
+        - 'RISC-V Unprivileged ISA': architecture/risc-v/risc-v-unprivileged-spec.md
     - Assembly:
       - 'Professional Assembly Language': assembly/pro-assembly.md
       - 'NASM': assembly/nasm.md

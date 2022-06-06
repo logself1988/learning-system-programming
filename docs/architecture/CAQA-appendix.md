@@ -6,7 +6,7 @@
 
 4 topics:
 
-1. present a taxonomy of instruction set alternatives, and give some aualitative assessment of the advantages and disadvantages of various approaches;
+1. present a taxonomy of instruction set alternatives, and give some qualitative assessment of the advantages and disadvantages of various approaches;
 2. present and analyze some instruction set measurements that are largely independent of a specific instruction set;
 3. address the issue of languages and compilers and their bearing on instruction set architecture;
 4. show how these ideas are reflected in the RISC-V instruction set in the "Putting It All Together" section.
@@ -555,7 +555,7 @@ imm: value displacement
 +--------------+----------+----------+------+----------+--------------+
 
 store, compare and branch
-rs1: base regiser first source
+rs1: base register first source
 rs2: data source to store second source
 imm: displacement offset
 

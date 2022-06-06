@@ -43,6 +43,10 @@ Intel 64, IA-32 Manual:
 - [Intel® 64 and IA-32 Architectures Software Developer’s Manual Volume 3A: System Programming Guide, Part 1](./docs/architecture/intel/vol3a-system-programming-guide.md)
 - [Intel® 64 and IA-32 Architectures Software Developer’s Manual Volume 3B: System Programming Guide, Part 2](./docs/architecture/intel/vol3b-system-programming-guide.md)
 
+RISC-V Specifications:
+
+- [The RISC-V Instruction Set Manual Volume I: Unprivileged ISA](./docs/architecture/risc-v/risc-v-unprivileged-spec.md)
+
 Instruction listings:
 
 - [x86 instruction listings](https://en.wikipedia.org/wiki/X86_instruction_listings): x86 integer instructions, x87 floating-point instructions, SIMD instructions, Cryptographic instructions, Undocumented instructions
