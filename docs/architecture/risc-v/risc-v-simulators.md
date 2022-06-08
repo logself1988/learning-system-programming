@@ -125,3 +125,105 @@ Hello, world!
 [Inferior 1 (process 1) exited normally]
 (gdb) q
 ```
+
+## MacOS
+
+
+### Resources
+
+- [riscv-software-src/homebrew-riscv](https://github.com/riscv-software-src/homebrew-riscv)
+
+### Steps
+
+1. use brew
+
+```
+➜  brew tap riscv-software-src/riscv
+➜  brew install riscv-tools
+```
+
+stuck on:
+
+```
+==> Installing dependencies for riscv-software-src/riscv/riscv-tools: riscv-gnu-toolchain, dtc, riscv-isa-sim and riscv-pk
+==> Installing riscv-software-src/riscv/riscv-tools dependency: riscv-gnu-toolchain
+Warning: Your Xcode (12.1) is outdated.
+Please update to Xcode 12.4 (or delete it).
+Xcode can be updated from the App Store.
+
+==> sed -i .bak s/.*=host-darwin.o$// riscv-gcc/gcc/config.host
+==> sed -i .bak s/.* x-darwin.$// riscv-gcc/gcc/config.host
+==> ./configure --prefix=/usr/local/Cellar/riscv-gnu-toolchain/main --with-cmodel=medany --enable-multilib
+==> make
+```
+
+Homebrew Caches: `~/Library/Caches/Homebrew/` `riscv-gnu-toolchain--git`,  `riscv-isa-sim--git` and `riscv-pk--git`.
+
+3. build and install riscv-gnu-toolchain
+
+```
+➜  ./configure --prefix=/opt/riscv
+➜  make
+
+# a long time to wait
+```
+
+in `~/.zshrc` add:
+
+```
+# RISCV
+export RISCV=/opt/riscv
+export PATH=$RISCV/bin:$PATH
+```
+
+test:
+
+```
+➜  source ~/.zshrc
+
+➜  riscv64-unknown-elf-gcc --version
+riscv64-unknown-elf-gcc (g5964b5cd727) 11.1.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
+
+4. build and install riscv-pk
+
+```
+➜  mkdir build
+➜  cd build
+➜  ../configure --prefix=$RISCV --host=riscv64-unknown-elf
+➜  make
+➜  sudo make install
+```
+
+5. build and install riscv-isa-sim
+
+```
+➜  brew info dtc
+
+➜  mkdir build
+➜  cd build
+➜  ../configure --prefix=$RISCV
+➜  make
+➜  sudo make install
+```
+
+6. test
+
+```
+➜  cat hello.c
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello, world\n");
+	return 0;
+}
+
+➜  riscv64-unknown-elf-gcc -o hello hello.c
+➜  spike pk hello
+bbl loader
+Hello, world
+```
