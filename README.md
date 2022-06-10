@@ -45,6 +45,8 @@ Intel 64, IA-32 Manual:
 
 RISC-V Specifications:
 
+- [The RISC-V Reader: An Open Architecture Atlas](./docs/architecture/risc-v/the-risc-v-reader.md)
+- [Digrams of RISC-V Instructions](./docs/architecture/risc-v/risc-v-instructions.md)
 - [The RISC-V Instruction Set Manual Volume I: Unprivileged ISA](./docs/architecture/risc-v/risc-v-unprivileged-spec.md)
 - [RISC-V Simulators](./docs/architecture/risc-v/risc-v-simulators.md)
 

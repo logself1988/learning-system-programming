@@ -37,6 +37,8 @@ nav:
         - 'Volume 3A: System Programming Guide': architecture/intel/vol3a-system-programming-guide.md
         - 'Volume 3B: System Programming Guide': architecture/intel/vol3b-system-programming-guide.md
       - 'RISC-V':
+        - 'The RISC-V Reader: An Open Architecture Atlas': architecture/risc-v/the-risc-v-reader.md
+        - 'Digrams of RISC-V Instructions': architecture/risc-v/risc-v-instructions.md
         - 'RISC-V Unprivileged ISA': architecture/risc-v/risc-v-unprivileged-spec.md
         - 'RISC-V Simulators': architecture/risc-v/risc-v-simulators.md
     - Assembly:
