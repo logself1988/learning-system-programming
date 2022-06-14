@@ -36,3 +36,5 @@
 **/*.dSYM/
 greeting
 game
+
+.vscode/

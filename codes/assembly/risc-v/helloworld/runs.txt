@@ -1,0 +1,42 @@
+# hello.c
+
+✗ make
+riscv64-unknown-elf-gcc -Wall -g  -o hello hello.c
+✗ make run
+spike pk hello
+bbl loader
+Hello, world
+
+## .c to .s
+
+✗ make run2
+riscv64-unknown-elf-gcc -march=rv64g -o hello hello.s
+spike pk hello
+bbl loader
+Hello, world
+
+# myhello.s
+
+✗ man puts
+
+SYNOPSIS
+     #include <stdio.h>
+
+     int
+     fputs(const char *restrict s, FILE *restrict stream);
+
+     int
+     puts(const char *s);
+
+✗ make myhello
+riscv64-unknown-elf-gcc -march=rv64g -o myhello myhello.s
+spike pk myhello
+bbl loader
+Hello, world!
+
+# func.
+
+> show how to write functions.
+
+✗ make func.s
+riscv64-unknown-elf-gcc -march=rv64g -S -o func.s func.c

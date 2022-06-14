@@ -41,6 +41,7 @@ nav:
         - 'Digrams of RISC-V Instructions': architecture/risc-v/risc-v-instructions.md
         - 'RISC-V Unprivileged ISA': architecture/risc-v/risc-v-unprivileged-spec.md
         - 'RISC-V Simulators': architecture/risc-v/risc-v-simulators.md
+        - 'RISC-V Cheatsheet': architecture/risc-v/risc-v-cheatsheet.md
     - Assembly:
       - 'Professional Assembly Language': assembly/pro-assembly.md
       - 'NASM': assembly/nasm.md
@@ -90,6 +91,7 @@ extra:
   search:
     language: 'en'
 markdown_extensions:
+  - attr_list
   - admonition
   - codehilite:
       linenums: true
