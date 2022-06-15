@@ -1,0 +1,147 @@
+??? question "radd16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "radd32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "radd64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "radd8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "raddw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "rcras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "rcras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "rcrsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "rcrsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "rdcycle rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "rdcycleh rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "rdinstret rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "rdinstreth rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "rdtime rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "rdtimeh rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "rem rd, rs1, rs2 (). $\fbox{rv_m}$"
+
+    .
+
+??? question "remu rd, rs1, rs2 (). $\fbox{rv_m}$"
+
+    .
+
+??? question "remuw rd, rs1, rs2 (). $\fbox{rv64_m}$"
+
+    .
+
+??? question "remw rd, rs1, rs2 (). $\fbox{rv64_m}$"
+
+    .
+
+??? question "rev rd, rs1 (). $\fbox{rv64_zbpbo}$"
+
+    .
+
+??? question "rev8 rd, rs1 (). $\fbox{rv64_zks}$"
+
+    .
+
+??? question "rev8.h rd, rs1 (). $\fbox{rv_zbpbo}$"
+
+    .
+
+??? question "rol rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+
+    .
+
+??? question "rolw rd, rs1, rs2 (). $\fbox{rv64_zbkb}$"
+
+    .
+
+??? question "ror rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+
+    .
+
+??? question "rori rd, rs1, shamtd (). $\fbox{rv64_zbb}$"
+
+    .
+
+??? question "roriw rd, rs1, shamtw (). $\fbox{rv64_zbkb}$"
+
+    .
+
+??? question "rorw rd, rs1, rs2 (). $\fbox{rv64_zbkb}$"
+
+    .
+
+??? question "rstas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "rstas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "rstsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "rstsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "rsub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "rsub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "rsub64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "rsub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "rsubw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .

@@ -1,0 +1,31 @@
+??? question "gorc rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+
+    .
+
+??? question "gorci rd, rs1, shamtd (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "gorciw rd, rs1, shamtw (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "gorcw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "grev rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+
+    .
+
+??? question "grevi rd, rs1, shamtd (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "greviw rd, rs1, shamtw (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "grevw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+
+    .

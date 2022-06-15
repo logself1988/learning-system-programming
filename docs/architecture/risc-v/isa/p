@@ -1,0 +1,75 @@
+??? question "pack rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+
+    .
+
+??? question "packh rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+
+    .
+
+??? question "packu rd, rs1, rs2 (). $\fbox{rv64_zbm}$"
+
+    .
+
+??? question "packuw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "packw rd, rs1, rs2 (). $\fbox{rv64_zbkb}$"
+
+    .
+
+??? question "pause  (). $\fbox{rv_i}$"
+
+    .
+
+??? question "pbsad rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "pbsada rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "pkbb16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "pkbb32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "pkbt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "pkbt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "pktb16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "pktb32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "pktt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "pktt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "prefetch.i rs1, imm12hi (). $\fbox{rv_zicbo}$"
+
+    .
+
+??? question "prefetch.r rs1, imm12hi (). $\fbox{rv_zicbo}$"
+
+    .
+
+??? question "prefetch.w rs1, imm12hi (). $\fbox{rv_zicbo}$"
+
+    .

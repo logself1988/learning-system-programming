@@ -1,0 +1,686 @@
+
+??? summary "fabs.d rd, rs (Floating-point Absolute Value). $\fbox{pseudo} \ \fbox{rv_f}$"
+
+    f[rd] = |f[rs]|.
+
+    Write the absolute value of the double-precision floating-point number in f[rs1] to f[rd].
+	
+    fsgnjx.d rd, rs, rs
+
+??? summary "fabs.s rd, rs (Floating-point Absolute Value). $\fbox{pseudo} \ \fbox{rv_f}$"
+
+    f[rd] = |f[rs1]|.
+
+    Write the absolute value of the single-precision floating-point number in f[rs1] to f[rd].
+
+	fsgnjx.s rd, rs, rs
+
+
+??? summary "fadd.d rd, rs1, rs2 (Floating-point Add, Double-Precision). $\fbox{rv_d}$"
+
+    f[rd] = f[rs1] + f[rs2].
+
+    Add the double-precision floating-point numbers in register f[rs1] and f[rs2], and write the rounded double-precision sum to f[rd].
+
+??? question "fadd.h rd, rs1, rs2, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fadd.q rd, rs1, rs2, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? summary "fadd.s rd, rs1, rs2, rm (Floating-point Add, Single-Precision). $\fbox{rv_f}$"
+
+    f[rd] = f[rs1] + f[rs2].
+
+    Add the single-precision floating-point numbers in registers f[rs1] and f[rs2] and write the rounding single-precision sum to f[rd].
+
+??? summary "fclass.d rd, rs1 (Floating-point Classify, Double-Precision). $\fbox{rv_d}$"
+
+    x[rd] = calssify_d(f[rs1]).
+
+    Write to x[rd] a mask indicating the class of the double-precision floating-point number in f[rs1].
+
+??? question "fclass.h rd, rs1 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fclass.q rd, rs1 (). $\fbox{rv_q}$"
+
+    .
+
+??? summary "fclass.s rd, rs1 (Floating-point Classify, Single-Precision). $\fbox{rv_f}$"
+
+    x[rd] = classify_s(f[rs1]).
+
+    Write to x[rd] a mask indicating the class of the single-precision floating-point number in f[rs1]. Excatly one bit in x[rd] is set:
+
+    ```
+    x[rd]     Meaning
+    bit
+    0         f[rs1] is $- \infty$.
+    1         f[rs1] is a negative normal number.
+    2         f[rs1] is a negative subnormal number.
+    3         f[rs1] is -0.
+    4         f[rs1] is +0.
+    5         f[rs1] is a positive subnormal number.
+    6         f[rs1] is a positive normal number.
+    7         f[rs1] is $+ \infty$.
+    8         f[rs1] is a signaling NaN.
+    9         f[rs1] is a quiet NaN.
+    ```
+
+??? question "fcvt.d.h rd, rs1, rm (). $\fbox{rv_d_zfh}$"
+
+    .
+
+??? summary "fcvt.d.l rd, rs1, rm (Floating-point Convert to Double from Long). $\fbox{rv64_d}$"
+
+    f[rd] = f64_s64(x[rs1]).
+
+    Convert the 64-bit two's complement integer in x[rs1] to a double-precision floating-point number and write it to f[rd].
+
+??? summary "fcvt.d.lu rd, rs1, rm (Floating-point Convert to Double from Unsigned Long). $\fbox{rv64_d}$"
+
+    f[rd] = f64_u64(x[rs1]).
+
+    Convert the 64-bit unsigned integer in x[rs1] to a double-precision floating-point number and write it to f[rd].
+
+??? question "fcvt.d.q rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? summary "fcvt.d.s rd, rs1, rm (Floating-point Convert to Double from Single). $\fbox{rv_d}$"
+
+    f[rd] = f64_f32(f[rs1]).
+
+    Convert the single-precision floating-point number in f[rs1] to a double-precision floating-point number and write it to f[rd].
+
+??? summary "fcvt.d.w rd, rs1, rm (Floating-point Convert to Double from Word). $\fbox{rv_d}$"
+
+    f[rd] = f64_s32(x[rs1]).
+
+    Convert the 32_bit two's complement integer in x[rs1] to a double-precision floating-point number and write it to f[rd].
+
+??? summary "fcvt.d.wu rd, rs1, rm (Floating-point Convert to Double from unsigned Word). $\fbox{rv_d}$"
+
+    f[rd] = f64_u32(x[rs1]).
+
+    Convert the 32-bit unsigned integer in x[rs1] to a double-precision floating-point number and write it to f[rd].
+
+??? question "fcvt.h.d rd, rs1, rm (). $\fbox{rv_d_zfh}$"
+
+    .
+
+??? question "fcvt.h.l rd, rs1, rm (). $\fbox{rv64_zfh}$"
+
+    .
+
+??? question "fcvt.h.lu rd, rs1, rm (). $\fbox{rv64_zfh}$"
+
+    .
+
+??? question "fcvt.h.q rd, rs1, rm (). $\fbox{rv_q_zfh}$"
+
+    .
+
+??? question "fcvt.h.s rd, rs1, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fcvt.h.w rd, rs1, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fcvt.h.wu rd, rs1, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? summary "fcvt.l.d rd, rs1, rm (Floating-point Convert to Long from Double). $\fbox{rv64_d}$"
+
+    x[rd] = s64_f64(f[rs1]).
+
+    Convert the double-precision floating-point number in register f[rs1] to a 64-bit two's complement integer and write it to x[rd].
+
+??? question "fcvt.l.h rd, rs1, rm (). $\fbox{rv64_zfh}$"
+
+    .
+
+??? question "fcvt.l.q rd, rs1, rm (). $\fbox{rv64_q}$"
+
+    .
+
+??? summary "fcvt.l.s rd, rs1, rm (Floating-point Convert to Long from Single). $\fbox{rv64_f}$"
+
+    x[rd] = s64_f32(f[rs1]).
+
+    Convert the single-precision floating-point number in register f[rs1] to a 64-bit two's complement integer and write it to x[rd].
+
+??? summary "fcvt.lu.d rd, rs1, rm (Floating-point Convert to Unsigned Long from Double). $\fbox{rv64_d}$"
+
+    x[rd] = u64_f64(f[rs1]).
+
+    Convert the double-precision floating-point number in register f[rs1] to a 64-bit unsigned integer and write it to x[rd].
+
+??? question "fcvt.lu.h rd, rs1, rm (). $\fbox{rv64_zfh}$"
+
+    .
+
+??? question "fcvt.lu.q rd, rs1, rm (). $\fbox{rv64_q}$"
+
+    .
+
+??? summary "fcvt.lu.s rd, rs1, rm (Convert to Unsigned Long from Single). $\fbox{rv64_f}$"
+
+    x[rd] = u64_f32(f[rs1]).
+
+    Convert the single-precision floating-point number in register f[rs1] to a 64-bit unsigned integer and write it to x[rd].
+
+??? question "fcvt.q.d rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fcvt.q.h rd, rs1, rm (). $\fbox{rv_q_zfh}$"
+
+    .
+
+??? question "fcvt.q.l rd, rs1, rm (). $\fbox{rv64_q}$"
+
+    .
+
+??? question "fcvt.q.lu rd, rs1, rm (). $\fbox{rv64_q}$"
+
+    .
+
+??? question "fcvt.q.s rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fcvt.q.w rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fcvt.q.wu rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? summary "fcvt.s.d rd, rs1, rm (Floating-point Convert to Single from Double). $\fbox{rv_d}$"
+
+    f[rd] = f32_f64(f[rs1]).
+
+    Convert the double-precision floating-point number if f[rs1] to a single-precision floating-point number and write it to f[rd].
+
+??? question "fcvt.s.h rd, rs1, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? summary "fcvt.s.l rd, rs1, rm (Floating-point Convert to Single from Long). $\fbox{rv64_f}$"
+
+    f[rd] = f32_s64(x[rs1]).
+
+    Convert the 64-bit two's complement integer in x[rs1] to a single-precision floating-point number and write it to f[rd].
+
+??? summary "fcvt.s.lu rd, rs1, rm (Floating-point Convert to Single from Unsigned Long). $\fbox{rv64_f}$"
+
+    f[rd] = f32_u64(x[rs1]).
+
+    Convert the 64-bit unsigned integer in x[rs1] to a single-precision floating-point number and write it to f[rd].
+
+??? question "fcvt.s.q rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? summary "fcvt.s.w rd, rs1, rm (Floating-point Convert to Single from Word). $\fbox{rv_f}$"
+
+    f[rd] = f32_s32(x[rs1]).
+
+    Convert the 32-bit two's complement integer in x[rs1] to a single-precision floating-point number and write it to f[rd].
+
+??? summary "fcvt.s.wu rd, rs1, rm (Floating-point Convert to Single from Unsigned Word). $\fbox{rv_f}$"
+
+    f[rd] = f32_u32(x[rs1]).
+
+    Convert the 32-bit unsigned integer in x[rs1] to a single-precision floating-point number and write it to f[rd].
+
+??? summary "fcvt.w.d rd, rs1, rm (Floating-point Convert to Word from Double). $\fbox{rv_d}$"
+
+    x[rd] = sext(s32_f64(f[rs1])).
+
+    Convert the double-precision floating-point number in register f[rs1] to a 32-bit two's complement integer and write the sign-extended result to x[rd].
+
+??? question "fcvt.w.h rd, rs1, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fcvt.w.q rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? summary "fcvt.w.s rd, rs1, rm (Floating-point Convert to Word from Single). $\fbox{rv_f}$"
+
+    x[rd] = sext(s32_f32(f[rs1])).
+
+    Convert the single-precision floating-point number in register f[rs1] to a 32-bit two's complement integer and write the sign-extended result to x[rd].
+
+??? summary "fcvt.wu.d rd, rs1, rm (Floating-point Convert to Unsigned Word from Double). $\fbox{rv_d}$"
+
+    x[rd] = sext(u32_f64(f[rs1])).
+
+    Convert the double-precision floating-point number in register f[rs1] to a 32-bit unsigned integer and write the sign-extended result to x[rd].
+
+??? question "fcvt.wu.h rd, rs1, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fcvt.wu.q rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? summary "fcvt.wu.s rd, rs1, rm (Floating-point Convert to Unsigned Word from Single). $\fbox{rv_f}$"
+
+    x[rd] = sext(u32_f32(f[rs1])).
+
+    Convert the single-precision floating-point number in register f[rs1] to a 32-bit unsigned integer and write the sign-extended result to x[rd].
+
+??? summary "fdiv.d rd, rs1, rs2, rm (Floating-point Divide, Double-Precision). $\fbox{rv_d}$"
+
+    f[rd] = f[rs1] / f[rs2].
+
+    Divide the double-precision floating-point number in register f[rs1] by f[rs2] and write the rounded double-precision quotient to f[rd].
+
+??? question "fdiv.h rd, rs1, rs2, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fdiv.q rd, rs1, rs2, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? summary "fdiv.s rd, rs1, rs2, rm (Floating-point Divide, Single-Precision). $\fbox{rv_f}$"
+
+    f[rd] = f[rs1] / f[rs2].
+
+    Divide the single-precision floating-point number in register f[rs1] by f[rs2] and write the rounded double-precision quotient to f[rd].
+
+??? summary "fence fm, pred, succ, rs1, rd (Fence Memory and I/O). $\fbox{rv_i}$"
+
+    Fence(pred, succ).
+
+    Renders preceding memory and I/O accesses in the pred(ecessor) set observable to other threads and devices before subsequence memory and I/O accesses in the succ(essor) set become observable.
+    
+    Bits 3,2,1,0 in these sets correspond to device input, device output, memory reads, memory writes, respectively.
+
+    For example fence r, rw, orders older reads with younger reads and writes, and is encoded with pred=0010, succ=0011.
+
+    If the arguments are omitted, a full fence iorw, iorw is implied.
+
+??? summary "fence.i imm12, rs1, rd (Fence Instruction Stream). $\fbox{rv_zifencei} \ \fbox{rv_i}$"
+
+    Fence(Store, Fetch).
+
+    Render stores to instruction memory observable to subsequence instruction feteches.
+
+??? question "fence.tso  (). $\fbox{rv_i}$"
+
+    .
+
+??? question "feq.d rd, rs1, rs2 (Floatint-point ). $\fbox{rv_d}$"
+
+    .
+
+??? question "feq.h rd, rs1, rs2 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "feq.q rd, rs1, rs2 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "feq.s rd, rs1, rs2 (Floatint-point ). $\fbox{rv_f}$"
+
+    .
+
+??? question "fld rd, rs1, imm12 (Floatint-point ). $\fbox{rv_d}$"
+
+    .
+
+??? question "fle.d rd, rs1, rs2 (Floatint-point ). $\fbox{rv_d}$"
+
+    .
+
+??? question "fle.h rd, rs1, rs2 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fle.q rd, rs1, rs2 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fle.s rd, rs1, rs2 (Floatint-point ). $\fbox{rv_f}$"
+
+    .
+
+??? question "flh rd, rs1, imm12 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "flq rd, rs1, imm12 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "flt.d rd, rs1, rs2 (Floatint-point ). $\fbox{rv_d}$"
+
+    .
+
+??? question "flt.h rd, rs1, rs2 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "flt.q rd, rs1, rs2 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "flt.s rd, rs1, rs2 (Floatint-point ). $\fbox{rv_f}$"
+
+    .
+
+??? question "flw rd, rs1, imm12 (Floatint-point ). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmadd.d rd, rs1, rs2, rs3, rm (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fmadd.h rd, rs1, rs2, rs3, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fmadd.q rd, rs1, rs2, rs3, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fmadd.s rd, rs1, rs2, rs3, rm (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmax.d rd, rs1, rs2 (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fmax.h rd, rs1, rs2 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fmax.q rd, rs1, rs2 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fmax.s rd, rs1, rs2 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmin.d rd, rs1, rs2 (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fmin.h rd, rs1, rs2 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fmin.q rd, rs1, rs2 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fmin.s rd, rs1, rs2 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmsub.d rd, rs1, rs2, rs3, rm (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fmsub.h rd, rs1, rs2, rs3, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fmsub.q rd, rs1, rs2, rs3, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fmsub.s rd, rs1, rs2, rs3, rm (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmul.d rd, rs1, rs2, rm (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fmul.h rd, rs1, rs2, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fmul.q rd, rs1, rs2, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fmul.s rd, rs1, rs2, rm (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmv.d.x rd, rs1 (). $\fbox{rv64_d}$"
+
+    .
+
+??? question "fmv.h.x rd, rs1 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fmv.s.x rd, rs1 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmv.w.x rd, rs1 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmv.x.d rd, rs1 (). $\fbox{rv64_d}$"
+
+    .
+
+??? question "fmv.x.h rd, rs1 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fmv.x.s rd, rs1 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fmv.x.w rd, rs1 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fnmadd.d rd, rs1, rs2, rs3, rm (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fnmadd.h rd, rs1, rs2, rs3, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fnmadd.q rd, rs1, rs2, rs3, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fnmadd.s rd, rs1, rs2, rs3, rm (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fnmsub.d rd, rs1, rs2, rs3, rm (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fnmsub.h rd, rs1, rs2, rs3, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fnmsub.q rd, rs1, rs2, rs3, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fnmsub.s rd, rs1, rs2, rs3, rm (). $\fbox{rv_f}$"
+
+    .
+
+??? question "frcsr rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "frflags rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "frrm rd (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "fscsr rd, rs1 (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "fsd imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fsflags rd, rs1 (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "fsflagsi rd, zimm (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "fsgnj.d rd, rs1, rs2 (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fsgnj.h rd, rs1, rs2 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fsgnj.q rd, rs1, rs2 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fsgnj.s rd, rs1, rs2 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fsgnjn.d rd, rs1, rs2 (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fsgnjn.h rd, rs1, rs2 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fsgnjn.q rd, rs1, rs2 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fsgnjn.s rd, rs1, rs2 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fsgnjx.d rd, rs1, rs2 (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fsgnjx.h rd, rs1, rs2 (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fsgnjx.q rd, rs1, rs2 (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fsgnjx.s rd, rs1, rs2 (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fsh imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fsl rd, rs1, rs2, rs3 (). $\fbox{rv_zbt}$"
+
+    .
+
+??? question "fslw rd, rs1, rs2, rs3 (). $\fbox{rv64_zbt}$"
+
+    .
+
+??? question "fsq imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fsqrt.d rd, rs1, rm (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fsqrt.h rd, rs1, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fsqrt.q rd, rs1, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fsqrt.s rd, rs1, rm (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fsr rd, rs1, rs2, rs3 (). $\fbox{rv32_zbpbo}$"
+
+    .
+
+??? question "fsri rd, rs1, rs3, shamtd (). $\fbox{rv64_zbt}$"
+
+    .
+
+??? question "fsriw rd, rs1, rs3, shamtw (). $\fbox{rv64_zbt}$"
+
+    .
+
+??? question "fsrm rd, rs1 (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "fsrmi rd, zimm (). $\fbox{rv_zicsr}$"
+
+    .
+
+??? question "fsrw rd, rs1, rs2, rs3 (). $\fbox{rv64_zbpbo}$"
+
+    .
+
+??? question "fsub.d rd, rs1, rs2, rm (). $\fbox{rv_d}$"
+
+    .
+
+??? question "fsub.h rd, rs1, rs2, rm (). $\fbox{rv_zfh}$"
+
+    .
+
+??? question "fsub.q rd, rs1, rs2, rm (). $\fbox{rv_q}$"
+
+    .
+
+??? question "fsub.s rd, rs1, rs2, rm (). $\fbox{rv_f}$"
+
+    .
+
+??? question "fsw imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_f}$"
+
+    .

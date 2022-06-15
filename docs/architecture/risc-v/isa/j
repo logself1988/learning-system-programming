@@ -1,0 +1,7 @@
+??? question "jal rd, jimm20 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "jalr rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .

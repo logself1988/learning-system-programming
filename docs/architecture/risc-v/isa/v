@@ -1,0 +1,1831 @@
+??? question "vaadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vaadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vaaddu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vaaddu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vadc.vim vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vadc.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vadc.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vadd.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoaddei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoaddei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoaddei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoaddei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoandei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoandei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoandei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoandei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamomaxei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamomaxei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamomaxei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamomaxei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamomaxuei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamomaxuei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamomaxuei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamomaxuei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamominei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamominei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamominei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamominei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamominuei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamominuei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamominuei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamominuei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoorei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoorei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoorei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoorei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoswapei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoswapei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoswapei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoswapei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoxorei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoxorei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoxorei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vamoxorei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vand.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vand.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vand.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vasub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vasub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vasubu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vasubu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vcompress.vm vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vcpop.m vm, vs2, rd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vdiv.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vdiv.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vdivu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vdivu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfadd.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfclass.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfcvt.f.x.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfcvt.f.xu.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfcvt.rtz.x.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfcvt.rtz.xu.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfcvt.x.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfcvt.xu.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfdiv.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfdiv.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfirst.m vm, vs2, rd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmacc.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmadd.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmax.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmax.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmerge.vfm vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmin.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmin.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmsac.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmul.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmv.f.s vs2, rd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmv.s.f rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfmv.v.f rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfncvt.f.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfncvt.f.x.w vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfncvt.f.xu.w vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfncvt.rod.f.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfncvt.rtz.x.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfncvt.rtz.xu.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfncvt.x.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfncvt.xu.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfnmacc.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfnmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfnmadd.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfnmadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfnmsac.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfnmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfnmsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfnmsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfrdiv.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfrec7.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfredmax.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfredmin.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfredosum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfredsum.vs vm, vs2, vs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vfredusum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfrsqrt7.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfrsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsgnj.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsgnj.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsgnjn.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsgnjn.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsgnjx.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsgnjx.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfslide1down.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfslide1up.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsqrt.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwadd.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwadd.wf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwadd.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwcvt.f.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwcvt.f.x.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwcvt.f.xu.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwcvt.rtz.x.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwcvt.rtz.xu.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwcvt.x.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwcvt.xu.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwmacc.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwmsac.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwmul.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwnmacc.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwnmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwnmsac.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwnmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwredosum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwredsum.vs vm, vs2, vs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vfwredusum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwsub.wf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vfwsub.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vid.v vm, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "viota.m vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl1r.v rs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vl1re16.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl1re32.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl1re64.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl1re8.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl2r.v rs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vl2re16.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl2re32.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl2re64.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl2re8.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl4r.v rs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vl4re16.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl4re32.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl4re64.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl4re8.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl8r.v rs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vl8re16.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl8re32.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl8re64.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vl8re8.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle1024.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle1024ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle128.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle128ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle16.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle16ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle1.v rs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vle256.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle256ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle32.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle32ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle512.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle512ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle64.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle64ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle8.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vle8ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlm.v rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vloxei1024.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vloxei128.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vloxei16.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vloxei256.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vloxei32.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vloxei512.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vloxei64.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vloxei8.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlse1024.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlse128.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlse16.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlse256.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlse32.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlse512.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlse64.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vlse8.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vluxei1024.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vluxei128.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vluxei16.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vluxei256.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vluxei32.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vluxei512.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vluxei64.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vluxei8.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmacc.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmadc.vi vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmadc.vim vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmadc.vv vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmadc.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmadc.vx vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmadc.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmand.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmandn.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmandnot.mm vm, vs2, vs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vmax.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmax.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmaxu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmaxu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmerge.vim vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmerge.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmerge.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmfeq.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmfeq.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmfge.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmfgt.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmfle.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmfle.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmflt.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmflt.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmfne.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmfne.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmin.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmin.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vminu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vminu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmnand.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmnor.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmor.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmorn.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmornot.mm vm, vs2, vs1, vd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vmsbc.vv vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsbc.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsbc.vx vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsbc.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsbf.m vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmseq.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmseq.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmseq.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsgt.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsgt.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsgtu.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsgtu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsif.m vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsle.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsle.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsle.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsleu.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsleu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsleu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmslt.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmslt.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsltu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsltu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsne.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsne.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsne.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmsof.m vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmul.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmulh.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmulh.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmulhsu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmulhsu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmulhu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmulhu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv1r.v vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv2r.v vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv4r.v vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv8r.v vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv.s.x rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv.v.i simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv.v.v vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv.v.x rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmv.x.s vs2, rd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmxnor.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vmxor.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnclip.wi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnclip.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnclip.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnclipu.wi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnclipu.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnclipu.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnmsac.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnmsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnmsub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnsra.wi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnsra.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnsra.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnsrl.wi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnsrl.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vnsrl.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vor.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vor.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vor.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vpopc.m vm, vs2, rd (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vredand.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vredmax.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vredmaxu.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vredmin.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vredminu.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vredor.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vredsum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vredxor.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vrem.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vrem.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vremu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vremu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vrgather.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vrgather.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vrgather.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vrgatherei16.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vrsub.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vrsub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vs1r.v rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vs2r.v rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vs4r.v rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vs8r.v rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsadd.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsaddu.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsaddu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsaddu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsbc.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsbc.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vse1024.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vse128.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vse16.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vse1.v rs1, vs3 (). $\fbox{rv_v_aliases}$"
+
+    .
+
+??? question "vse256.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vse32.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vse512.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vse64.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vse8.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsetivli zimm10, zimm, rd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsetvl rs2, rs1, rd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsetvli zimm11, rs1, rd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsext.vf2 vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsext.vf4 vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsext.vf8 vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vslide1down.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vslide1up.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vslidedown.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vslidedown.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vslideup.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vslideup.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsll.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsll.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsll.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsm.v rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsmul.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsoxei1024.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsoxei128.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsoxei16.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsoxei256.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsoxei32.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsoxei512.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsoxei64.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsoxei8.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsra.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsra.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsra.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsrl.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsrl.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsrl.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsse1024.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsse128.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsse16.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsse256.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsse32.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsse512.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsse64.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsse8.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssra.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssra.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssra.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssrl.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssrl.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssrl.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssubu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vssubu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsuxei1024.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsuxei128.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsuxei16.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsuxei256.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsuxei32.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsuxei512.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsuxei64.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vsuxei8.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwadd.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwadd.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwaddu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwaddu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwaddu.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwaddu.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmacc.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmaccsu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmaccsu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmaccu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmaccu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmaccus.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmul.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmulsu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmulsu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmulu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwmulu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwredsum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwredsumu.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwsub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwsub.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwsub.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwsubu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwsubu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwsubu.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vwsubu.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vxor.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vxor.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vxor.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vzext.vf2 vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vzext.vf4 vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .
+
+??? question "vzext.vf8 vm, vs2, vd (). $\fbox{rv_v}$"
+
+    .

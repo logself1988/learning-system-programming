@@ -1,0 +1,11 @@
+??? summary "ebreak  (Environment Breakpoint). $\fbox{rv_i}$"
+
+    RaiseException(Breakpoint).
+
+    Make a request of the debugger by raising a Breakpoint exception.
+
+??? summary "ecall  (Environment Call). $\fbox{rv_i}$"
+
+    RaiseException(EnvironmentCall).
+
+    Make a request of the execution environment by raising an Environment Call exception.

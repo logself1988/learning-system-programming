@@ -1,0 +1,27 @@
+??? question "zext.h rd, rs1 (). $\fbox{rv64_zbb}$"
+
+    .
+
+??? question "zip rd, rs1 (). $\fbox{rv32_zks}$"
+
+    .
+
+??? question "zunpkd810 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "zunpkd820 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "zunpkd830 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "zunpkd831 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "zunpkd832 rs1, rd (). $\fbox{rv_p}$"
+
+    .

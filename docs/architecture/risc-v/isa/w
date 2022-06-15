@@ -1,0 +1,11 @@
+??? question "wext rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "wexti imm5, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "wfi  (). $\fbox{rv_system}$"
+
+    .

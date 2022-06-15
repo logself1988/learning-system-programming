@@ -1,0 +1,263 @@
+??? question "uclip16 imm4, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uclip32 imm5, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uclip8 imm3, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ucmple16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ucmple8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ucmplt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ucmplt8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukadd16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukadd32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ukadd64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukadd8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukaddh rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukaddw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukcras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukcras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ukcrsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukcrsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ukmar64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukmsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukstas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukstas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ukstsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ukstsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "uksub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uksub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "uksub64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uksub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uksubh rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uksubw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umaqa rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umar64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umax16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umax32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "umax8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umin16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umin32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "umin8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umul16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umul8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umulx16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "umulx8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "unshfl rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+
+    .
+
+??? question "unshfli rd, rs1, shamtw (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "unshflw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "unzip rd, rs1 (). $\fbox{rv32_zks}$"
+
+    .
+
+??? question "unzip16 rd, rs1 (). $\fbox{rv64_zbm}$"
+
+    .
+
+??? question "unzip8 rd, rs1 (). $\fbox{rv64_zbm}$"
+
+    .
+
+??? question "uradd16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uradd32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "uradd64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uradd8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "uraddw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "urcras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "urcras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "urcrsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "urcrsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "urstas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "urstas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "urstsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "urstsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ursub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ursub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ursub64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ursub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ursubw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .

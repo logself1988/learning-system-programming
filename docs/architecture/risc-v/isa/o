@@ -1,0 +1,15 @@
+??? question "or rd, rs1, rs2 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "orc.b rd, rs1 (). $\fbox{rv_zbb}$"
+
+    .
+
+??? question "ori rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "orn rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+
+    .

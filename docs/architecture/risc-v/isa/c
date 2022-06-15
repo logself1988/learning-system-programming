@@ -1,0 +1,436 @@
+
+??? question "c.add rd_rs1, c_rs2_n0 (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.addi rd_rs1_n0, c_nzimm6lo, c_nzimm6hi (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.addi16sp c_nzimm10hi, c_nzimm10lo (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.addi4spn rd_p, c_nzuimm10 (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.addiw rd_rs1, c_imm6lo, c_imm6hi (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.addw rd_rs1_p, rs2_p (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.and rd_rs1_p, rs2_p (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.andi rd_rs1_p, c_imm6hi, c_imm6lo (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.beqz rs1_p, c_bimm9lo, c_bimm9hi (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.bnez rs1_p, c_bimm9lo, c_bimm9hi (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.ebreak  (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.fld rd_p, rs1_p, c_uimm8lo, c_uimm8hi (). $\fbox{rv_c_d}$"
+
+    .
+
+??? question "c.fldsp rd, c_uimm9sphi, c_uimm9splo (). $\fbox{rv_c_d}$"
+
+    .
+
+??? question "c.flw rd_p, rs1_p, c_uimm7lo, c_uimm7hi (). $\fbox{rv32_c_f}$"
+
+    .
+
+??? question "c.flwsp rd, c_uimm8sphi, c_uimm8splo (). $\fbox{rv32_c_f}$"
+
+    .
+
+??? question "c.fsd rs1_p, rs2_p, c_uimm8lo, c_uimm8hi (). $\fbox{rv_c_d}$"
+
+    .
+
+??? question "c.fsdsp c_rs2, c_uimm9sp_s (). $\fbox{rv_c_d}$"
+
+    .
+
+??? question "c.fsw rs1_p, rs2_p, c_uimm7lo, c_uimm7hi (). $\fbox{rv32_c_f}$"
+
+    .
+
+??? question "c.fswsp c_rs2, c_uimm8sp_s (). $\fbox{rv32_c_f}$"
+
+    .
+
+??? question "c.j c_imm12 (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.jal c_imm12 (). $\fbox{rv32_c}$"
+
+    .
+
+??? question "c.jalr c_rs1_n0 (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.jr rs1_n0 (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.ld rd_p, rs1_p, c_uimm8lo, c_uimm8hi (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.ldsp rd_n0, c_uimm9sphi, c_uimm9splo (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.li rd, c_imm6lo, c_imm6hi (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.lq rd_p, rs1_p, c_uimm9lo, c_uimm9hi (). $\fbox{rv128_c}$"
+
+    .
+
+??? question "c.lqsp rd, c_uimm10sphi, c_uimm10splo (). $\fbox{rv128_c}$"
+
+    .
+
+??? question "c.lui rd_n2, c_nzimm18hi, c_nzimm18lo (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.lw rd_p, rs1_p, c_uimm7lo, c_uimm7hi (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.lwsp rd_n0, c_uimm8sphi, c_uimm8splo (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.mv rd, c_rs2_n0 (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.nop c_nzimm6hi, c_nzimm6lo (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.or rd_rs1_p, rs2_p (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.sd rs1_p, rs2_p, c_uimm8hi, c_uimm8lo (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.sdsp c_rs2, c_uimm9sp_s (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.slli rd_rs1_n0, c_nzuimm6hi, c_nzuimm6lo (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.sq rs1_p, rs2_p, c_uimm9hi, c_uimm9lo (). $\fbox{rv128_c}$"
+
+    .
+
+??? question "c.sqsp c_rs2, c_uimm10sp_s (). $\fbox{rv128_c}$"
+
+    .
+
+??? question "c.srai rd_rs1_p, c_nzuimm6lo, c_nzuimm6hi (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.srli rd_rs1_p, c_nzuimm6lo, c_nzuimm6hi (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.sub rd_rs1_p, rs2_p (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.subw rd_rs1_p, rs2_p (). $\fbox{rv64_c}$"
+
+    .
+
+??? question "c.sw rs1_p, rs2_p, c_uimm7lo, c_uimm7hi (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.swsp c_rs2, c_uimm8sp_s (). $\fbox{rv_c}$"
+
+    .
+
+??? question "c.xor rd_rs1_p, rs2_p (). $\fbox{rv_c}$"
+
+    .
+
+??? summary "call offset (Call far-away subroutine). $\fbox{pseudo} \ \fbox{rv_c}$"
+
+	auipc x1, offset[31:12] + offset[11]
+    jalr x1, offset[11:0](x1)
+
+    `call rd, symbol`   x[rd] = pc+8; pc = &symbol. Write the address of the next instruction (pc+8) to x[rd], then sets the pc to symbol.
+
+??? question "cbo.clean rs1 (). $\fbox{rv_zicbo}$"
+
+    .
+
+??? question "cbo.flush rs1 (). $\fbox{rv_zicbo}$"
+
+    .
+
+??? question "cbo.inval rs1 (). $\fbox{rv_zicbo}$"
+
+    .
+
+??? question "cbo.zero rs1 (). $\fbox{rv_zicbo}$"
+
+    .
+
+??? question "clmul rd, rs1, rs2 (). $\fbox{rv_zbkc}$"
+
+    .
+
+??? question "clmulh rd, rs1, rs2 (). $\fbox{rv_zbkc}$"
+
+    .
+
+??? question "clmulr rd, rs1, rs2 (). $\fbox{rv_zbc}$"
+
+    .
+
+??? question "clo16 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clo32 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clo8 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clrs16 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clrs32 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clrs8 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clz rd, rs1 (). $\fbox{rv32_zbpbo}$"
+
+    .
+
+??? question "clz16 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clz32 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clz8 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "clzw rd, rs1 (). $\fbox{rv64_zbb}$"
+
+    .
+
+??? question "cmix rd, rs1, rs2, rs3 (). $\fbox{rv_zbpbo}$"
+
+    .
+
+??? question "cmov rd, rs1, rs2, rs3 (). $\fbox{rv_zbt}$"
+
+    .
+
+??? question "cmpeq16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "cmpeq8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "cpop rd, rs1 (). $\fbox{rv_zbb}$"
+
+    .
+
+??? question "cpopw rd, rs1 (). $\fbox{rv64_zbb}$"
+
+    .
+
+??? question "cras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "cras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "crc32.b rd, rs1 (). $\fbox{rv_zbr}$"
+
+    .
+
+??? question "crc32.d rd, rs1 (). $\fbox{rv64_zbr}$"
+
+    .
+
+??? question "crc32.h rd, rs1 (). $\fbox{rv_zbr}$"
+
+    .
+
+??? question "crc32.w rd, rs1 (). $\fbox{rv_zbr}$"
+
+    .
+
+??? question "crc32c.b rd, rs1 (). $\fbox{rv_zbr}$"
+
+    .
+
+??? question "crc32c.d rd, rs1 (). $\fbox{rv64_zbr}$"
+
+    .
+
+??? question "crc32c.h rd, rs1 (). $\fbox{rv_zbr}$"
+
+    .
+
+??? question "crc32c.w rd, rs1 (). $\fbox{rv_zbr}$"
+
+    .
+
+??? question "crsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "crsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? summary "csrc csr, rs (Control and Status Register Clear). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+	CSRs[csr] &= ~x[rs].
+
+    For each bit set in x[rs], clear the corresponding bit in control and status register csr.
+
+    csrrc x0, csr, rs
+
+??? summary "csrci csr, imm (Control and Status Register Immediate). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    CSRs[csr] &= ~imm.
+
+	For each bit set in the five-bit zero-extended immediate, clear the corresponding bit in control and status register csr.
+    
+    csrrci x0, csr, imm
+
+??? summary "csrr rd, csr (Control and Status Register Read). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+	x[rd] = CSRs[csr].
+
+    Copy control and status register csr to x[rd].
+    
+    csrrs rd, csr, x0
+
+??? summary "csrrc rd, rs1, csr (Control and Status Register Read and Clear). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+
+    t = CSRs[csr]; CSRs[csr] = t & ~x[rs1]; x[rd] = t.
+
+    Let `t` be the value of control and status register csr. Write the bitwise AND of `t` and the one's complement of x[rs1] to the csr, then write `t` to x[rd].
+
+??? summary "csrrci rd, csr, zimm (Control and Status Register Read and Clear Immediate). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+
+    t = CSRs[csr]; CSRs[csr] = t & ~zimm; x[rd] = t.
+
+    Let `t` be the value of control and status register csr. Write the bitwise AND of `t` and the one's complement of the five-bit zero-extended immediate zimm to the csr, then write `t` to x[rd].
+
+??? summary "csrrs rd, csr, rs1 (Control and Status Register Read and Set). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+
+    t = CSRs[csr]; CSRs[csr] = t | x[rs1]; x[rd] = t.
+
+    Let `t` be the value of control and status register csr. Write the bitwise OR of `t` and x[rs1] to the csr, then write `t` to x[rd].
+
+
+??? summary "csrrsi rd, csr, zimm (Control and Status Register Read and Set Immediate). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+
+    t = CSRs[csr]; CSRs[csr] = t | zimm; x[rd] = t.
+
+    Let `t` be the value of control and status register csr. Write the bitwise OR of `t` and the five-bit zero-extended immediate zimm to the csr, then write `t` to x[rd].
+
+??? summary "csrrw rd, csr, rs1 (Control and Status Register Read and Write). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+
+    t = CSRs[csr]; CSRs[csr] = x[rs1]; x[rd] = t.
+
+    Let `t` be the value of control and status register csr.
+    Copy x[rs1] to the csr, then write `t` to x[rd].    
+
+??? summary "csrrwi rd, csr, zimm (Control and Status Register Read and Write Immediate). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+
+    x[rd] = CSRs[csr]; CSRs[csr] = zimm.
+
+    Copy the control and status register csr to x[rd], then write the five-bit zero-extended immediate zimm to the csr.
+
+??? summary "csrs csr, rs (Control and Status Register Set). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    CSRs[csr] != x[rs].
+
+    For each bit set in x[rs1], set the corresponding bit in control and status register csr.
+
+	csrrs x0, csr, rs
+
+??? summary "csrsi csr, imm (Control and Status Register Set Immediate). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+	CSRs[csr] != zimm.
+
+    For each bit set in the five-bit zero-extended immediate, set the corresponding bit in control and status register csr.
+    
+    csrrsi x0, csr, imm
+
+??? summary "csrw csr, rs (Control and Status Register Write). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    CSRs[csr] = x[rs1]
+
+    Copy x[rs1] to control and status register csr.
+
+	csrrw x0, csr, rs
+
+??? summary "csrwi csr, imm (Control and Status Register Write Immediate). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+	Copy the five-bit zero-extended immediate to control and status register csr.
+    
+    csrrwi x0, csr, imm
+
+
+??? question "ctz rd, rs1 (). $\fbox{rv_zbb}$"
+
+    .
+
+??? question "ctzw rd, rs1 (). $\fbox{rv64_zbb}$"
+
+    .

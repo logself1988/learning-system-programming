@@ -1,0 +1,255 @@
+??? summary "add rd, rs1, rs2 (Add). $\fbox{rv_i}$"
+
+    x[rd] = x[rs1] + x[rs2].
+
+    Add register x[rs2] to register x[rs1] and write the result to x[rd].
+
+    Arithmetic overflow is ignored.
+
+??? question "add16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "add32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "add64 rs2, rs1, rd (). $\fbox{rv32_p}$"
+
+    .
+
+??? question "add8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "add.uw rd, rs1, rs2 (). $\fbox{rv64_zba}$"
+
+    .
+
+??? question "addd rd, rs1, rs2 (). $\fbox{rv128_i}$"
+
+    .
+
+??? summary "addi rd, rs1, imm12 (Add Immediate). $\fbox{rv_i}$"
+
+    x[rd] = x[rs1] + sext(imm12).
+
+    Add the sign-extended immediate to register x[rs1] and write the result to x[rd].
+
+    Arithmetic overflow is ignored.
+
+??? question "addid rd, rs1, imm12 (). $\fbox{rv128_i}$"
+
+    .
+
+??? summary "addiw rd, rs1, imm12 (Add Word Immediate). $\fbox{rv64_i}$"
+
+    x[rd] = sext((x[rs1] + sext(imm12))[31:0]).
+
+    Add the sign-extended immediate to x[rs1], truncate the result to 32 bits, and write the sign-extended result to x[rd].
+
+    Arithmetic overflow is ignored.
+
+??? summary "addw rd, rs1, rs2 (Add Word). $\fbox{rv64_i}$"
+
+    x[rd] = sext((x[rs1] + x[rs2])[31:0]).
+
+    Add register x[rs2] to register x[rs1], truncate the result to 32 bits, and write the sign-extended result to x[rd].
+
+    Arithmetic overflow is ignored.
+
+??? question "aes32dsi rd, rs1, rs2, bs (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "aes32dsmi rd, rs1, rs2, bs (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "aes32esi rd, rs1, rs2, bs (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "aes32esmi rd, rs1, rs2, bs (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "aes64ds rd, rs1, rs2 (). $\fbox{rv64_zknd}$"
+
+    .
+
+??? question "aes64dsm rd, rs1, rs2 (). $\fbox{rv64_zk}$"
+
+    .
+
+??? question "aes64es rd, rs1, rs2 (). $\fbox{rv64_zkne}$"
+
+    .
+
+??? question "aes64esm rd, rs1, rs2 (). $\fbox{rv64_zk}$"
+
+    .
+
+??? question "aes64im rd, rs1 (). $\fbox{rv64_zk}$"
+
+    .
+
+??? question "aes64ks1i rd, rs1, rnum (). $\fbox{rv64_zk}$"
+
+    .
+
+??? question "aes64ks2 rd, rs1, rs2 (). $\fbox{rv64_zk}$"
+
+    .
+
+??? summary "amoadd.d rd, rs2, (rs1) (Atomic Memory Operation: Add Doubleword). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] + x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to `t`+x[rs2].
+    Set x[rd] to `t`.
+
+??? summary "amoadd.w rd, rs2, (rs1) (Atomic Memory Operation: Add Word). $\fbox{rv_a}$"
+
+    x[rd] = AMO32(M[x[rs1]] + x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to `t`+x[rs2].
+    Set x[rd] to `t`.
+
+??? summary "amoand.d rd, rs2, (rs1) (Atomic Memory Operation: AND Doubleword). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] & x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the bitwise AND of  `t` and x[rs2].
+    Set x[rd] to the sign extention of `t`.
+
+??? summary "amoand.w rd, rs2, (rs1) (Atomic Memory Operation: AND Word). $\fbox{rv_a}$"
+
+    x[rd] = AMO32(M[x[rs1]] & x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the bitwise AND of  `t` and x[rs2].
+    Set x[rd] to the sign extension of `t`.
+
+??? summary "amomax.d rd, rs2, (rs1) (Atomic Memory Operation: Maximum Doubleword). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] MAX x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the larger of `t` and x[rs2], using a two's complement comparison.
+    Set x[rd] to `t`.
+
+??? summary "amomax.w rd, rs2, (rs1) (Atomic Memory Operation: Maximum Word). $\fbox{rv_a}$"
+
+    x[rd] = AMO32(M[x[rs1]] MAX x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the larger of `t` and x[rs2], using a two's complement comparison.
+    Set x[rd] to the sign extension of `t`.
+
+??? summary "amomaxu.d rd, rs2, (rs1) (Atomic Memory Operation: Maximum Doubleword, Unsigned). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] MAXU x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the larger of `t` and x[rs2], using an unsigned comparison.
+    Set x[rd] to `t`.
+
+??? summary "amomaxu.w rd, rs2, (rs1) (Atomic Memory Operation: Maximum Word, Unsigned). $\fbox{rv_a}$"
+
+    x[rd] = AMO32(M[x[rs1]] MAXU x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the larger of `t` and x[rs2], using an unsigned comparison.
+    Set x[rd] to the sign extension of `t`.
+
+??? summary "amomin.d rd, rs2, (rs1) (Atomic Memory Operation: Minimum Doubleword). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] MIN x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the smaller of `t` and x[rs2], using a two's complement comparison.
+    Set x[rd] to `t`.
+
+??? summary "amomin.w rd, rs2, (rs1) (Atomic Memory Operation: Minimum Word). $\fbox{rv_a}$"
+
+    x[rd] = AMO32(M[x[rs1]] MIN x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the smaller of `t` and x[rs2], using a two's complement comparison.
+    Set x[rd] to the sign extension of `t`.
+
+??? summary "amominu.d rd, rs2, (rs1) (Atomic Memory Operation: Minimum Doubleword, Unsigned). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] MINU x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the smaller of `t` and x[rs2], using an unsigned comparison.
+    Set x[rd] to `t`.
+
+??? summary "amominu.w rd, rs2, (rs1) (Atomic Memory Operation: Minimum Word, Unsigned). $\fbox{rv_a}$"
+
+    .x[rd] = AMO32(M[x[rs1]] MINU x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the smaller of `t` and x[rs2], using an unsigned comparison.
+    Set x[rd] to the sign extension of `t`.
+
+??? summary "amoor.d rd, rs2, (rs1) (Atomic Memory Operation: OR Doubleword). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] | x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the bitwise OR of `t` and x[rs2].
+    Set x[rd] to `t`.
+
+??? summary "amoor.w rd, rs2, (rs1) (Atomic Memory Operation: OR Word). $\fbox{rv_a}$"
+
+    x[rd] = AMO32(M[x[rs1]] | x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the bitwise OR of `t` and x[rs2].
+    Set x[rd] to the sign extension of `t`.
+
+??? summary "amoswap.d rd, rs2, (rs1) (Atomic Memory Operation: Swap Doubleword). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] SWAP x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to x[rs2].
+    Set x[rd] to `t`.
+
+??? summary "amoswap.w rd, rs2, (rs1) (Atomic Memory Operation: Swap Word). $\fbox{rv_a}$"
+
+    x[rd] = AMO32(M[x[rs1]] SWAP x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to x[rs2].
+    Set x[rd] to the sign extension of `t`.
+
+??? summary "amoxor.d rd, rs2, (rs1) (Atomic Memory Operation: XOR Doubleword). $\fbox{rv64_a}$"
+
+    x[rd] = AMO64(M[x[rs1]] ^ x[rs2]).
+
+    Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the bitwise XOR of `t` and x[rs2].
+    Set x[rd] to `t`.
+
+??? summary "amoxor.w rd, rs2, (rs1) (Atomic Memory Operation: XOR Word). $\fbox{rv_a}$"
+
+    x[rd] = AMO32(M[x[rs1]] ^ x[rs2]).
+
+    Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the bitwise XOR of `t` and x[rs2].
+    Set x[rd] to the sign extension of `t`.
+
+??? summary "and rd, rs1, rs2 (AND). $\fbox{rv_i}$"
+
+    x[rd] = x[rs1] & x[rs2].
+
+    Compute the bitwise AND of registers x[rs1] and x[rs2], and write the result to x[rd].
+
+??? summary "andi rd, rs1, imm12 (AND Immediate). $\fbox{rv_i}$"
+
+    x[rd] = x[rs1] & sext(imm12).
+
+    Compute the bitwise AND of the sign-extended immediate and register  x[rs1] and write the result to x[rd].
+
+??? question "andn rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+
+    .
+
+??? summary "auipc rd, imm20 (Add Upper Immediate to PC). $\fbox{rv_i}$"
+
+    x[rd] = pc + sext(imm20[31:12] << 12).
+
+    Add the sign-extended 20-bit immediate, left-shifted by 12 bits, to the pc, and write the result to x[rd].
+
+??? question "ave rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .

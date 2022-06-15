@@ -1,0 +1,27 @@
+??? question "xnor rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+
+    .
+
+??? question "xor rd, rs1, rs2 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "xori rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "xperm16 rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+
+    .
+
+??? question "xperm32 rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "xperm4 rd, rs1, rs2 (). $\fbox{rv_zbkx}$"
+
+    .
+
+??? question "xperm8 rd, rs1, rs2 (). $\fbox{rv_zbkx}$"
+
+    .

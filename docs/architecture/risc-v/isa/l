@@ -1,0 +1,47 @@
+??? question "lb rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "lbu rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "ld rd, rs1, imm12 (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "ldu rd, rs1, imm12 (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "lh rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "lhu rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "lq rd, rs1, imm12 (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "lr.d rd, rs1, aq, rl (). $\fbox{rv64_a}$"
+
+    .
+
+??? question "lr.w rd, rs1, aq, rl (). $\fbox{rv_a}$"
+
+    .
+
+??? question "lui rd, imm20 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "lw rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "lwu rd, rs1, imm12 (). $\fbox{rv64_i}$"
+
+    .

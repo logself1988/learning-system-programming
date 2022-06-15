@@ -1,0 +1,28 @@
+??? summary "div rd, rs1, rs2 (Divide). $\fbox{rv_m}$"
+
+    x[rd] = x[rs1] /s x[rs2].
+
+    Divide x[rs1] by x[rs2], rounding towards zero, treating the values as two's complement numbers, and write the quotient to x[rd].
+
+
+??? summary "divu rd, rs1, rs2 (Divide, Unsigned). $\fbox{rv_m}$"
+
+    x[rd] = x[rs1] /u x[rs2].
+
+    Divide x[rs1] by x[rs2], rounding towards zero, treating the values as unsigned numbers, and write the quotient to x[rd].
+
+??? summary "divuw rd, rs1, rs2 (Divide Word, Unsigned). $\fbox{rv64_m}$"
+
+    x[rd] = sext(x[rs1][31:0] /u x[rs2][31:0]).
+
+    Divide the lower 32 bits of x[rs1] by the lower 32 bits of x[rs2], rounding towards zero, treating the values as unsigned numbers, and write the sign-extended 32-bit quotient to x[rd].
+
+??? summary "divw rd, rs1, rs2 (Divide Word). $\fbox{rv64_m}$"
+
+    x[rd] = sext(x[rs1][31:0] /s x[rs2][31:0]).
+
+    Divide the lower 32 bits of x[rs1] by the lower 32 bits of x[rs2], rounding towards zero, treating the values as two's complement numbers, and write the sign-extended 32-bit quotient to x[rd].
+
+??? question "dret  (). $\fbox{rv_system}$"
+
+    .

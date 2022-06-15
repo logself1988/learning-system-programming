@@ -1,0 +1,691 @@
+??? question "sb imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sbreak  (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sc.d rd, rs1, rs2, aq, rl (). $\fbox{rv64_a}$"
+
+    .
+
+??? question "sc.w rd, rs1, rs2, aq, rl (). $\fbox{rv_a}$"
+
+    .
+
+??? question "scall  (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sclip16 imm4, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sclip32 imm5, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sclip8 imm3, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "scmple16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "scmple8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "scmplt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "scmplt8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sd imm12hi, rs1, rs2, imm12lo (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "sext.b rd, rs1 (). $\fbox{rv_zbb}$"
+
+    .
+
+??? question "sext.h rd, rs1 (). $\fbox{rv_zbb}$"
+
+    .
+
+??? question "sfence.inval.ir  (). $\fbox{rv_svinval}$"
+
+    .
+
+??? question "sfence.vma rs1, rs2 (). $\fbox{rv_s}$"
+
+    .
+
+??? question "sfence.w.inval  (). $\fbox{rv_svinval}$"
+
+    .
+
+??? question "sh imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sh1add rd, rs1, rs2 (). $\fbox{rv_zba}$"
+
+    .
+
+??? question "sh1add.uw rd, rs1, rs2 (). $\fbox{rv64_zba}$"
+
+    .
+
+??? question "sh2add rd, rs1, rs2 (). $\fbox{rv_zba}$"
+
+    .
+
+??? question "sh2add.uw rd, rs1, rs2 (). $\fbox{rv64_zba}$"
+
+    .
+
+??? question "sh3add rd, rs1, rs2 (). $\fbox{rv_zba}$"
+
+    .
+
+??? question "sh3add.uw rd, rs1, rs2 (). $\fbox{rv64_zba}$"
+
+    .
+
+??? question "sha256sig0 rd, rs1 (). $\fbox{rv_zk}$"
+
+    .
+
+??? question "sha256sig1 rd, rs1 (). $\fbox{rv_zk}$"
+
+    .
+
+??? question "sha256sum0 rd, rs1 (). $\fbox{rv_zk}$"
+
+    .
+
+??? question "sha256sum1 rd, rs1 (). $\fbox{rv_zk}$"
+
+    .
+
+??? question "sha512sig0 rd, rs1 (). $\fbox{rv64_zk}$"
+
+    .
+
+??? question "sha512sig0h rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "sha512sig0l rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "sha512sig1 rd, rs1 (). $\fbox{rv64_zk}$"
+
+    .
+
+??? question "sha512sig1h rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "sha512sig1l rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "sha512sum0 rd, rs1 (). $\fbox{rv64_zk}$"
+
+    .
+
+??? question "sha512sum0r rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "sha512sum1 rd, rs1 (). $\fbox{rv64_zk}$"
+
+    .
+
+??? question "sha512sum1r rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+
+    .
+
+??? question "shfl rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+
+    .
+
+??? question "shfli rd, rs1, shamtw (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "shflw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+
+    .
+
+??? question "sinval.vma rs1, rs2 (). $\fbox{rv_svinval}$"
+
+    .
+
+??? question "sll rd, rs1, rs2 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sll16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sll32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "sll8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "slld rd, rs1, rs2 (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "slli rd, rs1, shamt (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "slli16 imm4, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "slli32 imm5, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "slli8 imm3, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "slli.uw rd, rs1, shamtd (). $\fbox{rv64_zba}$"
+
+    .
+
+??? question "sllid rd, rs1, shamtd (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "slliw rd, rs1, shamtw (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "sllw rd, rs1, rs2 (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "slo rd, rs1, rs2 (). $\fbox{rv_b}$"
+
+    .
+
+??? question "sloi rd, rs1, shamtd (). $\fbox{rv_b}$"
+
+    .
+
+??? question "sloiw rd, rs1, shamtw (). $\fbox{rv64_b}$"
+
+    .
+
+??? question "slow rd, rs1, rs2 (). $\fbox{rv64_b}$"
+
+    .
+
+??? question "slt rd, rs1, rs2 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "slti rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sltiu rd, rs1, imm12 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sltu rd, rs1, rs2 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sm3p0 rd, rs1 (). $\fbox{rv_zks}$"
+
+    .
+
+??? question "sm3p1 rd, rs1 (). $\fbox{rv_zks}$"
+
+    .
+
+??? question "sm4ed rd, rs1, rs2, bs (). $\fbox{rv_zks}$"
+
+    .
+
+??? question "sm4ks rd, rs1, rs2, bs (). $\fbox{rv_zks}$"
+
+    .
+
+??? question "smal rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smalbb rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smalbt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smalda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smaldrs rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smalds rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smaltt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smalxda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smalxds rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smaqa rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smaqa.su rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smar64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smax16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smax32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "smax8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smbb16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smbt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smbt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "smdrs rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smdrs32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "smds rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smds32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "smin16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smin32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "smin8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smmul rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smmul.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smmwb rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smmwb.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smmwt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smmwt.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smslda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smslxda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smtt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smtt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "smul16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smul8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smulx16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smulx8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smxds rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "smxds32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "sq imm12hi, rs1, rs2, imm12lo (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "sra rd, rs1, rs2 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sra16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sra16.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sra32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "sra32.u rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "sra8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sra8.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sra.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srad rd, rs1, rs2 (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "srai rd, rs1, shamt (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "srai16 imm4, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srai16.u imm4, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srai32 imm5, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "srai32.u imm5, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "srai8 imm3, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srai8.u imm3, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srai.u imm6, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sraid rd, rs1, shamtd (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "sraiw rd, rs1, shamtw (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "sraiw.u imm5, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "sraw rd, rs1, rs2 (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "sret  (). $\fbox{rv_s}$"
+
+    .
+
+??? question "srl rd, rs1, rs2 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "srl16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srl16.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srl32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "srl32.u rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "srl8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srl8.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srld rd, rs1, rs2 (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "srli rd, rs1, shamt (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "srli16 imm4, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srli16.u imm4, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srli32 imm5, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "srli32.u imm5, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "srli8 imm3, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srli8.u imm3, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "srlid rd, rs1, shamtd (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "srliw rd, rs1, shamtw (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "srlw rd, rs1, rs2 (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "sro rd, rs1, rs2 (). $\fbox{rv_b}$"
+
+    .
+
+??? question "sroi rd, rs1, shamtd (). $\fbox{rv_b}$"
+
+    .
+
+??? question "sroiw rd, rs1, shamtw (). $\fbox{rv64_b}$"
+
+    .
+
+??? question "srow rd, rs1, rs2 (). $\fbox{rv64_b}$"
+
+    .
+
+??? question "stas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "stas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "stsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "stsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "sub rd, rs1, rs2 (). $\fbox{rv_i}$"
+
+    .
+
+??? question "sub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "sub64 rs2, rs1, rd (). $\fbox{rv32_p}$"
+
+    .
+
+??? question "sub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "subd rd, rs1, rs2 (). $\fbox{rv128_i}$"
+
+    .
+
+??? question "subw rd, rs1, rs2 (). $\fbox{rv64_i}$"
+
+    .
+
+??? question "sunpkd810 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sunpkd820 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sunpkd830 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sunpkd831 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sunpkd832 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "sw imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_i}$"
+
+    .
+
+??? question "swap8 rs1, rd (). $\fbox{rv_p}$"
+
+    .

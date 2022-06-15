@@ -1,0 +1,63 @@
+??? question "maddr32 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "max rd, rs1, rs2 (). $\fbox{rv_zbpbo}$"
+
+    .
+
+??? question "maxu rd, rs1, rs2 (). $\fbox{rv_zbb}$"
+
+    .
+
+??? question "maxw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "min rd, rs1, rs2 (). $\fbox{rv_zbpbo}$"
+
+    .
+
+??? question "minu rd, rs1, rs2 (). $\fbox{rv_zbb}$"
+
+    .
+
+??? question "minw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "mret  (). $\fbox{rv_system}$"
+
+    .
+
+??? question "msubr32 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "mul rd, rs1, rs2 (). $\fbox{rv_m}$"
+
+    .
+
+??? question "mulh rd, rs1, rs2 (). $\fbox{rv_m}$"
+
+    .
+
+??? question "mulhsu rd, rs1, rs2 (). $\fbox{rv_m}$"
+
+    .
+
+??? question "mulhu rd, rs1, rs2 (). $\fbox{rv_m}$"
+
+    .
+
+??? question "mulr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "mulsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "mulw rd, rs1, rs2 (). $\fbox{rv64_m}$"
+
+    .

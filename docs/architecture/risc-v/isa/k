@@ -1,0 +1,419 @@
+??? question "kabs16 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kabs32 rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kabs8 rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kabsw rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kadd16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kadd32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kadd64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kadd8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kaddh rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kaddw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kcras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kcras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kcrsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kcrsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kdmabb rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kdmabb16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kdmabt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kdmabt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kdmatt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kdmatt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kdmbb rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kdmbb16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kdmbt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kdmbt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kdmtt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kdmtt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "khm16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "khm8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "khmbb rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "khmbb16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "khmbt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "khmbt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "khmtt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "khmtt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "khmx16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "khmx8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmabb rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmabb32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmabt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmabt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmada rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmadrs rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmadrs32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmads rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmads32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmar64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmatt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmatt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmaxda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmaxda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmaxds rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmaxds32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmmac rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmac.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmawb rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmawb2 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmawb2.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmawb.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmawt rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmawt2 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmawt2.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmawt.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmsb rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmsb.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmwb2 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmwb2.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmwt2 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmmwt2.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmsda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmsda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmsxda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmsxda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kmxda rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kmxda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ksll16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ksll32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ksll8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslli16 imm4, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslli32 imm5, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kslli8 imm3, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslliw imm5, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ksllw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslra16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslra16.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslra32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kslra32.u rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kslra8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslra8.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslraw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kslraw.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kstas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kstas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "kstsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kstsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ksub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ksub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+
+    .
+
+??? question "ksub64 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ksub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ksubh rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "ksubw rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kwmmul rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "kwmmul.u rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .

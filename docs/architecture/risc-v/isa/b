@@ -1,0 +1,177 @@
+??? question "bclr rd, rs1, rs2 (). $\fbox{rv_zbs}$"
+
+    .
+
+??? question "bclri rd, rs1, shamtd (). $\fbox{rv64_zbs}$"
+
+    .
+
+??? question "bcompress rd, rs1, rs2 (). $\fbox{rv_zbe}$"
+
+    .
+
+??? question "bcompressw rd, rs1, rs2 (). $\fbox{rv64_zbe}$"
+
+    .
+
+??? question "bdecompress rd, rs1, rs2 (). $\fbox{rv_zbe}$"
+
+    .
+
+??? question "bdecompressw rd, rs1, rs2 (). $\fbox{rv64_zbe}$"
+
+    .
+
+??? summary "beq rs1, rs2, offset (Branch if Equal). $\fbox{rv_i}$"
+
+    if (rs1 == rs2) pc += sext(offset).
+
+    If register x[rs1] equals register x[rs2], set the pc to the current pc plus the sign-extended offset.
+
+??? summary "beqz rs, offset (Branch if Equal to Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+	if (rs1 == 0) pc += sext(offset).
+
+    beq rs, x0, offset
+
+
+??? question "bext rd, rs1, rs2 (). $\fbox{rv_zbs}$"
+
+    .
+
+??? question "bexti rd, rs1, shamtd (). $\fbox{rv64_zbs}$"
+
+    .
+
+??? question "bfp rd, rs1, rs2 (). $\fbox{rv_zbf}$"
+
+    .
+
+??? question "bfpw rd, rs1, rs2 (). $\fbox{rv64_zbf}$"
+
+    .
+
+??? summary "bge rs1, rs2, offset (Branch if Greater Than or Equal). $\fbox{rv_i}$"
+
+    if (rs1 >=s rs2) pc += sext(offset).
+
+    If register x[rs1] is at least x[rs2], treating the values as two's complement numbers, set the pc the the current pc plus the sign-extended offset.
+
+??? summary "bgeu rs1, rs2, offset (Branch if Greater Than or Equal, Unsigned). $\fbox{rv_i}$"
+
+    if (Rs1 >=u rs2) pc += sext(offset).
+
+    If register x[rs1] is at least x[rs2], treating the values as unsgined numbers, set the pc to the current pc plus the sign-extended offset.
+
+??? summary "bgez rs, offset (Branch if Greater Than or Equal to Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    if (rs >=s 0) pc += sext(offset).
+
+	bge rs, x0, offset
+
+??? summary "bgt rs, rt, offset (Branch if Greater Than). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    if (rs >s rt) pc += sext(offset)
+
+	blt rt, rs, offset
+
+??? summary "bgtu rs, rt, offset (Branch if Greater Than, Unsigned). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+	if (rs >u rt) pc += sext(offset)
+
+    bltu rt, rs, offset
+
+??? summary "bgtz rs, offset (Branch if Greater Than Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    if (rs >s 0) pc += sext(offset)
+
+	blt x0, rs, offset
+
+??? question "binv rd, rs1, rs2 (). $\fbox{rv_zbs}$"
+
+    .
+
+??? question "binvi rd, rs1, shamtd (). $\fbox{rv64_zbs}$"
+
+    .
+
+??? question "bitrev rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "bitrevi imm6, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? summary "ble rs, rt, offset (Branch if Less Than or Equal). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    if (rs <=s rt) pc += sext(offset)
+
+	bge rt, rs, offset
+
+
+??? summary "bleu rs, rt, offset (Branch if Less Than or Equal, Unsigned). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    if (rs <=u rt) pc += sext(offset)
+
+	bgeu rt, rs, offset
+
+??? summary "blez rs, offset (Branch if Less Than or Equal to Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    if (rs <=s 0) pc += sext(offset)
+
+	bge x0, rs, offset
+
+
+??? summary "blt rs1, rs2, offset (Branch if Less Than). $\fbox{rv_i}$"
+
+    if (rs1 <s rs2) pc += sext(offset).
+
+    If register x[rs1] is less than x[rs2], treating the values as two's complement numbers, set the pc to the current pc plus the sign-extended offset.
+
+??? summary "bltu rs1, rs2, offset (Branch if Less Than, Unsigned). $\fbox{rv_i}$"
+
+    if (rs1 <u rs2) pc += sext(offset).
+
+    If register x[rs1] is less than x[rs2], treating the values as unsigned numbers, set the pc to the current pc plus the sign-extended offset.
+
+??? question "bmatflip rd, rs1 (). $\fbox{rv64_zbm}$"
+
+    .
+
+??? question "bmator rd, rs1, rs2 (). $\fbox{rv64_zbm}$"
+
+    .
+
+??? question "bmatxor rd, rs1, rs2 (). $\fbox{rv64_zbm}$"
+
+    .
+
+??? summary "bne rs1, rs2, offset (Branch if Not Equal). $\fbox{rv_i}$"
+
+    if (rs1 != rs2) pc += sext(offset).
+
+    If register x[rs1] does not equal register x[rs2], set the pc the the current pc plus the sign-extended offset.
+
+??? summary "bnez rs, offset (Branch if Not Equal to Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+
+    if (rs1 != 0) pc += sext(offset)
+
+	bne rs, x0, offset
+
+
+??? question "bpick rs3, rs2, rs1, rd (). $\fbox{rv_p}$"
+
+    .
+
+??? question "brev8 rd, rs1 (). $\fbox{rv_zks}$"
+
+    .
+
+??? question "bset rd, rs1, rs2 (). $\fbox{rv_zbs}$"
+
+    .
+
+??? question "bseti rd, rs1, shamtd (). $\fbox{rv64_zbs}$"
+
+    .
