@@ -1,7 +1,50 @@
-??? question "jal rd, jimm20 (). $\fbox{rv_i}$"
+??? summary "<font color="red">j</font> offset (Jump). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
-    .
+    pc += sex(offset).
 
-??? question "jalr rd, rs1, imm12 (). $\fbox{rv_i}$"
+    Set the pc to the current pc plus the sign-extended offset.
 
-    .
+    ``` asm
+	jal x0, offset
+    ```
+
+??? summary "<font color="red">jal</font> rd, offset (Jump and Link). <font color="green">rv_i</font> "
+
+    x[rd] = pc+4; pc += sext(offset).
+
+    Write the address of the next instruction (pc+4) to x[rd], then set the pc to the current pc plus the sign-extended offset.
+
+    If rd is omitted, x1 is assumed.
+
+??? summary "<font color="red">jal</font> offset (Jump and link). <font color="green">pseudo</font> "
+
+    see `jal rd, offset`.
+
+	``` asm
+    jal x1, offset
+    ```
+
+??? summary "<font color="red">jalr</font> rd, offset(rs1) (Jump and Link Register). <font color="green">rv_i</font> "
+
+    t = pc+4; pc = (x[rs1] + sext(offset)) & ~1; x[rd] = t.
+
+    Set the pc to x[rs1] + sign-extend(offset), masking off the least-significant bit of the computed address, then write the previous pc+4 to x[rd].
+
+    If rd is omitted, x1 is assumed.
+
+??? summary "<font color="red">jalr</font> rs (Jump and Link Register). <font color="green">pseudo</font> "
+
+    see `jalr rd, offset(rs1)`
+	
+    ``` asm
+    jalr x1, 0(rs)
+    ```
+
+??? summary "<font color="red">jr</font> rs (Jump Register). <font color="green">pseudo</font> "
+
+    pc = x[rs].
+
+	``` asm
+    jalr x0, 0(rs)
+    ```
+

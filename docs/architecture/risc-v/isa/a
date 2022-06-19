@@ -1,4 +1,4 @@
-??? summary "add rd, rs1, rs2 (Add). $\fbox{rv_i}$"
+??? summary "<font color="red">add</font> rd, rs1, rs2 (Add). <font color="green">rv_i</font> "
 
     x[rd] = x[rs1] + x[rs2].
 
@@ -6,31 +6,31 @@
 
     Arithmetic overflow is ignored.
 
-??? question "add16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">add16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "add32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">add32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "add64 rs2, rs1, rd (). $\fbox{rv32_p}$"
+??? question "<font color="red">add64</font> rs2, rs1, rd (). <font color="green">rv32_p</font> "
 
     .
 
-??? question "add8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">add8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "add.uw rd, rs1, rs2 (). $\fbox{rv64_zba}$"
+??? question "<font color="red">add.uw</font> rd, rs1, rs2 (). <font color="green">rv64_zba</font> "
 
     .
 
-??? question "addd rd, rs1, rs2 (). $\fbox{rv128_i}$"
+??? question "<font color="red">addd</font> rd, rs1, rs2 (). <font color="green">rv128_i</font> "
 
     .
 
-??? summary "addi rd, rs1, imm12 (Add Immediate). $\fbox{rv_i}$"
+??? summary "<font color="red">addi</font> rd, rs1, imm12 (Add Immediate). <font color="green">rv_i</font> "
 
     x[rd] = x[rs1] + sext(imm12).
 
@@ -38,11 +38,11 @@
 
     Arithmetic overflow is ignored.
 
-??? question "addid rd, rs1, imm12 (). $\fbox{rv128_i}$"
+??? question "<font color="red">addid</font> rd, rs1, imm12 (). <font color="green">rv128_i</font> "
 
     .
 
-??? summary "addiw rd, rs1, imm12 (Add Word Immediate). $\fbox{rv64_i}$"
+??? summary "<font color="red">addiw</font> rd, rs1, imm12 (Add Word Immediate). <font color="green">rv64_i</font> "
 
     x[rd] = sext((x[rs1] + sext(imm12))[31:0]).
 
@@ -50,7 +50,7 @@
 
     Arithmetic overflow is ignored.
 
-??? summary "addw rd, rs1, rs2 (Add Word). $\fbox{rv64_i}$"
+??? summary "<font color="red">addw</font> rd, rs1, rs2 (Add Word). <font color="green">rv64_i</font> "
 
     x[rd] = sext((x[rs1] + x[rs2])[31:0]).
 
@@ -58,198 +58,198 @@
 
     Arithmetic overflow is ignored.
 
-??? question "aes32dsi rd, rs1, rs2, bs (). $\fbox{rv32_zk}$"
+??? question "<font color="red">aes32dsi</font> rd, rs1, rs2, bs (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "aes32dsmi rd, rs1, rs2, bs (). $\fbox{rv32_zk}$"
+??? question "<font color="red">aes32dsmi</font> rd, rs1, rs2, bs (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "aes32esi rd, rs1, rs2, bs (). $\fbox{rv32_zk}$"
+??? question "<font color="red">aes32esi</font> rd, rs1, rs2, bs (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "aes32esmi rd, rs1, rs2, bs (). $\fbox{rv32_zk}$"
+??? question "<font color="red">aes32esmi</font> rd, rs1, rs2, bs (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "aes64ds rd, rs1, rs2 (). $\fbox{rv64_zknd}$"
+??? question "<font color="red">aes64ds</font> rd, rs1, rs2 (). <font color="green">rv64_zknd</font> "
 
     .
 
-??? question "aes64dsm rd, rs1, rs2 (). $\fbox{rv64_zk}$"
+??? question "<font color="red">aes64dsm</font> rd, rs1, rs2 (). <font color="green">rv64_zk</font> "
 
     .
 
-??? question "aes64es rd, rs1, rs2 (). $\fbox{rv64_zkne}$"
+??? question "<font color="red">aes64es</font> rd, rs1, rs2 (). <font color="green">rv64_zkne</font> "
 
     .
 
-??? question "aes64esm rd, rs1, rs2 (). $\fbox{rv64_zk}$"
+??? question "<font color="red">aes64esm</font> rd, rs1, rs2 (). <font color="green">rv64_zk</font> "
 
     .
 
-??? question "aes64im rd, rs1 (). $\fbox{rv64_zk}$"
+??? question "<font color="red">aes64im</font> rd, rs1 (). <font color="green">rv64_zk</font> "
 
     .
 
-??? question "aes64ks1i rd, rs1, rnum (). $\fbox{rv64_zk}$"
+??? question "<font color="red">aes64ks1i</font> rd, rs1, rnum (). <font color="green">rv64_zk</font> "
 
     .
 
-??? question "aes64ks2 rd, rs1, rs2 (). $\fbox{rv64_zk}$"
+??? question "<font color="red">aes64ks2</font> rd, rs1, rs2 (). <font color="green">rv64_zk</font> "
 
     .
 
-??? summary "amoadd.d rd, rs2, (rs1) (Atomic Memory Operation: Add Doubleword). $\fbox{rv64_a}$"
+??? summary "<font color="red">amoadd.d</font> rd, rs2, (rs1) (Atomic Memory Operation: Add Doubleword). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] + x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to `t`+x[rs2].
     Set x[rd] to `t`.
 
-??? summary "amoadd.w rd, rs2, (rs1) (Atomic Memory Operation: Add Word). $\fbox{rv_a}$"
+??? summary "<font color="red">amoadd.w</font> rd, rs2, (rs1) (Atomic Memory Operation: Add Word). <font color="green">rv_a</font> "
 
     x[rd] = AMO32(M[x[rs1]] + x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to `t`+x[rs2].
     Set x[rd] to `t`.
 
-??? summary "amoand.d rd, rs2, (rs1) (Atomic Memory Operation: AND Doubleword). $\fbox{rv64_a}$"
+??? summary "<font color="red">amoand.d</font> rd, rs2, (rs1) (Atomic Memory Operation: AND Doubleword). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] & x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the bitwise AND of  `t` and x[rs2].
     Set x[rd] to the sign extention of `t`.
 
-??? summary "amoand.w rd, rs2, (rs1) (Atomic Memory Operation: AND Word). $\fbox{rv_a}$"
+??? summary "<font color="red">amoand.w</font> rd, rs2, (rs1) (Atomic Memory Operation: AND Word). <font color="green">rv_a</font> "
 
     x[rd] = AMO32(M[x[rs1]] & x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the bitwise AND of  `t` and x[rs2].
     Set x[rd] to the sign extension of `t`.
 
-??? summary "amomax.d rd, rs2, (rs1) (Atomic Memory Operation: Maximum Doubleword). $\fbox{rv64_a}$"
+??? summary "<font color="red">amomax.d</font> rd, rs2, (rs1) (Atomic Memory Operation: Maximum Doubleword). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] MAX x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the larger of `t` and x[rs2], using a two's complement comparison.
     Set x[rd] to `t`.
 
-??? summary "amomax.w rd, rs2, (rs1) (Atomic Memory Operation: Maximum Word). $\fbox{rv_a}$"
+??? summary "<font color="red">amomax.w</font> rd, rs2, (rs1) (Atomic Memory Operation: Maximum Word). <font color="green">rv_a</font> "
 
     x[rd] = AMO32(M[x[rs1]] MAX x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the larger of `t` and x[rs2], using a two's complement comparison.
     Set x[rd] to the sign extension of `t`.
 
-??? summary "amomaxu.d rd, rs2, (rs1) (Atomic Memory Operation: Maximum Doubleword, Unsigned). $\fbox{rv64_a}$"
+??? summary "<font color="red">amomaxu.d</font> rd, rs2, (rs1) (Atomic Memory Operation: Maximum Doubleword, Unsigned). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] MAXU x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the larger of `t` and x[rs2], using an unsigned comparison.
     Set x[rd] to `t`.
 
-??? summary "amomaxu.w rd, rs2, (rs1) (Atomic Memory Operation: Maximum Word, Unsigned). $\fbox{rv_a}$"
+??? summary "<font color="red">amomaxu.w</font> rd, rs2, (rs1) (Atomic Memory Operation: Maximum Word, Unsigned). <font color="green">rv_a</font> "
 
     x[rd] = AMO32(M[x[rs1]] MAXU x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the larger of `t` and x[rs2], using an unsigned comparison.
     Set x[rd] to the sign extension of `t`.
 
-??? summary "amomin.d rd, rs2, (rs1) (Atomic Memory Operation: Minimum Doubleword). $\fbox{rv64_a}$"
+??? summary "<font color="red">amomin.d</font> rd, rs2, (rs1) (Atomic Memory Operation: Minimum Doubleword). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] MIN x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the smaller of `t` and x[rs2], using a two's complement comparison.
     Set x[rd] to `t`.
 
-??? summary "amomin.w rd, rs2, (rs1) (Atomic Memory Operation: Minimum Word). $\fbox{rv_a}$"
+??? summary "<font color="red">amomin.w</font> rd, rs2, (rs1) (Atomic Memory Operation: Minimum Word). <font color="green">rv_a</font> "
 
     x[rd] = AMO32(M[x[rs1]] MIN x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the smaller of `t` and x[rs2], using a two's complement comparison.
     Set x[rd] to the sign extension of `t`.
 
-??? summary "amominu.d rd, rs2, (rs1) (Atomic Memory Operation: Minimum Doubleword, Unsigned). $\fbox{rv64_a}$"
+??? summary "<font color="red">amominu.d</font> rd, rs2, (rs1) (Atomic Memory Operation: Minimum Doubleword, Unsigned). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] MINU x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the smaller of `t` and x[rs2], using an unsigned comparison.
     Set x[rd] to `t`.
 
-??? summary "amominu.w rd, rs2, (rs1) (Atomic Memory Operation: Minimum Word, Unsigned). $\fbox{rv_a}$"
+??? summary "<font color="red">amominu.w</font> rd, rs2, (rs1) (Atomic Memory Operation: Minimum Word, Unsigned). <font color="green">rv_a</font> "
 
     .x[rd] = AMO32(M[x[rs1]] MINU x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the smaller of `t` and x[rs2], using an unsigned comparison.
     Set x[rd] to the sign extension of `t`.
 
-??? summary "amoor.d rd, rs2, (rs1) (Atomic Memory Operation: OR Doubleword). $\fbox{rv64_a}$"
+??? summary "<font color="red">amoor.d</font> rd, rs2, (rs1) (Atomic Memory Operation: OR Doubleword). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] | x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the bitwise OR of `t` and x[rs2].
     Set x[rd] to `t`.
 
-??? summary "amoor.w rd, rs2, (rs1) (Atomic Memory Operation: OR Word). $\fbox{rv_a}$"
+??? summary "<font color="red">amoor.w</font> rd, rs2, (rs1) (Atomic Memory Operation: OR Word). <font color="green">rv_a</font> "
 
     x[rd] = AMO32(M[x[rs1]] | x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the bitwise OR of `t` and x[rs2].
     Set x[rd] to the sign extension of `t`.
 
-??? summary "amoswap.d rd, rs2, (rs1) (Atomic Memory Operation: Swap Doubleword). $\fbox{rv64_a}$"
+??? summary "<font color="red">amoswap.d</font> rd, rs2, (rs1) (Atomic Memory Operation: Swap Doubleword). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] SWAP x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to x[rs2].
     Set x[rd] to `t`.
 
-??? summary "amoswap.w rd, rs2, (rs1) (Atomic Memory Operation: Swap Word). $\fbox{rv_a}$"
+??? summary "<font color="red">amoswap.w</font> rd, rs2, (rs1) (Atomic Memory Operation: Swap Word). <font color="green">rv_a</font> "
 
     x[rd] = AMO32(M[x[rs1]] SWAP x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to x[rs2].
     Set x[rd] to the sign extension of `t`.
 
-??? summary "amoxor.d rd, rs2, (rs1) (Atomic Memory Operation: XOR Doubleword). $\fbox{rv64_a}$"
+??? summary "<font color="red">amoxor.d</font> rd, rs2, (rs1) (Atomic Memory Operation: XOR Doubleword). <font color="green">rv64_a</font> "
 
     x[rd] = AMO64(M[x[rs1]] ^ x[rs2]).
 
     Atomically, let `t` be the value of the memory doubleword at address x[rs1]. then set that memory doubleword to the bitwise XOR of `t` and x[rs2].
     Set x[rd] to `t`.
 
-??? summary "amoxor.w rd, rs2, (rs1) (Atomic Memory Operation: XOR Word). $\fbox{rv_a}$"
+??? summary "<font color="red">amoxor.w</font> rd, rs2, (rs1) (Atomic Memory Operation: XOR Word). <font color="green">rv_a</font> "
 
     x[rd] = AMO32(M[x[rs1]] ^ x[rs2]).
 
     Atomically, let `t` be the value of the memory word at address x[rs1]. then set that memory word to the bitwise XOR of `t` and x[rs2].
     Set x[rd] to the sign extension of `t`.
 
-??? summary "and rd, rs1, rs2 (AND). $\fbox{rv_i}$"
+??? summary "<font color="red">and</font> rd, rs1, rs2 (AND). <font color="green">rv_i</font> "
 
     x[rd] = x[rs1] & x[rs2].
 
     Compute the bitwise AND of registers x[rs1] and x[rs2], and write the result to x[rd].
 
-??? summary "andi rd, rs1, imm12 (AND Immediate). $\fbox{rv_i}$"
+??? summary "<font color="red">andi</font> rd, rs1, imm12 (AND Immediate). <font color="green">rv_i</font> "
 
     x[rd] = x[rs1] & sext(imm12).
 
     Compute the bitwise AND of the sign-extended immediate and register  x[rs1] and write the result to x[rd].
 
-??? question "andn rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+??? question "<font color="red">andn</font> rd, rs1, rs2 (). <font color="green">rv_zbkb</font> "
 
     .
 
-??? summary "auipc rd, imm20 (Add Upper Immediate to PC). $\fbox{rv_i}$"
+??? summary "<font color="red">auipc</font> rd, imm20 (Add Upper Immediate to PC). <font color="green">rv_i</font> "
 
     x[rd] = pc + sext(imm20[31:12] << 12).
 
     Add the sign-extended 20-bit immediate, left-shifted by 12 bits, to the pc, and write the result to x[rd].
 
-??? question "ave rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ave</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .

@@ -1,691 +1,834 @@
-??? question "sb imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_i}$"
+??? summary "<font color="red">sb</font> rs2, offset(rs1) (Store Byte). <font color="green">rv_i</font> "
 
-    .
+    M[x[rs1] + sext(offset)] = x[rs2][7:0].
 
-??? question "sbreak  (). $\fbox{rv_i}$"
+    Store the least-significant byte in register x[rs2] to memory at address x[rs1] + sign-extend(offset).
 
-    .
+??? summary "s{b|h|w|d} rd, symbol, rt (Store global). <font color="green">pseudo</font> "
 
-??? question "sc.d rd, rs1, rs2, aq, rl (). $\fbox{rv64_a}$"
+    ``` asm
+    auipc rt, delta[31:12] + delta[11]
+    s{b|h|w|d} rd, delta[11:0](rt)
+    ```
 
-    .
+??? summary "<font color="red">sbreak</font>  (Environment Breakpoint). <font color="green">rv_i</font> "
 
-??? question "sc.w rd, rs1, rs2, aq, rl (). $\fbox{rv_a}$"
+    > The SCALL and SBREAK instructions have been renamed to ECALL and EBREAK, respectively.
+    Their encoding and functionality are unchanged.
 
-    .
+??? summary "<font color="red">sc.d</font> rd, rs2, (rs1) (Store-Conditional Doubleword). <font color="green">rv64_a</font> "
 
-??? question "scall  (). $\fbox{rv_i}$"
+    x[rd] = StoreConditional64(M[x[rs1]], x[rs2]).
 
-    .
+    Store the eight bytes in register x[rs2] to memory at address x[rs1], provide there exists a load reservation on that memory address.
+    Write 0 to x[rd] if the store succeeded, or a nonzero error code otherwise.
 
-??? question "sclip16 imm4, rs1, rd (). $\fbox{rv_p}$"
+??? summary "<font color="red">sc.w</font> rd, rs1, rs2, aq, rl (Store-Conditional Word). <font color="green">rv_a</font> "
 
-    .
+    x[rd] = StoreConditional32(M[x[rs1]], x[rs2]).
 
-??? question "sclip32 imm5, rs1, rd (). $\fbox{rv_p}$"
+    Store the four bytes in register x[rs2] to memory at address x[rs1], provide there exists a load reservation on that memory address.
+    Write 0 to x[rd] if the store succeeded, or a nonzero error code otherwise.
 
-    .
+??? summary "<font color="red">scall</font> (Environment Call). <font color="green">rv_i</font> "
+
+    > The SCALL and SBREAK instructions have been renamed to ECALL and EBREAK, respectively.
+    Their encoding and functionality are unchanged..
 
-??? question "sclip8 imm3, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sclip16</font> imm4, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "scmple16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sclip32</font> imm5, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "scmple8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sclip8</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "scmplt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">scmple16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "scmplt8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">scmple8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sd imm12hi, rs1, rs2, imm12lo (). $\fbox{rv64_i}$"
+??? question "<font color="red">scmplt16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sext.b rd, rs1 (). $\fbox{rv_zbb}$"
+??? question "<font color="red">scmplt8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sext.h rd, rs1 (). $\fbox{rv_zbb}$"
+??? summary "<font color="red">sd</font> rs2, offset(rs1) (Store Doubleword). <font color="green">rv64_i</font> "
 
-    .
+    M[x[rs1] + sext(offset)] = x[rs2][63:0].
 
-??? question "sfence.inval.ir  (). $\fbox{rv_svinval}$"
+    Store the eight bytes in register x[rs2] to memory at address x[rs1] + sign-extend(offset).
 
-    .
+??? summary "<font color="red">seqz</font> rd, rs (Set if Equal to Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
-??? question "sfence.vma rs1, rs2 (). $\fbox{rv_s}$"
+	x[rd] = (x[rs] == 0).
 
-    .
+    Write 1 to x[rd] if x[rs1] equals 0, or 0 if not.
+
+    ``` asm
+    sltiu rd, rs, 1
+    ```
 
-??? question "sfence.w.inval  (). $\fbox{rv_svinval}$"
+??? question "<font color="red">sext.b</font> rd, rs1 (). <font color="green">rv_zbb</font> "
 
     .
 
-??? question "sh imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_i}$"
+??? question "<font color="red">sext.h</font> rd, rs1 (). <font color="green">rv_zbb</font> "
 
     .
 
-??? question "sh1add rd, rs1, rs2 (). $\fbox{rv_zba}$"
+??? summary "<font color="red">sext.w</font> rd, rs (Sign-extend Word). <font color="green">pseudo</font> "
 
-    .
+    Read the lower 32 bits of x[rs], sign-extend them, and write the result to x[rd].
+    
+    ``` asm
+    addiw rd, rs, 0
+    ```
 
-??? question "sh1add.uw rd, rs1, rs2 (). $\fbox{rv64_zba}$"
+??? question "<font color="red">sfence.inval.ir</font>  (). <font color="green">rv_svinval</font> "
 
     .
 
-??? question "sh2add rd, rs1, rs2 (). $\fbox{rv_zba}$"
+??? summary "<font color="red">sfence.vma</font> rs1, rs2 (Fence Virtual Memory). <font color="green">rv_s</font> "
 
-    .
+    Fence(Store, AddressTranslation).
 
-??? question "sh2add.uw rd, rs1, rs2 (). $\fbox{rv64_zba}$"
+    Order preceding stores to the page tables with subsequent virtual-address translations. 
+    When rs2=0, translations for all address spaces are affected; 
+    otherwise, only translations for address space identified by x[rs2] are ordered.
+    When rs1=0, translations for all virtual addresses in the selected address spaces are ordered; 
+    otherwise, only translations for the page containing virtual address x[rs1] in the selected address spaces are ordered.
 
+??? question "<font color="red">sfence.w.inval</font>  (). <font color="green">rv_svinval</font> "
+
     .
 
-??? question "sh3add rd, rs1, rs2 (). $\fbox{rv_zba}$"
+??? summary "<font color="red">sgtz</font> rd, rs (Set if Greater Than Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
-    .
+	x[rd] = (x[rs] >s 0)
+    
+    Write 1 to x[rd] if x[rs2] is greater than 0, or 0 if not.
+    
+    ``` asm
+    slt rd, x0, rs
+    ```
 
-??? question "sh3add.uw rd, rs1, rs2 (). $\fbox{rv64_zba}$"
+??? summary "<font color="red">sh</font> rs2, offset(rs1) (Store Halfword). <font color="green">rv_i</font> "
 
-    .
+    M[x[rs1] + sext(offset)] = x[rs2][15:0].
+
+    Store the two least-significant bytes in register x[rs2] to memory at address x[rs1] + sign-extend(offset).
 
-??? question "sha256sig0 rd, rs1 (). $\fbox{rv_zk}$"
+??? question "<font color="red">sh1add</font> rd, rs1, rs2 (). <font color="green">rv_zba</font> "
 
     .
 
-??? question "sha256sig1 rd, rs1 (). $\fbox{rv_zk}$"
+??? question "<font color="red">sh1add.uw</font> rd, rs1, rs2 (). <font color="green">rv64_zba</font> "
 
     .
 
-??? question "sha256sum0 rd, rs1 (). $\fbox{rv_zk}$"
+??? question "<font color="red">sh2add</font> rd, rs1, rs2 (). <font color="green">rv_zba</font> "
 
     .
 
-??? question "sha256sum1 rd, rs1 (). $\fbox{rv_zk}$"
+??? question "<font color="red">sh2add.uw</font> rd, rs1, rs2 (). <font color="green">rv64_zba</font> "
 
     .
 
-??? question "sha512sig0 rd, rs1 (). $\fbox{rv64_zk}$"
+??? question "<font color="red">sh3add</font> rd, rs1, rs2 (). <font color="green">rv_zba</font> "
 
     .
 
-??? question "sha512sig0h rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+??? question "<font color="red">sh3add.uw</font> rd, rs1, rs2 (). <font color="green">rv64_zba</font> "
 
     .
 
-??? question "sha512sig0l rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+??? question "<font color="red">sha256sig0</font> rd, rs1 (). <font color="green">rv_zk</font> "
 
     .
 
-??? question "sha512sig1 rd, rs1 (). $\fbox{rv64_zk}$"
+??? question "<font color="red">sha256sig1</font> rd, rs1 (). <font color="green">rv_zk</font> "
 
     .
 
-??? question "sha512sig1h rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+??? question "<font color="red">sha256sum0</font> rd, rs1 (). <font color="green">rv_zk</font> "
 
     .
 
-??? question "sha512sig1l rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+??? question "<font color="red">sha256sum1</font> rd, rs1 (). <font color="green">rv_zk</font> "
 
     .
 
-??? question "sha512sum0 rd, rs1 (). $\fbox{rv64_zk}$"
+??? question "<font color="red">sha512sig0</font> rd, rs1 (). <font color="green">rv64_zk</font> "
 
     .
 
-??? question "sha512sum0r rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+??? question "<font color="red">sha512sig0h</font> rd, rs1, rs2 (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "sha512sum1 rd, rs1 (). $\fbox{rv64_zk}$"
+??? question "<font color="red">sha512sig0l</font> rd, rs1, rs2 (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "sha512sum1r rd, rs1, rs2 (). $\fbox{rv32_zk}$"
+??? question "<font color="red">sha512sig1</font> rd, rs1 (). <font color="green">rv64_zk</font> "
 
     .
 
-??? question "shfl rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+??? question "<font color="red">sha512sig1h</font> rd, rs1, rs2 (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "shfli rd, rs1, shamtw (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">sha512sig1l</font> rd, rs1, rs2 (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "shflw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">sha512sum0</font> rd, rs1 (). <font color="green">rv64_zk</font> "
 
     .
 
-??? question "sinval.vma rs1, rs2 (). $\fbox{rv_svinval}$"
+??? question "<font color="red">sha512sum0r</font> rd, rs1, rs2 (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "sll rd, rs1, rs2 (). $\fbox{rv_i}$"
+??? question "<font color="red">sha512sum1</font> rd, rs1 (). <font color="green">rv64_zk</font> "
 
     .
 
-??? question "sll16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sha512sum1r</font> rd, rs1, rs2 (). <font color="green">rv32_zk</font> "
 
     .
 
-??? question "sll32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">shfl</font> rd, rs1, rs2 (). <font color="green">rv_zbp</font> "
 
     .
 
-??? question "sll8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">shfli</font> rd, rs1, shamtw (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "slld rd, rs1, rs2 (). $\fbox{rv128_i}$"
+??? question "<font color="red">shflw</font> rd, rs1, rs2 (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "slli rd, rs1, shamt (). $\fbox{rv128_i}$"
+??? question "<font color="red">sinval.vma</font> rs1, rs2 (). <font color="green">rv_svinval</font> "
 
     .
 
-??? question "slli16 imm4, rs1, rd (). $\fbox{rv_p}$"
+??? summary "<font color="red">sll</font> rd, rs1, rs2 (Shift Left Logical). <font color="green">rv_i</font> "
 
-    .
+    x[rd] = x[rs1] << x[rs2].
+
+    Shift register x[rs1] left by x[rs2] bit positions. 
+    The vacated bits are filled with zeros, and the result is written to x[rd].
+    The least-significant five bits of x[rs2] (or six bits for RV64I) form the shift amount; the upper bits are ignored.
 
-??? question "slli32 imm5, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">sll16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "slli8 imm3, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sll32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "slli.uw rd, rs1, shamtd (). $\fbox{rv64_zba}$"
+??? question "<font color="red">sll8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sllid rd, rs1, shamtd (). $\fbox{rv128_i}$"
+??? question "<font color="red">slld</font> rd, rs1, rs2 (). <font color="green">rv128_i</font> "
 
     .
 
-??? question "slliw rd, rs1, shamtw (). $\fbox{rv64_i}$"
+??? summary "<font color="red">slli</font> rd, rs1, shamt (Shift Left Logical Immediate). <font color="green">rv_i</font>, <font color="green"> rv128_i</font> "
 
-    .
+    x[rd] = x[rs1] << shamt.
+
+    Shift register x[rs1] left by shamt bit positions.
+    The vacated bits are filled with zeros, and the result is written to x[rd].
+    For RV32I, the instruction is only legal when shamt[5]=0.
 
-??? question "sllw rd, rs1, rs2 (). $\fbox{rv64_i}$"
+??? question "<font color="red">slli16</font> imm4, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "slo rd, rs1, rs2 (). $\fbox{rv_b}$"
+??? question "<font color="red">slli32</font> imm5, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "sloi rd, rs1, shamtd (). $\fbox{rv_b}$"
+??? question "<font color="red">slli8</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sloiw rd, rs1, shamtw (). $\fbox{rv64_b}$"
+??? question "<font color="red">slli.uw</font> rd, rs1, shamtd (). <font color="green">rv64_zba</font> "
 
     .
 
-??? question "slow rd, rs1, rs2 (). $\fbox{rv64_b}$"
+??? question "<font color="red">sllid</font> rd, rs1, shamtd (). <font color="green">rv128_i</font> "
 
     .
 
-??? question "slt rd, rs1, rs2 (). $\fbox{rv_i}$"
+??? summary "<font color="red">slliw</font> rd, rs1, shamtw (Shift Left Logical Word Immediate). <font color="green">rv64_i</font> "
 
-    .
+    x[rd] = sext((x[rs1] << shamt)[31:0]).
 
-??? question "slti rd, rs1, imm12 (). $\fbox{rv_i}$"
+    Shifts x[rs1] left by shamt bit positions.
+    The vacated bits are filled with zeros, and the result is truncated to 32 bits, and the sign-extended 32-bit result is written to x[rd].
+    The instruction is only legal when shamt[5]=0.
 
-    .
+??? summary "<font color="red">sllw</font> rd, rs1, rs2 (Shift Left Logical Word). <font color="green">rv64_i</font> "
 
-??? question "sltiu rd, rs1, imm12 (). $\fbox{rv_i}$"
+    x[rd] = sext((x[rs1] << x[rs2][4:0])[31:0]).
 
-    .
+    Shift the lower 32 bits of x[rs1] left by x[rs1] bit positions.
+    The vacated bits are filled with zeros, and the sign-extended 32-bit result is written to x[rd].
+    The least-significant five bits of x[rs2] form the shift amount; the upper bits are ignored.
 
-??? question "sltu rd, rs1, rs2 (). $\fbox{rv_i}$"
+??? question "<font color="red">slo</font> rd, rs1, rs2 (). <font color="green">rv_b</font> "
 
     .
 
-??? question "sm3p0 rd, rs1 (). $\fbox{rv_zks}$"
+??? question "<font color="red">sloi</font> rd, rs1, shamtd (). <font color="green">rv_b</font> "
 
     .
 
-??? question "sm3p1 rd, rs1 (). $\fbox{rv_zks}$"
+??? question "<font color="red">sloiw</font> rd, rs1, shamtw (). <font color="green">rv64_b</font> "
 
     .
 
-??? question "sm4ed rd, rs1, rs2, bs (). $\fbox{rv_zks}$"
+??? question "<font color="red">slow</font> rd, rs1, rs2 (). <font color="green">rv64_b</font> "
 
     .
 
-??? question "sm4ks rd, rs1, rs2, bs (). $\fbox{rv_zks}$"
+??? summary "<font color="red">slt</font> rd, rs1, rs2 (Set if Less Than). <font color="green">rv_i</font> "
 
-    .
+    x[rd] = x[rs1] <s x[rs2].
 
-??? question "smal rs2, rs1, rd (). $\fbox{rv_p}$"
+    Compare x[rs1] and x[rs2] as two's complement numbers, and write 1 to x[rd] if x[rs1] is smaller, or 0 if not.
 
-    .
+??? summary "<font color="red">slti</font> rd, rs1, immediate (Set if Less Than Immediate). <font color="green">rv_i</font> "
 
-??? question "smalbb rs2, rs1, rd (). $\fbox{rv_p}$"
+    x[rd] = x[rs1] <s sext(immediate).
 
-    .
+    Compare x[rs1] and the sign-extended immediate as two's complement numbers, and write 1 to x[rd] if x[rs1] is smaller, or 0 if not.
 
-??? question "smalbt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? summary "<font color="red">sltiu</font> rd, rs1, immediate (Set if Less Than Immediate). <font color="green">rv_i</font> "
 
-    .
+    x[rd] = x[rs1] <u sext(immediate).
 
-??? question "smalda rs2, rs1, rd (). $\fbox{rv_p}$"
+    Compare x[rs1] and the sign-extended immediate as unsigned numbers, and write 1 to x[rd] if x[rs1] is smaller, or 0 if not.
 
-    .
+??? summary "<font color="red">sltu</font> rd, rs1, rs2 (Set if Less Than, Unsigned). <font color="green">rv_i</font> "
 
-??? question "smaldrs rs2, rs1, rd (). $\fbox{rv_p}$"
+    x[rd] = x[rs1] <u x[rs2].
 
-    .
+    Compare x[rs1] and x[rs2] as unsigned numbers, and write 1 to x[rd] if x[rs1] is smaller, or 0 if not.
 
-??? question "smalds rs2, rs1, rd (). $\fbox{rv_p}$"
+??? summary "<font color="red">sltz</font> rd, rs (Set if Less Than Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
-    .
+	x[rd] = (x[rs1] <s 0).
+
+    Write 1 to x[rd] if x[rs1] is less than zero, or 0 if not.
+    
+    ``` asm	
+    slt rd, rs, x0
+    ```
 
-??? question "smaltt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sm3p0</font> rd, rs1 (). <font color="green">rv_zks</font> "
 
     .
 
-??? question "smalxda rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sm3p1</font> rd, rs1 (). <font color="green">rv_zks</font> "
 
     .
 
-??? question "smalxds rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sm4ed</font> rd, rs1, rs2, bs (). <font color="green">rv_zks</font> "
 
     .
 
-??? question "smaqa rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sm4ks</font> rd, rs1, rs2, bs (). <font color="green">rv_zks</font> "
 
     .
 
-??? question "smaqa.su rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smal</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smar64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smalbb</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smax16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smalbt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smax32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smalda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smax8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smaldrs</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smbb16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smalds</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smbt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smaltt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smbt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smalxda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smdrs rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smalxds</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smdrs32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smaqa</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smds rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smaqa.su</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smds32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smar64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smin16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smax16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smin32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smax32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "smin8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smax8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smmul rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smbb16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smmul.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smbt16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smmwb rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smbt32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "smmwb.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smdrs</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smmwt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smdrs32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "smmwt.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smds</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smslda rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smds32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "smslxda rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smin16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smin32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "smtt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smin8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smtt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smmul</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smul16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smmul.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smul8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smmwb</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smulx16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smmwb.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smulx8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smmwt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smxds rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smmwt.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "smxds32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smslda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sq imm12hi, rs1, rs2, imm12lo (). $\fbox{rv128_i}$"
+??? question "<font color="red">smslxda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sra rd, rs1, rs2 (). $\fbox{rv_i}$"
+??? question "<font color="red">smsr64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sra16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smtt16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sra16.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smtt32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "sra32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smul16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sra32.u rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">smul8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sra8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smulx16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sra8.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smulx8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sra.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">smxds</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srad rd, rs1, rs2 (). $\fbox{rv128_i}$"
+??? question "<font color="red">smxds32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "srai rd, rs1, shamt (). $\fbox{rv128_i}$"
+??? summary "<font color="red">snez</font> rd, rs (Set if Not Equal to Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
-    .
+	x[rd] = (x[rs] != 0).
+
+    Write 0 to x[rd] if x[rs] equals 0, or 1 if not.
+    
+    ``` asm
+    sltu rd, x0, rs
+    ```
 
-??? question "srai16 imm4, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sq</font> imm12hi, rs1, rs2, imm12lo (). <font color="green">rv128_i</font> "
 
     .
 
-??? question "srai16.u imm4, rs1, rd (). $\fbox{rv_p}$"
+??? summary "<font color="red">sra</font> rd, rs1, rs2 (Shift Right Arithmetic). <font color="green">rv_i</font> "
 
-    .
+    x[rd] = x[rs1] >>s x[rs2].
+
+    Shift register x[rs1] right by x[rs2] bit positions.
+    The vacated bits are filled with copies of x[rs1]'s most-significant bit, and write the result to x[rd].
+    The least-significant five bits of x[rs2] (or six bits for RV64I) form the shift amount; the upper bits are ignored.
 
-??? question "srai32 imm5, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">sra16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srai32.u imm5, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">sra16.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srai8 imm3, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sra32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "srai8.u imm3, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sra32.u</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "srai.u imm6, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sra8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sraid rd, rs1, shamtd (). $\fbox{rv128_i}$"
+??? question "<font color="red">sra8.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sraiw rd, rs1, shamtw (). $\fbox{rv64_i}$"
+??? question "<font color="red">sra.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sraiw.u imm5, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">srad</font> rd, rs1, rs2 (). <font color="green">rv128_i</font> "
 
     .
 
-??? question "sraw rd, rs1, rs2 (). $\fbox{rv64_i}$"
+??? summary "<font color="red">srai</font> rd, rs1, shamt (Shift Right Arithmetic Immediate). <font color="green">rv_i</font>, <font color="green"> rv128_i</font> "
 
+    x[rd] = x[rs1] >>s shamt.
+
+    Shift register x[rs1] right by shamt bit positions. 
+    The vacated bits are filled with copies of x[rs1]'s most-significant bit, and write result to x[rd].
+    For RV32I, the instruction is only legal when shamt[5]=0.
+
+??? question "<font color="red">srai16</font> imm4, rs1, rd (). <font color="green">rv_p</font> "
+
     .
 
-??? question "sret  (). $\fbox{rv_s}$"
+??? question "<font color="red">srai16.u</font> imm4, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srl rd, rs1, rs2 (). $\fbox{rv_i}$"
+??? question "<font color="red">srai32</font> imm5, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "srl16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">srai32.u</font> imm5, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "srl16.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">srai8</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srl32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">srai8.u</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srl32.u rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">srai.u</font> imm6, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srl8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sraid</font> rd, rs1, shamtd (). <font color="green">rv128_i</font> "
 
     .
+
+??? summary "<font color="red">sraiw</font> rd, rs1, shamtw (Shift Right Arithmetic Word Immediate). <font color="green">rv64_i</font> "
 
-??? question "srl8.u rs2, rs1, rd (). $\fbox{rv_p}$"
+    x[rd] = sex(x[rs1][31:0] >>s shamt)
+    
+    Shift the lower 32 bits of x[rs1] right by shamt bit positions.
+    The vacated bits are filled with copies of x[rs1][31], and the sign-extended 32-bit result is written to x[rd].
+    The instruction is only legal when shamt[5]=0.
 
+??? question "<font color="red">sraiw.u</font> imm5, rs1, rd (). <font color="green">rv64_p</font> "
+
     .
+
+??? summary "<font color="red">sraw</font> rd, rs1, rs2 (Shift Right Arithmetic Word). <font color="green">rv64_i</font> "
+
+    x[rd] = sext(x[rs1][31:0] >>s x[rs2][4:0]).
+
+    Shift the lower 32 bits of x[rs1] right by x[rs2] bit positions.
+    The vacated bits are filled with x[rs1][31], and the sign-extended 32-bit result is written to x[rd].
+    The least-significant five bits of x[rs2] form the shift amount; the upper bits are ignored.
+
+??? summary "<font color="red">sret</font>  (Supervisor-mode Exception Return). <font color="green">rv_s</font> "
+
+    ExceptionReturn(Supervisor).
+    
+    Return from a supervisor-mode exception handler.
+    Set the pc to CSRs[sepc], the privilege mode to CSRs[sstatus].SPP, CSRs[sstatus].SIE to CSRs[sstatus].SPIE, CSRs[sstatus].SPIE to 1,
+    and CSRS[sstatus].SPP to 0.
+ 
+??? summary "<font color="red">srl</font> rd, rs1, rs2 (Shift Right Logical). <font color="green">rv_i</font> "
+
+    x[rd] = x[rs1] >>u x[rs2].
+
+    Shift register x[rs1] right by x[rs2] bit positions.
+    The vacated bits are filled with zeros, and the result is written to x[rd].
+    The least-significant five bits of x[rs2] (or six bits for RV64I) form the shift amount; the upper bits are ignored.
 
-??? question "srld rd, rs1, rs2 (). $\fbox{rv128_i}$"
+??? question "<font color="red">srl16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srli rd, rs1, shamt (). $\fbox{rv128_i}$"
+??? question "<font color="red">srl16.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srli16 imm4, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">srl32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "srli16.u imm4, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">srl32.u</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "srli32 imm5, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">srl8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srli32.u imm5, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">srl8.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srli8 imm3, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">srld</font> rd, rs1, rs2 (). <font color="green">rv128_i</font> "
 
     .
 
-??? question "srli8.u imm3, rs1, rd (). $\fbox{rv_p}$"
+??? summary "<font color="red">srli</font> rd, rs1, shamt (Shift Right Logical Immediate). <font color="green">rv_i</font>, <font color="green"> rv128_i</font> "
 
+    x[rd] = x[rs1] >>u shamt.
+
+    Shift register x[rs1] right by shamt bit positions.
+    The vacated bits are filled with zeros, and the result is written to x[rd].
+    For RV32I, the instruction is only legal when shamt[5]=0.
+
+??? question "<font color="red">srli16</font> imm4, rs1, rd (). <font color="green">rv_p</font> "
+
     .
 
-??? question "srlid rd, rs1, shamtd (). $\fbox{rv128_i}$"
+??? question "<font color="red">srli16.u</font> imm4, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "srliw rd, rs1, shamtw (). $\fbox{rv64_i}$"
+??? question "<font color="red">srli32</font> imm5, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "srlw rd, rs1, rs2 (). $\fbox{rv64_i}$"
+??? question "<font color="red">srli32.u</font> imm5, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "sro rd, rs1, rs2 (). $\fbox{rv_b}$"
+??? question "<font color="red">srli8</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sroi rd, rs1, shamtd (). $\fbox{rv_b}$"
+??? question "<font color="red">srli8.u</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sroiw rd, rs1, shamtw (). $\fbox{rv64_b}$"
+??? question "<font color="red">srlid</font> rd, rs1, shamtd (). <font color="green">rv128_i</font> "
 
     .
+
+??? summary "<font color="red">srliw</font> rd, rs1, shamt (Shift Right Logical Word Immediate). <font color="green">rv64_i</font> "
+
+    x[rd] = sext(x[rs1][31:0] >>u shamt).
+
+    Shift the lower 32 bits of x[rs1] right by shamt bit positions.
+    The vacated bits are filled with zeros, and the sign-extended 32-bit result is written to x[rd].
+    The instruction is only legal when shamt[5]=0.
+
+??? summary "<font color="red">srlw</font> rd, rs1, rs2 (Shift Right Logical Word). <font color="green">rv64_i</font> "
+
+    x[rd] = sext(x[rs1][31:0] >>u x[rs2][4:0]).
 
-??? question "srow rd, rs1, rs2 (). $\fbox{rv64_b}$"
+    Shift the lower 32 bits of x[rs1] right by x[rs2] bit positions.
+    The vacated bits are filled with zeros, and the sign-extended 32-bit result is written to x[rd].
+    The least-significant five bits of x[rs2] form then shift amount; the upper bits are ignored.
 
+??? question "<font color="red">sro</font> rd, rs1, rs2 (). <font color="green">rv_b</font> "
+
     .
 
-??? question "stas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sroi</font> rd, rs1, shamtd (). <font color="green">rv_b</font> "
 
     .
 
-??? question "stas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">sroiw</font> rd, rs1, shamtw (). <font color="green">rv64_b</font> "
 
     .
 
-??? question "stsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">srow</font> rd, rs1, rs2 (). <font color="green">rv64_b</font> "
 
     .
 
-??? question "stsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">stas16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sub rd, rs1, rs2 (). $\fbox{rv_i}$"
+??? question "<font color="red">stas32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "sub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">stsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">stsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
+
+??? summary "<font color="red">sub</font> rd, rs1, rs2 (Subtract). <font color="green">rv_i</font> "
+
+    x[rd] = x[rs1] - x[rs2].
+
+    Subtract register x[rs2] from register x[rs1] and wite the result to x[rd].
+    Arithmetic overflow is ignored.
 
-??? question "sub64 rs2, rs1, rd (). $\fbox{rv32_p}$"
+??? question "<font color="red">sub16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sub32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "subd rd, rs1, rs2 (). $\fbox{rv128_i}$"
+??? question "<font color="red">sub64</font> rs2, rs1, rd (). <font color="green">rv32_p</font> "
 
     .
 
-??? question "subw rd, rs1, rs2 (). $\fbox{rv64_i}$"
+??? question "<font color="red">sub8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sunpkd810 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">subd</font> rd, rs1, rs2 (). <font color="green">rv128_i</font> "
 
     .
 
-??? question "sunpkd820 rs1, rd (). $\fbox{rv_p}$"
+??? summary "<font color="red">subw</font> rd, rs1, rs2 (Subtract Wrod). <font color="green">rv64_i</font> "
 
+    x[rd] = sext((x[rs1] - x[rs2])[31:0]).
+    
+    Subtract register x[rs2] from register x[rs1], truncate the result to 32 bits, and write the sign-extended result to x[rd].
+    Arithmetic overflow is ignored.
+
+??? question "<font color="red">sunpkd810</font> rs1, rd (). <font color="green">rv_p</font> "
+
     .
 
-??? question "sunpkd830 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sunpkd820</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sunpkd831 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sunpkd830</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sunpkd832 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">sunpkd831</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "sw imm12hi, rs1, rs2, imm12lo (). $\fbox{rv_i}$"
+??? question "<font color="red">sunpkd832</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
+
+??? summary "<font color="red">sw</font> rs2, offset(rs1) (Store Word). <font color="green">rv_i</font> "
+
+    M[x[rs1] + sext(offset)] = x[rs2][31:0].
+
+    Store the four least-significant bytes in register x[rs2] to memory at address x[rs1] + sign-extend(offset).
 
-??? question "swap8 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">swap8</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .

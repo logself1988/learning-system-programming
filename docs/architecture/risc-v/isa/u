@@ -1,263 +1,263 @@
-??? question "uclip16 imm4, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uclip16</font> imm4, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uclip32 imm5, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uclip32</font> imm5, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uclip8 imm3, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uclip8</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ucmple16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ucmple16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ucmple8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ucmple8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ucmplt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ucmplt16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ucmplt8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ucmplt8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukadd16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukadd16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukadd32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">ukadd32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ukadd64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukadd64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukadd8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukadd8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukaddh rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukaddh</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukaddw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukaddw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukcras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukcras16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukcras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">ukcras32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ukcrsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukcrsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukcrsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">ukcrsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ukmar64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukmar64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukmsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukmsr64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukstas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukstas16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukstas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">ukstas32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ukstsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ukstsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ukstsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">ukstsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "uksub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uksub16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uksub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">uksub32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "uksub64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uksub64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uksub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uksub8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uksubh rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uksubh</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uksubw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uksubw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umaqa rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umaqa</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umar64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umar64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umax16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umax16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umax32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">umax32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "umax8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umax8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umin16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umin16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umin32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">umin32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "umin8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umin8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umsr64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umul16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umul16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umul8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umul8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umulx16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umulx16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "umulx8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">umulx8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "unshfl rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+??? question "<font color="red">unshfl</font> rd, rs1, rs2 (). <font color="green">rv_zbp</font> "
 
     .
 
-??? question "unshfli rd, rs1, shamtw (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">unshfli</font> rd, rs1, shamtw (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "unshflw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">unshflw</font> rd, rs1, rs2 (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "unzip rd, rs1 (). $\fbox{rv32_zks}$"
+??? question "<font color="red">unzip</font> rd, rs1 (). <font color="green">rv32_zks</font> "
 
     .
 
-??? question "unzip16 rd, rs1 (). $\fbox{rv64_zbm}$"
+??? question "<font color="red">unzip16</font> rd, rs1 (). <font color="green">rv64_zbm</font> "
 
     .
 
-??? question "unzip8 rd, rs1 (). $\fbox{rv64_zbm}$"
+??? question "<font color="red">unzip8</font> rd, rs1 (). <font color="green">rv64_zbm</font> "
 
     .
 
-??? question "uradd16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uradd16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uradd32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">uradd32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "uradd64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uradd64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uradd8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uradd8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "uraddw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">uraddw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "urcras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">urcras16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "urcras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">urcras32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "urcrsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">urcrsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "urcrsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">urcrsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "urstas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">urstas16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "urstas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">urstas32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "urstsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">urstsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "urstsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">urstsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ursub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ursub16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ursub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">ursub32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ursub64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ursub64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ursub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ursub8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ursubw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ursubw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .

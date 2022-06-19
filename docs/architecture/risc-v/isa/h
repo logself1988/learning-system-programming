@@ -1,67 +1,67 @@
-??? question "hfence.gvma rs1, rs2 (). $\fbox{rv_h}$"
+??? question "<font color="red">hfence.gvma</font> rs1, rs2 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hfence.vvma rs1, rs2 (). $\fbox{rv_h}$"
+??? question "<font color="red">hfence.vvma</font> rs1, rs2 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hinval.gvma rs1, rs2 (). $\fbox{rv_svinval}$"
+??? question "<font color="red">hinval.gvma</font> rs1, rs2 (). <font color="green">rv_svinval</font> "
 
     .
 
-??? question "hinval.vvma rs1, rs2 (). $\fbox{rv_svinval}$"
+??? question "<font color="red">hinval.vvma</font> rs1, rs2 (). <font color="green">rv_svinval</font> "
 
     .
 
-??? question "hlv.b rd, rs1 (). $\fbox{rv_h}$"
+??? question "<font color="red">hlv.b</font> rd, rs1 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hlv.bu rd, rs1 (). $\fbox{rv_h}$"
+??? question "<font color="red">hlv.bu</font> rd, rs1 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hlv.d rd, rs1 (). $\fbox{rv64_h}$"
+??? question "<font color="red">hlv.d</font> rd, rs1 (). <font color="green">rv64_h</font> "
 
     .
 
-??? question "hlv.h rd, rs1 (). $\fbox{rv_h}$"
+??? question "<font color="red">hlv.h</font> rd, rs1 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hlv.hu rd, rs1 (). $\fbox{rv_h}$"
+??? question "<font color="red">hlv.hu</font> rd, rs1 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hlv.w rd, rs1 (). $\fbox{rv_h}$"
+??? question "<font color="red">hlv.w</font> rd, rs1 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hlv.wu rd, rs1 (). $\fbox{rv64_h}$"
+??? question "<font color="red">hlv.wu</font> rd, rs1 (). <font color="green">rv64_h</font> "
 
     .
 
-??? question "hlvx.hu rd, rs1 (). $\fbox{rv_h}$"
+??? question "<font color="red">hlvx.hu</font> rd, rs1 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hlvx.wu rd, rs1 (). $\fbox{rv_h}$"
+??? question "<font color="red">hlvx.wu</font> rd, rs1 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hsv.b rs1, rs2 (). $\fbox{rv_h}$"
+??? question "<font color="red">hsv.b</font> rs1, rs2 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hsv.d rs1, rs2 (). $\fbox{rv64_h}$"
+??? question "<font color="red">hsv.d</font> rs1, rs2 (). <font color="green">rv64_h</font> "
 
     .
 
-??? question "hsv.h rs1, rs2 (). $\fbox{rv_h}$"
+??? question "<font color="red">hsv.h</font> rs1, rs2 (). <font color="green">rv_h</font> "
 
     .
 
-??? question "hsv.w rs1, rs2 (). $\fbox{rv_h}$"
+??? question "<font color="red">hsv.w</font> rs1, rs2 (). <font color="green">rv_h</font> "
 
     .

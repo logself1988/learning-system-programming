@@ -1,27 +1,27 @@
-??? question "zext.h rd, rs1 (). $\fbox{rv64_zbb}$"
+??? question "<font color="red">zext.h</font> rd, rs1 (). <font color="green">rv64_zbb</font> "
 
     .
 
-??? question "zip rd, rs1 (). $\fbox{rv32_zks}$"
+??? question "<font color="red">zip</font> rd, rs1 (). <font color="green">rv32_zks</font> "
 
     .
 
-??? question "zunpkd810 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">zunpkd810</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "zunpkd820 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">zunpkd820</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "zunpkd830 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">zunpkd830</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "zunpkd831 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">zunpkd831</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "zunpkd832 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">zunpkd832</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .

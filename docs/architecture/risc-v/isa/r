@@ -1,147 +1,199 @@
-??? question "radd16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">radd16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "radd32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">radd32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "radd64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">radd64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "radd8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">radd8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "raddw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">raddw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "rcras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">rcras16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "rcras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">rcras32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "rcrsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">rcrsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "rcrsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">rcrsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "rdcycle rd (). $\fbox{rv_zicsr}$"
+??? summary "<font color="red">rdcycle</font> rd (Read Cycle Counter). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font>, <font color="green"> rv_i</font> "
+
+    x[rd] = CSRs[cycle].
+
+    Write the number of cycles that have elapsed to x[rd].
+
+    ``` asm
+    csrrs rd, cycle, x0
+    ````
+
+??? summary "<font color="red">rdcycleh</font> rd (Read Cycle Counter High). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font>, <font color="green"> rv32_i</font> "
+
+    x[rd] = CSRs[cycleh].
+
+    Write the number of cycles that have elapsed, shifted right by 32 bits, to x[rd].
+
+    ``` asm
+    csrrs rd, cycleh, x0
+    ```
+
+??? summary "<font color="red">rdinstret</font> rd (Read Instructions-Retired Counter). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font>, <font color="green"> rv_i</font> "
+
+    x[rd] = CSRs[instret].
+
+    Write the number of instructions that have retired to x[rd].
+
+    ``` asm
+    csrrs rd, instret, x0
+    ```
+
+??? summary "<font color="red">rdinstreth</font> rd (Read Instructions-Retired Counter High). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font>, <font color="green"> rv32_i</font> "
+
+    x[rd] = CSRs[instreth].
+
+    Write the number of instructions that have retired, shifted right by 32 bits, to x[rd].
+
+    ``` asm
+    csrrs rd, instreth, x0
+    ```
+
+??? summary "<font color="red">rdtime</font> rd (Read Time). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font>, <font color="green"> rv_i</font> "
+
+    x[rd] = CSRs[time].
+    
+    Write the current time to x[rd]. The timer frequency is platform-dependent. 
+
+    ``` asm
+    csrrs rd, time, x0
+    ```
+
+??? summary "<font color="red">rdtimeh</font> rd (Read Time High). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font>, <font color="green"> rv32_i</font> "
+
+    x[rd] = CSRs[timeh].
+
+    Write the current time, shifted right by 32 bits, to x[rd]. The timer frequency is platform-dependent.
+
+    ``` asm
+    csrrs rd, timeh, x0
+    ```
+
+??? summary "<font color="red">rem</font> rd, rs1, rs2 (Remainder). <font color="green">rv_m</font> "
+
+    x[rd] = x[rs1] % x[rs2].
+
+    Divide x[rs1] by x[rs2], rouding towards zero, treating the values as two's complement numbers, and write the remainder to x[rd].
+
+??? summary "<font color="red">remu</font> rd, rs1, rs2 (Remainder, Unsigned). <font color="green">rv_m</font> "
+
+    x[rd] = x[rs1] %u x[rs2].
+
+    Divide x[rs1] by x[rs2], rouding towards zero, treating the values as unsigned numbers, and write the remainder to x[rd].
+
+??? summary "<font color="red">remuw</font> rd, rs1, rs2 (Remainder Word, Unsigned). <font color="green">rv64_m</font> "
+
+    x[rd] = sext(x[rs1][31:0] %u x[rs2][31:0]).
+
+    Divide the lower 32 bits of x[rs1] by the lower 32 bits of x[rs2], rounding towards zero, treating the values as unsigned numbers, and write the sign-extended 32-bit remainder to x[rd].
+
+??? summary "<font color="red">remw</font> rd, rs1, rs2 (Remainder Word). <font color="green">rv64_m</font> "
+
+    x[rd] = sext(x[rs1][31:0] %s x[rs2][31:0]).
+
+    Divide the lower 32 bits of x[rs1] by the lower 32 bits of x[rs2], rounding towards zero, treating the values as two's complement numbers, and write the sign-extended 32-bit remainder to x[rd].
+
+??? summary "<font color="red">ret</font> (Return). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
+
+	pc = x[1].
+    
+    ``` asm
+    jalr x0, 0(x1)
+    ```
+
+??? question "<font color="red">rev</font> rd, rs1 (). <font color="green">rv64_zbpbo</font> "
 
     .
 
-??? question "rdcycleh rd (). $\fbox{rv_zicsr}$"
+??? question "<font color="red">rev8</font> rd, rs1 (). <font color="green">rv64_zks</font> "
 
     .
 
-??? question "rdinstret rd (). $\fbox{rv_zicsr}$"
+??? question "<font color="red">rev8.h</font> rd, rs1 (). <font color="green">rv_zbpbo</font> "
 
     .
 
-??? question "rdinstreth rd (). $\fbox{rv_zicsr}$"
+??? question "<font color="red">rol</font> rd, rs1, rs2 (). <font color="green">rv_zbkb</font> "
 
     .
 
-??? question "rdtime rd (). $\fbox{rv_zicsr}$"
+??? question "<font color="red">rolw</font> rd, rs1, rs2 (). <font color="green">rv64_zbkb</font> "
 
     .
 
-??? question "rdtimeh rd (). $\fbox{rv_zicsr}$"
+??? question "<font color="red">ror</font> rd, rs1, rs2 (). <font color="green">rv_zbkb</font> "
 
     .
 
-??? question "rem rd, rs1, rs2 (). $\fbox{rv_m}$"
+??? question "<font color="red">rori</font> rd, rs1, shamtd (). <font color="green">rv64_zbb</font> "
 
     .
 
-??? question "remu rd, rs1, rs2 (). $\fbox{rv_m}$"
+??? question "<font color="red">roriw</font> rd, rs1, shamtw (). <font color="green">rv64_zbkb</font> "
 
     .
 
-??? question "remuw rd, rs1, rs2 (). $\fbox{rv64_m}$"
+??? question "<font color="red">rorw</font> rd, rs1, rs2 (). <font color="green">rv64_zbkb</font> "
 
     .
 
-??? question "remw rd, rs1, rs2 (). $\fbox{rv64_m}$"
+??? question "<font color="red">rstas16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "rev rd, rs1 (). $\fbox{rv64_zbpbo}$"
+??? question "<font color="red">rstas32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "rev8 rd, rs1 (). $\fbox{rv64_zks}$"
+??? question "<font color="red">rstsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "rev8.h rd, rs1 (). $\fbox{rv_zbpbo}$"
+??? question "<font color="red">rstsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "rol rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+??? question "<font color="red">rsub16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "rolw rd, rs1, rs2 (). $\fbox{rv64_zbkb}$"
+??? question "<font color="red">rsub32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ror rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+??? question "<font color="red">rsub64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "rori rd, rs1, shamtd (). $\fbox{rv64_zbb}$"
+??? question "<font color="red">rsub8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "roriw rd, rs1, shamtw (). $\fbox{rv64_zbkb}$"
-
-    .
-
-??? question "rorw rd, rs1, rs2 (). $\fbox{rv64_zbkb}$"
-
-    .
-
-??? question "rstas16 rs2, rs1, rd (). $\fbox{rv_p}$"
-
-    .
-
-??? question "rstas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
-
-    .
-
-??? question "rstsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
-
-    .
-
-??? question "rstsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
-
-    .
-
-??? question "rsub16 rs2, rs1, rd (). $\fbox{rv_p}$"
-
-    .
-
-??? question "rsub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
-
-    .
-
-??? question "rsub64 rs2, rs1, rd (). $\fbox{rv_p}$"
-
-    .
-
-??? question "rsub8 rs2, rs1, rd (). $\fbox{rv_p}$"
-
-    .
-
-??? question "rsubw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">rsubw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .

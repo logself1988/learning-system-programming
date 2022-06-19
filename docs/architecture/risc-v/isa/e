@@ -1,10 +1,10 @@
-??? summary "ebreak  (Environment Breakpoint). $\fbox{rv_i}$"
+??? summary "<font color="red">ebreak</font>  (Environment Breakpoint). <font color="green">rv_i</font> "
 
     RaiseException(Breakpoint).
 
     Make a request of the debugger by raising a Breakpoint exception.
 
-??? summary "ecall  (Environment Call). $\fbox{rv_i}$"
+??? summary "<font color="red">ecall</font>  (Environment Call). <font color="green">rv_i</font> "
 
     RaiseException(EnvironmentCall).
 

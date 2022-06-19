@@ -1,0 +1,11 @@
+??? summary "<font color="red">tail</font> symbol (Tail call). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
+
+		pc = &symbol; clobber x[6].
+
+    Set the pc to symbol, overwriting x[6] in the process.
+    
+    ``` asm
+    auipc x6, offset[31:12] + offset[11]
+    jalr x0, offset[11:0](x6)
+    ```
+

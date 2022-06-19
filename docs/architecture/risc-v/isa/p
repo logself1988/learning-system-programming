@@ -1,75 +1,75 @@
-??? question "pack rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+??? question "<font color="red">pack</font> rd, rs1, rs2 (). <font color="green">rv_zbkb</font> "
 
     .
 
-??? question "packh rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+??? question "<font color="red">packh</font> rd, rs1, rs2 (). <font color="green">rv_zbkb</font> "
 
     .
 
-??? question "packu rd, rs1, rs2 (). $\fbox{rv64_zbm}$"
+??? question "<font color="red">packu</font> rd, rs1, rs2 (). <font color="green">rv64_zbm</font> "
 
     .
 
-??? question "packuw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">packuw</font> rd, rs1, rs2 (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "packw rd, rs1, rs2 (). $\fbox{rv64_zbkb}$"
+??? question "<font color="red">packw</font> rd, rs1, rs2 (). <font color="green">rv64_zbkb</font> "
 
     .
 
-??? question "pause  (). $\fbox{rv_i}$"
+??? question "<font color="red">pause</font>  (). <font color="green">rv_i</font> "
 
     .
 
-??? question "pbsad rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">pbsad</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "pbsada rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">pbsada</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "pkbb16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">pkbb16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "pkbb32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">pkbb32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "pkbt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">pkbt16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "pkbt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">pkbt32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "pktb16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">pktb16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "pktb32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">pktb32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "pktt16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">pktt16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "pktt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">pktt32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "prefetch.i rs1, imm12hi (). $\fbox{rv_zicbo}$"
+??? question "<font color="red">prefetch.i</font> rs1, imm12hi (). <font color="green">rv_zicbo</font> "
 
     .
 
-??? question "prefetch.r rs1, imm12hi (). $\fbox{rv_zicbo}$"
+??? question "<font color="red">prefetch.r</font> rs1, imm12hi (). <font color="green">rv_zicbo</font> "
 
     .
 
-??? question "prefetch.w rs1, imm12hi (). $\fbox{rv_zicbo}$"
+??? question "<font color="red">prefetch.w</font> rs1, imm12hi (). <font color="green">rv_zicbo</font> "
 
     .

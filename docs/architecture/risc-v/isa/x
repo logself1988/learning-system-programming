@@ -1,27 +1,31 @@
-??? question "xnor rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+??? question "<font color="red">xnor</font> rd, rs1, rs2 (). <font color="green">rv_zbkb</font> "
 
     .
 
-??? question "xor rd, rs1, rs2 (). $\fbox{rv_i}$"
+??? summary "<font color="red">xor</font> rd, rs1, rs2 (Exclusive-OR). <font color="green">rv_i</font> "
+
+    x[rd] = x[rs1] ^ x[rs2].
+
+    Compute the bitwise exclusive-OR of registers x[rs1] and x[rs2], and write the result to x[rd].
+
+??? summary "<font color="red">xori</font> rd, rs1, immediate (). <font color="green">rv_i</font> "
+
+    x[rd] = x[rs1] ^ sext(immediate).
+
+    Compute the bitwise exclusive-OR of the sign-extended immediate and register x[rs1], and write the result to x[rd].
+
+??? question "<font color="red">xperm16</font> rd, rs1, rs2 (). <font color="green">rv_zbp</font> "
 
     .
 
-??? question "xori rd, rs1, imm12 (). $\fbox{rv_i}$"
+??? question "<font color="red">xperm32</font> rd, rs1, rs2 (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "xperm16 rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+??? question "<font color="red">xperm4</font> rd, rs1, rs2 (). <font color="green">rv_zbkx</font> "
 
     .
 
-??? question "xperm32 rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
-
-    .
-
-??? question "xperm4 rd, rs1, rs2 (). $\fbox{rv_zbkx}$"
-
-    .
-
-??? question "xperm8 rd, rs1, rs2 (). $\fbox{rv_zbkx}$"
+??? question "<font color="red">xperm8</font> rd, rs1, rs2 (). <font color="green">rv_zbkx</font> "
 
     .

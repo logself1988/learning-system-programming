@@ -1,419 +1,419 @@
-??? question "kabs16 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kabs16</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kabs32 rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kabs32</font> rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kabs8 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kabs8</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kabsw rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kabsw</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kadd16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kadd16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kadd32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kadd32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kadd64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kadd64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kadd8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kadd8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kaddh rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kaddh</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kaddw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kaddw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kcras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kcras16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kcras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kcras32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kcrsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kcrsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kcrsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kcrsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kdmabb rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kdmabb</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kdmabb16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kdmabb16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kdmabt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kdmabt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kdmabt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kdmabt16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kdmatt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kdmatt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kdmatt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kdmatt16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kdmbb rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kdmbb</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kdmbb16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kdmbb16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kdmbt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kdmbt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kdmbt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kdmbt16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kdmtt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kdmtt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kdmtt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kdmtt16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "khm16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">khm16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "khm8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">khm8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "khmbb rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">khmbb</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "khmbb16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">khmbb16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "khmbt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">khmbt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "khmbt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">khmbt16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "khmtt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">khmtt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "khmtt16 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">khmtt16</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "khmx16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">khmx16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "khmx8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">khmx8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmabb rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmabb</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmabb32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmabb32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmabt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmabt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmabt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmabt32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmada rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmada</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmadrs rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmadrs</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmadrs32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmadrs32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmads rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmads</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmads32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmads32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmar64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmar64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmatt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmatt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmatt32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmatt32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmaxda rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmaxda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmaxda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmaxda32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmaxds rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmaxds</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmaxds32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmaxds32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmda rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmda32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmmac rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmac</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmac.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmac.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmawb rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmawb</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmawb2 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmawb2</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmawb2.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmawb2.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmawb.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmawb.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmawt rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmawt</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmawt2 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmawt2</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmawt2.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmawt2.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmawt.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmawt.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmsb rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmsb</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmsb.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmsb.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmwb2 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmwb2</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmwb2.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmwb2.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmwt2 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmwt2</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmmwt2.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmmwt2.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmsda rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmsda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmsda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmsda32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmsr64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmsxda rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmsxda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmsxda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmsxda32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kmxda rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kmxda</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kmxda32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kmxda32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ksll16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ksll16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ksll32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">ksll32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ksll8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ksll8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslli16 imm4, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslli16</font> imm4, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslli32 imm5, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kslli32</font> imm5, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kslli8 imm3, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslli8</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslliw imm5, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslliw</font> imm5, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ksllw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ksllw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslra16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslra16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslra16.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslra16.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslra32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kslra32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kslra32.u rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kslra32.u</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kslra8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslra8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslra8.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslra8.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslraw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslraw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kslraw.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kslraw.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kstas16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kstas16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kstas32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kstas32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "kstsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kstsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kstsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">kstsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ksub16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ksub16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ksub32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">ksub32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "ksub64 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ksub64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ksub8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ksub8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ksubh rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ksubh</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "ksubw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">ksubw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kwmmul rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kwmmul</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "kwmmul.u rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">kwmmul.u</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .

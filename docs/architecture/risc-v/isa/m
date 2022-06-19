@@ -1,63 +1,89 @@
-??? question "maddr32 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">maddr32</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "max rd, rs1, rs2 (). $\fbox{rv_zbpbo}$"
+??? question "<font color="red">max</font> rd, rs1, rs2 (). <font color="green">rv_zbpbo</font> "
 
     .
 
-??? question "maxu rd, rs1, rs2 (). $\fbox{rv_zbb}$"
+??? question "<font color="red">maxu</font> rd, rs1, rs2 (). <font color="green">rv_zbb</font> "
 
     .
 
-??? question "maxw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">maxw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "min rd, rs1, rs2 (). $\fbox{rv_zbpbo}$"
+??? question "<font color="red">min</font> rd, rs1, rs2 (). <font color="green">rv_zbpbo</font> "
 
     .
 
-??? question "minu rd, rs1, rs2 (). $\fbox{rv_zbb}$"
+??? question "<font color="red">minu</font> rd, rs1, rs2 (). <font color="green">rv_zbb</font> "
 
     .
 
-??? question "minw rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">minw</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "mret  (). $\fbox{rv_system}$"
+??? summary "<font color="red">mret</font>  (Machine-mode Exception Return). <font color="green">rv_system</font> "
+
+    ExceptionReturn(Machine).
+
+    Return from a machine-mode exception handler. Set the pc the CSRs[mepc], the privilege mode to CSRs[mstatus].MPP, CSRs[mstatus].MIE to CSRs[mstatus].MPIE, and CSRs[mstatus].MPIE to 1; and if user mode is supported, set CSRs[mstatus].MPP to 0.
+
+??? question "<font color="red">msubr32</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "msubr32 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? summary "<font color="red">mul</font> rd, rs1, rs2 (Multiply). <font color="green">rv_m</font> "
+
+    x[rd] = x[rs1] * x[rs2].
+
+    Multiply x[rs1] by x[rs2], write the product to x[rd].
+
+    Arithmetic overflow is ignored.
+
+??? summary "<font color="red">mulh</font> rd, rs1, rs2 (Multiply Hign). <font color="green">rv_m</font> "
+
+    x[rd] = (x[rs1] s*s x[rs2]) >>s XLEN.
+
+    Multiply x[rs1] by x[rs2], treating the values as two's complement numbers, and write the upper half of the product to x[rd].
+
+??? summary "<font color="red">mulhsu</font> rd, rs1, rs2 (Multiply High Signed-Unsigned). <font color="green">rv_m</font> "
+
+    x[rd] = (x[rs1] s*u x[rs2]) >>s XLEN.
+
+    Multiply x[rs1] by x[rs2], treating x[rs1] as a two's complement number and x[rs2] as an unsigned number, and write the upper half of the product to x[rd].
+
+??? summary "<font color="red">mulhu</font> rd, rs1, rs2 (Multiply High Unsigned). <font color="green">rv_m</font> "
+
+    x[rd] = (x[rs1] u*u x[rs2]) >>s XLEN.
+
+    Multiply x[rs1] by x[rs2], treating the values as unsigned numbers, and write the upper half of the product to x[rd].
+
+??? question "<font color="red">mulr64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "mul rd, rs1, rs2 (). $\fbox{rv_m}$"
+??? question "<font color="red">mulsr64</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "mulh rd, rs1, rs2 (). $\fbox{rv_m}$"
+??? summary "<font color="red">mulw</font> rd, rs1, rs2 (Multiply Word). <font color="green">rv64_m</font> "
 
-    .
+    x[rd] = sext((x[rs1] * x[rs2])[31:0]).
 
-??? question "mulhsu rd, rs1, rs2 (). $\fbox{rv_m}$"
+    Multiply x[rs1] by x[rs2], truncate the product to 32 bits, and write the sign-extended result to x[rd].
 
-    .
+    Arithmetic overflow is ignore.
 
-??? question "mulhu rd, rs1, rs2 (). $\fbox{rv_m}$"
+??? summary "<font color="red">mv</font> rd, rs (Move). <font color="green">pseudo</font> "
 
-    .
-
-??? question "mulr64 rs2, rs1, rd (). $\fbox{rv_p}$"
-
-    .
-
-??? question "mulsr64 rs2, rs1, rd (). $\fbox{rv_p}$"
-
-    .
-
-??? question "mulw rd, rs1, rs2 (). $\fbox{rv64_m}$"
-
-    .
+	x[rd] = x[rs].
+    
+    Copy register x[rs] to x[rd]. 
+    
+    ``` asm
+    addi rd, rs, 0
+    ```

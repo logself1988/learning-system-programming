@@ -1,11 +1,13 @@
-??? question "wext rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">wext</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "wexti imm5, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">wexti</font> imm5, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "wfi  (). $\fbox{rv_system}$"
+??? summary "<font color="red">wfi</font>  (Wait for Interrupt). <font color="green">rv_system</font> "
 
-    .
+    while (noInterruptsPending) idle.
+
+    Idle the processor to save energy if no enabled interrupts are currently pending.

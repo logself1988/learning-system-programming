@@ -1,31 +1,31 @@
-??? question "gorc rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+??? question "<font color="red">gorc</font> rd, rs1, rs2 (). <font color="green">rv_zbp</font> "
 
     .
 
-??? question "gorci rd, rs1, shamtd (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">gorci</font> rd, rs1, shamtd (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "gorciw rd, rs1, shamtw (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">gorciw</font> rd, rs1, shamtw (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "gorcw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">gorcw</font> rd, rs1, rs2 (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "grev rd, rs1, rs2 (). $\fbox{rv_zbp}$"
+??? question "<font color="red">grev</font> rd, rs1, rs2 (). <font color="green">rv_zbp</font> "
 
     .
 
-??? question "grevi rd, rs1, shamtd (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">grevi</font> rd, rs1, shamtd (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "greviw rd, rs1, shamtw (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">greviw</font> rd, rs1, shamtw (). <font color="green">rv64_zbp</font> "
 
     .
 
-??? question "grevw rd, rs1, rs2 (). $\fbox{rv64_zbp}$"
+??? question "<font color="red">grevw</font> rd, rs1, rs2 (). <font color="green">rv64_zbp</font> "
 
     .

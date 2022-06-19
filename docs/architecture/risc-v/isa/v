@@ -1,1831 +1,1831 @@
-??? question "vaadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vaadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vaadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vaadd.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vaaddu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vaaddu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vaaddu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vaaddu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vadc.vim vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vadc.vim</font> vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vadc.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vadc.vvm</font> vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vadc.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vadc.vxm</font> vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vadd.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vadd.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vadd.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoaddei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoaddei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoaddei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoaddei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoaddei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoaddei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoaddei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoaddei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoandei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoandei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoandei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoandei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoandei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoandei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoandei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoandei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamomaxei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamomaxei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamomaxei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamomaxei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamomaxei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamomaxei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamomaxei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamomaxei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamomaxuei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamomaxuei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamomaxuei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamomaxuei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamomaxuei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamomaxuei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamomaxuei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamomaxuei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamominei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamominei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamominei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamominei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamominei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamominei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamominei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamominei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamominuei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamominuei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamominuei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamominuei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamominuei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamominuei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamominuei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamominuei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoorei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoorei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoorei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoorei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoorei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoorei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoorei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoorei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoswapei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoswapei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoswapei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoswapei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoswapei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoswapei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoswapei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoswapei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoxorei16.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoxorei16.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoxorei32.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoxorei32.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoxorei64.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoxorei64.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vamoxorei8.v wd, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vamoxorei8.v</font> wd, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vand.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vand.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vand.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vand.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vand.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vand.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vasub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vasub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vasub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vasub.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vasubu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vasubu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vasubu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vasubu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vcompress.vm vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vcompress.vm</font> vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vcpop.m vm, vs2, rd (). $\fbox{rv_v}$"
+??? question "<font color="red">vcpop.m</font> vm, vs2, rd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vdiv.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vdiv.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vdiv.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vdiv.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vdivu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vdivu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vdivu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vdivu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfadd.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfadd.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfclass.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfclass.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfcvt.f.x.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfcvt.f.x.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfcvt.f.xu.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfcvt.f.xu.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfcvt.rtz.x.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfcvt.rtz.x.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfcvt.rtz.xu.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfcvt.rtz.xu.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfcvt.x.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfcvt.x.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfcvt.xu.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfcvt.xu.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfdiv.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfdiv.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfdiv.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfdiv.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfirst.m vm, vs2, rd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfirst.m</font> vm, vs2, rd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmacc.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmacc.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmacc.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmadd.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmadd.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmax.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmax.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmax.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmax.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmerge.vfm vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmerge.vfm</font> vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmin.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmin.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmin.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmin.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmsac.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmsac.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmsac.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmsub.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmsub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmul.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmul.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmul.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmv.f.s vs2, rd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmv.f.s</font> vs2, rd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmv.s.f rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmv.s.f</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfmv.v.f rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfmv.v.f</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfncvt.f.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfncvt.f.f.w</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfncvt.f.x.w vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfncvt.f.x.w</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfncvt.f.xu.w vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfncvt.f.xu.w</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfncvt.rod.f.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfncvt.rod.f.f.w</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfncvt.rtz.x.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfncvt.rtz.x.f.w</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfncvt.rtz.xu.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfncvt.rtz.xu.f.w</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfncvt.x.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfncvt.x.f.w</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfncvt.xu.f.w vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfncvt.xu.f.w</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfnmacc.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfnmacc.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfnmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfnmacc.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfnmadd.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfnmadd.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfnmadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfnmadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfnmsac.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfnmsac.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfnmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfnmsac.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfnmsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfnmsub.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfnmsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfnmsub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfrdiv.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfrdiv.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfrec7.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfrec7.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfredmax.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfredmax.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfredmin.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfredmin.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfredosum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfredosum.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfredsum.vs vm, vs2, vs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vfredsum.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vfredusum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfredusum.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfrsqrt7.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfrsqrt7.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfrsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfrsub.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsgnj.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsgnj.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsgnj.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsgnj.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsgnjn.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsgnjn.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsgnjn.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsgnjn.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsgnjx.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsgnjx.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsgnjx.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsgnjx.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfslide1down.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfslide1down.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfslide1up.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfslide1up.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsqrt.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsqrt.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsub.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfsub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwadd.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwadd.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwadd.wf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwadd.wf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwadd.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwadd.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwcvt.f.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwcvt.f.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwcvt.f.x.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwcvt.f.x.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwcvt.f.xu.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwcvt.f.xu.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwcvt.rtz.x.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwcvt.rtz.x.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwcvt.rtz.xu.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwcvt.rtz.xu.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwcvt.x.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwcvt.x.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwcvt.xu.f.v vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwcvt.xu.f.v</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwmacc.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwmacc.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwmacc.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwmsac.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwmsac.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwmsac.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwmul.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwmul.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwmul.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwnmacc.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwnmacc.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwnmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwnmacc.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwnmsac.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwnmsac.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwnmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwnmsac.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwredosum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwredosum.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwredsum.vs vm, vs2, vs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vfwredsum.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vfwredusum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwredusum.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwsub.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwsub.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwsub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwsub.wf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwsub.wf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vfwsub.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vfwsub.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vid.v vm, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vid.v</font> vm, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "viota.m vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">viota.m</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl1r.v rs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vl1r.v</font> rs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vl1re16.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl1re16.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl1re32.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl1re32.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl1re64.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl1re64.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl1re8.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl1re8.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl2r.v rs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vl2r.v</font> rs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vl2re16.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl2re16.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl2re32.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl2re32.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl2re64.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl2re64.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl2re8.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl2re8.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl4r.v rs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vl4r.v</font> rs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vl4re16.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl4re16.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl4re32.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl4re32.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl4re64.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl4re64.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl4re8.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl4re8.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl8r.v rs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vl8r.v</font> rs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vl8re16.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl8re16.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl8re32.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl8re32.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl8re64.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl8re64.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vl8re8.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vl8re8.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle1024.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle1024.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle1024ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle1024ff.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle128.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle128.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle128ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle128ff.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle16.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle16.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle16ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle16ff.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle1.v rs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vle1.v</font> rs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vle256.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle256.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle256ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle256ff.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle32.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle32.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle32ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle32ff.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle512.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle512.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle512ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle512ff.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle64.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle64.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle64ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle64ff.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle8.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle8.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vle8ff.v nf, vm, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vle8ff.v</font> nf, vm, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlm.v rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlm.v</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vloxei1024.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vloxei1024.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vloxei128.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vloxei128.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vloxei16.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vloxei16.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vloxei256.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vloxei256.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vloxei32.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vloxei32.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vloxei512.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vloxei512.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vloxei64.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vloxei64.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vloxei8.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vloxei8.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlse1024.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlse1024.v</font> nf, vm, rs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlse128.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlse128.v</font> nf, vm, rs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlse16.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlse16.v</font> nf, vm, rs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlse256.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlse256.v</font> nf, vm, rs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlse32.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlse32.v</font> nf, vm, rs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlse512.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlse512.v</font> nf, vm, rs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlse64.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlse64.v</font> nf, vm, rs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vlse8.v nf, vm, rs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vlse8.v</font> nf, vm, rs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vluxei1024.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vluxei1024.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vluxei128.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vluxei128.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vluxei16.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vluxei16.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vluxei256.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vluxei256.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vluxei32.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vluxei32.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vluxei512.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vluxei512.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vluxei64.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vluxei64.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vluxei8.v nf, vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vluxei8.v</font> nf, vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmacc.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmacc.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmacc.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmadc.vi vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmadc.vi</font> vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmadc.vim vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmadc.vim</font> vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmadc.vv vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmadc.vv</font> vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmadc.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmadc.vvm</font> vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmadc.vx vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmadc.vx</font> vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmadc.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmadc.vxm</font> vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmadd.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmand.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmand.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmandn.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmandn.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmandnot.mm vm, vs2, vs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vmandnot.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vmax.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmax.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmax.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmax.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmaxu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmaxu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmaxu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmaxu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmerge.vim vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmerge.vim</font> vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmerge.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmerge.vvm</font> vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmerge.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmerge.vxm</font> vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmfeq.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmfeq.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmfeq.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmfeq.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmfge.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmfge.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmfgt.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmfgt.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmfle.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmfle.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmfle.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmfle.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmflt.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmflt.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmflt.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmflt.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmfne.vf vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmfne.vf</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmfne.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmfne.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmin.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmin.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmin.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmin.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vminu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vminu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vminu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vminu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmnand.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmnand.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmnor.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmnor.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmor.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmor.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmorn.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmorn.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmornot.mm vm, vs2, vs1, vd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vmornot.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vmsbc.vv vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsbc.vv</font> vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsbc.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsbc.vvm</font> vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsbc.vx vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsbc.vx</font> vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsbc.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsbc.vxm</font> vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsbf.m vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsbf.m</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmseq.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmseq.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmseq.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmseq.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmseq.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmseq.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsgt.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsgt.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsgt.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsgt.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsgtu.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsgtu.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsgtu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsgtu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsif.m vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsif.m</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsle.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsle.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsle.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsle.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsle.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsle.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsleu.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsleu.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsleu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsleu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsleu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsleu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmslt.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmslt.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmslt.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmslt.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsltu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsltu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsltu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsltu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsne.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsne.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsne.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsne.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsne.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsne.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmsof.m vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmsof.m</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmul.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmul.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmul.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmulh.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmulh.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmulh.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmulh.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmulhsu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmulhsu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmulhsu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmulhsu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmulhu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmulhu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmulhu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmulhu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv1r.v vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv1r.v</font> vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv2r.v vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv2r.v</font> vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv4r.v vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv4r.v</font> vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv8r.v vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv8r.v</font> vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv.s.x rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv.s.x</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv.v.i simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv.v.i</font> simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv.v.v vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv.v.v</font> vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv.v.x rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv.v.x</font> rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmv.x.s vs2, rd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmv.x.s</font> vs2, rd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmxnor.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmxnor.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vmxor.mm vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vmxor.mm</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnclip.wi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnclip.wi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnclip.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnclip.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnclip.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnclip.wx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnclipu.wi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnclipu.wi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnclipu.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnclipu.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnclipu.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnclipu.wx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnmsac.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnmsac.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnmsac.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnmsac.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnmsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnmsub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnmsub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnmsub.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnsra.wi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnsra.wi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnsra.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnsra.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnsra.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnsra.wx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnsrl.wi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnsrl.wi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnsrl.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnsrl.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vnsrl.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vnsrl.wx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vor.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vor.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vor.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vor.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vor.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vor.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vpopc.m vm, vs2, rd (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vpopc.m</font> vm, vs2, rd (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vredand.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vredand.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vredmax.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vredmax.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vredmaxu.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vredmaxu.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vredmin.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vredmin.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vredminu.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vredminu.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vredor.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vredor.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vredsum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vredsum.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vredxor.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vredxor.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vrem.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vrem.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vrem.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vrem.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vremu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vremu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vremu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vremu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vrgather.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vrgather.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vrgather.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vrgather.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vrgather.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vrgather.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vrgatherei16.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vrgatherei16.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vrsub.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vrsub.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vrsub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vrsub.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vs1r.v rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vs1r.v</font> rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vs2r.v rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vs2r.v</font> rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vs4r.v rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vs4r.v</font> rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vs8r.v rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vs8r.v</font> rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsadd.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsadd.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsadd.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsaddu.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsaddu.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsaddu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsaddu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsaddu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsaddu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsbc.vvm vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsbc.vvm</font> vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsbc.vxm vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsbc.vxm</font> vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vse1024.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vse1024.v</font> nf, vm, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vse128.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vse128.v</font> nf, vm, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vse16.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vse16.v</font> nf, vm, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vse1.v rs1, vs3 (). $\fbox{rv_v_aliases}$"
+??? question "<font color="red">vse1.v</font> rs1, vs3 (). <font color="green">rv_v_aliases</font> "
 
     .
 
-??? question "vse256.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vse256.v</font> nf, vm, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vse32.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vse32.v</font> nf, vm, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vse512.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vse512.v</font> nf, vm, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vse64.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vse64.v</font> nf, vm, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vse8.v nf, vm, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vse8.v</font> nf, vm, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsetivli zimm10, zimm, rd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsetivli</font> zimm10, zimm, rd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsetvl rs2, rs1, rd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsetvl</font> rs2, rs1, rd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsetvli zimm11, rs1, rd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsetvli</font> zimm11, rs1, rd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsext.vf2 vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsext.vf2</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsext.vf4 vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsext.vf4</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsext.vf8 vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsext.vf8</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vslide1down.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vslide1down.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vslide1up.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vslide1up.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vslidedown.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vslidedown.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vslidedown.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vslidedown.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vslideup.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vslideup.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vslideup.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vslideup.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsll.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsll.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsll.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsll.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsll.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsll.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsm.v rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsm.v</font> rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsmul.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsmul.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsmul.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsoxei1024.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsoxei1024.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsoxei128.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsoxei128.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsoxei16.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsoxei16.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsoxei256.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsoxei256.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsoxei32.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsoxei32.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsoxei512.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsoxei512.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsoxei64.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsoxei64.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsoxei8.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsoxei8.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsra.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsra.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsra.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsra.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsra.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsra.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsrl.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsrl.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsrl.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsrl.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsrl.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsrl.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsse1024.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsse1024.v</font> nf, vm, rs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsse128.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsse128.v</font> nf, vm, rs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsse16.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsse16.v</font> nf, vm, rs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsse256.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsse256.v</font> nf, vm, rs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsse32.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsse32.v</font> nf, vm, rs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsse512.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsse512.v</font> nf, vm, rs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsse64.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsse64.v</font> nf, vm, rs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsse8.v nf, vm, rs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsse8.v</font> nf, vm, rs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssra.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssra.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssra.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssra.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssra.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssra.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssrl.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssrl.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssrl.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssrl.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssrl.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssrl.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssub.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssubu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssubu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vssubu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vssubu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vsub.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsuxei1024.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsuxei1024.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsuxei128.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsuxei128.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsuxei16.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsuxei16.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsuxei256.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsuxei256.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsuxei32.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsuxei32.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsuxei512.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsuxei512.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsuxei64.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsuxei64.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vsuxei8.v nf, vm, vs2, rs1, vs3 (). $\fbox{rv_v}$"
+??? question "<font color="red">vsuxei8.v</font> nf, vm, vs2, rs1, vs3 (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwadd.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwadd.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwadd.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwadd.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwadd.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwadd.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwadd.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwadd.wx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwaddu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwaddu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwaddu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwaddu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwaddu.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwaddu.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwaddu.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwaddu.wx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmacc.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmacc.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmacc.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmacc.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmaccsu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmaccsu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmaccsu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmaccsu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmaccu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmaccu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmaccu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmaccu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmaccus.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmaccus.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmul.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmul.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmul.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmul.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmulsu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmulsu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmulsu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmulsu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmulu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmulu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwmulu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwmulu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwredsum.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwredsum.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwredsumu.vs vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwredsumu.vs</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwsub.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwsub.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwsub.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwsub.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwsub.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwsub.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwsub.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwsub.wx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwsubu.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwsubu.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwsubu.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwsubu.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwsubu.wv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwsubu.wv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vwsubu.wx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vwsubu.wx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vxor.vi vm, vs2, simm5, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vxor.vi</font> vm, vs2, simm5, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vxor.vv vm, vs2, vs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vxor.vv</font> vm, vs2, vs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vxor.vx vm, vs2, rs1, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vxor.vx</font> vm, vs2, rs1, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vzext.vf2 vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vzext.vf2</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vzext.vf4 vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vzext.vf4</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .
 
-??? question "vzext.vf8 vm, vs2, vd (). $\fbox{rv_v}$"
+??? question "<font color="red">vzext.vf8</font> vm, vs2, vd (). <font color="green">rv_v</font> "
 
     .

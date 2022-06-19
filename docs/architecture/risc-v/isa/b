@@ -1,177 +1,183 @@
-??? question "bclr rd, rs1, rs2 (). $\fbox{rv_zbs}$"
+??? question "<font color="red">bclr</font> rd, rs1, rs2 (). <font color="green">rv_zbs</font> "
 
     .
 
-??? question "bclri rd, rs1, shamtd (). $\fbox{rv64_zbs}$"
+??? question "<font color="red">bclri</font> rd, rs1, shamtd (). <font color="green">rv64_zbs</font> "
 
     .
 
-??? question "bcompress rd, rs1, rs2 (). $\fbox{rv_zbe}$"
+??? question "<font color="red">bcompress</font> rd, rs1, rs2 (). <font color="green">rv_zbe</font> "
 
     .
 
-??? question "bcompressw rd, rs1, rs2 (). $\fbox{rv64_zbe}$"
+??? question "<font color="red">bcompressw</font> rd, rs1, rs2 (). <font color="green">rv64_zbe</font> "
 
     .
 
-??? question "bdecompress rd, rs1, rs2 (). $\fbox{rv_zbe}$"
+??? question "<font color="red">bdecompress</font> rd, rs1, rs2 (). <font color="green">rv_zbe</font> "
 
     .
 
-??? question "bdecompressw rd, rs1, rs2 (). $\fbox{rv64_zbe}$"
+??? question "<font color="red">bdecompressw</font> rd, rs1, rs2 (). <font color="green">rv64_zbe</font> "
 
     .
 
-??? summary "beq rs1, rs2, offset (Branch if Equal). $\fbox{rv_i}$"
+??? summary "<font color="red">beq</font> rs1, rs2, offset (Branch if Equal). <font color="green">rv_i</font> "
 
     if (rs1 == rs2) pc += sext(offset).
 
     If register x[rs1] equals register x[rs2], set the pc to the current pc plus the sign-extended offset.
 
-??? summary "beqz rs, offset (Branch if Equal to Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">beqz</font> rs, offset (Branch if Equal to Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
 	if (rs1 == 0) pc += sext(offset).
 
     beq rs, x0, offset
 
 
-??? question "bext rd, rs1, rs2 (). $\fbox{rv_zbs}$"
+??? question "<font color="red">bext</font> rd, rs1, rs2 (). <font color="green">rv_zbs</font> "
 
     .
 
-??? question "bexti rd, rs1, shamtd (). $\fbox{rv64_zbs}$"
+??? question "<font color="red">bexti</font> rd, rs1, shamtd (). <font color="green">rv64_zbs</font> "
 
     .
 
-??? question "bfp rd, rs1, rs2 (). $\fbox{rv_zbf}$"
+??? question "<font color="red">bfp</font> rd, rs1, rs2 (). <font color="green">rv_zbf</font> "
 
     .
 
-??? question "bfpw rd, rs1, rs2 (). $\fbox{rv64_zbf}$"
+??? question "<font color="red">bfpw</font> rd, rs1, rs2 (). <font color="green">rv64_zbf</font> "
 
     .
 
-??? summary "bge rs1, rs2, offset (Branch if Greater Than or Equal). $\fbox{rv_i}$"
+??? summary "<font color="red">bge</font> rs1, rs2, offset (Branch if Greater Than or Equal). <font color="green">rv_i</font> "
 
     if (rs1 >=s rs2) pc += sext(offset).
 
     If register x[rs1] is at least x[rs2], treating the values as two's complement numbers, set the pc the the current pc plus the sign-extended offset.
 
-??? summary "bgeu rs1, rs2, offset (Branch if Greater Than or Equal, Unsigned). $\fbox{rv_i}$"
+??? summary "<font color="red">bgeu</font> rs1, rs2, offset (Branch if Greater Than or Equal, Unsigned). <font color="green">rv_i</font> "
 
     if (Rs1 >=u rs2) pc += sext(offset).
 
     If register x[rs1] is at least x[rs2], treating the values as unsgined numbers, set the pc to the current pc plus the sign-extended offset.
 
-??? summary "bgez rs, offset (Branch if Greater Than or Equal to Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">bgez</font> rs, offset (Branch if Greater Than or Equal to Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs >=s 0) pc += sext(offset).
 
 	bge rs, x0, offset
 
-??? summary "bgt rs, rt, offset (Branch if Greater Than). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">bgt</font> rs, rt, offset (Branch if Greater Than). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs >s rt) pc += sext(offset)
 
 	blt rt, rs, offset
 
-??? summary "bgtu rs, rt, offset (Branch if Greater Than, Unsigned). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">bgtu</font> rs, rt, offset (Branch if Greater Than, Unsigned). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
 	if (rs >u rt) pc += sext(offset)
 
     bltu rt, rs, offset
 
-??? summary "bgtz rs, offset (Branch if Greater Than Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">bgtz</font> rs, offset (Branch if Greater Than Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs >s 0) pc += sext(offset)
 
 	blt x0, rs, offset
 
-??? question "binv rd, rs1, rs2 (). $\fbox{rv_zbs}$"
+??? question "<font color="red">binv</font> rd, rs1, rs2 (). <font color="green">rv_zbs</font> "
 
     .
 
-??? question "binvi rd, rs1, shamtd (). $\fbox{rv64_zbs}$"
+??? question "<font color="red">binvi</font> rd, rs1, shamtd (). <font color="green">rv64_zbs</font> "
 
     .
 
-??? question "bitrev rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">bitrev</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "bitrevi imm6, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">bitrevi</font> imm6, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? summary "ble rs, rt, offset (Branch if Less Than or Equal). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">ble</font> rs, rt, offset (Branch if Less Than or Equal). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs <=s rt) pc += sext(offset)
 
 	bge rt, rs, offset
 
 
-??? summary "bleu rs, rt, offset (Branch if Less Than or Equal, Unsigned). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">bleu</font> rs, rt, offset (Branch if Less Than or Equal, Unsigned). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs <=u rt) pc += sext(offset)
 
 	bgeu rt, rs, offset
 
-??? summary "blez rs, offset (Branch if Less Than or Equal to Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">blez</font> rs, offset (Branch if Less Than or Equal to Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs <=s 0) pc += sext(offset)
 
 	bge x0, rs, offset
 
 
-??? summary "blt rs1, rs2, offset (Branch if Less Than). $\fbox{rv_i}$"
+??? summary "<font color="red">blt</font> rs1, rs2, offset (Branch if Less Than). <font color="green">rv_i</font> "
 
     if (rs1 <s rs2) pc += sext(offset).
 
     If register x[rs1] is less than x[rs2], treating the values as two's complement numbers, set the pc to the current pc plus the sign-extended offset.
 
-??? summary "bltu rs1, rs2, offset (Branch if Less Than, Unsigned). $\fbox{rv_i}$"
+??? summary "<font color="red">bltu</font> rs1, rs2, offset (Branch if Less Than, Unsigned). <font color="green">rv_i</font> "
 
     if (rs1 <u rs2) pc += sext(offset).
 
     If register x[rs1] is less than x[rs2], treating the values as unsigned numbers, set the pc to the current pc plus the sign-extended offset.
 
-??? question "bmatflip rd, rs1 (). $\fbox{rv64_zbm}$"
+??? summary "<font color="red">bltz</font> rs, offset (Branch if Less Than Zero). <font color="green">pseudo</font> "
+
+	``` asm
+    blt rs, x0, offset
+    ```
+
+??? question "<font color="red">bmatflip</font> rd, rs1 (). <font color="green">rv64_zbm</font> "
 
     .
 
-??? question "bmator rd, rs1, rs2 (). $\fbox{rv64_zbm}$"
+??? question "<font color="red">bmator</font> rd, rs1, rs2 (). <font color="green">rv64_zbm</font> "
 
     .
 
-??? question "bmatxor rd, rs1, rs2 (). $\fbox{rv64_zbm}$"
+??? question "<font color="red">bmatxor</font> rd, rs1, rs2 (). <font color="green">rv64_zbm</font> "
 
     .
 
-??? summary "bne rs1, rs2, offset (Branch if Not Equal). $\fbox{rv_i}$"
+??? summary "<font color="red">bne</font> rs1, rs2, offset (Branch if Not Equal). <font color="green">rv_i</font> "
 
     if (rs1 != rs2) pc += sext(offset).
 
     If register x[rs1] does not equal register x[rs2], set the pc the the current pc plus the sign-extended offset.
 
-??? summary "bnez rs, offset (Branch if Not Equal to Zero). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">bnez</font> rs, offset (Branch if Not Equal to Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs1 != 0) pc += sext(offset)
 
 	bne rs, x0, offset
 
 
-??? question "bpick rs3, rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">bpick</font> rs3, rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "brev8 rd, rs1 (). $\fbox{rv_zks}$"
+??? question "<font color="red">brev8</font> rd, rs1 (). <font color="green">rv_zks</font> "
 
     .
 
-??? question "bset rd, rs1, rs2 (). $\fbox{rv_zbs}$"
+??? question "<font color="red">bset</font> rd, rs1, rs2 (). <font color="green">rv_zbs</font> "
 
     .
 
-??? question "bseti rd, rs1, shamtd (). $\fbox{rv64_zbs}$"
+??? question "<font color="red">bseti</font> rd, rs1, shamtd (). <font color="green">rv64_zbs</font> "
 
     .

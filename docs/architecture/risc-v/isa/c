@@ -1,340 +1,340 @@
 
-??? question "c.add rd_rs1, c_rs2_n0 (). $\fbox{rv_c}$"
+??? question "<font color="red">c.add</font> rd_rs1, c_rs2_n0 (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.addi rd_rs1_n0, c_nzimm6lo, c_nzimm6hi (). $\fbox{rv_c}$"
+??? question "<font color="red">c.addi</font> rd_rs1_n0, c_nzimm6lo, c_nzimm6hi (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.addi16sp c_nzimm10hi, c_nzimm10lo (). $\fbox{rv_c}$"
+??? question "<font color="red">c.addi16sp</font> c_nzimm10hi, c_nzimm10lo (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.addi4spn rd_p, c_nzuimm10 (). $\fbox{rv_c}$"
+??? question "<font color="red">c.addi4spn</font> rd_p, c_nzuimm10 (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.addiw rd_rs1, c_imm6lo, c_imm6hi (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.addiw</font> rd_rs1, c_imm6lo, c_imm6hi (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.addw rd_rs1_p, rs2_p (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.addw</font> rd_rs1_p, rs2_p (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.and rd_rs1_p, rs2_p (). $\fbox{rv_c}$"
+??? question "<font color="red">c.and</font> rd_rs1_p, rs2_p (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.andi rd_rs1_p, c_imm6hi, c_imm6lo (). $\fbox{rv_c}$"
+??? question "<font color="red">c.andi</font> rd_rs1_p, c_imm6hi, c_imm6lo (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.beqz rs1_p, c_bimm9lo, c_bimm9hi (). $\fbox{rv_c}$"
+??? question "<font color="red">c.beqz</font> rs1_p, c_bimm9lo, c_bimm9hi (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.bnez rs1_p, c_bimm9lo, c_bimm9hi (). $\fbox{rv_c}$"
+??? question "<font color="red">c.bnez</font> rs1_p, c_bimm9lo, c_bimm9hi (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.ebreak  (). $\fbox{rv_c}$"
+??? question "<font color="red">c.ebreak</font>  (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.fld rd_p, rs1_p, c_uimm8lo, c_uimm8hi (). $\fbox{rv_c_d}$"
+??? question "<font color="red">c.fld</font> rd_p, rs1_p, c_uimm8lo, c_uimm8hi (). <font color="green">rv_c_d</font> "
 
     .
 
-??? question "c.fldsp rd, c_uimm9sphi, c_uimm9splo (). $\fbox{rv_c_d}$"
+??? question "<font color="red">c.fldsp</font> rd, c_uimm9sphi, c_uimm9splo (). <font color="green">rv_c_d</font> "
 
     .
 
-??? question "c.flw rd_p, rs1_p, c_uimm7lo, c_uimm7hi (). $\fbox{rv32_c_f}$"
+??? question "<font color="red">c.flw</font> rd_p, rs1_p, c_uimm7lo, c_uimm7hi (). <font color="green">rv32_c_f</font> "
 
     .
 
-??? question "c.flwsp rd, c_uimm8sphi, c_uimm8splo (). $\fbox{rv32_c_f}$"
+??? question "<font color="red">c.flwsp</font> rd, c_uimm8sphi, c_uimm8splo (). <font color="green">rv32_c_f</font> "
 
     .
 
-??? question "c.fsd rs1_p, rs2_p, c_uimm8lo, c_uimm8hi (). $\fbox{rv_c_d}$"
+??? question "<font color="red">c.fsd</font> rs1_p, rs2_p, c_uimm8lo, c_uimm8hi (). <font color="green">rv_c_d</font> "
 
     .
 
-??? question "c.fsdsp c_rs2, c_uimm9sp_s (). $\fbox{rv_c_d}$"
+??? question "<font color="red">c.fsdsp</font> c_rs2, c_uimm9sp_s (). <font color="green">rv_c_d</font> "
 
     .
 
-??? question "c.fsw rs1_p, rs2_p, c_uimm7lo, c_uimm7hi (). $\fbox{rv32_c_f}$"
+??? question "<font color="red">c.fsw</font> rs1_p, rs2_p, c_uimm7lo, c_uimm7hi (). <font color="green">rv32_c_f</font> "
 
     .
 
-??? question "c.fswsp c_rs2, c_uimm8sp_s (). $\fbox{rv32_c_f}$"
+??? question "<font color="red">c.fswsp</font> c_rs2, c_uimm8sp_s (). <font color="green">rv32_c_f</font> "
 
     .
 
-??? question "c.j c_imm12 (). $\fbox{rv_c}$"
+??? question "<font color="red">c.j</font> c_imm12 (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.jal c_imm12 (). $\fbox{rv32_c}$"
+??? question "<font color="red">c.jal</font> c_imm12 (). <font color="green">rv32_c</font> "
 
     .
 
-??? question "c.jalr c_rs1_n0 (). $\fbox{rv_c}$"
+??? question "<font color="red">c.jalr</font> c_rs1_n0 (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.jr rs1_n0 (). $\fbox{rv_c}$"
+??? question "<font color="red">c.jr</font> rs1_n0 (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.ld rd_p, rs1_p, c_uimm8lo, c_uimm8hi (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.ld</font> rd_p, rs1_p, c_uimm8lo, c_uimm8hi (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.ldsp rd_n0, c_uimm9sphi, c_uimm9splo (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.ldsp</font> rd_n0, c_uimm9sphi, c_uimm9splo (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.li rd, c_imm6lo, c_imm6hi (). $\fbox{rv_c}$"
+??? question "<font color="red">c.li</font> rd, c_imm6lo, c_imm6hi (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.lq rd_p, rs1_p, c_uimm9lo, c_uimm9hi (). $\fbox{rv128_c}$"
+??? question "<font color="red">c.lq</font> rd_p, rs1_p, c_uimm9lo, c_uimm9hi (). <font color="green">rv128_c</font> "
 
     .
 
-??? question "c.lqsp rd, c_uimm10sphi, c_uimm10splo (). $\fbox{rv128_c}$"
+??? question "<font color="red">c.lqsp</font> rd, c_uimm10sphi, c_uimm10splo (). <font color="green">rv128_c</font> "
 
     .
 
-??? question "c.lui rd_n2, c_nzimm18hi, c_nzimm18lo (). $\fbox{rv_c}$"
+??? question "<font color="red">c.lui</font> rd_n2, c_nzimm18hi, c_nzimm18lo (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.lw rd_p, rs1_p, c_uimm7lo, c_uimm7hi (). $\fbox{rv_c}$"
+??? question "<font color="red">c.lw</font> rd_p, rs1_p, c_uimm7lo, c_uimm7hi (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.lwsp rd_n0, c_uimm8sphi, c_uimm8splo (). $\fbox{rv_c}$"
+??? question "<font color="red">c.lwsp</font> rd_n0, c_uimm8sphi, c_uimm8splo (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.mv rd, c_rs2_n0 (). $\fbox{rv_c}$"
+??? question "<font color="red">c.mv</font> rd, c_rs2_n0 (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.nop c_nzimm6hi, c_nzimm6lo (). $\fbox{rv_c}$"
+??? question "<font color="red">c.nop</font> c_nzimm6hi, c_nzimm6lo (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.or rd_rs1_p, rs2_p (). $\fbox{rv_c}$"
+??? question "<font color="red">c.or</font> rd_rs1_p, rs2_p (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.sd rs1_p, rs2_p, c_uimm8hi, c_uimm8lo (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.sd</font> rs1_p, rs2_p, c_uimm8hi, c_uimm8lo (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.sdsp c_rs2, c_uimm9sp_s (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.sdsp</font> c_rs2, c_uimm9sp_s (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.slli rd_rs1_n0, c_nzuimm6hi, c_nzuimm6lo (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.slli</font> rd_rs1_n0, c_nzuimm6hi, c_nzuimm6lo (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.sq rs1_p, rs2_p, c_uimm9hi, c_uimm9lo (). $\fbox{rv128_c}$"
+??? question "<font color="red">c.sq</font> rs1_p, rs2_p, c_uimm9hi, c_uimm9lo (). <font color="green">rv128_c</font> "
 
     .
 
-??? question "c.sqsp c_rs2, c_uimm10sp_s (). $\fbox{rv128_c}$"
+??? question "<font color="red">c.sqsp</font> c_rs2, c_uimm10sp_s (). <font color="green">rv128_c</font> "
 
     .
 
-??? question "c.srai rd_rs1_p, c_nzuimm6lo, c_nzuimm6hi (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.srai</font> rd_rs1_p, c_nzuimm6lo, c_nzuimm6hi (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.srli rd_rs1_p, c_nzuimm6lo, c_nzuimm6hi (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.srli</font> rd_rs1_p, c_nzuimm6lo, c_nzuimm6hi (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.sub rd_rs1_p, rs2_p (). $\fbox{rv_c}$"
+??? question "<font color="red">c.sub</font> rd_rs1_p, rs2_p (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.subw rd_rs1_p, rs2_p (). $\fbox{rv64_c}$"
+??? question "<font color="red">c.subw</font> rd_rs1_p, rs2_p (). <font color="green">rv64_c</font> "
 
     .
 
-??? question "c.sw rs1_p, rs2_p, c_uimm7lo, c_uimm7hi (). $\fbox{rv_c}$"
+??? question "<font color="red">c.sw</font> rs1_p, rs2_p, c_uimm7lo, c_uimm7hi (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.swsp c_rs2, c_uimm8sp_s (). $\fbox{rv_c}$"
+??? question "<font color="red">c.swsp</font> c_rs2, c_uimm8sp_s (). <font color="green">rv_c</font> "
 
     .
 
-??? question "c.xor rd_rs1_p, rs2_p (). $\fbox{rv_c}$"
+??? question "<font color="red">c.xor</font> rd_rs1_p, rs2_p (). <font color="green">rv_c</font> "
 
     .
 
-??? summary "call offset (Call far-away subroutine). $\fbox{pseudo} \ \fbox{rv_c}$"
+??? summary "<font color="red">call</font> offset (Call far-away subroutine). <font color="green">pseudo</font>, <font color="green"> rv_c</font> "
 
 	auipc x1, offset[31:12] + offset[11]
     jalr x1, offset[11:0](x1)
 
     `call rd, symbol`   x[rd] = pc+8; pc = &symbol. Write the address of the next instruction (pc+8) to x[rd], then sets the pc to symbol.
 
-??? question "cbo.clean rs1 (). $\fbox{rv_zicbo}$"
+??? question "<font color="red">cbo.clean</font> rs1 (). <font color="green">rv_zicbo</font> "
 
     .
 
-??? question "cbo.flush rs1 (). $\fbox{rv_zicbo}$"
+??? question "<font color="red">cbo.flush</font> rs1 (). <font color="green">rv_zicbo</font> "
 
     .
 
-??? question "cbo.inval rs1 (). $\fbox{rv_zicbo}$"
+??? question "<font color="red">cbo.inval</font> rs1 (). <font color="green">rv_zicbo</font> "
 
     .
 
-??? question "cbo.zero rs1 (). $\fbox{rv_zicbo}$"
+??? question "<font color="red">cbo.zero</font> rs1 (). <font color="green">rv_zicbo</font> "
 
     .
 
-??? question "clmul rd, rs1, rs2 (). $\fbox{rv_zbkc}$"
+??? question "<font color="red">clmul</font> rd, rs1, rs2 (). <font color="green">rv_zbkc</font> "
 
     .
 
-??? question "clmulh rd, rs1, rs2 (). $\fbox{rv_zbkc}$"
+??? question "<font color="red">clmulh</font> rd, rs1, rs2 (). <font color="green">rv_zbkc</font> "
 
     .
 
-??? question "clmulr rd, rs1, rs2 (). $\fbox{rv_zbc}$"
+??? question "<font color="red">clmulr</font> rd, rs1, rs2 (). <font color="green">rv_zbc</font> "
 
     .
 
-??? question "clo16 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clo16</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clo32 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clo32</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clo8 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clo8</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clrs16 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clrs16</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clrs32 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clrs32</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clrs8 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clrs8</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clz rd, rs1 (). $\fbox{rv32_zbpbo}$"
+??? question "<font color="red">clz</font> rd, rs1 (). <font color="green">rv32_zbpbo</font> "
 
     .
 
-??? question "clz16 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clz16</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clz32 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clz32</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clz8 rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">clz8</font> rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "clzw rd, rs1 (). $\fbox{rv64_zbb}$"
+??? question "<font color="red">clzw</font> rd, rs1 (). <font color="green">rv64_zbb</font> "
 
     .
 
-??? question "cmix rd, rs1, rs2, rs3 (). $\fbox{rv_zbpbo}$"
+??? question "<font color="red">cmix</font> rd, rs1, rs2, rs3 (). <font color="green">rv_zbpbo</font> "
 
     .
 
-??? question "cmov rd, rs1, rs2, rs3 (). $\fbox{rv_zbt}$"
+??? question "<font color="red">cmov</font> rd, rs1, rs2, rs3 (). <font color="green">rv_zbt</font> "
 
     .
 
-??? question "cmpeq16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">cmpeq16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "cmpeq8 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">cmpeq8</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "cpop rd, rs1 (). $\fbox{rv_zbb}$"
+??? question "<font color="red">cpop</font> rd, rs1 (). <font color="green">rv_zbb</font> "
 
     .
 
-??? question "cpopw rd, rs1 (). $\fbox{rv64_zbb}$"
+??? question "<font color="red">cpopw</font> rd, rs1 (). <font color="green">rv64_zbb</font> "
 
     .
 
-??? question "cras16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">cras16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "cras32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">cras32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? question "crc32.b rd, rs1 (). $\fbox{rv_zbr}$"
+??? question "<font color="red">crc32.b</font> rd, rs1 (). <font color="green">rv_zbr</font> "
 
     .
 
-??? question "crc32.d rd, rs1 (). $\fbox{rv64_zbr}$"
+??? question "<font color="red">crc32.d</font> rd, rs1 (). <font color="green">rv64_zbr</font> "
 
     .
 
-??? question "crc32.h rd, rs1 (). $\fbox{rv_zbr}$"
+??? question "<font color="red">crc32.h</font> rd, rs1 (). <font color="green">rv_zbr</font> "
 
     .
 
-??? question "crc32.w rd, rs1 (). $\fbox{rv_zbr}$"
+??? question "<font color="red">crc32.w</font> rd, rs1 (). <font color="green">rv_zbr</font> "
 
     .
 
-??? question "crc32c.b rd, rs1 (). $\fbox{rv_zbr}$"
+??? question "<font color="red">crc32c.b</font> rd, rs1 (). <font color="green">rv_zbr</font> "
 
     .
 
-??? question "crc32c.d rd, rs1 (). $\fbox{rv64_zbr}$"
+??? question "<font color="red">crc32c.d</font> rd, rs1 (). <font color="green">rv64_zbr</font> "
 
     .
 
-??? question "crc32c.h rd, rs1 (). $\fbox{rv_zbr}$"
+??? question "<font color="red">crc32c.h</font> rd, rs1 (). <font color="green">rv_zbr</font> "
 
     .
 
-??? question "crc32c.w rd, rs1 (). $\fbox{rv_zbr}$"
+??? question "<font color="red">crc32c.w</font> rd, rs1 (). <font color="green">rv_zbr</font> "
 
     .
 
-??? question "crsa16 rs2, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">crsa16</font> rs2, rs1, rd (). <font color="green">rv_p</font> "
 
     .
 
-??? question "crsa32 rs2, rs1, rd (). $\fbox{rv64_p}$"
+??? question "<font color="red">crsa32</font> rs2, rs1, rd (). <font color="green">rv64_p</font> "
 
     .
 
-??? summary "csrc csr, rs (Control and Status Register Clear). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrc</font> csr, rs (Control and Status Register Clear). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
 	CSRs[csr] &= ~x[rs].
 
@@ -342,7 +342,7 @@
 
     csrrc x0, csr, rs
 
-??? summary "csrci csr, imm (Control and Status Register Immediate). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrci</font> csr, imm (Control and Status Register Immediate). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     CSRs[csr] &= ~imm.
 
@@ -350,7 +350,7 @@
     
     csrrci x0, csr, imm
 
-??? summary "csrr rd, csr (Control and Status Register Read). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrr</font> rd, csr (Control and Status Register Read). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
 	x[rd] = CSRs[csr].
 
@@ -358,45 +358,45 @@
     
     csrrs rd, csr, x0
 
-??? summary "csrrc rd, rs1, csr (Control and Status Register Read and Clear). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrrc</font> rd, rs1, csr (Control and Status Register Read and Clear). <font color="green">rv_zicsr</font>, <font color="green"> rv_i</font> "
 
     t = CSRs[csr]; CSRs[csr] = t & ~x[rs1]; x[rd] = t.
 
     Let `t` be the value of control and status register csr. Write the bitwise AND of `t` and the one's complement of x[rs1] to the csr, then write `t` to x[rd].
 
-??? summary "csrrci rd, csr, zimm (Control and Status Register Read and Clear Immediate). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrrci</font> rd, csr, zimm (Control and Status Register Read and Clear Immediate). <font color="green">rv_zicsr</font>, <font color="green"> rv_i</font> "
 
     t = CSRs[csr]; CSRs[csr] = t & ~zimm; x[rd] = t.
 
     Let `t` be the value of control and status register csr. Write the bitwise AND of `t` and the one's complement of the five-bit zero-extended immediate zimm to the csr, then write `t` to x[rd].
 
-??? summary "csrrs rd, csr, rs1 (Control and Status Register Read and Set). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrrs</font> rd, csr, rs1 (Control and Status Register Read and Set). <font color="green">rv_zicsr</font>, <font color="green"> rv_i</font> "
 
     t = CSRs[csr]; CSRs[csr] = t | x[rs1]; x[rd] = t.
 
     Let `t` be the value of control and status register csr. Write the bitwise OR of `t` and x[rs1] to the csr, then write `t` to x[rd].
 
 
-??? summary "csrrsi rd, csr, zimm (Control and Status Register Read and Set Immediate). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrrsi</font> rd, csr, zimm (Control and Status Register Read and Set Immediate). <font color="green">rv_zicsr</font>, <font color="green"> rv_i</font> "
 
     t = CSRs[csr]; CSRs[csr] = t | zimm; x[rd] = t.
 
     Let `t` be the value of control and status register csr. Write the bitwise OR of `t` and the five-bit zero-extended immediate zimm to the csr, then write `t` to x[rd].
 
-??? summary "csrrw rd, csr, rs1 (Control and Status Register Read and Write). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrrw</font> rd, csr, rs1 (Control and Status Register Read and Write). <font color="green">rv_zicsr</font>, <font color="green"> rv_i</font> "
 
     t = CSRs[csr]; CSRs[csr] = x[rs1]; x[rd] = t.
 
     Let `t` be the value of control and status register csr.
     Copy x[rs1] to the csr, then write `t` to x[rd].    
 
-??? summary "csrrwi rd, csr, zimm (Control and Status Register Read and Write Immediate). $\fbox{rv_zicsr} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrrwi</font> rd, csr, zimm (Control and Status Register Read and Write Immediate). <font color="green">rv_zicsr</font>, <font color="green"> rv_i</font> "
 
     x[rd] = CSRs[csr]; CSRs[csr] = zimm.
 
     Copy the control and status register csr to x[rd], then write the five-bit zero-extended immediate zimm to the csr.
 
-??? summary "csrs csr, rs (Control and Status Register Set). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrs</font> csr, rs (Control and Status Register Set). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     CSRs[csr] != x[rs].
 
@@ -404,7 +404,7 @@
 
 	csrrs x0, csr, rs
 
-??? summary "csrsi csr, imm (Control and Status Register Set Immediate). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrsi</font> csr, imm (Control and Status Register Set Immediate). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
 	CSRs[csr] != zimm.
 
@@ -412,7 +412,7 @@
     
     csrrsi x0, csr, imm
 
-??? summary "csrw csr, rs (Control and Status Register Write). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrw</font> csr, rs (Control and Status Register Write). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     CSRs[csr] = x[rs1]
 
@@ -420,17 +420,17 @@
 
 	csrrw x0, csr, rs
 
-??? summary "csrwi csr, imm (Control and Status Register Write Immediate). $\fbox{pseudo} \ \fbox{rv_i}$"
+??? summary "<font color="red">csrwi</font> csr, imm (Control and Status Register Write Immediate). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
 	Copy the five-bit zero-extended immediate to control and status register csr.
     
     csrrwi x0, csr, imm
 
 
-??? question "ctz rd, rs1 (). $\fbox{rv_zbb}$"
+??? question "<font color="red">ctz</font> rd, rs1 (). <font color="green">rv_zbb</font> "
 
     .
 
-??? question "ctzw rd, rs1 (). $\fbox{rv64_zbb}$"
+??? question "<font color="red">ctzw</font> rd, rs1 (). <font color="green">rv64_zbb</font> "
 
     .

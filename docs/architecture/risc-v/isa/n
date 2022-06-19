@@ -1,0 +1,37 @@
+??? summary "<font color="red">nop</font> (No operation). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
+
+    Merely advances the pc the pc to the next instruction.
+    
+    ``` asm
+    addi x0, x0, 0
+    ```
+
+??? summary "<font color="red">not</font> rd, rs (Not). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
+
+		x[rd] = ~x[rs].
+    
+    Write the one’s complement of x[rs] to x[rd].
+
+    ``` asm
+    xori rd, rs, -1
+    ```
+
+??? summary "<font color="red">neg</font> rd, rs (Negate). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
+
+    x[rd] = -x[rs].
+
+    Write the two’s complement of x[rs] to x[rd].
+
+		``` asm
+    sub rd, x0, rs
+    ```
+
+??? summary "<font color="red">negw</font> rd, rs (Negate Word). <font color="green">pseudo</font>, <font color="green"> rv64_i</font> "
+
+    x[rd] = sext((-x[rs])[31:0]).
+
+    Compute the two’s complement of x[rs], truncate the result to 32 bits, and write the sign-extended result to x[rd].
+
+    ``` asm
+		subw rd, x0, rs
+    ```

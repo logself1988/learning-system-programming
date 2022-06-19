@@ -1,15 +1,19 @@
-??? question "or rd, rs1, rs2 (). $\fbox{rv_i}$"
+??? summary "<font color="red">or</font> rd, rs1, rs2 (OR). <font color="green">rv_i</font> "
+
+    x[rd] = x[rs1] | x[rs2].
+
+    Compute the bitwise inclusive-OR of registers x[rs1] and x[rs2] and write the result to x[rd].
+
+??? question "<font color="red">orc.b</font> rd, rs1 (). <font color="green">rv_zbb</font> "
 
     .
 
-??? question "orc.b rd, rs1 (). $\fbox{rv_zbb}$"
+??? summary "<font color="red">ori</font> rd, rs1, immediate (OR Immediate). <font color="green">rv_i</font> "
 
-    .
+    x[rd] = x[rs1] | sext(immediate).
 
-??? question "ori rd, rs1, imm12 (). $\fbox{rv_i}$"
+    Compute the bitwise inclusive-OR of the sign-extended immediate and register x[rs1] and write the result to x[rd].
 
-    .
-
-??? question "orn rd, rs1, rs2 (). $\fbox{rv_zbkb}$"
+??? question "<font color="red">orn</font> rd, rs1, rs2 (). <font color="green">rv_zbkb</font> "
 
     .

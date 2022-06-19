@@ -1,3 +1,3 @@
-??? question "insb imm3, rs1, rd (). $\fbox{rv_p}$"
+??? question "<font color="red">insb</font> imm3, rs1, rd (). <font color="green">rv_p</font> "
 
     .
