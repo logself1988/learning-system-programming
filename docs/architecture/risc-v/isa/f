@@ -5,7 +5,9 @@
 
     Write the absolute value of the double-precision floating-point number in f[rs1] to f[rd].
 	
+    ``` asm
     fsgnjx.d rd, rs, rs
+    ```
 
 ??? summary "<font color="red">fabs.s</font> rd, rs (Floating-point Absolute Value). <font color="green">pseudo</font>, <font color="green"> rv_f</font> "
 
@@ -13,8 +15,9 @@
 
     Write the absolute value of the single-precision floating-point number in f[rs1] to f[rd].
 
-	fsgnjx.s rd, rs, rs
-
+	``` asm
+    fsgnjx.s rd, rs, rs
+    ```
 
 ??? summary "<font color="red">fadd.d</font> rd, rs1, rs2 (Floating-point Add, Double-Precision). <font color="green">rv_d</font> "
 
@@ -319,7 +322,9 @@
 
     see `fence pred, succ`.
 
-	fence iorw, iorw
+	``` asm
+    fence iorw, iorw
+    ```
 
 ??? summary "<font color="red">fence.i</font> imm12, rs1, rd (Fence Instruction Stream). <font color="green">rv_zifencei</font>, <font color="green"> rv_i</font> "
 
@@ -359,8 +364,10 @@
 
 ??? summary "fl{w|d} rd, symbol, rt (Floating-point load global). <font color="green">pseudo</font> "
 
+    ``` asm
     auipc rt, delta[31 : 12] + delta[11]
     fl{w|d} rd, delta[11:0](rt)
+    ```
 
 ??? summary "<font color="red">fle.d</font> rd, rs1, rs2 (Floating-point Less Than or Equal, Double-Precision). <font color="green">rv_d</font> "
 
@@ -523,7 +530,9 @@
 
     Copy the double-precision floating-point number in f[rs1] to f[rd].
 
-	fsgnj.d rd, rs, rs
+	``` asm
+    fsgnj.d rd, rs, rs
+    ```
 
 ??? summary "<font color="red">fmv.d.x</font> rd, rs1 (Floating-point Move Doubleword from Integer). <font color="green">rv64_d</font> "
 
@@ -541,8 +550,9 @@
 
     Copy the single-precision floating-point number in f[rs1] to f[rd].
 
-	fsgnj.s rd, rs, rs
-
+	``` asm
+    fsgnj.s rd, rs, rs
+    ```
 
 ??? summary "<font color="red">fmv.s.x</font> rd, rs1 (Floating-point Move Word from Integer). <font color="green">rv_f</font> "
 
@@ -584,8 +594,9 @@
 
     Write the opposite of the double-precision floating-point number in f[rs] to f[rd].
 
-	fsgnjn.d rd, rs, rs
-
+	``` asm
+    fsgnjn.d rd, rs, rs
+    ```
 
 ??? summary "<font color="red">fneg.s</font> rd, rs (Floating-point Negate). <font color="green">pseudo</font>, <font color="green"> rv_f</font> "
 
@@ -593,8 +604,9 @@
 
     Write the opposite of the single-precision floating-point number in f[rs] to f[rd].
 
-	fsgnjn.s rd, rs, rs
-
+	``` asm
+    fsgnjn.s rd, rs, rs
+    ```
 
 ??? summary "<font color="red">fnmadd.d</font> rd, rs1, rs2, rs3, rm (Floating-point Fused Negative Multiply-Add, Double-Precision). <font color="green">rv_d</font> "
 
@@ -642,7 +654,9 @@
 
     Copy the floating-point control and status register to x[rd].
 
-	csrrs rd, fcsr, x0
+	``` asm
+    csrrs rd, fcsr, x0
+    ```
 
 ??? summary "<font color="red">frflags</font> rd (Floating-point Read Exception Flags). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font> "
 
@@ -650,7 +664,9 @@
 
     Copy the floating-point exception flags to x[rd].
 
-	csrrs rd, fflags, x0
+	``` asm
+    csrrs rd, fflags, x0
+    ```
 
 ??? summary "<font color="red">frrm</font> rd (Floating-point Read Rounding Mode). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font> "
 
@@ -668,13 +684,17 @@
 
     if rd is ommitted, x0 is assumed.
 
-	csrrw rd, fcsr, rs
+	``` asm
+    csrrw rd, fcsr, rs
+    ```
 
 ??? summary "<font color="red">fscsr</font> rs (Write FP control/status register). <font color="green">pseudo</font> "
 
     see `fscsr rd, rs1`.
 
-	csrrw x0, fcsr, rs
+	``` asm
+    csrrw x0, fcsr, rs
+    ```
 
 ??? summary "<font color="red">fsd</font> rs2, offset(rs1) (Floating-point Store Doubleword). <font color="green">rv_d</font> "
 
@@ -690,17 +710,23 @@
 
     If rd is omitted, x0 is assumed.
 
-	csrrw rd, fflags, rs
+	``` asm
+    csrrw rd, fflags, rs
+    ```
 
 ??? summary "<font color="red">fsflags</font> rs (Floating-point Swap Exception Flags). <font color="green">pseudo</font> "
 
     see `fsflags rd, rs1`.
 
-	csrrw x0, fflags, rs
+	``` asm
+    csrrw x0, fflags, rs
+    ```
 
 ??? summary "<font color="red">fsflagsi</font> rd, zimm (Floating-point ). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font> "
 
+    ``` asm
     see `fsflags rd, rs1`.
+    ```
 
 ??? summary "<font color="red">fsgnj.d</font> rd, rs1, rs2 (Floating-point Sign Inject, Double-Precision). <font color="green">rv_d</font> "
 
@@ -816,11 +842,15 @@
 
     Copy x[rs1] to the floating-point rounding mode register, then copy the previous floating-point rounding mode to x[rd].
 
-	csrrw rd, frm, rs
+	``` asm
+    csrrw rd, frm, rs
+    ```
 
 ??? summary "<font color="red">fsrm</font> rs (Write FP rounding mode). <font color="green">pseudo</font>, <font color="green"> rv_f</font> "
 
-	csrrw x0, frm, rs
+	``` asm
+    csrrw x0, frm, rs
+    ```
 
 ??? summary "<font color="red">fsrmi</font> rd, zimm (Floating-point Swap Rounding Mode Immediate). <font color="green">rv_zicsr</font>, <font color="green"> pseudo</font> "
 
@@ -858,5 +888,7 @@
 
 ??? summary "fs{w|d} rd, symbol, rt (Floating-point store global). <font color="green">pseudo</font> "
 
+    ``` asm
     auipc rt, delta[31 : 12] + delta[11]
     fs{w|d} rd, delta[11:0](rt)
+    ```

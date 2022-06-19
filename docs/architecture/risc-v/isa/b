@@ -32,7 +32,9 @@
 
 	if (rs1 == 0) pc += sext(offset).
 
+    ``` asm
     beq rs, x0, offset
+    ```
 
 
 ??? question "<font color="red">bext</font> rd, rs1, rs2 (). <font color="green">rv_zbs</font> "
@@ -67,25 +69,33 @@
 
     if (rs >=s 0) pc += sext(offset).
 
-	bge rs, x0, offset
+	``` asm
+    bge rs, x0, offset
+    ```
 
 ??? summary "<font color="red">bgt</font> rs, rt, offset (Branch if Greater Than). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs >s rt) pc += sext(offset)
 
-	blt rt, rs, offset
+	``` asm
+    blt rt, rs, offset
+    ```
 
 ??? summary "<font color="red">bgtu</font> rs, rt, offset (Branch if Greater Than, Unsigned). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
 	if (rs >u rt) pc += sext(offset)
 
+    ``` asm
     bltu rt, rs, offset
+    ```
 
 ??? summary "<font color="red">bgtz</font> rs, offset (Branch if Greater Than Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs >s 0) pc += sext(offset)
 
-	blt x0, rs, offset
+	``` asm
+    blt x0, rs, offset
+    ```
 
 ??? question "<font color="red">binv</font> rd, rs1, rs2 (). <font color="green">rv_zbs</font> "
 
@@ -107,21 +117,26 @@
 
     if (rs <=s rt) pc += sext(offset)
 
-	bge rt, rs, offset
+	``` asm
+    bge rt, rs, offset
+    ```
 
 
 ??? summary "<font color="red">bleu</font> rs, rt, offset (Branch if Less Than or Equal, Unsigned). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs <=u rt) pc += sext(offset)
 
-	bgeu rt, rs, offset
+	``` asm
+    bgeu rt, rs, offset
+    ```
 
 ??? summary "<font color="red">blez</font> rs, offset (Branch if Less Than or Equal to Zero). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
     if (rs <=s 0) pc += sext(offset)
 
-	bge x0, rs, offset
-
+	``` asm
+    bge x0, rs, offset
+    ```
 
 ??? summary "<font color="red">blt</font> rs1, rs2, offset (Branch if Less Than). <font color="green">rv_i</font> "
 
@@ -163,8 +178,9 @@
 
     if (rs1 != 0) pc += sext(offset)
 
-	bne rs, x0, offset
-
+	``` asm
+    bne rs, x0, offset
+    ```
 
 ??? question "<font color="red">bpick</font> rs3, rs2, rs1, rd (). <font color="green">rv_p</font> "
 

@@ -185,8 +185,10 @@
 
 ??? summary "<font color="red">call</font> offset (Call far-away subroutine). <font color="green">pseudo</font>, <font color="green"> rv_c</font> "
 
-	auipc x1, offset[31:12] + offset[11]
+	``` asm
+    auipc x1, offset[31:12] + offset[11]
     jalr x1, offset[11:0](x1)
+    ```
 
     `call rd, symbol`   x[rd] = pc+8; pc = &symbol. Write the address of the next instruction (pc+8) to x[rd], then sets the pc to symbol.
 
@@ -340,7 +342,9 @@
 
     For each bit set in x[rs], clear the corresponding bit in control and status register csr.
 
+    ``` asm
     csrrc x0, csr, rs
+    ```
 
 ??? summary "<font color="red">csrci</font> csr, imm (Control and Status Register Immediate). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
@@ -348,7 +352,9 @@
 
 	For each bit set in the five-bit zero-extended immediate, clear the corresponding bit in control and status register csr.
     
+    ``` asm
     csrrci x0, csr, imm
+    ```
 
 ??? summary "<font color="red">csrr</font> rd, csr (Control and Status Register Read). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
@@ -356,7 +362,9 @@
 
     Copy control and status register csr to x[rd].
     
+    ``` asm
     csrrs rd, csr, x0
+    ```
 
 ??? summary "<font color="red">csrrc</font> rd, rs1, csr (Control and Status Register Read and Clear). <font color="green">rv_zicsr</font>, <font color="green"> rv_i</font> "
 
@@ -402,7 +410,9 @@
 
     For each bit set in x[rs1], set the corresponding bit in control and status register csr.
 
-	csrrs x0, csr, rs
+	``` asm
+    csrrs x0, csr, rs
+    ```
 
 ??? summary "<font color="red">csrsi</font> csr, imm (Control and Status Register Set Immediate). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
@@ -410,7 +420,9 @@
 
     For each bit set in the five-bit zero-extended immediate, set the corresponding bit in control and status register csr.
     
+    ``` asm
     csrrsi x0, csr, imm
+    ```
 
 ??? summary "<font color="red">csrw</font> csr, rs (Control and Status Register Write). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
@@ -418,14 +430,17 @@
 
     Copy x[rs1] to control and status register csr.
 
-	csrrw x0, csr, rs
+	``` asm
+    csrrw x0, csr, rs
+    ```
 
 ??? summary "<font color="red">csrwi</font> csr, imm (Control and Status Register Write Immediate). <font color="green">pseudo</font>, <font color="green"> rv_i</font> "
 
 	Copy the five-bit zero-extended immediate to control and status register csr.
     
+    ``` asm
     csrrwi x0, csr, imm
-
+    ```
 
 ??? question "<font color="red">ctz</font> rd, rs1 (). <font color="green">rv_zbb</font> "
 
