@@ -65,6 +65,7 @@ Instruction listings:
 - [Instructions](./docs/assembly/instructions.md)
 - [Assembly Language Step-by-Step](./docs/assembly/assembly-step-by-step.md): mostly Assembly concenpts, can also used as a NASM intriduction
 - [NASM – The Netwide Assembler](./docs/assembly/nasm.md)
+- [An Introduction to Assembly Programming with RISC-V](./docs/assembly/introduction-with-risc-v.md)
 
 ### Resources
 

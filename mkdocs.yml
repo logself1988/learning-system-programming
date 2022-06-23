@@ -1,95 +1,98 @@
 site_name: Learning System Programming
-site_author: 'zhoujiagen@gmail.com'
+site_author: "zhoujiagen@gmail.com"
 copyright: MIT
 repo_name: learning-system-programming
 repo_url: https://github.com/zhoujiagen/learning-system-programming
 
 nav:
-    - Home: index.md
-    - Tools:
-      - 'GNU':
-        - 'Toolchain': tools/gnu/gnu-toolchain.md
-        - 'An Introduction to GCC': tools/gnu/gcc-intro.md
-        - '深入分析GCC': tools/gnu/gcc-analysis.md
-        - 'glibc': tools/gnu/gnu-glibc.md
-        - 'Managing Projects with GNU Make': tools/gnu/gnu-make.md
-        - 'Autotools': tools/gnu/gnu-autotools.md
-      - 'Programming':
-        - 'C Tool': tools/programming/c-tool.md
-        - 'C++ Tool': tools/programming/cpp-tool.md
-        - CMake:
-          - 'Mastering CMake': tools/programming/cmake/mastering-cmake.md
-          - 'References':
-            - Home: tools/programming/cmake/refs/index.md
-            - 'Variables': tools/programming/cmake/refs/cmake-variables.md
-            - 'Commands': tools/programming/cmake/refs/cmake-commands.md
-            - 'Modules': tools/programming/cmake/refs/cmake-modules.md
-        - Ninja: tools/programming/ninja.md
-    - Architecture:
-      - 'Computer Architecture: A Quantitative Approach':
-        - 'Home': architecture/CAQA.md
-        - 'Appendix': architecture/CAQA-appendix.md
-      - 'Low-Level Programming': architecture/Low-Level-Programming.md
-      - 'System V Application Binary Interface': architecture/ABI.md
-      - 'The Linux Kernel CPU Architectures': architecture/linux-cpu-architecture.md
-      - 'Intel':
-        - 'Volume 1: Basic Architecture': architecture/intel/vol1-basic-architecture.md
-        - 'Volume 3A: System Programming Guide': architecture/intel/vol3a-system-programming-guide.md
-        - 'Volume 3B: System Programming Guide': architecture/intel/vol3b-system-programming-guide.md
-      - 'RISC-V':
-        - 'The RISC-V Reader: An Open Architecture Atlas': architecture/risc-v/the-risc-v-reader.md
-        - 'Digrams of RISC-V Instructions': architecture/risc-v/risc-v-instructions.md
-        - 'RISC-V Unprivileged ISA': architecture/risc-v/risc-v-unprivileged-spec.md
-        - 'RISC-V Simulators': architecture/risc-v/risc-v-simulators.md
-        - 'RISC-V Cheatsheet': architecture/risc-v/risc-v-cheatsheet.md
-    - Assembly:
-      - 'Professional Assembly Language': assembly/pro-assembly.md
-      - 'NASM': assembly/nasm.md
-      - 'Assembly Language Step-by-Step': assembly/assembly-step-by-step.md
-      - 'Instructions': assembly/instructions.md
-    - C:
-      - 'Headers': c/c-headers.md
-      - 'Core': c/c-core.md
-    - 'C++':
-      - 'Programming: Principles and Practice Using C++':
-        - 'Home': cpp/PPP2/PPP2.md
-        - 'Part I The Basics': cpp/PPP2/PPP2-1-The-Basics.md
-        - 'Part II Input and Output': cpp/PPP2/PPP2-2-Input-and-Output.md
-        - 'Part III Data and Algorithms': cpp/PPP2/PPP2-3-Data-and-Algorithms.md
-        - 'Part IV Broadening the View': cpp/PPP2/PPP2-4-Broadening-the-View.md
-        - 'Part V Appendices': cpp/PPP2/PPP2-5-Appendices.md
-      - 'C++ Primer':
-        - 'Home': cpp/CP5/CP5.md
-        - 'Part I The Basics': cpp/CP5/CP5-1-The-Basics.md
-        - 'Part II The C++ Library': cpp/CP5/CP5-2-The-Cpp-Library.md
-        - 'Part III Tools for Class Authors': cpp/CP5/CP5-3-Tools-for-class-authors.md
-        - 'Part IV Advanced Topics': cpp/CP5/CP5-4-Advanced-Topics.md
-      - 'Q&A': cpp/QA.md
-      - 'C++ 11': cpp/CXX11-Standard.md
-      - 'C++ Concurrency in Action': cpp/cpp_concurrency.md
-    - 'Kernel':
-      - 'Programming':
-        - 'UNIX环境高级编程': kernel/programming/apue.md
-        - 'Linux编程接口': kernel/programming/tlpi.md
-        - '系统调用': kernel/programming/syscall.md
-      - 'Linux Specifications':
-        - 'Linux手册页': kernel/specification/linux-man.md
-        - 'Linux Standard Base': kernel/specification/linux-standard-base.md
-        - 'Linux Referenced Specifications': kernel/specification/linux-ref-spec.md
-      - 'Linux Architecture':
-        - 'Linux内核设计与实现':
-          - 'Home': kernel/linux-arch/kernel-dev/kernel-dev.md
-          - 'Part 1': kernel/linux-arch/kernel-dev/kernel-dev1.md
-          - 'Part 2': kernel/linux-arch/kernel-dev/kernel-dev2.md
-          - '深入Linux内核架构': kernel/linux-arch/linux-arch.md
-          - 'Linux内核设计的艺术': kernel/linux-arch/linux-0.11.md
+  - Home: index.md
+  - Tools:
+      - "GNU":
+          - "Toolchain": tools/gnu/gnu-toolchain.md
+          - "An Introduction to GCC": tools/gnu/gcc-intro.md
+          - "深入分析GCC": tools/gnu/gcc-analysis.md
+          - "glibc": tools/gnu/gnu-glibc.md
+          - "Managing Projects with GNU Make": tools/gnu/gnu-make.md
+          - "Autotools": tools/gnu/gnu-autotools.md
+      - "Programming":
+          - "C Tool": tools/programming/c-tool.md
+          - "C++ Tool": tools/programming/cpp-tool.md
+          - CMake:
+              - "Mastering CMake": tools/programming/cmake/mastering-cmake.md
+              - "References":
+                  - Home: tools/programming/cmake/refs/index.md
+                  - "Variables": tools/programming/cmake/refs/cmake-variables.md
+                  - "Commands": tools/programming/cmake/refs/cmake-commands.md
+                  - "Modules": tools/programming/cmake/refs/cmake-modules.md
+          - Ninja: tools/programming/ninja.md
+  - Architecture:
+      - "Computer Architecture: A Quantitative Approach":
+          - "Home": architecture/CAQA.md
+          - "Appendix": architecture/CAQA-appendix.md
+      - "Low-Level Programming": architecture/Low-Level-Programming.md
+      - "System V Application Binary Interface": architecture/ABI.md
+      - "The Linux Kernel CPU Architectures": architecture/linux-cpu-architecture.md
+      - "Intel":
+          - "Volume 1: Basic Architecture": architecture/intel/vol1-basic-architecture.md
+          - "Volume 3A: System Programming Guide": architecture/intel/vol3a-system-programming-guide.md
+          - "Volume 3B: System Programming Guide": architecture/intel/vol3b-system-programming-guide.md
+      - "RISC-V":
+          - "The RISC-V Reader: An Open Architecture Atlas": architecture/risc-v/the-risc-v-reader.md
+          - "Digrams of RISC-V Instructions": architecture/risc-v/risc-v-instructions.md
+          - "RISC-V Unprivileged ISA": architecture/risc-v/risc-v-unprivileged-spec.md
+          - "RISC-V Simulators": architecture/risc-v/risc-v-simulators.md
+          - "RISC-V Cheatsheet": architecture/risc-v/risc-v-cheatsheet.md
+  - Assembly:
+      - "Professional Assembly Language": assembly/pro-assembly.md
+      - "NASM": assembly/nasm.md
+      - "Assembly Language Step-by-Step": assembly/assembly-step-by-step.md
+      - "Instructions": assembly/instructions.md
+      - "An Introduction to Assembly Programming with RISC-V": assembly/introduction-with-risc-v.md
+  - C:
+      - "Headers": c/c-headers.md
+      - "Core": c/c-core.md
+  - "C++":
+      - "Programming: Principles and Practice Using C++":
+          - "Home": cpp/PPP2/PPP2.md
+          - "Part I The Basics": cpp/PPP2/PPP2-1-The-Basics.md
+          - "Part II Input and Output": cpp/PPP2/PPP2-2-Input-and-Output.md
+          - "Part III Data and Algorithms": cpp/PPP2/PPP2-3-Data-and-Algorithms.md
+          - "Part IV Broadening the View": cpp/PPP2/PPP2-4-Broadening-the-View.md
+          - "Part V Appendices": cpp/PPP2/PPP2-5-Appendices.md
+      - "C++ Primer":
+          - "Home": cpp/CP5/CP5.md
+          - "Part I The Basics": cpp/CP5/CP5-1-The-Basics.md
+          - "Part II The C++ Library": cpp/CP5/CP5-2-The-Cpp-Library.md
+          - "Part III Tools for Class Authors": cpp/CP5/CP5-3-Tools-for-class-authors.md
+          - "Part IV Advanced Topics": cpp/CP5/CP5-4-Advanced-Topics.md
+      - "Q&A": cpp/QA.md
+      - "C++ 11": cpp/CXX11-Standard.md
+      - "C++ Concurrency in Action": cpp/cpp_concurrency.md
+  - "Kernel":
+      - "Programming":
+          - "UNIX环境高级编程": kernel/programming/apue.md
+          - "Linux编程接口": kernel/programming/tlpi.md
+          - "系统调用": kernel/programming/syscall.md
+      - "Linux Specifications":
+          - "Linux手册页": kernel/specification/linux-man.md
+          - "Linux Standard Base": kernel/specification/linux-standard-base.md
+          - "Linux Referenced Specifications": kernel/specification/linux-ref-spec.md
+      - "Linux Architecture":
+          - "Linux内核设计与实现":
+              - "Home": kernel/linux-arch/kernel-dev/kernel-dev.md
+              - "Part 1": kernel/linux-arch/kernel-dev/kernel-dev1.md
+              - "Part 2": kernel/linux-arch/kernel-dev/kernel-dev2.md
+              - "深入Linux内核架构": kernel/linux-arch/linux-arch.md
+              - "Linux内核设计的艺术": kernel/linux-arch/linux-0.11.md
 
 #theme: readthedocs
 theme:
   name: material
+  features:
+    - content.code.annotate
 extra:
   search:
-    language: 'en'
+    language: "en"
 markdown_extensions:
   - attr_list
   - admonition
@@ -107,6 +110,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -122,6 +127,6 @@ markdown_extensions:
   - markdown_inline_graphviz
 
 extra_javascript:
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

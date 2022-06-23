@@ -27,7 +27,7 @@
     Load a byte from memory at address x[rs1] + sign-extend(offset) and write it to x[rd], sign-extending the result.
 
 
-??? summary "l{b|h|w|d} rd, symbol (Load global Byte|Halfword|Word|Doubleword). <font color="green">pseudo</font> "
+??? summary "l{b|h|w|d} rd, symbol (Load Global Byte|Halfword|Word|Doubleword). <font color="green">pseudo</font> "
 
     ``` asm
     auipc rd, delta[31 : 12] + delta[11]

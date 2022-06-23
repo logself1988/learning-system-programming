@@ -59,6 +59,16 @@ The document contians the following versions of the RISC-V ISA modules:
 |Zam      |0.1    |Draft    |Misaligned Atomics                             |
 |Ztso     |0.1    |Frozen   |Total Store Ordering                           |
 
+#### Preface to Document Version 20190608-Base-Ratified
+
+#### Preface to Document Version 2.2
+
+#### Preface to Document Version 2.1
+
+#### Preface to Version 2.0
+
+- The base ISA has been defined to have a **little-endian** memory system, with bit-endian or bi-endian as non-standard variants.
+
 ### 1. Introduction
 
 > The RISC-V ISA is defined avoiding implementation details as much as possible and should be read as the software-visible interface to a wide variety of implementations rather than as the design of a particular hardware artifact.
@@ -87,6 +97,8 @@ The document contians the following versions of the RISC-V ISA modules:
 - RV32E
 - RV128I
 
+The base integer instruction sets use a **two's-complement representation** for signed integer values.
+
 > RISC-V has been designed to support extensive customization and specification.
 
 - "I": base integer ISA, prefixed by RV32, RV64.
@@ -101,6 +113,10 @@ The document contians the following versions of the RISC-V ISA modules:
 > The default memory consistency model for RISC-V is the RISC-V Weak Memory Ordering(RVWMO).
 
 #### 1.5 Base Instruction-Length Encoding
+
+The base RISC-V ISA has fixed-length 32-bit instructions that must be naturally aligned on 32-bit doundaries.
+
+However, the standard RISC-V encoding scheme is designed to support ISA extensions with varible-length instructions, where each instruction can be any number of 16-bit instruction parcels in length and parcels are naturally aligned on 16-bit boundaries.
 
 - IALIGN: refer to the instruction-address alignment constraint the implementation enforces, measured in bits.
 - ILEN: refer to the maximum instruction length supported by an implementation, which is always a multiple of IALIGN, measured in bits.
@@ -137,7 +153,9 @@ Figure 1.1: RISC-V instruction length encoding.
  base+4           base+2             base  Byte Address
 ```
 
-> Instructions are stored in memory as a sequence of 16-bit little-endian parcels, regardless of memory system endianness.
+RISC-V base ISAs have either little-endian or big-endian memory systems, with the privileged architecture further defining bi-endian operation.
+
+Instructions are stored in memory as a sequence of 16-bit little-endian parcels, regardless of memory system endianness. Parcels forming one instruction are stored at increasing halfword addresses, with the lowest-addressed parcel holding the lowest-numbered bits in the instruction specification.
 
 #### 1.6 Exceptions, Traps, and Interrupts
 

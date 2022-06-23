@@ -8,20 +8,20 @@ hello: hello.c
 	$(GCC) $(CFLAGS) -o $@ $<
 
 hello.s: hello.c
-	$(GCC) $(CFLAGS_RAW) -S -o $@ $<
+	$(GCC) $(ARCH_RV64G) -S -o $@ $<
 
 func.s: func.c
-	$(GCC) $(CFLAGS_RAW) -S -o $@ $<
+	$(GCC) $(ARCH_RV64G) -S -o $@ $<
 
 run: hello
 	$(SIM) $<
 
 run2: hello.s
-	$(GCC) $(CFLAGS_RAW) -o hello $<
+	$(GCC) $(ARCH_RV64G) -o hello $<
 	$(SIM) hello
 
 myhello: myhello.s
-	$(GCC) $(CFLAGS_RAW) -o $@ $<
+	$(GCC) $(ARCH_RV64G) -o $@ $<
 	$(SIM) $@
 
 clean:

@@ -1,0 +1,599 @@
+### 1 Execution of programs: a 10,000 ft overview 
+
+A **native program** is a program encoded using instructions that can be directly executed by the computer hardware, without helo from an emulator os a virtual machine.
+
+#### 1.1 Main components of computers 
+##### 1.1.1 The main memory 
+##### 1.1.2 The CPU 
+#### 1.2 Executing program instructions 
+
+Algorithm 1: RV32I instructions execution cycle.
+
+``` algol
+while True do
+  // Fetch instruction and update PC;
+  IR <- MainMemory[PC];
+  PC <- PC+4;
+  ExecuteInstruction(IR).
+end
+```
+
+- `PC`: Program Counter, store the starting address of the sequence of memory words that store the next instruction to be executed.
+- `IR`: CPU internal register to store an instruction.
+
+#### 1.3 The boot process 
+
+On power on, the `PC` is automatically set so that the CPU starts by retrieving instruction from a small non-volatile memory device, which stores a small program that performs the boot process.
+
+The boot process program sets up the basic computer componenets, checks the boot configuration, and based on its settings, loads into main memory the operating system boot loader from a persistent storage device. (In old computer systems this program is known as **BIOS (Basic Input/Output System)**, more modern system use the **UEFI (Unified Extensible Firmware Interface)**).
+
+Once the operating system boot loader is loaded into memory, the CPU starts executing its code, which , in turn, finishes setting up the computer and loading the primary operating system modules into the main memory.
+
+### 2 Data representation on modern computers 
+#### 2.1 Numeral Systems and the Positional Notation 
+
+A **numeral system** is a system used for expressing numbers.
+
+A **positional numeral system** is a numeral system in which the value of a digit $d^{i}$ dependens on the value of the symbol used on the digit and also on the position of the digit on the sequence of digits.
+
+The **decimal**, **binary**, **octal** and **hexadecimal** numeral systems are positional numeral systems taht are frequently used when programming computers.
+
+##### 2.1.1 Converting numbers between bases 
+
+Algorithm 2: Algorithm to compute the sequence of digits $d_{b}^{m-1} d_{b}^{m-2} \cdots d_{b}^{1} d_{b}^{0}$ that represent value $V$ on base $b$.
+
+$$
+\begin{array}{l}
+input: Value \ V \ and \ base \ b. \\
+output: Sequence \ of \ digits \ d_{b}^{m-1} d_{b}^{m-2} \cdots d_{b}^{1} d_{b}^{0} \\
+\\
+i = 0;                                          \\
+tmp = V;                                        \\
+\textbf{while} \ temp \neq 0 \ \textbf{do}      \\
+\quad rem = temp \ \textbf{mod} \ b;            \\
+\quad d_{b}^{i} = symbol\_from\_value(rem, b);  \\
+\quad temp = temp / b;                          \\
+\quad i = i + 1;                                \\
+\textbf{end}
+\end{array}
+$$
+
+#### 2.2 Representing numbers on computers 
+##### 2.2.1 Unsigned numbers 
+
+The unsigned numbers' representation can represent natural numbers in the range $\left[ 0 .. (2^{m}-1) \right]$ with a seuqnce of $m$ bits.
+
+##### 2.2.2 Signed numbers 
+
+The **signal and magnitude** representation can represent numbers in the range $\left[ -(2^{m-1} - 1) .. (2^{m-1} - 1) \right]$ with a sequence of $m$ bits.
+
+- one's complement representation: range $\left[ -(2^{m-1} - 1) .. (2^{m-1} - 1)\right]$ with a sequence of $m$ bits.
+
+- two's complement representation: range $\left[ -(2^{m-1}) .. (2^{m-1} - 1)\right]$ with a sequence of $m$ bits.
+
+##### 2.2.3 Binary arithmetic and Overﬂow 
+##### 2.2.4 Integer Overﬂow
+
+An **integer overflow** occurs when the result of an arithmetic operation on two integer m-bit binary numbers is outside of the range that can be represented by an m-bit binary number.
+
+#### 2.3 Representing text 
+
+The **character encoding standard** defines how characters are represented on computers: ASCII, Extended ASCII, UTF-8, ISO-LATIN-1, Mac OS Roman, ....
+
+**Texts** are represented in computers as sequences of characters on memory.
+
+#### 2.4 Organizing data on the memory 
+
+> The discussion focus on byte addressable memories.
+
+##### 2.4.1 Texts on the main memory 
+##### 2.4.2 Numbers on the main memory 
+
+The **little-endian format** places the least significant byte(LSB) on the memory position associated with the lowest address, while the **big-endian format** places the LSB on the memory position associated with the highest address.
+
+##### 2.4.3 Arrays on the main memory 
+
+The base address of an array is the address of the first memory word that is being used to store the array elements.
+
+##### 2.4.4 Structs on the main memory 
+
+The base address of a struct is the address of the first memory word that is being used to store the fields of the struct.
+
+#### 2.5 Encoding instructions 
+
+Computer instructions are usually encoded as a sequence of bits.
+
+Most modern computers store the code, i.e., the program instructions, on the same memory they store the data - the main memory. 
+
+Also, modern computer instructions are encoded using multiples of 8 bits so that they fit the size of multiple memory words on a byte addressable memory.
+
+### 3 Assembly, object, and executable ﬁles 
+#### 3.1 Generating native programs 
+
+A **compiler** is a tool that translates a program from one language to another.
+
+``` C title="func.c"
+int func(int a) 
+{
+  return a*113;
+}
+```
+
+``` C title="main.c"
+int main()
+{
+  int r = func (10);
+  return r+1;
+}
+```
+
+``` shell
+riscv64-unknown-elf-gcc -mabi=ilp32 -march=rv32i -S main.c -o main.s
+riscv64-unknown-elf-gcc -mabi=ilp32 -march=rv32i -S func.c -o func.s
+```
+
+**Machine language** is a low-level language that can be directly processed by a computer's CPU.
+
+An **assembler** is a tool that translates a program in assembly language into a program in machine language. 
+
+Assemblers usually produce **object files** that are encoded in binary and contains code in machine language; The object file also contains other information, such as the list of symbols (e.g. global variables and functions) defined in the file. 
+There are several known file formats used to encode object files: ELF (Executable and Linking Format), PE (Portable Executable).
+
+``` shell
+riscv64-unknown-elf-as -mabi=ilp32 -march=rv32i main.s -o main.o
+riscv64-unknown-elf-as -mabi=ilp32 -march=rv32i func.s -o func.o
+```
+
+A **linker** is a tool taht links together one or more object files and produces an executable file.
+
+``` shell
+riscv64-unknown-elf-ld -m elf32lriscv main.o func.o -o main.x
+```
+
+##### 3.1.1 Inspecting the contents of object and executable ﬁles 
+
+`objdump`, `nm`, `readelf`.
+
+#### 3.2 Labels, symbols, references, and relocation 
+
+##### 3.2.1 Labels and symbols 
+
+**Labels** are markers that represent program locations.
+
+``` asm title="sum.s"
+x:
+  .word 10
+
+sum10:
+  lw a0, x
+  addi a0, a0, 10
+  ret
+```
+
+**Program symbols** are names that are associated with numerical values and the symbol table is a data structure that maps each program symbol to its value.
+
+``` shell
+riscv64-unknown-elf-nm sum10.o
+```
+
+The programmer may also explicitly define symbols by using the `.set` directive.
+
+``` asm title="get_answer.s"
+.set answer, 42
+get_answer:
+  li a0, answer
+  ret
+```
+
+``` shell
+riscv64-unknown-elf as -march=rv32im get_answer.s -o get_answer.o
+riscv64-unknown-elf-nm get_answer.o
+```
+
+##### 3.2.2 References to labels and relocation 
+
+``` asm title="trunk.s"
+trunk42:
+  li t1, 42
+  bge t1, a0, done
+  mv a0, t1
+done:
+  ret
+```
+
+``` shell
+# objdump(1) — Linux manual page: https://man7.org/linux/man-pages/man1/objdump.1.html
+riscv64-unknown-elf-objdump -D trunk.o
+```
+
+**Relocation** is the process in which the code and data are assigned new memory address. 
+
+The **relocation table** is a data structure that contains information that describes how the program instructions and data need to be modified to reflect the addresses reassignment.
+Each object file contains a relocation table and the linker uses their information to adjust the code when performing the relocation process.
+
+``` shell
+riscv64-unknown-elf-objdump -r trunk.o
+```
+
+``` shell
+riscv64-unknown-elf-ld -m elf32lriscv trunk.o -o trunk.x
+riscv64-unknown-elf-objdump -D trunk.x
+```
+
+##### 3.2.3 Undeﬁned references 
+
+``` asm title="main.s"
+# Contents of the main.s file
+start:
+  li a0, 10
+  li a1, 20
+  jal exit
+```
+
+``` shell
+riscv64-unknown-elf-nm main.o
+riscv64-unknown-elf-objdump -r main.o
+
+riscv64-unknown-elf-ld -m elf32lriscv main.o -o main.x
+...: undefined reference to 'exit'
+```
+
+##### 3.2.4 Global vs local symbols 
+
+The `.globl` directive is an assembly directive that instructs the assembler to register a label as a global symbol.
+
+``` asm title="exit.s"
+# Contents of the exit.s file
+.globl exit
+exit:
+  li a0, 0
+  li a7, 93
+  ecall
+```
+
+``` shell
+riscv64-unknown-elf-as -march=rv32im main.s -o main.o
+riscv64-unknown-elf-as -march=rv32im exits. -o exit.o
+riscv64-unknown-elf-ld -m elf32lriscv main.o exit.o -o main.x
+...: cannot find entry symbol start; ...
+```
+
+##### 3.2.5 The program entry point 
+
+Every program has an **entry point**, i.e. the point from which the CPU must start executing the program. 
+The entry point is defined by an address, which is the address of the first instruction that must be executed.
+
+``` asm title="main.s"
+# Contents of the main.s file
+.globl start
+start:
+  li a0, 10
+  li a1, 20
+  jal exit
+```
+
+``` shell
+riscv64-unknown-elf-as -march=rv32im main.s -o main.o
+riscv64-unknown-elf-as 0march=rv32im exit.s -o exit.o
+riscv64-unknown-elf-ld -m elf32lriscv exit.o main.o -o main.x
+```
+
+``` shell
+# exit.o before main.o
+riscv64-unknown-elf-objdump -D main.x
+
+# display ELF files
+riscv64-unknown-elf-readelf -h main.x
+```
+
+#### 3.3 Program sections 
+
+- `.text`
+- `.data`
+- `.bss`
+- `.rodata`
+
+When linking multiple object files, the linker groups information from sections with the same name and places them together into a single section on the executable file.
+
+> ELF layout
+
+``` asm title="prog.s"
+.section .data
+x: .word 10
+
+.section .text
+update_x:
+  la t1, x
+  sw a0, (t1)
+  ret
+
+.section .data
+y: .word 12
+
+.section .text
+update_y:
+  la t1, y
+  sw a0, (t1)
+  ret
+```
+
+``` shell
+riscv64-unknown-elf-as -march=rv32im prog.s -o prog.o
+riscv64-unknown-elf-objdump -D prog.o
+```
+
+``` shell
+riscv64-unknown-elf-ld -m elf32lrsiscv prog.o -o prog.x
+riscv64-unknown-elf-objdump -D prog.x
+```
+
+#### 3.4 Executable vs object ﬁles 
+
+- addresses on object files are not final and elements from different sections may be assigned the same address.
+- object files usually contain several references to undefined symbols, which are expected to be resolved by the linker.
+- object files contain a relocation table so that instructions and data on object file can be relocated on linking.
+- addresses on executable files are usually final.
+- object files do not have an entry point.
+
+### 4 Assembly language 
+
+``` EBNF
+PROGRAM = LINES ;
+LINES   = LINE ['\n' LINES] ;
+LINE    = [<label>] [<instruction>]
+          | [<label>] [<directive>] ;
+```
+
+#### 4.1 Comments 
+
+``` asm
+x: .word 10       # This is a comment
+
+sum1:
+/* This
+is
+  a
+    multi-line
+      comment.
+*/
+  addi a0, a1, 1
+  ret
+```
+
+#### 4.2 Assembly instructions 
+
+**Assembly instructions** are instructions that are converted by the assembler into machine instructions.
+
+A **pseudo-instruction** is an assembly instruction that does not have a corresponding machine instruction on the ISA, but can be translated automatically by the assembler into one or more alternative machine instructions to achieve the same effect.
+
+The operands of assembly instructions may contain: 
+
+- a register name,
+- an immediate value,
+- a symbol name.
+
+#### 4.3 Immediate values
+
+``` asm
+li a0, 10       # load 10 into a0
+li a1, 0xa      # load 10 into a1
+li a2, 0b1010   # load 10 into a2
+li a3, 012      # load 10 into a3
+li a4, '0'      # load 48 into a4
+li a5, 'a'      # load 97 into a5
+
+li a0, -12      # load -12 into a0
+li a1, -0xc     # load -12 into a1
+li a2, -0b1100  # load -12 into a2
+li a3, -014     # load -12 into a3
+li a4, -'0'     # load -48 into a4
+li a5, -'a'     # load -97 into a5
+```
+
+#### 4.4 Symbol names 
+
+``` asm
+.set max_tem, 100       # Set the max_temp limit
+
+check_temp:             # check_temp routine
+  li t1, max_temp       # Loads the max_temp limit into t1
+  ble a0, t1, temp_ok   # If a0 <= max_temp, then ok
+  jal alarm             # Else, invokes the alarm routine
+  temp_ok:
+  ret                   # Returns from the routine
+```
+
+#### 4.5 Labels 
+
+**Symbolic labels** are stored as symbols in the symbol table and are often used to identify global variables and routines.
+
+``` asm
+age: .word 42
+
+get_age:
+  la t1, age
+  lw a0, (t1)
+  ret
+```
+
+**Numeric labels** are used for local reference and are not included in the symbol table of executable files. They can be refefined repeatedly in the same assembly program.
+
+References to numeric labels contain a suffix that indicates whether the reference is to a numeric label positioned before (`b` suffix) or after (`f` suffix) the reference.
+
+``` asm title="pow.s"
+# Pow function -- compute a^b
+# Inputs: a0=a, a1=b
+# Output: a0=a^b
+pow:
+  mv a2, a0         # Saves a0 in a2
+  li a0, 1          # Sets a0 to 1
+1:
+  beqz a1, 0f       # If a1 = 0 then done
+  mul a0, a0, a2    # Else, multiply
+  addi a1, a1, -1   # Decrements the counter
+  j 1b              # Repeat
+1:
+  ret
+```
+
+#### 4.6 The location counter and the assembling process
+
+The **location counter** is an internal assembler counter that keeps track of addresses when a program is being assembled. More specifically, it keeps the address of the next available memory position. 
+Each section has its own location counter, and the active location counter is the location counter of the active section.
+
+#### 4.7 Assembly directives 
+
+**Assembly directives** are commands used to control the assembler.
+
+##### 4.7.1 Adding values to the program 
+
+```
+.byte   expression [, expression]*    # emit one or more 8-bit words
+.half   expression [, expression]*    # emit one or more 16-bit words
+.word   expression [, expression]*    # emit one or more 32-bit words
+.dword  expression [, expression]*    # emit one or more 64-bit words
+.string string                        # emit NULL terminated string
+.asciz  string                        # alias for .string
+.ascii  string                        # emit string without NULL character
+```
+
+``` asm
+x: .byte 10, 12, 'A', 5+5
+y: .word x
+z: .word y+4
+i: .word 0
+j: .word 1
+```
+
+##### 4.7.2 The `.section` directive 
+
+``` asm
+.section .text
+set_x:
+  la t1, x
+  sw a0, (t1)
+  ret
+get_msg:
+  la a0, msg
+  ret
+
+.section .data
+x: .word 10
+
+.section .rodata
+.msg: .string "Assembly rocks!"
+```
+
+##### 4.7.3 Allocating variables on the `.bss` section 
+
+The `.bss` section is dedicated for storing uninitialized global variables.
+
+The GNU assembler does not allow assembly programs to add data to the `.bss` section.
+
+``` asm title="data-on-bss.s"
+.section .bss
+x: .word 10
+
+.section .text
+set_x:
+  la t1, x
+  sw a0, (t1)
+  ret
+```
+
+``` shell
+riscv64-unknown-elf-as -march=rv32im data-on-bss.s -o data-on-bss.o
+... Error: attempt to store non-zero values in section '.bss'
+```
+
+`.skip N` directive is a directive that advances the location counter by N units and can be used to allocate space for variables on the `.bss` section.
+
+``` asm
+.section .bss
+x: .skip 4
+V: .skip 80
+y: .skip 4
+```
+
+##### 4.7.4 The `.set` and `.equ` directives 
+
+The `.set name, expression` directive adds a symbol to the symbol table. It takes a name and an expression as arguments, evaluates an expression to a value, and stores the name and the resuling value into the symbols table.
+
+The `.equ` directive performs the same task as `.set`.
+
+``` asm
+.set max_value, 42
+
+truncates_value_to_max:
+  li t1, max_value
+  ble a0, t1, ok
+  mv a0, t1
+ok:
+  ret
+```
+
+##### 4.7.5 The `.globl` directive 
+
+By default, symbols automatically created fro labels or explicitly created by the program using the `.set` or `.equ` directives are stored on the symbol table as local symbols.
+
+The `.globl` directeive can be used to turn local symbols into global ones.
+
+``` asm
+.globl max_value
+.globl start
+
+.set max_value, 42
+
+start:
+  li a0, max_value
+  jal process_temp
+  ret
+```
+
+##### 4.7.6 The `.align` directive 
+
+Some ISAs require instructions or multi-byte data to be stored on addresses that are multiple of a given number.
+
+``` asm
+.text
+.foo:
+  j next
+  .byte 0xa
+  .skip 3       # Advanceing the location counter by 3 units
+                # This is a very poor way
+
+next:
+  ret
+```
+
+The `.alogn N` directive checks if the location counter is a multiple of $2^{N}$, if it is, it has no effect on the program, otherwise, it advances the location counter to the next value that is a multiple of $2^{N}$.
+
+The compiler usually inserts a `.align 2` directive before routine labels to ensure the routine instructions starts on addresses that are multiple of 4.
+
+``` asm
+.text
+.align 2
+func1:
+  addi a0, a0, 2
+  ret
+.align 2
+func2:
+  addi a0, a0, 42
+  ret
+```
+
+RISC-V Instruction Set Manual recommends 16-bit, 32-bit, and 64-bit values to be stored on addresses that are multiple of 2, 4 and 8, respectively.
+
+``` asm
+.data
+.align 1
+i: .half 1      # 16-bit variable initialized with 1
+.align 2
+x: .word 9      # 32-bit variable initialized with 9
+.alogn 3
+y: .dword 11    # 64-bit variable initialized with 11
+
+.bss
+.align 3
+z: .skip 8      # 64-bit variable (uninitialized)
+```

@@ -1,5 +1,7 @@
 # Instructions
 
+> TODO 2022-06-20 move to `architecture` folders.
+
 ## IA32 in AT&T
 
 ```

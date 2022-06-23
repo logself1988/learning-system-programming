@@ -78,7 +78,7 @@
 
     Arithmetic overflow is ignore.
 
-??? summary "<font color="red">mv</font> rd, rs (Move). <font color="green">pseudo</font> "
+??? summary "<font color="red">mv</font> rd, rs (Move/Copy register). <font color="green">pseudo</font> "
 
 	x[rd] = x[rs].
     

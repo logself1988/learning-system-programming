@@ -4,7 +4,7 @@
 
     Store the least-significant byte in register x[rs2] to memory at address x[rs1] + sign-extend(offset).
 
-??? summary "s{b|h|w|d} rd, symbol, rt (Store global). <font color="green">pseudo</font> "
+??? summary "s{b|h|w|d} rd, symbol, rt (Store Global). <font color="green">pseudo</font> "
 
     ``` asm
     auipc rt, delta[31:12] + delta[11]

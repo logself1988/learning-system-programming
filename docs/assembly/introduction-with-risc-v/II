@@ -1,0 +1,1355 @@
+### 5 Introduction 
+
+Many computer systems are organized so taht the software is divided into user and system software.
+
+### 6 The RV32I ISA 
+
+In this book, we will focus on the RV32IM.
+
+#### 6.1 Datatypes and memory organization 
+
+**ISA native datatypes** are datatypes taht can be naturally processed by the ISA.
+
+RV32I native datatype name and size in bytes:
+
+- `byte`: 1.
+- `unsigned byte`: 1.
+- `halfword`: 2.
+- `unsigned halfword`: 2.
+- `word`: 4.
+- `unsigned word`: 4.
+
+#### 6.2 RV32I registers 
+
+#### 6.3 Load/Store architecture 
+
+A **Load/Store architecture** is an instruction set architecture that requires values to be loaded/stored explicitly from/to memory before operating on them.
+
+``` asm
+lw a5, 0(a0)      # Loads a word value from memory, stores it on register a5.
+                  # Memory address is the sum of the contents of register a0 and the constant 0.
+add a6, a5, a5    # Multiplies it by two, stores result on register a6.
+sw a6, 0(a0)      # Stores the value from register a6 into memory.
+```
+
+#### 6.4 Pseudo-instructions 
+
+``` asm
+nop               # No operation
+addi x0, x0, 0    # Same as
+
+mv a5, a7         # Copy the contents of a7 into a5
+addi a5, a7, 0    # Same as
+
+# ...
+```
+
+#### 6.5 Logic, shift, and arithmetic instructions 
+##### 6.5.1 Instructions syntax and operands 
+
+``` asm
+MNM rd, rs1, rs2
+MNM rd, rs1, imm
+```
+
+- `MNM`: the instruction mnemonic.
+- `rd`: the target register.
+- `rs1`: the first source register.
+- `rs2`: the second source register.
+- `imm`: the immediate value.
+
+##### 6.5.2 Dealing with large immediate values 
+
+RV32I arithmetic, logic and shift instructions can only encode immediate values that can be represented as a 12-bit two's complement signed number: $\left[-2048, 2047\right]$.
+
+``` asm
+# invalid
+add a0, a5, 2048
+add a0, 15, 10000
+add a0, a5, -3000
+
+# produce 4005
+add a5, x0, 1000
+slli a5, a5, 2
+add a5, a5, 5
+```
+
+`li rd, imm` (load immediate) pseudo-instruction is automatically converted by the assembler to the best sequence of matchine instructions to compose the desied value.
+
+##### 6.5.3 Logic instructions 
+
+``` asm
+and rd, rs1, rs2
+or rd, rs1, rs2
+xor rd, rs1, rs2
+andi rd, rs1, imm
+ori rd, rs1, imm
+xori rd, rs1, imm
+```
+
+##### 6.5.4 Shift instructions 
+
+``` asm
+sll rd, rs1, rs2      # shift left logical
+slli  rd, rs1, imm
+
+srl rd, rs1, rs2      # shift right logical
+srli  rd, rs1, imm
+
+sra rd, rs1, rs2      # shift right arithmetic
+srai  rd, rs1, imm
+```
+
+The **logical left shift instructions** `sll` `slli` may be used to multiply numbers by powers of 2. In this context, shifting a value $N$ times to the left is equivalent to multiplying the value by $2^{N}$.
+
+``` asm
+li a2, 24             # a0 <= 24
+slli a0, a2, 2        # a0 <= a2 << 2
+sll a1, a2, a3        # a0 <= a2 << a3
+
+slli a0, a3, 1        # a0 <= a3 * 2
+slli a1, a3, 2        # a1 <= a3 * 4
+slli a2, a3, 3        # a2 <= a3 * 8
+```
+
+The **logical right shift instructions** `srl` `srli` may only be used to divide *unsigned* numbers. In this case, shifting an unsigned number $N$ times to the right with a logical right shift operation is equivalent to integer dividing the unsigned number by $2^{N}$.
+
+``` asm
+li a5, 24             # a5 <= 24
+srli a0, a5, 2        # a0 <= a5 >> 2
+srl a1, a5, a7        # a0 <= a5 >> a7
+```
+
+The **arithmetic right shift** operation may only be used to integer divide *signed* numbers. In this case, shifting a signed number $N$ times to the right with an arithmetic right shift operation is equivalent to integer dividing the signed number by $2^{N}$.
+
+##### 6.5.5 Arithmetic instructions 
+
+``` asm
+add rd, rs1, rs2      # add
+addi rd, rs1, imm
+
+sub rd, rs1, rs2      # subtract
+
+mul rd, rs1, rs2      # multiply
+
+div{u} rd, rs1, rs2   # divide
+
+rem{u} rd, rs1, rs2   # remainder
+```
+
+``` asm
+# multiply the value of a2 by 5 and by 10 in RV32I
+slli a0, a2, 2        # a0 <= a2 * 4
+add a0, a0, a2        # a0 <= a2 * 5
+slli a1, a0, 1        # a1 <= a2 * 10
+```
+
+#### 6.6 Data movement instructions
+
+RV32I data movement instructions:
+
+``` asm
+# imm(rs): the memory address is calculated by adding the immediate value imm to the value in rs.
+
+lw rd, imm(rs1)       # Loads a 32-bit signedn or unsigned word from memory into register rd.
+lh rd, imm(rs1)       # Loads a 16-bit signed halfword from memory into register rd.
+lhu rd, imm(rs1)      # Loads a 16-bit unsigned halfword from memory into register rd.
+lb rd, imm(rs1)       # Loads a 8-bit signed byte from memory into register rd.
+lbu rd, imm(rs1)      # Loads a 8-bit unsigned byte from memory into register rd.
+
+sw rs1, imm(rs2)      # Stores the 32-bit value at register rs1 into memory.
+sh rs1, imm(rs2)      # Stores the 16 least significant bits from register rs1 into memory.
+sb rs1, imm(rs2)      # Stores the 8 least significant bits from register rs1 into memory.
+```
+
+RV32I data movement pseudo-instructions:
+
+``` asm
+mv rd, rs               # Copies the value from register rs into register rd.
+li rd, imm              # Loads the immediate value imm into register rd.
+la rd, rot              # Lodas the label address rot into register rd.
+
+L{W|H|HU|B|BU} rd, lab  # For lw/h/hu/b/bu, the memory address is calculated based on a label lab.
+S{W|H|B} rd, lab        # For sw/h/b, the memory address is calculated based on a label lab.
+```
+
+##### 6.6.1 Load instructions 
+
+> The RV32I follows the **little-endian** endianness format.
+
+``` asm
+lw a0, 0(a2)
+
+# a2: |00|00|1F|40|  8000_{10}
+# memory: |08|01|0E|0A|
+#         8000 ->
+# a0: |0A|0E|01|08|
+```
+
+``` asm
+lbu a0, 0(a2)
+
+# a2: |00|00|1F|40|  8000_{10}
+# memory: |08|01|0E|0A|
+#         8000 ->
+# a0: |00|00|00|08|
+```
+
+``` asm
+lb a0, 0(a2)
+
+# a2: |00|00|1F|40|  8000_{10}
+
+# memory: |08|01|0E|0A|
+#         8000 ->
+# a0: |00|00|00|08|
+
+# memory: |FE|01|0E|0A|
+#         8000 ->
+# a0: |FF|FF|FF|FE|
+```
+
+``` asm
+lhu a0, 0(a2)
+
+# a2: |00|00|1F|40|  8000_{10}
+# memory: |02|01|0E|0A|
+#         8000 ->
+# a0: |00|00|01|02|
+```
+
+``` asm
+lh a0, 0(a2)
+
+# a2: |00|00|1F|40|  8000_{10}
+
+# memory: |02|01|0E|0A|
+#         8000 ->
+# a0: |00|00|01|02|
+
+# memory: |FE|FF|0E|0A|
+#         8000 ->
+# a0: |FF|FF|FF|FE|
+```
+
+##### 6.6.2 Store instructions 
+
+``` asm
+sw a0, 0(a2)
+
+# a2: |00|00|1F|40|  8000_{10}
+# memory: |08|01|0E|0A|
+#         8000 ->
+# a0: |0A|0E|01|08|
+```
+
+``` asm
+sh a0, 0(a2)
+
+# a2: |00|00|1F|40|  8000_{10}
+# memory: |08|01|...
+#         8000 ->
+# a0: |0A|0E|01|08|
+```
+
+``` asm
+sb a0, 0(a2)
+
+# a2: |00|00|1F|40|  8000_{10}
+# memory: |08|...
+#         8000
+# a0: |0A|0E|01|08|
+```
+
+##### 6.6.3 Data movement pseudo-instructions 
+
+`mv rd, rs`: copy register instruction.
+
+`li rd, imm`: load immediate instruction.
+
+`l{w|h|hu|b|bu} rd, symbol`: load global instructions.
+
+`s{w|h|b} rs, symbol, rt`: store global instructions.
+
+#### 6.7 Control-flow instructions 
+
+**Control-flow instructions** are instructions capable of changing the normal execution flow.
+
+##### 6.7.1 Conditional control-flow instructions 
+
+**Conditional control-flow instructions** change the normal execution flow under certain conditions.
+
+RV32I conditional control-flow instructions:
+
+``` asm
+beq rs1, rs2, lab     # Jumps to label lab if the value in rs1 is 
+                      # equal to the value is rs2.
+beqz rs1, lab         # Jumps to label lab if the value in rs1 is 
+                      # equal to zero.
+bne rs1, rs2, lab     # Jumps to label lab if the value in rs1 is 
+                      # difference from the value is rs2.
+bnez rs1, lab         # Jumps to label lab if the value in rs1 is 
+                      # difference from zero.
+blt rs1, rs2, lab     # Jumps to label lab if the signed value in rs1 is 
+                      # smaller than the value is rs2.
+bltu rs1, rs2, lab    # Jumps to label lab if the unsigned value in rs1 is 
+                      # smaller than the value is rs2.
+bge rs1, rs2, lab     # Jumps to label lab if the signed value in rs1 is 
+                      # greater than or equal to the value is rs2.
+bgeu rs1, rs2, lab    # Jumps to label lab if the unsigned value in rs1 is 
+                      # greater than or equal to the value is rs2.
+```
+
+example:
+
+``` asm
+beq a0, a2, THEN      # Jumps to label THEN if a0 = a2
+bne a1, a3, ELSE      # Jumps to label ELSE if a1 != a3
+blt a2, a3, NEXT      # Jumps to label NEXT if a2 < a3 (signed compare)
+bge a4, a1, LOOP      # Jumps to label LOOP if a4 >= a1 (signed compare)
+bltu a0, a2, L        # Jumps to label L if a0 < a2 (unsigned compare)
+```
+
+Conditional control-flow instructions are usually employed to implement if and conditional loop statements.
+
+``` asm
+# Initializes the counter
+  mov a0, 10
+LOOP:
+  # Do something
+  # ...
+  # Decrements the counter and loop back
+  sub a0, a0, 1
+  bne a0, zero, LOOP
+  add a1, a1, a1      # Instruction after the loop
+```
+
+##### 6.7.2 Direct vs indirect control-flow instructions 
+
+A **direct control-flow instruction** is an instruction that has the target address encoded directly into the instruction itself. Example: `beq a0, a1, L`. In RV32I, the target address of conditional control-flow instruction is encoded as 12-bit signed offsets to the PC.
+
+An **indirect control-flow instruction** is a control-flow instruction that has the target address specified indirectly, either through memory or through a register. Example: `jr rs1`.
+
+##### 6.7.3 Unconditional control-flow instructions 
+
+**Unconditional control-flow instructions** are control-flow instructions that always change the execution flow to a given target. Example: `j L`.
+
+RV32I unconditional control-flow instructions:
+
+``` asm
+j lab                 # Jumps to address indicated by symbol sym.
+jr rs1                # Jumps to the address stored on register rs1.
+jal lab               # Stores the return address (PC+4) on the return register (ra), 
+                      # then Jumps to label lab.
+jal rd, lab           # Stores the return address (PC+4) on register rd,
+                      # then jumos to label lab.
+jalr rd, rs1, imm     # Stores thre return address (PC+4) on register rd,
+                      # then jumps to the address calculated by 
+                      # adding the immediate value imm to the value on register rs1
+ret                   # Jumps to the address stored on the return register (ra)
+```
+
+Example:
+
+``` asm
+0x8000: jal ra, FOO     # Invoke routine FOO
+0x8004: sub a0, a1, a2  
+0x8008: jal ra, FOO     # Invoke routine FOO again
+0x800C: mul a0, a1, a2
+
+FOO:                    # Routine FOO
+0x8080: add a0, a0, a1  # Perform some computation
+0x8084: jr ra           # Returns from routine
+```
+
+##### 6.7.4 System Calls 
+
+A **system call**, or **syscall**, is a special call operation used to invoke operating system service routines. In RISC-V, this operation is performed by a special instruction called `ecall`.
+
+Example: invoke Linux write
+
+- [write(2) — Linux manual page](https://man7.org/linux/man-pages/man2/write.2.html)
+- [syscall(2) — Linux manual page](https://man7.org/linux/man-pages/man2/syscall.2.html)
+- Linux syscall numbers: [linux/include/uapi/asm-generic/unistd.h v5.19-rc3](https://github.com/torvalds/linux/blob/v5.19-rc3/include/uapi/asm-generic/unistd.h)
+
+``` C
+#include <unistd.h>
+
+ssize_t write(int fd, const void *buf, size_t count);
+```
+
+``` asm
+.data
+msg: .asciz "Assembly rocks" # Allocate a string on memory
+
+.text
+start:
+  li a0, 1            # a0: File descriptor = 1 (stdout)
+  la a1, msg          # a1: Message buffer address
+  li a2, 14           # a2: Message buffer size (14 bytes)
+  li a7, 64           # Syscall code (write = 64)
+  ecall               # Invoke the syscall
+```
+
+#### 6.8 Conditional set instructions 
+
+A **conditional set instruction** compares tweo values, it sets the target register with values one or zero, indicating whether or not the condition is true.
+
+RV32I conditional set instructions:
+
+``` asm
+slt rd, rs1, rs2      # Sets rd with 1 if the signed value in rs1 is less than 
+                      # the signed value in rs2,
+                      # otherwise, sets it with 0.
+slti rd, rs1, imm     # Sets rd with 1 if the signed value in rs1 is less than 
+                      # the sign-extended immediate value imm,
+                      # otherwise, sets it with 0.
+sltu rd, rs1, rs2     # Sets rd with 1 if the unsigned value in rs1 is less than 
+                      # the unsigned value in rs2,
+                      # otherwise, sets it with 0.
+sltui rd, rs1, imm    # Sets rd with 1 if the unsgined value in rs1 is less than
+                      # the unsigned immediate value imm,
+                      # otherwise, sets it with 0.
+seqz rd, rs1          # Sets rd with 1 if the value in rs1 is equal to zero,
+                      # otherwise, sets it with 0.
+snez rd, rs1          # Sets rd with 1 if the value in rs1 is not equal to zero,
+                      # otherwise, sets it with 0.
+sltz rd, rs1          # Sets rd with 1 if the signed value in rs1 is less than zero,
+                      # otherwise, sets it with 0.
+sgtz rd, rs1          # Sets rd with 1 if the signed value in rs1 is greater than zero,
+                      # otherwise, sets it with 0.
+```
+
+#### 6.9 Detecting overﬂow 
+
+The RISC-V does not provide special hardware support to detect overflow when performing arithmetic operations.
+
+Example: handle overflow
+
+``` asm
+add a0, a1, a2          # Add two values
+bltu a0, a1, handle_ov  # Jumps to handle_ov in case
+                        # an overflow happened
+# ...
+handle_ov:              # Code to handle the overflow
+# ...
+```
+
+Example: handle overflow by setting an indicator register
+
+``` asm
+add a0, a1, a2          # Add two values
+sltu t1, a0, a1         # t1 <=1 if (a1+a2) < a1 (Overflow)
+                        # otherwise, t2 <= 0 (No overflow)
+```
+
+Example: detect overflow when adding two signed numbers
+
+``` asm
+add a0, a1, a2          # Add two values
+slti t1, a2, 0          # t1 = (a2 < 0)
+slt t2, a0, a1          # t2 = (a1+a2 < a1)
+bne t1, t2, handle_ov   # overflow if (a2 < 0) && (a1+a2 >= a1)
+                        #       or if (a2 >= 0) && (a1+a2 < a1)
+
+# ...
+handle_ov:              # Code to handle the overflow
+# ...
+```
+
+#### 6.10 Arithmetic on multi-word variables 
+
+Example: add 2 64-bit values
+
+``` asm
+# first value: a1:a0
+# second value: a3:a2
+# result: a5:a4
+
+add a4, a0, a2          # Add the least significant word
+sltu t1, a4, a2         # t1 <= 1 if (a0+a2) < a2 (Overflow = carry out)
+                        # otherwise, a2 <= 0
+add a5, a1, a3          # Add the most significant word
+add a5, t1, a5          # Add the carry out
+```
+
+### 7 Controlling the execution flow 
+#### 7.1 Conditional statements 
+
+##### 7.1.1 if-then statements 
+
+``` c
+if (x >= 10)            // condition
+{                       // then block
+  y = x;
+}
+```
+
+``` asm
+  li t1, 10             
+  blt a3, t1, skip      # jumps to skip if x < 10
+  mv a4, a3             # y = x
+skip:
+```
+
+##### 7.1.2 Comparing signed vs unsigned variables 
+
+- `blt`
+- `bltu`
+
+##### 7.1.3 if-then-else statements 
+
+``` c
+if (x >= 10)            // condition
+{                       // then block
+  y = y + 1;
+}
+else                    // else block
+{
+  y = x;
+}
+```
+
+``` asm
+  li t3, 10
+  bltu a1, t3, else     # jumps to else if x < 10
+  addi a2, a2, 1        # y = y + 1
+  j cont
+else:
+  mv a2, a1             # y = x
+cont:
+```
+
+##### 7.1.4 Handling non-trivial boolean expressions 
+
+Example: and
+
+``` c
+// x, y: singned integer
+if ((x >= 10) && (y < 20))
+{
+  x = y;
+}
+```
+
+``` asm
+  li t1, 10
+  blt a1, t1, skip      # jumps to skip if x < 10
+  li t1, 20
+  bge a2, t1, skip      # jumps to skip if y >= 20
+  mv a1, a2             # x = y
+skip:
+```
+
+Example: or
+
+``` c
+// x, y: singned integer
+if ((x >= 10) || (y < 20))
+{
+  x = y;
+}
+```
+
+``` asm
+  li t1, 10
+  bge a1, t1, then      # jumps to then if x >= 10
+  li t1, 20
+  bge a2, t1, skip      # jumps to skip if y >= 20
+then:
+  mv a1, a2
+skip:
+```
+
+##### 7.1.5 Nested if statements 
+
+``` c
+if (x == 10)
+{
+  x = 5;
+  if (y == 20)
+  {
+    x = 0;
+  }
+}
+```
+
+``` asm
+  li t1, 10
+  bne a1, t1, skip        # jumps to skip if x != 10
+  li a1, 5                # x = 5
+  li t1, 20
+  bne a2, 20, skip_inner  # jumps to skip_inner if y != 20
+  li a1, 0                # x = 20
+skip_inner:
+skip:
+```
+
+#### 7.2 Repetition statements 
+##### 7.2.1 `while` loop 
+
+``` c
+int i = 0;
+while (i < 20)        // loop condition
+{                     // loop body
+  y = y + 3;
+  i = i + 1;
+}
+```
+
+``` asm
+  li a1, 0            # i = 0
+while:
+  li t1, 20
+  bge a1, t1, skip    # if i >= 20, jump to skip to leave the loop
+  addi a2, a2, 3      # y = y + 3
+  addi a1, a1, 1      # i = i + 1
+  j while             # loop back
+skip:
+```
+
+##### 7.2.2 `do-while` loop 
+
+``` c
+int i = 0;
+do
+{                     // loop body
+  y = y + 2;
+  i = i + 1;
+} while (i < 10);     // loop condition
+```
+
+``` asm
+  li a1, 0            # i = 0
+dowhile:
+  addi a2, a2, 2      # y = y + 2
+  addi a1, a1, 1      # i = i + 1
+  li t1, 10
+  blt a1, t1, dowhile # jump back to dowhile if i < 10
+```
+
+##### 7.2.3 `for` loop 
+
+``` c
+for (i = 0; i < 10; i = i + 1)
+{
+  y = y + 2;
+}
+```
+
+``` asm
+  li a1, 0            # i = 0
+for:
+  li t1, 10
+  bge a1, t1, skip    # if i >= 10 then jumps to skip to leave the loop
+  addi a2, a2, 2      # y = y + 2
+  addi a1, a1, 1      # i = i + 1
+  j for
+skip:
+```
+
+##### 7.2.4 Hoisting loop-invariant code 
+
+**Loop-invariant codes** are those that always produce the same values and does not need to be re-executed every time a loop body is repeated. Compiler optimization: loop-invariant code motion (LICM).
+
+Example: before
+
+``` asm
+  li a1, 0            # i = 0
+for:
+  li t1, 10
+  bge a1, t1, skip    # if i >= 10 then jumps to skip to leave the loop
+  addi a2, a2, 2      # y = y + 2
+  addi a1, a1, 1      # i = i + 1
+  j for
+```
+
+Example: after
+
+``` asm
+  li a1, 0            # i = 0
+  li t1, 10           # t1 = 10
+for:
+  bge a1, t1, skip    # if i >= 10 then jumps to skip to leave the loop
+  addi a2, a2, 2      # y = y + 2
+  addi a1, a1, 1      # i = i + 1
+  j for
+```
+
+#### 7.3 Invoking and returning from routines 
+
+Example: `jal` and `ret`
+
+``` asm
+update_x:             # The update_x routine
+  la t1, x
+  sw a0, (t1)
+  ret                 # jumps to the address stored in ra
+```
+
+``` asm
+.data
+x: .skip 4
+
+.text
+  li a0, 42           # Loads 42 into a0
+  jal update_x        # Invokes the update_x routine
+                      # stores the return address on ra
+```
+
+##### 7.3.1 Returning values from functions 
+
+A **function** is a routine that can accept arguments and returns one or more values.
+
+A **procedure** is a routine that can accept arguments but does not return any values.
+
+Returning a value from a function is a matter of convention and is usually defined by the **Application Binary Interface (ABI)**.
+
+#### 7.4 Examples 
+##### 7.4.1 Searching for the maximum value on an array 
+
+``` c title="array_largest.c"
+/* Global array */
+int numbers[10];
+
+/* Returns the largest value from array numbers. */
+int get_largest_number()
+{
+  int largest = numbers[0];
+  for (int i = 1; i < 10; i++)
+  {
+    if (numbers[i] > largest)
+      largest = numbers[i];
+  }
+  return largest;
+}
+```
+
+``` shell
+riscv64-unknown-elf-gcc -O2 -mabi=ilp32 -march=rv32i -S -o array_largest.s array_largest.c
+```
+
+### 8 Implementing routines 
+
+#### 8.1 The program memory layout 
+
+A **Von Neumann architecture** is a computer architecture that stores both the data and the code at the same address space.
+
+Common program memory layout:
+
+```
+0x0000  +-------------------+
+        |      Code         |
+        +-------------------+
+        |   Static Data     |
+        +-------------------+
+        |      Heap         |
+        +-------|------------+ <- program break
+        |       v           |
+        |   Free space      |
+        |       ^           |
+        +-------|-----------+ <- top of stack
+        |     Stack         |
+0x1000  +-------------------+        
+```
+
+#### 8.2 The program stack 
+
+An **active routine** is a routine that was invoked but did not return yet.
+
+``` c
+int a = 10;
+
+int main()
+{
+  return bar() + 2;
+}
+int bar()
+{
+  return fun() + 4;
+}
+int fun()
+{
+  return a;
+}
+```
+
+The **program stack** is a stack data structure that stores information about active routines, such as local variables, parameters, and the return address.
+
+The **stack pointer** is a pointer to the top of the stack. In RISC-V, the stack pointer is stored by register `sp`.
+
+Example: push the contents of register a0 into the stack
+
+``` asm
+addi sp, sp, -4       # allocate stack space
+sw a0, 0(sp)          # store data into the stack
+```
+
+Example: pop a value from the top of the stack into register a0
+
+``` asm
+lw a0, 0(sp)          # retrieve data from stack
+addi sp, sp, 4        # deallocate space
+```
+
+Example: push/pop 4 values from/into register a0-3 into/from the program stack
+
+``` asm
+addi sp, sp, -16      # allocate stack space: 4 words
+sw a0, 12(sp)         # store the first value: SP+12
+sw a1, 8(sp)          # store the second value: SP+8
+sw a2, 4(sp)          # store the third value: SP+4
+sw a3, 0(sp)          # store the fourth value: SP+0
+
+lw a3, 0(sp)          # retrieve the first value: SP+0
+lw a2, 4(sp)          # retrieve the second value: SP+4
+lw a1, 8(sp)          # retrieve the third value: SP+8
+lw a0, 12(sp)         # retrieve the fourth value: SP+12
+addi sp, sp, 16       # deallocate stack space: 4 words
+```
+
+The stack pointer register must be intialized to the base of the program stack before executing the program.
+
+##### 8.2.1 Types of stacks 
+
+A **full descending statck** is a stack that:
+
+- grows towards low address, and
+- the stack pointer points to the last element pushed into the stack.
+
+The RISC-V program stack is a full descending stack.
+
+A **empty descending statck** is a stack that:
+
+- grows towards low address, and
+- the stack pointer points to the next available memory position.
+
+A **full ascending statck** is a stack that:
+
+- grows towards high address, and
+- the stack pointer points to the last element pushed into the stack.
+
+A **empty ascending statck** is a stack that:
+
+- grows towards high address, and
+- the stack pointer points to the next available memory position.
+
+#### 8.3 The ABI and software composition 
+
+The **Application Binary Interface (ABI)** is a set of conventions defined to facilitate the composition of software.
+
+Example: a routine
+
+``` c
+void jsort(char* a, int n);
+```
+
+Only code generated for the same ABI can be linked together by the linker.
+
+Example: specify ABI using GCC with `-mabi` flag
+
+``` shell
+gcc -c program.c -mabi=ilp32 -o program.o
+```
+
+#### 8.4 Passing parameters to and returning values from routines 
+##### 8.4.1 Passing parameters to routines 
+
+Example: RISC-V ilp32 ABI
+
+The integer calling convention:
+
+- the first 8 scalar parameters of the routine are passed through registers a0-7, being one parameter per register.
+- in case there are more than 8 parameters, the remaing parameters 9 to $N$, are passed through the stack.
+
+``` c
+int sum10(int a, int b, int c, int d, int e,
+          int f, int g, int h, int i, int j);
+```
+
+``` asm
+# sum(10,20,30,40,50,60,70,80,90,100)
+main:
+  li a0, 10
+  li a1, 20
+  li a2, 30
+  li a3, 40
+  li a4, 50
+  li a5, 60
+  li a6, 70
+  li a7, 80
+  addi sp, sp, -8     # allocate stack space
+  li t1, 100
+  sw t1, 4(sp)
+  li t1, 90
+  sw t1, 0(sp)
+  jal sum10           # invoke sum10
+  addi sp, sp, 8      # deallocate the parameters from stack
+  ret
+
+sum10:
+  lw t1, 0(sp)        # load 9th parameter
+  lw t2, 4(sp)        # load 10th parameter
+  add a0, a0, a1      # sum all parameters
+  add a0, a0, a2
+  add a0, a0, a3
+  add a0, a0, a4
+  add a0, a0, a5
+  add a0, a0, a6
+  add a0, a0, a7
+  add a0, a0, t1
+  add a0, a0, t2      # place return value on a0
+  ret                 # returns
+```
+
+##### 8.4.2 Returning values from routines 
+
+The RISC-V ilp32 ABI defines that values should be return in register a0-1.
+
+In case the value being returned is 64-bit long, then the least significant 32 bits must be returned in register a0, and the most significant 32 bits must be returned in resiter a1.
+
+#### 8.5 Value and reference parameters 
+
+**Value parameters** are parameters that contain the value itself.
+
+Example: value parameters
+
+``` c
+int pow2(int v)
+{
+  return v*v;
+}
+```
+
+``` asm
+pow2:
+  mul a0, a0, a0
+  ret
+
+main:                 # call pow2(32)
+  li a0, 32
+  jal pow2
+  ret
+```
+
+**Reference parameters** are parameters that contain a reference to a variable. The **reference** ois the variable memory address.
+
+Example: reference parameters
+
+``` c
+int inc(int* v)
+{
+  *v = *v + 1;
+}
+```
+
+``` asm
+.data
+y: .skip 4
+
+.text
+main:
+  la a0, y            # set the parameter with the address of y
+  jal inc             # invoke inc
+  ret
+
+inc:
+  lw a1, (a0)         # a1 = *v
+  addi a1, a1, 1      # a1 = a1 + 1
+  sw a1, (a0)         # *v = a1
+  ret
+```
+
+#### 8.6 Global vs local variables 
+
+**Global variables** are allocated on the static data space by the assembler and are usually deallocate on the assembly program with the help of directives.
+
+Example: global variables
+
+``` c
+int x;
+
+int main()
+{
+  return x+1;
+}
+```
+
+``` asm
+.data
+x:
+  .skip 4
+
+.text
+main:
+  la a0, x            # load the address of variable x
+  lw a0, 0(a0)        # load the value of x
+  addi a0, a0, 1      # increment the value
+  ret
+```
+
+Ideally, **local variables** should be allocated on registers.
+
+Example: allocate local variable on registers
+
+``` c
+void exchange(int* a, int* b)
+{
+  int tmp = *b;
+  *b = *a;
+  *a = tmp;
+}
+```
+
+``` asm
+exchange:
+  lw a2, (a1)         # tmp = *b
+  lw a3, (a0)         # a3 = *a
+  sw a3, (a1)         # *b = a3
+  sw a2, (a0)         # *a = tmp
+  ret
+```
+
+##### 8.6.1 Allocating local variables on memory 
+
+There are several situations in which local variables must be allocated on memory:
+
+- when a routine has a large number of local variables and there are not enough registers to allocate them;
+- when a local variable is an array or a structure;
+- when the code needs the address of the local variable: when passing a local variable as reference to other routines.
+
+Local variables that need to be allocated on memory, are allocated on the program stack whenever a toutine is invoked and become active, and deallocate whenever the routine returns.
+
+Example: situation in which needing the address of the local variable `userid`
+
+``` c
+int foo()
+{
+  int userid;
+  get_uid(&userid);
+  return userid;
+}
+```
+
+``` asm
+foo:
+  addi sp, sp, -4     # allocate userid
+  mv a0, sp           # a0 <= address of userid
+  jal get_uid         # invoke the get_uid routine
+  lw a0, (sp)         # a0 = userid
+  addi sp, sp, 4      # deallocate userid
+  ret
+```
+
+Example: situation in which the local variable is an array
+
+``` c
+int bar()
+{
+  int my_array[8];
+  init_array(my_array);
+  return my_array[4];
+}
+```
+
+``` asm
+bar:
+  addi sp, sp, -32    # allocate my_array
+  mv a0, sp           # a0 <= address of my_array
+  jal init_array      # invoke the init_array routine
+  lw a0, 16(sp)       # load my_array[4] into a0
+  addi sp, sp, 32     # deallocate my_array
+  ret
+```
+
+Example: situation in which the local variable is a structure
+
+``` c
+typedef struct
+{
+  int year;
+  int month;
+  int day;
+} date_t;
+
+int get_current_day()
+{
+  date_t d;
+  init_date(&d);
+  return d.day;
+}
+```
+
+``` asm
+get_current_day:
+  addi sp, sp, -12    # allocate d
+  mv a0, sp           # a0 <= address of d
+  jal init_date       # invoke the init_date routine
+  lw a0, 8(sp)        # load d.day into a0
+  addi sp, sp, 12     # deallocate d
+  ret
+```
+
+#### 8.7 Register usage policies 
+
+Problem: routine `mix` call routine `exchange`, `mix` uses a register `a2` which is destroyed by `exchange`
+
+``` asm linenums="1" hl_lines="2 9 13"
+exchange:
+  lw a2, (a1)         # tmp = *b, a2 is destroyed.
+  lw a3, (a0)         # a3 = *a
+  sw a3, (a1)         # *b = a3
+  sw a2, (a0)         # *a = tmp
+  ret
+
+mix:
+  lw a2, (a0)         # load important information into a2 
+  la a0, x            # set parameter 0 with address of x
+  la a1, y            # set parameter 1 with address of y
+  jal exchange        # invoke the exchange routine
+  mv a0, a2           # move important information into a0 to return
+  ret
+```
+
+Solution 1: `mix` saves/restores register `a2` into/from the program stack
+
+``` asm linenums="1" hl_lines="3 4 8 9"
+mix:
+  lw a2, (a0)
+  addi sp, sp, -4
+  sw a2, (sp)
+  la a0, x
+  la a1, y
+  jal exchange
+  lw a2, (sp)
+  addi sp, sp, 4
+  mv a0, a2
+  ret
+```
+
+Solution 2: `exchange` saves/restores register `a2-3` into/from the program stack
+
+``` asm linenums="1" hl_lines="2 3 4 9 10 11"
+exchange:
+  addi sp, sp, -8
+  sw a2, 4(sp)
+  sw a3, 0(sp)
+  lw a2, (a1)
+  lw a3, (a0)
+  sw a3, (a1)
+  sw a2, (a0)
+  lw a3, 0(sp)
+  lw a2, 4(sp)
+  addi sp, sp, 8
+  ret
+```
+
+##### 8.7.1 Caller-saved vs Callee-saved registers 
+
+A **call site** is a place from which a routine is being invoked.
+
+The **caller routine** is the routine that is invoking the other routine, i.e. the routine that contains the call site.
+
+The **callee routine** is the routine that is being invoked by the call site.
+
+The ABI defines which registers must be saved by the caller, and which registers must be saved by the callee routine. **Caller-saved registers** are registers that must be saved by the caller routine, and **callee-saved registers** are registers that must be saved by the callee routine.
+
+Example: RISC-V ilp32 ABI
+
+The RISC-V ilp32 ABI defines that registers `t0-6`, `a0-7` and `ra` are caller-saved, and registers `s0-11` are callee-saved.
+
+!!! info ""
+    
+    There is no need to save all the **caller-saved registers** before invoking a routine: only the registers that contain values might by used by the caller routine after the call site.
+
+    There is no need for the callee routine to save and restore all the **callee-saved registers**: only the ones that are modified by the routine.
+
+
+##### 8.7.2 Saving and restoring the return address 
+
+Whenever a routine is invoked, register `ra` is updated with a new value, and its previous contents are destroyed. If the contents of register `ra` are required after the call site, then it must be saved and restored.
+
+``` asm linenums="1" hl_lines="2 3 13 14"
+mix:
+  addi sp, sp, -4
+  sw ra, (sp)
+  lw a2, (a0)
+  addi sp, sp, -4
+  sw a2, (sp)
+  la a0, x
+  la a1, y
+  jal exchange
+  lw a2, (sp)
+  addi sp, sp, 4
+  mv a0, a2
+  lw ra, (sp)
+  addi sp, sp, 4
+  ret
+```
+
+#### 8.8 Stack Frames and the Frame Pointer 
+##### 8.8.1 Stack Frames 
+
+All active routines may contain information in the program statck, and this information is naturally grouped and sorted accordingly to the call order.
+
+Example: program stack with data from active routines A,B,C, A invoked B and B invoked C
+
+```
+0x0000  +-------------------+
+        |      Code         |
+        +-------------------+
+        |   Static Data     |
+        +-------------------+
+        |      Heap         |
+        +-------|------------+ <- program break
+        |       v           |
+        |   Free space      |
+        |       ^           |
+0x04E4  +-------|-----------+ <- top of stack
+        |     Stack - C     |        
+0x04F0  +-------|-----------+
+        |     Stack - B     |
+0x04F8  +-------|-----------+
+        |     Stack - A     |
+0x0500  +-------------------+   
+```
+
+A **stack frame** is a consecutive segment of data on the program stack that stores information about an active routine.
+
+##### 8.8.2 The Frame Pointer 
+
+Example: routine `addijx` call routine `get_x`
+
+``` c
+int addijx(int a, int b, int c, int d, int e,
+          int f, int g, int h, int i, int j)
+{
+  return get_x() + i + j;
+}
+```
+
+``` asm linenums="1" hl_lines="6 7"
+addijx:
+  addi sp, sp, -4     # save the return address
+  sw ra, (sp)
+
+  jal get_x           # invoke the get_x routine
+  lw a1, 4(sp)        # load i from the program stack
+  lw a2, 8(sp)        # load j from the program stack
+  add a0, a0, a1      # a0 = get_x() + i
+  add a0, a0, a2      # a0 = get_x() + i + j
+
+  lw ra, (sp)         # restore the return address
+  addi sp, sp, 4
+  ret
+```
+
+The **frame pointer** points to the beginning of the stack frame of the currently executing routine.
+
+In RISC-V ilp32 ABI, the frame pointer is stored by the frame pointer register `fp`. The register `fp` must be initialized at the beginning of the routine, however, its previous contents must be saved so that it can be restored before returning from the routine.
+
+In most cases, instead of pushing information one by one on the program stack, each stack frame can be allocated with a signle instruction at the beginning of the routine and dellocated with a sginle instruction befreo returning.
+
+Example: allocate/deallocate the stack frame in the beginning/end of the routine, and use the frame pointer to access the parameters
+
+``` asm linenums="1" hl_lines="2 8 9 15"
+addijx:
+  addi sp, sp, -8
+  sw ra, 4(sp)
+  sw fp, 0(sp)
+  addi fp, sp, 8
+
+  jal get_x
+  lw a1, (fp)
+  lw a2, 4(fp)
+  add a0, a0, a1
+  add a0, a2, a2
+
+  lw fp, 0(sp)
+  lw ra, 4(sp)
+  addi sp, sp, 8
+  ret
+```
+
+##### 8.8.3 Keeping the stack pointer aligned 
+
+The RISC-V ilp32 ABI specifies that the stack pointer shall always be aligned to a 128-bit boundary upon routine entry. 
+
+And the stack pointer must remain aligned throughout procedure execution. The programmer or compiler can always allocate stack frames using multiplies of 16 bytes.
+
+#### 8.9 Implementing RISC-V ilp32 compatible routines 
+
+Guidelines to help programmers implement RISC-V assembly routings compatible with the RISC-V ilp32 ABI:
+
+- Include a label to define the routine entry point.
+- Use the return instruction `ret` to return from the routine. This instruction jumps to the address that is stored in the return address register `ra`.
+- Parameters must be accessed accordingly to the RISC-V ilp32 ABI.
+- In case the routine needs to store information on the program stack, a stack frame should be allocated at he beginning of the routine and deallocated before returning.
+- The routine may use registers to implement its functionality, however, callee-saved registers that are modified by the routine must be saved in the beginning of the routine and restored before returning from it. These registers must be saved on the stack frame.
+- The routine may modify and use caller-saved registers without saving them, however, in case their value needs to be preserved across a call site, the routine must save/restore its content before/after the call site. Routines that call other routines must save and restore the return address register to preserve its contents across call sites. These registers must be saved on the stack frame.
+- Local variables may be allocated on registers or on memory. Local variables that need to be allocated on memory must be allocated on the stack frame.
+- Optionally, the frame pointer register `fp` may be used to keep a pointer to the beginning of the stack frame and provide a fixed reference to access parameters and local variables. In this case , the previous frame pointer must be preserved when returning from the routine, hence, the contents of the frame pointer register must be saved in the stack frame at the beginning of the function and restored before returning.
+- The standard ABI specifies that routines should not modify the integer registers `tp` and `gp`.
+
+#### 8.10 Examples 
+##### 8.10.1 Recursive routines 
+
+**Recursive routines** are routines that call themselves.
+
+Example: compute the factorial of a number
+
+``` c
+int factorial(int n)
+{
+  if (n > 1)
+    return n * factorial(n-1);
+  else
+    return 1;
+}
+```
+
+``` asm
+factorial:
+  addi sp, sp, -16    # allocate stack frames using multiplies of 16 bytes
+  sw ra, 0(sp)
+
+  li a1, 1
+  ble a0, a1, else
+                      # n > 1
+  sw a0, 4(sp)        # save n on the frame
+  addi a0, a0, -1     # set the parameter 0 to n-1
+  jal factorial       # perform the recursive call
+
+  lw a1, 4(sp)        # load n from the frame 
+  mul a0, a0, a1      # a0 = factorial(n-1) * n
+  j fact_end
+else:
+  li a0, 1
+fact_end:
+  lw ra, 0(sp)
+  addi sp, sp, 16
+  ret
+```
+
+##### 8.10.2 The standard “C” library syscall routines 
+
+Syscall is performed in RISC-V by executing the `ecall` instruction. The program must set the `a7` register with proper syscall code.
+
+> See also **6.7.4 System Calls**.
+
+Example: implementation for the `write` routine
+
+``` asm
+# input: a0: fd, a1: buf, a2: count
+#   also the same parameters of the syscall
+write:
+  addi sp, sp, -16
+  sw ra, 12(sp)
+
+  li a7, 64           # set the syscall code
+  ecall               # invoke the operating system
+
+  lw ra, 12(sp)
+  addi sp, sp, 16
+  ret
+```
